@@ -21,6 +21,8 @@ const defaults = Object.freeze({
   seededRandom: false,
   // string for random seed (e.g. 'a', 'b', 'c' or 'abc')
   seededRandomString: 'cose',
+  // randomize packing
+  randomizePacking: true,
   // Whether or not to animate the layout
   animate: true, 
   // Duration of animation in ms, if enabled
@@ -314,7 +316,7 @@ Layout.prototype.run = function() {
           }
         });
 
-        let shiftResult = layUtil.packComponents(subgraphs, options.randomize).shifts;
+        let shiftResult = layUtil.packComponents(subgraphs, options.randomizePacking).shifts;
 
         if (options.quality === "draft") {
           spectralResult.forEach(function(result, index){

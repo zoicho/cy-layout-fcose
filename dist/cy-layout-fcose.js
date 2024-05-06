@@ -1576,20 +1576,20 @@ function Ye() {
                   gt.push(0);
                 return gt;
               }(Math.min(this.m + 1, this.n)), this.U = function(lt) {
-                var gt = function Pt(At) {
+                var gt = function Gt(At) {
                   if (At.length == 0)
                     return 0;
                   for (var St = [], Mt = 0; Mt < At[0]; Mt++)
-                    St.push(Pt(At.slice(1)));
+                    St.push(Gt(At.slice(1)));
                   return St;
                 };
                 return gt(lt);
               }([this.m, n]), this.V = function(lt) {
-                var gt = function Pt(At) {
+                var gt = function Gt(At) {
                   if (At.length == 0)
                     return 0;
                   for (var St = [], Mt = 0; Mt < At[0]; Mt++)
-                    St.push(Pt(At.slice(1)));
+                    St.push(Gt(At.slice(1)));
                   return St;
                 };
                 return gt(lt);
@@ -1690,12 +1690,12 @@ function Ye() {
                 if (/* @__PURE__ */ function(lt, gt) {
                   return lt && gt;
                 }(z < l, t[z] !== 0))
-                  for (var P = z + 1; P < n; P++) {
+                  for (var G = z + 1; G < n; G++) {
                     for (var K = 0, $ = z + 1; $ < this.n; $++)
-                      K += this.V[$][z] * this.V[$][P];
+                      K += this.V[$][z] * this.V[$][G];
                     K = -K / this.V[z + 1][z];
-                    for (var G = z + 1; G < this.n; G++)
-                      this.V[G][P] += K * this.V[G][z];
+                    for (var P = z + 1; P < this.n; P++)
+                      this.V[P][G] += K * this.V[P][z];
                   }
                 for (var W = 0; W < this.n; W++)
                   this.V[W][z] = 0;
@@ -1741,8 +1741,8 @@ function Ye() {
                       for (var Ft = B; Ft < o; Ft++) {
                         var zt = d.hypot(this.s[Ft], jt), kt = this.s[Ft] / zt, oe = jt / zt;
                         this.s[Ft] = zt, jt = -oe * t[Ft], t[Ft] = kt * t[Ft];
-                        for (var Gt = 0; Gt < this.m; Gt++)
-                          zt = kt * this.U[Gt][Ft] + oe * this.U[Gt][B - 1], this.U[Gt][B - 1] = -oe * this.U[Gt][Ft] + kt * this.U[Gt][B - 1], this.U[Gt][Ft] = zt;
+                        for (var Pt = 0; Pt < this.m; Pt++)
+                          zt = kt * this.U[Pt][Ft] + oe * this.U[Pt][B - 1], this.U[Pt][B - 1] = -oe * this.U[Pt][Ft] + kt * this.U[Pt][B - 1], this.U[Pt][Ft] = zt;
                       }
                     }
                     break;
@@ -2126,9 +2126,9 @@ function Ye() {
                   var c = E[g];
                   this.idToNodeMap.set(c.id, c);
                 }
-                var p = function G(W) {
+                var p = function P(W) {
                   for (var J = W.getChild().getNodes(), k, ft = 0, B = 0; B < J.length; B++)
-                    k = J[B], k.getChild() == null ? o.fixedNodeSet.has(k.id) && (ft += 100) : ft += G(k);
+                    k = J[B], k.getChild() == null ? o.fixedNodeSet.has(k.id) && (ft += 100) : ft += P(k);
                   return ft;
                 };
                 if (this.constraints.fixedNodeConstraint) {
@@ -2143,8 +2143,8 @@ function Ye() {
                 }
                 if (this.constraints.relativePlacementConstraint) {
                   var L = /* @__PURE__ */ new Map(), D = /* @__PURE__ */ new Map();
-                  if (this.dummyToNodeForVerticalAlignment = /* @__PURE__ */ new Map(), this.dummyToNodeForHorizontalAlignment = /* @__PURE__ */ new Map(), this.fixedNodesOnHorizontal = /* @__PURE__ */ new Set(), this.fixedNodesOnVertical = /* @__PURE__ */ new Set(), this.fixedNodeSet.forEach(function(G) {
-                    o.fixedNodesOnHorizontal.add(G), o.fixedNodesOnVertical.add(G);
+                  if (this.dummyToNodeForVerticalAlignment = /* @__PURE__ */ new Map(), this.dummyToNodeForHorizontalAlignment = /* @__PURE__ */ new Map(), this.fixedNodesOnHorizontal = /* @__PURE__ */ new Set(), this.fixedNodesOnVertical = /* @__PURE__ */ new Set(), this.fixedNodeSet.forEach(function(P) {
+                    o.fixedNodesOnHorizontal.add(P), o.fixedNodesOnVertical.add(P);
                   }), this.constraints.alignmentConstraint) {
                     if (this.constraints.alignmentConstraint.vertical)
                       for (var b = this.constraints.alignmentConstraint.vertical, g = 0; g < b.length; g++)
@@ -2158,32 +2158,32 @@ function Ye() {
                         });
                   }
                   if (f.RELAX_MOVEMENT_ON_CONSTRAINTS)
-                    this.shuffle = function(G) {
+                    this.shuffle = function(P) {
                       var W, J, k;
-                      for (k = G.length - 1; k >= 2 * G.length / 3; k--)
-                        W = Math.floor(Math.random() * (k + 1)), J = G[k], G[k] = G[W], G[W] = J;
-                      return G;
-                    }, this.nodesInRelativeHorizontal = [], this.nodesInRelativeVertical = [], this.nodeToRelativeConstraintMapHorizontal = /* @__PURE__ */ new Map(), this.nodeToRelativeConstraintMapVertical = /* @__PURE__ */ new Map(), this.nodeToTempPositionMapHorizontal = /* @__PURE__ */ new Map(), this.nodeToTempPositionMapVertical = /* @__PURE__ */ new Map(), this.constraints.relativePlacementConstraint.forEach(function(G) {
-                      if (G.left) {
-                        var W = L.has(G.left) ? L.get(G.left) : G.left, J = L.has(G.right) ? L.get(G.right) : G.right;
-                        o.nodesInRelativeHorizontal.includes(W) || (o.nodesInRelativeHorizontal.push(W), o.nodeToRelativeConstraintMapHorizontal.set(W, []), o.dummyToNodeForVerticalAlignment.has(W) ? o.nodeToTempPositionMapHorizontal.set(W, o.idToNodeMap.get(o.dummyToNodeForVerticalAlignment.get(W)[0]).getCenterX()) : o.nodeToTempPositionMapHorizontal.set(W, o.idToNodeMap.get(W).getCenterX())), o.nodesInRelativeHorizontal.includes(J) || (o.nodesInRelativeHorizontal.push(J), o.nodeToRelativeConstraintMapHorizontal.set(J, []), o.dummyToNodeForVerticalAlignment.has(J) ? o.nodeToTempPositionMapHorizontal.set(J, o.idToNodeMap.get(o.dummyToNodeForVerticalAlignment.get(J)[0]).getCenterX()) : o.nodeToTempPositionMapHorizontal.set(J, o.idToNodeMap.get(J).getCenterX())), o.nodeToRelativeConstraintMapHorizontal.get(W).push({ right: J, gap: G.gap }), o.nodeToRelativeConstraintMapHorizontal.get(J).push({ left: W, gap: G.gap });
+                      for (k = P.length - 1; k >= 2 * P.length / 3; k--)
+                        W = Math.floor(Math.random() * (k + 1)), J = P[k], P[k] = P[W], P[W] = J;
+                      return P;
+                    }, this.nodesInRelativeHorizontal = [], this.nodesInRelativeVertical = [], this.nodeToRelativeConstraintMapHorizontal = /* @__PURE__ */ new Map(), this.nodeToRelativeConstraintMapVertical = /* @__PURE__ */ new Map(), this.nodeToTempPositionMapHorizontal = /* @__PURE__ */ new Map(), this.nodeToTempPositionMapVertical = /* @__PURE__ */ new Map(), this.constraints.relativePlacementConstraint.forEach(function(P) {
+                      if (P.left) {
+                        var W = L.has(P.left) ? L.get(P.left) : P.left, J = L.has(P.right) ? L.get(P.right) : P.right;
+                        o.nodesInRelativeHorizontal.includes(W) || (o.nodesInRelativeHorizontal.push(W), o.nodeToRelativeConstraintMapHorizontal.set(W, []), o.dummyToNodeForVerticalAlignment.has(W) ? o.nodeToTempPositionMapHorizontal.set(W, o.idToNodeMap.get(o.dummyToNodeForVerticalAlignment.get(W)[0]).getCenterX()) : o.nodeToTempPositionMapHorizontal.set(W, o.idToNodeMap.get(W).getCenterX())), o.nodesInRelativeHorizontal.includes(J) || (o.nodesInRelativeHorizontal.push(J), o.nodeToRelativeConstraintMapHorizontal.set(J, []), o.dummyToNodeForVerticalAlignment.has(J) ? o.nodeToTempPositionMapHorizontal.set(J, o.idToNodeMap.get(o.dummyToNodeForVerticalAlignment.get(J)[0]).getCenterX()) : o.nodeToTempPositionMapHorizontal.set(J, o.idToNodeMap.get(J).getCenterX())), o.nodeToRelativeConstraintMapHorizontal.get(W).push({ right: J, gap: P.gap }), o.nodeToRelativeConstraintMapHorizontal.get(J).push({ left: W, gap: P.gap });
                       } else {
-                        var k = D.has(G.top) ? D.get(G.top) : G.top, ft = D.has(G.bottom) ? D.get(G.bottom) : G.bottom;
-                        o.nodesInRelativeVertical.includes(k) || (o.nodesInRelativeVertical.push(k), o.nodeToRelativeConstraintMapVertical.set(k, []), o.dummyToNodeForHorizontalAlignment.has(k) ? o.nodeToTempPositionMapVertical.set(k, o.idToNodeMap.get(o.dummyToNodeForHorizontalAlignment.get(k)[0]).getCenterY()) : o.nodeToTempPositionMapVertical.set(k, o.idToNodeMap.get(k).getCenterY())), o.nodesInRelativeVertical.includes(ft) || (o.nodesInRelativeVertical.push(ft), o.nodeToRelativeConstraintMapVertical.set(ft, []), o.dummyToNodeForHorizontalAlignment.has(ft) ? o.nodeToTempPositionMapVertical.set(ft, o.idToNodeMap.get(o.dummyToNodeForHorizontalAlignment.get(ft)[0]).getCenterY()) : o.nodeToTempPositionMapVertical.set(ft, o.idToNodeMap.get(ft).getCenterY())), o.nodeToRelativeConstraintMapVertical.get(k).push({ bottom: ft, gap: G.gap }), o.nodeToRelativeConstraintMapVertical.get(ft).push({ top: k, gap: G.gap });
+                        var k = D.has(P.top) ? D.get(P.top) : P.top, ft = D.has(P.bottom) ? D.get(P.bottom) : P.bottom;
+                        o.nodesInRelativeVertical.includes(k) || (o.nodesInRelativeVertical.push(k), o.nodeToRelativeConstraintMapVertical.set(k, []), o.dummyToNodeForHorizontalAlignment.has(k) ? o.nodeToTempPositionMapVertical.set(k, o.idToNodeMap.get(o.dummyToNodeForHorizontalAlignment.get(k)[0]).getCenterY()) : o.nodeToTempPositionMapVertical.set(k, o.idToNodeMap.get(k).getCenterY())), o.nodesInRelativeVertical.includes(ft) || (o.nodesInRelativeVertical.push(ft), o.nodeToRelativeConstraintMapVertical.set(ft, []), o.dummyToNodeForHorizontalAlignment.has(ft) ? o.nodeToTempPositionMapVertical.set(ft, o.idToNodeMap.get(o.dummyToNodeForHorizontalAlignment.get(ft)[0]).getCenterY()) : o.nodeToTempPositionMapVertical.set(ft, o.idToNodeMap.get(ft).getCenterY())), o.nodeToRelativeConstraintMapVertical.get(k).push({ bottom: ft, gap: P.gap }), o.nodeToRelativeConstraintMapVertical.get(ft).push({ top: k, gap: P.gap });
                       }
                     });
                   else {
                     var H = /* @__PURE__ */ new Map(), z = /* @__PURE__ */ new Map();
-                    this.constraints.relativePlacementConstraint.forEach(function(G) {
-                      if (G.left) {
-                        var W = L.has(G.left) ? L.get(G.left) : G.left, J = L.has(G.right) ? L.get(G.right) : G.right;
+                    this.constraints.relativePlacementConstraint.forEach(function(P) {
+                      if (P.left) {
+                        var W = L.has(P.left) ? L.get(P.left) : P.left, J = L.has(P.right) ? L.get(P.right) : P.right;
                         H.has(W) ? H.get(W).push(J) : H.set(W, [J]), H.has(J) ? H.get(J).push(W) : H.set(J, [W]);
                       } else {
-                        var k = D.has(G.top) ? D.get(G.top) : G.top, ft = D.has(G.bottom) ? D.get(G.bottom) : G.bottom;
+                        var k = D.has(P.top) ? D.get(P.top) : P.top, ft = D.has(P.bottom) ? D.get(P.bottom) : P.bottom;
                         z.has(k) ? z.get(k).push(ft) : z.set(k, [ft]), z.has(ft) ? z.get(ft).push(k) : z.set(ft, [k]);
                       }
                     });
-                    var P = function(W, J) {
+                    var G = function(W, J) {
                       var k = [], ft = [], B = new q(), Ot = /* @__PURE__ */ new Set(), vt = 0;
                       return W.forEach(function(_t, Vt) {
                         if (!Ot.has(Vt)) {
@@ -2199,17 +2199,17 @@ function Ye() {
                           vt++;
                         }
                       }), { components: k, isFixed: ft };
-                    }, K = P(H, o.fixedNodesOnHorizontal);
+                    }, K = G(H, o.fixedNodesOnHorizontal);
                     this.componentsOnHorizontal = K.components, this.fixedComponentsOnHorizontal = K.isFixed;
-                    var $ = P(z, o.fixedNodesOnVertical);
+                    var $ = G(z, o.fixedNodesOnVertical);
                     this.componentsOnVertical = $.components, this.fixedComponentsOnVertical = $.isFixed;
                   }
                 }
               }, R.prototype.updateDisplacements = function() {
                 var o = this;
                 if (this.constraints.fixedNodeConstraint && this.constraints.fixedNodeConstraint.forEach(function($) {
-                  var G = o.idToNodeMap.get($.nodeId);
-                  G.displacementX = 0, G.displacementY = 0;
+                  var P = o.idToNodeMap.get($.nodeId);
+                  P.displacementX = 0, P.displacementY = 0;
                 }), this.constraints.alignmentConstraint) {
                   if (this.constraints.alignmentConstraint.vertical)
                     for (var E = this.constraints.alignmentConstraint.vertical, g = 0; g < E.length; g++) {
@@ -2240,33 +2240,33 @@ function Ye() {
                   if (f.RELAX_MOVEMENT_ON_CONSTRAINTS)
                     this.totalIterations % 10 == 0 && (this.shuffle(this.nodesInRelativeHorizontal), this.shuffle(this.nodesInRelativeVertical)), this.nodesInRelativeHorizontal.forEach(function($) {
                       if (!o.fixedNodesOnHorizontal.has($)) {
-                        var G = 0;
-                        o.dummyToNodeForVerticalAlignment.has($) ? G = o.idToNodeMap.get(o.dummyToNodeForVerticalAlignment.get($)[0]).displacementX : G = o.idToNodeMap.get($).displacementX, o.nodeToRelativeConstraintMapHorizontal.get($).forEach(function(W) {
+                        var P = 0;
+                        o.dummyToNodeForVerticalAlignment.has($) ? P = o.idToNodeMap.get(o.dummyToNodeForVerticalAlignment.get($)[0]).displacementX : P = o.idToNodeMap.get($).displacementX, o.nodeToRelativeConstraintMapHorizontal.get($).forEach(function(W) {
                           if (W.right) {
-                            var J = o.nodeToTempPositionMapHorizontal.get(W.right) - o.nodeToTempPositionMapHorizontal.get($) - G;
-                            J < W.gap && (G -= W.gap - J);
+                            var J = o.nodeToTempPositionMapHorizontal.get(W.right) - o.nodeToTempPositionMapHorizontal.get($) - P;
+                            J < W.gap && (P -= W.gap - J);
                           } else {
-                            var J = o.nodeToTempPositionMapHorizontal.get($) - o.nodeToTempPositionMapHorizontal.get(W.left) + G;
-                            J < W.gap && (G += W.gap - J);
+                            var J = o.nodeToTempPositionMapHorizontal.get($) - o.nodeToTempPositionMapHorizontal.get(W.left) + P;
+                            J < W.gap && (P += W.gap - J);
                           }
-                        }), o.nodeToTempPositionMapHorizontal.set($, o.nodeToTempPositionMapHorizontal.get($) + G), o.dummyToNodeForVerticalAlignment.has($) ? o.dummyToNodeForVerticalAlignment.get($).forEach(function(W) {
-                          o.idToNodeMap.get(W).displacementX = G;
-                        }) : o.idToNodeMap.get($).displacementX = G;
+                        }), o.nodeToTempPositionMapHorizontal.set($, o.nodeToTempPositionMapHorizontal.get($) + P), o.dummyToNodeForVerticalAlignment.has($) ? o.dummyToNodeForVerticalAlignment.get($).forEach(function(W) {
+                          o.idToNodeMap.get(W).displacementX = P;
+                        }) : o.idToNodeMap.get($).displacementX = P;
                       }
                     }), this.nodesInRelativeVertical.forEach(function($) {
                       if (!o.fixedNodesOnHorizontal.has($)) {
-                        var G = 0;
-                        o.dummyToNodeForHorizontalAlignment.has($) ? G = o.idToNodeMap.get(o.dummyToNodeForHorizontalAlignment.get($)[0]).displacementY : G = o.idToNodeMap.get($).displacementY, o.nodeToRelativeConstraintMapVertical.get($).forEach(function(W) {
+                        var P = 0;
+                        o.dummyToNodeForHorizontalAlignment.has($) ? P = o.idToNodeMap.get(o.dummyToNodeForHorizontalAlignment.get($)[0]).displacementY : P = o.idToNodeMap.get($).displacementY, o.nodeToRelativeConstraintMapVertical.get($).forEach(function(W) {
                           if (W.bottom) {
-                            var J = o.nodeToTempPositionMapVertical.get(W.bottom) - o.nodeToTempPositionMapVertical.get($) - G;
-                            J < W.gap && (G -= W.gap - J);
+                            var J = o.nodeToTempPositionMapVertical.get(W.bottom) - o.nodeToTempPositionMapVertical.get($) - P;
+                            J < W.gap && (P -= W.gap - J);
                           } else {
-                            var J = o.nodeToTempPositionMapVertical.get($) - o.nodeToTempPositionMapVertical.get(W.top) + G;
-                            J < W.gap && (G += W.gap - J);
+                            var J = o.nodeToTempPositionMapVertical.get($) - o.nodeToTempPositionMapVertical.get(W.top) + P;
+                            J < W.gap && (P += W.gap - J);
                           }
-                        }), o.nodeToTempPositionMapVertical.set($, o.nodeToTempPositionMapVertical.get($) + G), o.dummyToNodeForHorizontalAlignment.has($) ? o.dummyToNodeForHorizontalAlignment.get($).forEach(function(W) {
-                          o.idToNodeMap.get(W).displacementY = G;
-                        }) : o.idToNodeMap.get($).displacementY = G;
+                        }), o.nodeToTempPositionMapVertical.set($, o.nodeToTempPositionMapVertical.get($) + P), o.dummyToNodeForHorizontalAlignment.has($) ? o.dummyToNodeForHorizontalAlignment.get($).forEach(function(W) {
+                          o.idToNodeMap.get(W).displacementY = P;
+                        }) : o.idToNodeMap.get($).displacementY = P;
                       }
                     });
                   else {
@@ -2280,8 +2280,8 @@ function Ye() {
                       else {
                         for (var H = 0, z = 0, p = 0; p < U.length; p++)
                           if (this.dummyToNodeForVerticalAlignment.has(U[p])) {
-                            var P = this.dummyToNodeForVerticalAlignment.get(U[p]);
-                            H += P.length * this.idToNodeMap.get(P[0]).displacementX, z += P.length;
+                            var G = this.dummyToNodeForVerticalAlignment.get(U[p]);
+                            H += G.length * this.idToNodeMap.get(G[0]).displacementX, z += G.length;
                           } else
                             H += this.idToNodeMap.get(U[p]).displacementX, z++;
                         for (var K = H / z, p = 0; p < U.length; p++)
@@ -2300,8 +2300,8 @@ function Ye() {
                       else {
                         for (var H = 0, z = 0, p = 0; p < U.length; p++)
                           if (this.dummyToNodeForHorizontalAlignment.has(U[p])) {
-                            var P = this.dummyToNodeForHorizontalAlignment.get(U[p]);
-                            H += P.length * this.idToNodeMap.get(P[0]).displacementY, z += P.length;
+                            var G = this.dummyToNodeForHorizontalAlignment.get(U[p]);
+                            H += G.length * this.idToNodeMap.get(G[0]).displacementY, z += G.length;
                           } else
                             H += this.idToNodeMap.get(U[p]).displacementY, z++;
                         for (var K = H / z, p = 0; p < U.length; p++)
@@ -2370,16 +2370,16 @@ function Ye() {
                 o.setCenter(U, H);
                 var z = [];
                 z = z.concat(o.getEdges());
-                var P = z.length;
-                E != null && P--;
-                for (var K = 0, $ = z.length, G, W = o.getEdgesBetween(E); W.length > 1; ) {
+                var G = z.length;
+                E != null && G--;
+                for (var K = 0, $ = z.length, P, W = o.getEdgesBetween(E); W.length > 1; ) {
                   var J = W[0];
                   W.splice(0, 1);
                   var k = z.indexOf(J);
-                  k >= 0 && z.splice(k, 1), $--, P--;
+                  k >= 0 && z.splice(k, 1), $--, G--;
                 }
-                E != null ? G = (z.indexOf(W[0]) + 1) % $ : G = 0;
-                for (var ft = Math.abs(c - g) / P, B = G; K != P; B = ++B % $) {
+                E != null ? P = (z.indexOf(W[0]) + 1) % $ : P = 0;
+                for (var ft = Math.abs(c - g) / G, B = P; K != G; B = ++B % $) {
                   var Ot = z[B].getOtherEnd(o);
                   if (Ot != E) {
                     var vt = (g + K * ft) % 360, _t = (vt + ft) % 360;
@@ -2411,11 +2411,11 @@ function Ye() {
                     o.memberGroups[U] = E[b];
                     var H = E[b][0].getParent(), z = new e(o.graphManager);
                     z.id = U, z.paddingLeft = H.paddingLeft || 0, z.paddingRight = H.paddingRight || 0, z.paddingBottom = H.paddingBottom || 0, z.paddingTop = H.paddingTop || 0, o.idToDummyNode[U] = z;
-                    var P = o.getGraphManager().add(o.newGraph(), z), K = H.getChild();
+                    var G = o.getGraphManager().add(o.newGraph(), z), K = H.getChild();
                     K.add(z);
                     for (var $ = 0; $ < E[b].length; $++) {
-                      var G = E[b][$];
-                      K.remove(G), P.add(G);
+                      var P = E[b][$];
+                      K.remove(P), G.add(P);
                     }
                   }
                 });
@@ -2493,8 +2493,8 @@ function Ye() {
                   var U = o.rows[b];
                   E = D;
                   for (var H = 0, z = 0; z < U.length; z++) {
-                    var P = U[z];
-                    P.rect.x = E, P.rect.y = g, E += P.rect.width + o.horizontalPadding, P.rect.height > H && (H = P.rect.height);
+                    var G = U[z];
+                    G.rect.x = E, G.rect.y = g, E += G.rect.width + o.horizontalPadding, G.rect.height > H && (H = G.rect.height);
                   }
                   g += H + o.verticalPadding;
                 }
@@ -2518,9 +2518,9 @@ function Ye() {
                 o.forEach(function($) {
                   x += $.getWidth(), L += $.getHeight(), $.getWidth() > D && (D = $.getWidth());
                 });
-                var b = x / p, U = L / p, H = Math.pow(g - c, 2) + 4 * (b + c) * (U + g) * p, z = (c - g + Math.sqrt(H)) / (2 * (b + c)), P;
-                E ? (P = Math.ceil(z), P == z && P++) : P = Math.floor(z);
-                var K = P * (b + c) - c;
+                var b = x / p, U = L / p, H = Math.pow(g - c, 2) + 4 * (b + c) * (U + g) * p, z = (c - g + Math.sqrt(H)) / (2 * (b + c)), G;
+                E ? (G = Math.ceil(z), G == z && G++) : G = Math.floor(z);
+                var K = G * (b + c) - c;
                 return D > K && (K = D), K += c * 2, K;
               }, R.prototype.tileNodesByFavoringDim = function(o, E, g) {
                 var c = f.TILING_PADDING_VERTICAL, p = f.TILING_PADDING_HORIZONTAL, x = f.TILING_COMPARE_BY, L = {
@@ -2536,29 +2536,29 @@ function Ye() {
                   centerY: 0
                 };
                 x && (L.idealRowWidth = this.calcIdealRowWidth(o, g));
-                var D = function(G) {
-                  return G.rect.width * G.rect.height;
-                }, b = function(G, W) {
-                  return D(W) - D(G);
+                var D = function(P) {
+                  return P.rect.width * P.rect.height;
+                }, b = function(P, W) {
+                  return D(W) - D(P);
                 };
-                o.sort(function($, G) {
+                o.sort(function($, P) {
                   var W = b;
-                  return L.idealRowWidth ? (W = x, W($.id, G.id)) : W($, G);
+                  return L.idealRowWidth ? (W = x, W($.id, P.id)) : W($, P);
                 });
                 for (var U = 0, H = 0, z = 0; z < o.length; z++) {
-                  var P = o[z];
-                  U += P.getCenterX(), H += P.getCenterY();
+                  var G = o[z];
+                  U += G.getCenterX(), H += G.getCenterY();
                 }
                 L.centerX = U / o.length, L.centerY = H / o.length;
                 for (var z = 0; z < o.length; z++) {
-                  var P = o[z];
+                  var G = o[z];
                   if (L.rows.length == 0)
-                    this.insertNodeToRow(L, P, 0, E);
-                  else if (this.canAddHorizontal(L, P.rect.width, P.rect.height)) {
+                    this.insertNodeToRow(L, G, 0, E);
+                  else if (this.canAddHorizontal(L, G.rect.width, G.rect.height)) {
                     var K = L.rows.length - 1;
-                    L.idealRowWidth || (K = this.getShortestRowIndex(L)), this.insertNodeToRow(L, P, K, E);
+                    L.idealRowWidth || (K = this.getShortestRowIndex(L)), this.insertNodeToRow(L, G, K, E);
                   } else
-                    this.insertNodeToRow(L, P, L.rows.length, E);
+                    this.insertNodeToRow(L, G, L.rows.length, E);
                   this.shiftToLastRow(L);
                 }
                 return L;
@@ -2644,27 +2644,27 @@ function Ye() {
                 if (c == o[1].source ? g = o[1].target : g = o[1].source, f.PURE_INCREMENTAL)
                   c.setCenter(g.getCenterX() + o[3].getWidth(), g.getCenterY() + o[3].getHeight());
                 else {
-                  var p = g.startX, x = g.finishX, L = g.startY, D = g.finishY, b = 0, U = 0, H = 0, z = 0, P = [b, H, U, z];
+                  var p = g.startX, x = g.finishX, L = g.startY, D = g.finishY, b = 0, U = 0, H = 0, z = 0, G = [b, H, U, z];
                   if (L > 0)
                     for (var K = p; K <= x; K++)
-                      P[0] += this.grid[K][L - 1].length + this.grid[K][L].length - 1;
+                      G[0] += this.grid[K][L - 1].length + this.grid[K][L].length - 1;
                   if (x < this.grid.length - 1)
                     for (var K = L; K <= D; K++)
-                      P[1] += this.grid[x + 1][K].length + this.grid[x][K].length - 1;
+                      G[1] += this.grid[x + 1][K].length + this.grid[x][K].length - 1;
                   if (D < this.grid[0].length - 1)
                     for (var K = p; K <= x; K++)
-                      P[2] += this.grid[K][D + 1].length + this.grid[K][D].length - 1;
+                      G[2] += this.grid[K][D + 1].length + this.grid[K][D].length - 1;
                   if (p > 0)
                     for (var K = L; K <= D; K++)
-                      P[3] += this.grid[p - 1][K].length + this.grid[p][K].length - 1;
-                  for (var $ = F.MAX_VALUE, G, W, J = 0; J < P.length; J++)
-                    P[J] < $ ? ($ = P[J], G = 1, W = J) : P[J] == $ && G++;
-                  if (G == 3 && $ == 0)
-                    P[0] == 0 && P[1] == 0 && P[2] == 0 ? E = 1 : P[0] == 0 && P[1] == 0 && P[3] == 0 ? E = 0 : P[0] == 0 && P[2] == 0 && P[3] == 0 ? E = 3 : P[1] == 0 && P[2] == 0 && P[3] == 0 && (E = 2);
-                  else if (G == 2 && $ == 0) {
+                      G[3] += this.grid[p - 1][K].length + this.grid[p][K].length - 1;
+                  for (var $ = F.MAX_VALUE, P, W, J = 0; J < G.length; J++)
+                    G[J] < $ ? ($ = G[J], P = 1, W = J) : G[J] == $ && P++;
+                  if (P == 3 && $ == 0)
+                    G[0] == 0 && G[1] == 0 && G[2] == 0 ? E = 1 : G[0] == 0 && G[1] == 0 && G[3] == 0 ? E = 0 : G[0] == 0 && G[2] == 0 && G[3] == 0 ? E = 3 : G[1] == 0 && G[2] == 0 && G[3] == 0 && (E = 2);
+                  else if (P == 2 && $ == 0) {
                     var k = Math.floor(Math.random() * 2);
-                    P[0] == 0 && P[1] == 0 ? k == 0 ? E = 0 : E = 1 : P[0] == 0 && P[2] == 0 ? k == 0 ? E = 0 : E = 2 : P[0] == 0 && P[3] == 0 ? k == 0 ? E = 0 : E = 3 : P[1] == 0 && P[2] == 0 ? k == 0 ? E = 1 : E = 2 : P[1] == 0 && P[3] == 0 ? k == 0 ? E = 1 : E = 3 : k == 0 ? E = 2 : E = 3;
-                  } else if (G == 4 && $ == 0) {
+                    G[0] == 0 && G[1] == 0 ? k == 0 ? E = 0 : E = 1 : G[0] == 0 && G[2] == 0 ? k == 0 ? E = 0 : E = 2 : G[0] == 0 && G[3] == 0 ? k == 0 ? E = 0 : E = 3 : G[1] == 0 && G[2] == 0 ? k == 0 ? E = 1 : E = 2 : G[1] == 0 && G[3] == 0 ? k == 0 ? E = 1 : E = 3 : k == 0 ? E = 2 : E = 3;
+                  } else if (P == 4 && $ == 0) {
                     var k = Math.floor(Math.random() * 4);
                     E = k;
                   } else
@@ -2748,8 +2748,8 @@ function Ye() {
                     var yt = new Set(st), it = !0, tt = !1, It = void 0;
                     try {
                       for (var lt = rt[Symbol.iterator](), gt; !(it = (gt = lt.next()).done); it = !0) {
-                        var Pt = gt.value;
-                        yt.add(Pt);
+                        var Gt = gt.value;
+                        yt.add(Gt);
                       }
                     } catch (At) {
                       tt = !0, It = At;
@@ -2823,8 +2823,8 @@ function Ye() {
                         var yt = !1, it = !0, tt = !1, It = void 0;
                         try {
                           for (var lt = st[Symbol.iterator](), gt; !(it = (gt = lt.next()).done); it = !0) {
-                            var Pt = gt.value;
-                            at.has(Pt) && (yt = !0);
+                            var Gt = gt.value;
+                            at.has(Gt) && (yt = !0);
                           }
                         } catch (Mt) {
                           tt = !0, It = Mt;
@@ -2846,7 +2846,7 @@ function Ye() {
                         }
                       }
                     }), xt.forEach(function(st, rt) {
-                      var yt = Number.POSITIVE_INFINITY, it = Number.POSITIVE_INFINITY, tt = Number.NEGATIVE_INFINITY, It = Number.NEGATIVE_INFINITY, lt = !0, gt = !1, Pt = void 0;
+                      var yt = Number.POSITIVE_INFINITY, it = Number.POSITIVE_INFINITY, tt = Number.NEGATIVE_INFINITY, It = Number.NEGATIVE_INFINITY, lt = !0, gt = !1, Gt = void 0;
                       try {
                         for (var At = st[Symbol.iterator](), St; !(lt = (St = At.next()).done); lt = !0) {
                           var Mt = St.value, Ht = void 0;
@@ -2855,13 +2855,13 @@ function Ye() {
                           Ht < yt && (yt = Ht), Ht > tt && (tt = Ht), te < it && (it = te), te > It && (It = te);
                         }
                       } catch (ne) {
-                        gt = !0, Pt = ne;
+                        gt = !0, Gt = ne;
                       } finally {
                         try {
                           !lt && At.return && At.return();
                         } finally {
                           if (gt)
-                            throw Pt;
+                            throw Gt;
                         }
                       }
                       var ue = (yt + tt) / 2 - (it + It) / 2, $t = !0, ee = !1, re = void 0;
@@ -2978,19 +2978,19 @@ function Ye() {
                       u.relativePlacementConstraint && (L = !0);
                     })();
                   else if (u.relativePlacementConstraint) {
-                    for (var z = 0, P = 0, K = 0; K < H.length; K++)
-                      H[K].length > z && (z = H[K].length, P = K);
+                    for (var z = 0, G = 0, K = 0; K < H.length; K++)
+                      H[K].length > z && (z = H[K].length, G = K);
                     if (z < U.size / 2)
                       nt(u.relativePlacementConstraint), x = !1, L = !1;
                     else {
-                      var $ = /* @__PURE__ */ new Map(), G = /* @__PURE__ */ new Map(), W = [];
-                      H[P].forEach(function(Y) {
+                      var $ = /* @__PURE__ */ new Map(), P = /* @__PURE__ */ new Map(), W = [];
+                      H[G].forEach(function(Y) {
                         b.get(Y).forEach(function(Z) {
-                          Z.direction == "horizontal" ? ($.has(Y) ? $.get(Y).push(Z) : $.set(Y, [Z]), $.has(Z.id) || $.set(Z.id, []), W.push({ left: Y, right: Z.id })) : (G.has(Y) ? G.get(Y).push(Z) : G.set(Y, [Z]), G.has(Z.id) || G.set(Z.id, []), W.push({ top: Y, bottom: Z.id }));
+                          Z.direction == "horizontal" ? ($.has(Y) ? $.get(Y).push(Z) : $.set(Y, [Z]), $.has(Z.id) || $.set(Z.id, []), W.push({ left: Y, right: Z.id })) : (P.has(Y) ? P.get(Y).push(Z) : P.set(Y, [Z]), P.has(Z.id) || P.set(Z.id, []), W.push({ top: Y, bottom: Z.id }));
                         });
                       }), nt(W), L = !1;
-                      var J = R($, "horizontal"), k = R(G, "vertical");
-                      H[P].forEach(function(Y, Z) {
+                      var J = R($, "horizontal"), k = R(P, "vertical");
+                      H[G].forEach(function(Y, Z) {
                         p[Z] = [m[y.get(Y)], C[y.get(Y)]], c[Z] = [], J.has(Y) ? c[Z][0] = J.get(Y) : c[Z][0] = m[y.get(Y)], k.has(Y) ? c[Z][1] = k.get(Y) : c[Z][1] = C[y.get(Y)];
                       }), x = !0;
                     }
@@ -3048,8 +3048,8 @@ function Ye() {
                         at.size > 0 ? _ = C[y.get(at.values().next().value)] : _ = q(j).y, j.forEach(function(ot) {
                           D.has(ot) || (C[y.get(ot)] = _);
                         });
-                      }, Gt = 0; Gt < kt.length; Gt++)
-                        oe(Gt);
+                      }, Pt = 0; Pt < kt.length; Pt++)
+                        oe(Pt);
                   }
                   u.relativePlacementConstraint && function() {
                     var Y = /* @__PURE__ */ new Map(), Z = /* @__PURE__ */ new Map(), j = /* @__PURE__ */ new Map(), at = /* @__PURE__ */ new Map(), _ = /* @__PURE__ */ new Map(), ot = /* @__PURE__ */ new Map(), Tt = /* @__PURE__ */ new Set(), pt = /* @__PURE__ */ new Set();
@@ -3079,8 +3079,8 @@ function Ye() {
                     }, it = !0, tt = !1, It = void 0;
                     try {
                       for (var lt = b.keys()[Symbol.iterator](), gt; !(it = (gt = lt.next()).done); it = !0) {
-                        var Pt = gt.value;
-                        yt(Pt);
+                        var Gt = gt.value;
+                        yt(Gt);
                       }
                     } catch (Dt) {
                       tt = !0, It = Dt;
@@ -3122,7 +3122,7 @@ function Ye() {
                           throw Le;
                       }
                     }
-                    var Pe = function(ht) {
+                    var Ge = function(ht) {
                       at.get(ht) ? at.get(ht).forEach(function(Et) {
                         C[y.get(Et)] = Qt.get(ht);
                       }) : C[y.get(ht)] = Qt.get(ht);
@@ -3130,7 +3130,7 @@ function Ye() {
                     try {
                       for (var ve = Qt.keys()[Symbol.iterator](), xe; !(de = (xe = ve.next()).done); de = !0) {
                         var ce = xe.value;
-                        Pe(ce);
+                        Ge(ce);
                       }
                     } catch (Dt) {
                       Ae = !0, Oe = Dt;
@@ -3646,20 +3646,20 @@ let we = function(A) {
     }
   }, V = function(E, g, c) {
     let p = [], x = 0, L = 0, D = 0, b, U = [], H = 0, z = 1;
-    for (let P = 0; P < u; P++)
-      U[P] = N;
+    for (let G = 0; G < u; G++)
+      U[G] = N;
     for (p[L] = E, U[E] = 0; L >= x; ) {
       D = p[x++];
-      let P = i[D];
-      for (let K = 0; K < P.length; K++)
-        b = n.get(P[K]), U[b] == N && (U[b] = U[D] + 1, p[++L] = b);
+      let G = i[D];
+      for (let K = 0; K < G.length; K++)
+        b = n.get(G[K]), U[b] == N && (U[b] = U[D] + 1, p[++L] = b);
       a[D][g] = U[D] * I;
     }
     if (c) {
-      for (let P = 0; P < u; P++)
-        a[P][g] < e[P] && (e[P] = a[P][g]);
-      for (let P = 0; P < u; P++)
-        e[P] > H && (H = e[P], z = P);
+      for (let G = 0; G < u; G++)
+        a[G][g] < e[G] && (e[G] = a[G][g]);
+      for (let G = 0; G < u; G++)
+        e[G] > H && (H = e[G], z = G);
     }
     return z;
   }, X = function(E) {
@@ -3843,6 +3843,8 @@ const sr = Object.freeze({
   seededRandom: !1,
   // string for random seed (e.g. 'a', 'b', 'c' or 'abc')
   seededRandomString: "cose",
+  // randomize packing
+  randomizePacking: !0,
   // Whether or not to animate the layout
   animate: !0,
   // Duration of animation in ms, if enabled
@@ -3917,10 +3919,10 @@ const sr = Object.freeze({
   stop: () => {
   }
   // on layoutstop
-}), Ge = function(A) {
+}), Pe = function(A) {
   this.options = be({}, sr, A);
 };
-Ge.prototype.run = function() {
+Pe.prototype.run = function() {
   let A = this, w = this.options, M = w.cy, S = w.eles, T = [], d = [], h, n = [];
   w.fixedNodeConstraint && (!Array.isArray(w.fixedNodeConstraint) || w.fixedNodeConstraint.length == 0) && (w.fixedNodeConstraint = void 0), w.alignmentConstraint && (w.alignmentConstraint.vertical && (!Array.isArray(w.alignmentConstraint.vertical) || w.alignmentConstraint.vertical.length == 0) && (w.alignmentConstraint.vertical = void 0), w.alignmentConstraint.horizontal && (!Array.isArray(w.alignmentConstraint.horizontal) || w.alignmentConstraint.horizontal.length == 0) && (w.alignmentConstraint.horizontal = void 0)), w.relativePlacementConstraint && (!Array.isArray(w.relativePlacementConstraint) || w.relativePlacementConstraint.length == 0) && (w.relativePlacementConstraint = void 0), (w.fixedNodeConstraint || w.alignmentConstraint || w.relativePlacementConstraint) && (w.tile = !1, w.packComponents = !1);
   let i, s = !1;
@@ -3994,7 +3996,7 @@ Ge.prototype.run = function() {
             }), m.nodes.length > 0 && (a.push(m), e.add(N));
           }
         });
-        let v = i.packComponents(a, w.randomize).shifts;
+        let v = i.packComponents(a, w.randomizePacking).shifts;
         if (w.quality === "draft")
           T.forEach(function(u, N) {
             let y = u.xCoords.map((C) => C + v[N].dx), m = u.yCoords.map((C) => C + v[N].dy);
@@ -4048,7 +4050,7 @@ Ge.prototype.run = function() {
     console.log("If randomize option is set to false, then quality option must be 'default' or 'proof'.");
 };
 let hr = function(A) {
-  A && A("layout", "fcose", Ge);
+  A && A("layout", "fcose", Pe);
 };
 export {
   hr as default

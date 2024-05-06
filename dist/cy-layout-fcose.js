@@ -1,26 +1,26 @@
-const Oe = Object.assign != null ? Object.assign.bind(Object) : function(F, ...nt) {
-  return nt.forEach((L) => {
-    Object.keys(L).forEach((U) => F[U] = L[U]);
-  }), F;
+const De = Object.assign != null ? Object.assign.bind(Object) : function(S, ...F) {
+  return F.forEach((I) => {
+    Object.keys(I).forEach((U) => S[U] = I[U]);
+  }), S;
 };
 var Ce = typeof globalThis < "u" ? globalThis : typeof window < "u" ? window : typeof global < "u" ? global : typeof self < "u" ? self : {};
-function De(F) {
-  return F && F.__esModule && Object.prototype.hasOwnProperty.call(F, "default") ? F.default : F;
+function Ie(S) {
+  return S && S.__esModule && Object.prototype.hasOwnProperty.call(S, "default") ? S.default : S;
 }
 var Me = { exports: {} }, de = { exports: {} }, Te;
-function Ie() {
-  return Te || (Te = 1, function(F, nt) {
-    (function(U, C) {
-      F.exports = C();
+function Re() {
+  return Te || (Te = 1, function(S, F) {
+    (function(U, m) {
+      S.exports = m();
     })(Ce, function() {
       return (
         /******/
-        function(L) {
+        function(I) {
           var U = {};
-          function C(c) {
+          function m(c) {
             if (U[c])
               return U[c].exports;
-            var n = U[c] = {
+            var a = U[c] = {
               /******/
               i: c,
               /******/
@@ -29,12 +29,12 @@ function Ie() {
               exports: {}
               /******/
             };
-            return L[c].call(n.exports, n, n.exports, C), n.l = !0, n.exports;
+            return I[c].call(a.exports, a, a.exports, m), a.l = !0, a.exports;
           }
-          return C.m = L, C.c = U, C.i = function(c) {
+          return m.m = I, m.c = U, m.i = function(c) {
             return c;
-          }, C.d = function(c, n, i) {
-            C.o(c, n) || Object.defineProperty(c, n, {
+          }, m.d = function(c, a, i) {
+            m.o(c, a) || Object.defineProperty(c, a, {
               /******/
               configurable: !1,
               /******/
@@ -43,8 +43,8 @@ function Ie() {
               get: i
               /******/
             });
-          }, C.n = function(c) {
-            var n = c && c.__esModule ? (
+          }, m.n = function(c) {
+            var a = c && c.__esModule ? (
               /******/
               function() {
                 return c.default;
@@ -55,28 +55,28 @@ function Ie() {
                 return c;
               }
             );
-            return C.d(n, "a", n), n;
-          }, C.o = function(c, n) {
-            return Object.prototype.hasOwnProperty.call(c, n);
-          }, C.p = "", C(C.s = 28);
+            return m.d(a, "a", a), a;
+          }, m.o = function(c, a) {
+            return Object.prototype.hasOwnProperty.call(c, a);
+          }, m.p = "", m(m.s = 28);
         }([
           /* 0 */
           /***/
-          function(L, U, C) {
+          function(I, U, m) {
             function c() {
             }
-            c.QUALITY = 1, c.DEFAULT_CREATE_BENDS_AS_NEEDED = !1, c.DEFAULT_INCREMENTAL = !1, c.DEFAULT_ANIMATION_ON_LAYOUT = !0, c.DEFAULT_ANIMATION_DURING_LAYOUT = !1, c.DEFAULT_ANIMATION_PERIOD = 50, c.DEFAULT_UNIFORM_LEAF_NODE_SIZES = !1, c.DEFAULT_GRAPH_MARGIN = 15, c.NODE_DIMENSIONS_INCLUDE_LABELS = !1, c.SIMPLE_NODE_SIZE = 40, c.SIMPLE_NODE_HALF_SIZE = c.SIMPLE_NODE_SIZE / 2, c.EMPTY_COMPOUND_NODE_SIZE = 40, c.MIN_EDGE_LENGTH = 1, c.WORLD_BOUNDARY = 1e6, c.INITIAL_WORLD_BOUNDARY = c.WORLD_BOUNDARY / 1e3, c.WORLD_CENTER_X = 1200, c.WORLD_CENTER_Y = 900, L.exports = c;
+            c.QUALITY = 1, c.DEFAULT_CREATE_BENDS_AS_NEEDED = !1, c.DEFAULT_INCREMENTAL = !1, c.DEFAULT_ANIMATION_ON_LAYOUT = !0, c.DEFAULT_ANIMATION_DURING_LAYOUT = !1, c.DEFAULT_ANIMATION_PERIOD = 50, c.DEFAULT_UNIFORM_LEAF_NODE_SIZES = !1, c.DEFAULT_GRAPH_MARGIN = 15, c.NODE_DIMENSIONS_INCLUDE_LABELS = !1, c.SIMPLE_NODE_SIZE = 40, c.SIMPLE_NODE_HALF_SIZE = c.SIMPLE_NODE_SIZE / 2, c.EMPTY_COMPOUND_NODE_SIZE = 40, c.MIN_EDGE_LENGTH = 1, c.WORLD_BOUNDARY = 1e6, c.INITIAL_WORLD_BOUNDARY = c.WORLD_BOUNDARY / 1e3, c.WORLD_CENTER_X = 1200, c.WORLD_CENTER_Y = 900, I.exports = c;
           },
           /* 1 */
           /***/
-          function(L, U, C) {
-            var c = C(2), n = C(8), i = C(9);
-            function r(f, o, y) {
-              c.call(this, y), this.isOverlapingSourceAndTarget = !1, this.vGraphObject = y, this.bendpoints = [], this.source = f, this.target = o;
+          function(I, U, m) {
+            var c = m(2), a = m(8), i = m(9);
+            function r(f, o, v) {
+              c.call(this, v), this.isOverlapingSourceAndTarget = !1, this.vGraphObject = v, this.bendpoints = [], this.source = f, this.target = o;
             }
             r.prototype = Object.create(c.prototype);
-            for (var a in c)
-              r[a] = c[a];
+            for (var n in c)
+              r[n] = c[n];
             r.prototype.getSource = function() {
               return this.source;
             }, r.prototype.getTarget = function() {
@@ -102,39 +102,39 @@ function Ie() {
                 return this.source;
               throw "Node is not incident with this edge";
             }, r.prototype.getOtherEndInGraph = function(f, o) {
-              for (var y = this.getOtherEnd(f), t = o.getGraphManager().getRoot(); ; ) {
-                if (y.getOwner() == o)
-                  return y;
-                if (y.getOwner() == t)
+              for (var v = this.getOtherEnd(f), t = o.getGraphManager().getRoot(); ; ) {
+                if (v.getOwner() == o)
+                  return v;
+                if (v.getOwner() == t)
                   break;
-                y = y.getOwner().getParent();
+                v = v.getOwner().getParent();
               }
               return null;
             }, r.prototype.updateLength = function() {
               var f = new Array(4);
-              this.isOverlapingSourceAndTarget = n.getIntersection(this.target.getRect(), this.source.getRect(), f), this.isOverlapingSourceAndTarget || (this.lengthX = f[0] - f[2], this.lengthY = f[1] - f[3], Math.abs(this.lengthX) < 1 && (this.lengthX = i.sign(this.lengthX)), Math.abs(this.lengthY) < 1 && (this.lengthY = i.sign(this.lengthY)), this.length = Math.sqrt(this.lengthX * this.lengthX + this.lengthY * this.lengthY));
+              this.isOverlapingSourceAndTarget = a.getIntersection(this.target.getRect(), this.source.getRect(), f), this.isOverlapingSourceAndTarget || (this.lengthX = f[0] - f[2], this.lengthY = f[1] - f[3], Math.abs(this.lengthX) < 1 && (this.lengthX = i.sign(this.lengthX)), Math.abs(this.lengthY) < 1 && (this.lengthY = i.sign(this.lengthY)), this.length = Math.sqrt(this.lengthX * this.lengthX + this.lengthY * this.lengthY));
             }, r.prototype.updateLengthSimple = function() {
               this.lengthX = this.target.getCenterX() - this.source.getCenterX(), this.lengthY = this.target.getCenterY() - this.source.getCenterY(), Math.abs(this.lengthX) < 1 && (this.lengthX = i.sign(this.lengthX)), Math.abs(this.lengthY) < 1 && (this.lengthY = i.sign(this.lengthY)), this.length = Math.sqrt(this.lengthX * this.lengthX + this.lengthY * this.lengthY);
-            }, L.exports = r;
+            }, I.exports = r;
           },
           /* 2 */
           /***/
-          function(L, U, C) {
-            function c(n) {
-              this.vGraphObject = n;
+          function(I, U, m) {
+            function c(a) {
+              this.vGraphObject = a;
             }
-            L.exports = c;
+            I.exports = c;
           },
           /* 3 */
           /***/
-          function(L, U, C) {
-            var c = C(2), n = C(10), i = C(13), r = C(0), a = C(16), f = C(5);
-            function o(t, h, s, g) {
-              s == null && g == null && (g = h), c.call(this, g), t.graphManager != null && (t = t.graphManager), this.estimatedSize = n.MIN_VALUE, this.inclusionTreeDepth = n.MAX_VALUE, this.vGraphObject = g, this.edges = [], this.graphManager = t, s != null && h != null ? this.rect = new i(h.x, h.y, s.width, s.height) : this.rect = new i();
+          function(I, U, m) {
+            var c = m(2), a = m(10), i = m(13), r = m(0), n = m(16), f = m(5);
+            function o(t, s, h, g) {
+              h == null && g == null && (g = s), c.call(this, g), t.graphManager != null && (t = t.graphManager), this.estimatedSize = a.MIN_VALUE, this.inclusionTreeDepth = a.MAX_VALUE, this.vGraphObject = g, this.edges = [], this.graphManager = t, h != null && s != null ? this.rect = new i(s.x, s.y, h.width, h.height) : this.rect = new i();
             }
             o.prototype = Object.create(c.prototype);
-            for (var y in c)
-              o[y] = c[y];
+            for (var v in c)
+              o[v] = c[v];
             o.prototype.getEdges = function() {
               return this.edges;
             }, o.prototype.getChild = function() {
@@ -163,88 +163,88 @@ function Ie() {
               return Math.sqrt(this.rect.width * this.rect.width + this.rect.height * this.rect.height);
             }, o.prototype.getHalfTheDiagonal = function() {
               return Math.sqrt(this.rect.height * this.rect.height + this.rect.width * this.rect.width) / 2;
-            }, o.prototype.setRect = function(t, h) {
-              this.rect.x = t.x, this.rect.y = t.y, this.rect.width = h.width, this.rect.height = h.height;
-            }, o.prototype.setCenter = function(t, h) {
-              this.rect.x = t - this.rect.width / 2, this.rect.y = h - this.rect.height / 2;
-            }, o.prototype.setLocation = function(t, h) {
-              this.rect.x = t, this.rect.y = h;
-            }, o.prototype.moveBy = function(t, h) {
-              this.rect.x += t, this.rect.y += h;
+            }, o.prototype.setRect = function(t, s) {
+              this.rect.x = t.x, this.rect.y = t.y, this.rect.width = s.width, this.rect.height = s.height;
+            }, o.prototype.setCenter = function(t, s) {
+              this.rect.x = t - this.rect.width / 2, this.rect.y = s - this.rect.height / 2;
+            }, o.prototype.setLocation = function(t, s) {
+              this.rect.x = t, this.rect.y = s;
+            }, o.prototype.moveBy = function(t, s) {
+              this.rect.x += t, this.rect.y += s;
             }, o.prototype.getEdgeListToNode = function(t) {
-              var h = [], s = this;
-              return s.edges.forEach(function(g) {
+              var s = [], h = this;
+              return h.edges.forEach(function(g) {
                 if (g.target == t) {
-                  if (g.source != s)
+                  if (g.source != h)
                     throw "Incorrect edge source!";
-                  h.push(g);
+                  s.push(g);
                 }
-              }), h;
+              }), s;
             }, o.prototype.getEdgesBetween = function(t) {
-              var h = [], s = this;
-              return s.edges.forEach(function(g) {
-                if (!(g.source == s || g.target == s))
+              var s = [], h = this;
+              return h.edges.forEach(function(g) {
+                if (!(g.source == h || g.target == h))
                   throw "Incorrect edge source and/or target";
-                (g.target == t || g.source == t) && h.push(g);
-              }), h;
+                (g.target == t || g.source == t) && s.push(g);
+              }), s;
             }, o.prototype.getNeighborsList = function() {
-              var t = /* @__PURE__ */ new Set(), h = this;
-              return h.edges.forEach(function(s) {
-                if (s.source == h)
-                  t.add(s.target);
+              var t = /* @__PURE__ */ new Set(), s = this;
+              return s.edges.forEach(function(h) {
+                if (h.source == s)
+                  t.add(h.target);
                 else {
-                  if (s.target != h)
+                  if (h.target != s)
                     throw "Incorrect incidency!";
-                  t.add(s.source);
+                  t.add(h.source);
                 }
               }), t;
             }, o.prototype.withChildren = function() {
-              var t = /* @__PURE__ */ new Set(), h, s;
+              var t = /* @__PURE__ */ new Set(), s, h;
               if (t.add(this), this.child != null)
                 for (var g = this.child.getNodes(), u = 0; u < g.length; u++)
-                  h = g[u], s = h.withChildren(), s.forEach(function(N) {
+                  s = g[u], h = s.withChildren(), h.forEach(function(N) {
                     t.add(N);
                   });
               return t;
             }, o.prototype.getNoOfChildren = function() {
-              var t = 0, h;
+              var t = 0, s;
               if (this.child == null)
                 t = 1;
               else
-                for (var s = this.child.getNodes(), g = 0; g < s.length; g++)
-                  h = s[g], t += h.getNoOfChildren();
+                for (var h = this.child.getNodes(), g = 0; g < h.length; g++)
+                  s = h[g], t += s.getNoOfChildren();
               return t == 0 && (t = 1), t;
             }, o.prototype.getEstimatedSize = function() {
-              if (this.estimatedSize == n.MIN_VALUE)
+              if (this.estimatedSize == a.MIN_VALUE)
                 throw "assert failed";
               return this.estimatedSize;
             }, o.prototype.calcEstimatedSize = function() {
               return this.child == null ? this.estimatedSize = (this.rect.width + this.rect.height) / 2 : (this.estimatedSize = this.child.calcEstimatedSize(), this.rect.width = this.estimatedSize, this.rect.height = this.estimatedSize, this.estimatedSize);
             }, o.prototype.scatter = function() {
-              var t, h, s = -r.INITIAL_WORLD_BOUNDARY, g = r.INITIAL_WORLD_BOUNDARY;
-              t = r.WORLD_CENTER_X + a.nextDouble() * (g - s) + s;
+              var t, s, h = -r.INITIAL_WORLD_BOUNDARY, g = r.INITIAL_WORLD_BOUNDARY;
+              t = r.WORLD_CENTER_X + n.nextDouble() * (g - h) + h;
               var u = -r.INITIAL_WORLD_BOUNDARY, N = r.INITIAL_WORLD_BOUNDARY;
-              h = r.WORLD_CENTER_Y + a.nextDouble() * (N - u) + u, this.rect.x = t, this.rect.y = h;
+              s = r.WORLD_CENTER_Y + n.nextDouble() * (N - u) + u, this.rect.x = t, this.rect.y = s;
             }, o.prototype.updateBounds = function() {
               if (this.getChild() == null)
                 throw "assert failed";
               if (this.getChild().getNodes().length != 0) {
                 var t = this.getChild();
                 if (t.updateBounds(!0), this.rect.x = t.getLeft(), this.rect.y = t.getTop(), this.setWidth(t.getRight() - t.getLeft()), this.setHeight(t.getBottom() - t.getTop()), r.NODE_DIMENSIONS_INCLUDE_LABELS) {
-                  var h = t.getRight() - t.getLeft(), s = t.getBottom() - t.getTop();
-                  this.labelWidth && (this.labelPosHorizontal == "left" ? (this.rect.x -= this.labelWidth, this.setWidth(h + this.labelWidth)) : this.labelPosHorizontal == "center" && this.labelWidth > h ? (this.rect.x -= (this.labelWidth - h) / 2, this.setWidth(this.labelWidth)) : this.labelPosHorizontal == "right" && this.setWidth(h + this.labelWidth)), this.labelHeight && (this.labelPosVertical == "top" ? (this.rect.y -= this.labelHeight, this.setHeight(s + this.labelHeight)) : this.labelPosVertical == "center" && this.labelHeight > s ? (this.rect.y -= (this.labelHeight - s) / 2, this.setHeight(this.labelHeight)) : this.labelPosVertical == "bottom" && this.setHeight(s + this.labelHeight));
+                  var s = t.getRight() - t.getLeft(), h = t.getBottom() - t.getTop();
+                  this.labelWidth && (this.labelPosHorizontal == "left" ? (this.rect.x -= this.labelWidth, this.setWidth(s + this.labelWidth)) : this.labelPosHorizontal == "center" && this.labelWidth > s ? (this.rect.x -= (this.labelWidth - s) / 2, this.setWidth(this.labelWidth)) : this.labelPosHorizontal == "right" && this.setWidth(s + this.labelWidth)), this.labelHeight && (this.labelPosVertical == "top" ? (this.rect.y -= this.labelHeight, this.setHeight(h + this.labelHeight)) : this.labelPosVertical == "center" && this.labelHeight > h ? (this.rect.y -= (this.labelHeight - h) / 2, this.setHeight(this.labelHeight)) : this.labelPosVertical == "bottom" && this.setHeight(h + this.labelHeight));
                 }
               }
             }, o.prototype.getInclusionTreeDepth = function() {
-              if (this.inclusionTreeDepth == n.MAX_VALUE)
+              if (this.inclusionTreeDepth == a.MAX_VALUE)
                 throw "assert failed";
               return this.inclusionTreeDepth;
             }, o.prototype.transform = function(t) {
-              var h = this.rect.x;
-              h > r.WORLD_BOUNDARY ? h = r.WORLD_BOUNDARY : h < -r.WORLD_BOUNDARY && (h = -r.WORLD_BOUNDARY);
-              var s = this.rect.y;
+              var s = this.rect.x;
               s > r.WORLD_BOUNDARY ? s = r.WORLD_BOUNDARY : s < -r.WORLD_BOUNDARY && (s = -r.WORLD_BOUNDARY);
-              var g = new f(h, s), u = t.inverseTransformPoint(g);
+              var h = this.rect.y;
+              h > r.WORLD_BOUNDARY ? h = r.WORLD_BOUNDARY : h < -r.WORLD_BOUNDARY && (h = -r.WORLD_BOUNDARY);
+              var g = new f(s, h), u = t.inverseTransformPoint(g);
               this.setLocation(u.x, u.y);
             }, o.prototype.getLeft = function() {
               return this.rect.x;
@@ -256,76 +256,76 @@ function Ie() {
               return this.rect.y + this.rect.height;
             }, o.prototype.getParent = function() {
               return this.owner == null ? null : this.owner.getParent();
-            }, L.exports = o;
+            }, I.exports = o;
           },
           /* 4 */
           /***/
-          function(L, U, C) {
-            var c = C(0);
-            function n() {
+          function(I, U, m) {
+            var c = m(0);
+            function a() {
             }
             for (var i in c)
-              n[i] = c[i];
-            n.MAX_ITERATIONS = 2500, n.DEFAULT_EDGE_LENGTH = 50, n.DEFAULT_SPRING_STRENGTH = 0.45, n.DEFAULT_REPULSION_STRENGTH = 4500, n.DEFAULT_GRAVITY_STRENGTH = 0.4, n.DEFAULT_COMPOUND_GRAVITY_STRENGTH = 1, n.DEFAULT_GRAVITY_RANGE_FACTOR = 3.8, n.DEFAULT_COMPOUND_GRAVITY_RANGE_FACTOR = 1.5, n.DEFAULT_USE_SMART_IDEAL_EDGE_LENGTH_CALCULATION = !0, n.DEFAULT_USE_SMART_REPULSION_RANGE_CALCULATION = !0, n.DEFAULT_COOLING_FACTOR_INCREMENTAL = 0.3, n.COOLING_ADAPTATION_FACTOR = 0.33, n.ADAPTATION_LOWER_NODE_LIMIT = 1e3, n.ADAPTATION_UPPER_NODE_LIMIT = 5e3, n.MAX_NODE_DISPLACEMENT_INCREMENTAL = 100, n.MAX_NODE_DISPLACEMENT = n.MAX_NODE_DISPLACEMENT_INCREMENTAL * 3, n.MIN_REPULSION_DIST = n.DEFAULT_EDGE_LENGTH / 10, n.CONVERGENCE_CHECK_PERIOD = 100, n.PER_LEVEL_IDEAL_EDGE_LENGTH_FACTOR = 0.1, n.MIN_EDGE_LENGTH = 1, n.GRID_CALCULATION_CHECK_PERIOD = 10, L.exports = n;
+              a[i] = c[i];
+            a.MAX_ITERATIONS = 2500, a.DEFAULT_EDGE_LENGTH = 50, a.DEFAULT_SPRING_STRENGTH = 0.45, a.DEFAULT_REPULSION_STRENGTH = 4500, a.DEFAULT_GRAVITY_STRENGTH = 0.4, a.DEFAULT_COMPOUND_GRAVITY_STRENGTH = 1, a.DEFAULT_GRAVITY_RANGE_FACTOR = 3.8, a.DEFAULT_COMPOUND_GRAVITY_RANGE_FACTOR = 1.5, a.DEFAULT_USE_SMART_IDEAL_EDGE_LENGTH_CALCULATION = !0, a.DEFAULT_USE_SMART_REPULSION_RANGE_CALCULATION = !0, a.DEFAULT_COOLING_FACTOR_INCREMENTAL = 0.3, a.COOLING_ADAPTATION_FACTOR = 0.33, a.ADAPTATION_LOWER_NODE_LIMIT = 1e3, a.ADAPTATION_UPPER_NODE_LIMIT = 5e3, a.MAX_NODE_DISPLACEMENT_INCREMENTAL = 100, a.MAX_NODE_DISPLACEMENT = a.MAX_NODE_DISPLACEMENT_INCREMENTAL * 3, a.MIN_REPULSION_DIST = a.DEFAULT_EDGE_LENGTH / 10, a.CONVERGENCE_CHECK_PERIOD = 100, a.PER_LEVEL_IDEAL_EDGE_LENGTH_FACTOR = 0.1, a.MIN_EDGE_LENGTH = 1, a.GRID_CALCULATION_CHECK_PERIOD = 10, I.exports = a;
           },
           /* 5 */
           /***/
-          function(L, U, C) {
-            function c(n, i) {
-              n == null && i == null ? (this.x = 0, this.y = 0) : (this.x = n, this.y = i);
+          function(I, U, m) {
+            function c(a, i) {
+              a == null && i == null ? (this.x = 0, this.y = 0) : (this.x = a, this.y = i);
             }
             c.prototype.getX = function() {
               return this.x;
             }, c.prototype.getY = function() {
               return this.y;
-            }, c.prototype.setX = function(n) {
-              this.x = n;
-            }, c.prototype.setY = function(n) {
-              this.y = n;
-            }, c.prototype.getDifference = function(n) {
-              return new DimensionD(this.x - n.x, this.y - n.y);
+            }, c.prototype.setX = function(a) {
+              this.x = a;
+            }, c.prototype.setY = function(a) {
+              this.y = a;
+            }, c.prototype.getDifference = function(a) {
+              return new DimensionD(this.x - a.x, this.y - a.y);
             }, c.prototype.getCopy = function() {
               return new c(this.x, this.y);
-            }, c.prototype.translate = function(n) {
-              return this.x += n.width, this.y += n.height, this;
-            }, L.exports = c;
+            }, c.prototype.translate = function(a) {
+              return this.x += a.width, this.y += a.height, this;
+            }, I.exports = c;
           },
           /* 6 */
           /***/
-          function(L, U, C) {
-            var c = C(2), n = C(10), i = C(0), r = C(7), a = C(3), f = C(1), o = C(13), y = C(12), t = C(11);
-            function h(g, u, N) {
-              c.call(this, N), this.estimatedSize = n.MIN_VALUE, this.margin = i.DEFAULT_GRAPH_MARGIN, this.edges = [], this.nodes = [], this.isConnected = !1, this.parent = g, u != null && u instanceof r ? this.graphManager = u : u != null && u instanceof Layout && (this.graphManager = u.graphManager);
+          function(I, U, m) {
+            var c = m(2), a = m(10), i = m(0), r = m(7), n = m(3), f = m(1), o = m(13), v = m(12), t = m(11);
+            function s(g, u, N) {
+              c.call(this, N), this.estimatedSize = a.MIN_VALUE, this.margin = i.DEFAULT_GRAPH_MARGIN, this.edges = [], this.nodes = [], this.isConnected = !1, this.parent = g, u != null && u instanceof r ? this.graphManager = u : u != null && u instanceof Layout && (this.graphManager = u.graphManager);
             }
-            h.prototype = Object.create(c.prototype);
-            for (var s in c)
-              h[s] = c[s];
-            h.prototype.getNodes = function() {
+            s.prototype = Object.create(c.prototype);
+            for (var h in c)
+              s[h] = c[h];
+            s.prototype.getNodes = function() {
               return this.nodes;
-            }, h.prototype.getEdges = function() {
+            }, s.prototype.getEdges = function() {
               return this.edges;
-            }, h.prototype.getGraphManager = function() {
+            }, s.prototype.getGraphManager = function() {
               return this.graphManager;
-            }, h.prototype.getParent = function() {
+            }, s.prototype.getParent = function() {
               return this.parent;
-            }, h.prototype.getLeft = function() {
+            }, s.prototype.getLeft = function() {
               return this.left;
-            }, h.prototype.getRight = function() {
+            }, s.prototype.getRight = function() {
               return this.right;
-            }, h.prototype.getTop = function() {
+            }, s.prototype.getTop = function() {
               return this.top;
-            }, h.prototype.getBottom = function() {
+            }, s.prototype.getBottom = function() {
               return this.bottom;
-            }, h.prototype.isConnected = function() {
+            }, s.prototype.isConnected = function() {
               return this.isConnected;
-            }, h.prototype.add = function(g, u, N) {
+            }, s.prototype.add = function(g, u, N) {
               if (u == null && N == null) {
-                var v = g;
+                var p = g;
                 if (this.graphManager == null)
                   throw "Graph has no graph mgr!";
-                if (this.getNodes().indexOf(v) > -1)
+                if (this.getNodes().indexOf(p) > -1)
                   throw "Node already in graph!";
-                return v.owner = this, this.getNodes().push(v), v;
+                return p.owner = this, this.getNodes().push(p), p;
               } else {
                 var T = g;
                 if (!(this.getNodes().indexOf(u) > -1 && this.getNodes().indexOf(N) > -1))
@@ -334,132 +334,132 @@ function Ie() {
                   throw "Both owners must be this graph!";
                 return u.owner != N.owner ? null : (T.source = u, T.target = N, T.isInterGraph = !1, this.getEdges().push(T), u.edges.push(T), N != u && N.edges.push(T), T);
               }
-            }, h.prototype.remove = function(g) {
+            }, s.prototype.remove = function(g) {
               var u = g;
-              if (g instanceof a) {
+              if (g instanceof n) {
                 if (u == null)
                   throw "Node is null!";
                 if (!(u.owner != null && u.owner == this))
                   throw "Owner graph is invalid!";
                 if (this.graphManager == null)
                   throw "Owner graph manager is invalid!";
-                for (var N = u.edges.slice(), v, T = N.length, m = 0; m < T; m++)
-                  v = N[m], v.isInterGraph ? this.graphManager.remove(v) : v.source.owner.remove(v);
-                var R = this.nodes.indexOf(u);
-                if (R == -1)
+                for (var N = u.edges.slice(), p, T = N.length, L = 0; L < T; L++)
+                  p = N[L], p.isInterGraph ? this.graphManager.remove(p) : p.source.owner.remove(p);
+                var D = this.nodes.indexOf(u);
+                if (D == -1)
                   throw "Node not in owner node list!";
-                this.nodes.splice(R, 1);
+                this.nodes.splice(D, 1);
               } else if (g instanceof f) {
-                var v = g;
-                if (v == null)
+                var p = g;
+                if (p == null)
                   throw "Edge is null!";
-                if (!(v.source != null && v.target != null))
+                if (!(p.source != null && p.target != null))
                   throw "Source and/or target is null!";
-                if (!(v.source.owner != null && v.target.owner != null && v.source.owner == this && v.target.owner == this))
+                if (!(p.source.owner != null && p.target.owner != null && p.source.owner == this && p.target.owner == this))
                   throw "Source and/or target owner is invalid!";
-                var b = v.source.edges.indexOf(v), I = v.target.edges.indexOf(v);
-                if (!(b > -1 && I > -1))
+                var X = p.source.edges.indexOf(p), w = p.target.edges.indexOf(p);
+                if (!(X > -1 && w > -1))
                   throw "Source and/or target doesn't know this edge!";
-                v.source.edges.splice(b, 1), v.target != v.source && v.target.edges.splice(I, 1);
-                var R = v.source.owner.getEdges().indexOf(v);
-                if (R == -1)
+                p.source.edges.splice(X, 1), p.target != p.source && p.target.edges.splice(w, 1);
+                var D = p.source.owner.getEdges().indexOf(p);
+                if (D == -1)
                   throw "Not in owner's edge list!";
-                v.source.owner.getEdges().splice(R, 1);
+                p.source.owner.getEdges().splice(D, 1);
               }
-            }, h.prototype.updateLeftTop = function() {
-              for (var g = n.MAX_VALUE, u = n.MAX_VALUE, N, v, T, m = this.getNodes(), R = m.length, b = 0; b < R; b++) {
-                var I = m[b];
-                N = I.getTop(), v = I.getLeft(), g > N && (g = N), u > v && (u = v);
+            }, s.prototype.updateLeftTop = function() {
+              for (var g = a.MAX_VALUE, u = a.MAX_VALUE, N, p, T, L = this.getNodes(), D = L.length, X = 0; X < D; X++) {
+                var w = L[X];
+                N = w.getTop(), p = w.getLeft(), g > N && (g = N), u > p && (u = p);
               }
-              return g == n.MAX_VALUE ? null : (m[0].getParent().paddingLeft != null ? T = m[0].getParent().paddingLeft : T = this.margin, this.left = u - T, this.top = g - T, new y(this.left, this.top));
-            }, h.prototype.updateBounds = function(g) {
-              for (var u = n.MAX_VALUE, N = -n.MAX_VALUE, v = n.MAX_VALUE, T = -n.MAX_VALUE, m, R, b, I, z, H = this.nodes, J = H.length, w = 0; w < J; w++) {
-                var ht = H[w];
-                g && ht.child != null && ht.updateBounds(), m = ht.getLeft(), R = ht.getRight(), b = ht.getTop(), I = ht.getBottom(), u > m && (u = m), N < R && (N = R), v > b && (v = b), T < I && (T = I);
+              return g == a.MAX_VALUE ? null : (L[0].getParent().paddingLeft != null ? T = L[0].getParent().paddingLeft : T = this.margin, this.left = u - T, this.top = g - T, new v(this.left, this.top));
+            }, s.prototype.updateBounds = function(g) {
+              for (var u = a.MAX_VALUE, N = -a.MAX_VALUE, p = a.MAX_VALUE, T = -a.MAX_VALUE, L, D, X, w, Z, W = this.nodes, Q = W.length, R = 0; R < Q; R++) {
+                var ht = W[R];
+                g && ht.child != null && ht.updateBounds(), L = ht.getLeft(), D = ht.getRight(), X = ht.getTop(), w = ht.getBottom(), u > L && (u = L), N < D && (N = D), p > X && (p = X), T < w && (T = w);
               }
-              var e = new o(u, v, N - u, T - v);
-              u == n.MAX_VALUE && (this.left = this.parent.getLeft(), this.right = this.parent.getRight(), this.top = this.parent.getTop(), this.bottom = this.parent.getBottom()), H[0].getParent().paddingLeft != null ? z = H[0].getParent().paddingLeft : z = this.margin, this.left = e.x - z, this.right = e.x + e.width + z, this.top = e.y - z, this.bottom = e.y + e.height + z;
-            }, h.calculateBounds = function(g) {
-              for (var u = n.MAX_VALUE, N = -n.MAX_VALUE, v = n.MAX_VALUE, T = -n.MAX_VALUE, m, R, b, I, z = g.length, H = 0; H < z; H++) {
-                var J = g[H];
-                m = J.getLeft(), R = J.getRight(), b = J.getTop(), I = J.getBottom(), u > m && (u = m), N < R && (N = R), v > b && (v = b), T < I && (T = I);
+              var e = new o(u, p, N - u, T - p);
+              u == a.MAX_VALUE && (this.left = this.parent.getLeft(), this.right = this.parent.getRight(), this.top = this.parent.getTop(), this.bottom = this.parent.getBottom()), W[0].getParent().paddingLeft != null ? Z = W[0].getParent().paddingLeft : Z = this.margin, this.left = e.x - Z, this.right = e.x + e.width + Z, this.top = e.y - Z, this.bottom = e.y + e.height + Z;
+            }, s.calculateBounds = function(g) {
+              for (var u = a.MAX_VALUE, N = -a.MAX_VALUE, p = a.MAX_VALUE, T = -a.MAX_VALUE, L, D, X, w, Z = g.length, W = 0; W < Z; W++) {
+                var Q = g[W];
+                L = Q.getLeft(), D = Q.getRight(), X = Q.getTop(), w = Q.getBottom(), u > L && (u = L), N < D && (N = D), p > X && (p = X), T < w && (T = w);
               }
-              var w = new o(u, v, N - u, T - v);
-              return w;
-            }, h.prototype.getInclusionTreeDepth = function() {
+              var R = new o(u, p, N - u, T - p);
+              return R;
+            }, s.prototype.getInclusionTreeDepth = function() {
               return this == this.graphManager.getRoot() ? 1 : this.parent.getInclusionTreeDepth();
-            }, h.prototype.getEstimatedSize = function() {
-              if (this.estimatedSize == n.MIN_VALUE)
+            }, s.prototype.getEstimatedSize = function() {
+              if (this.estimatedSize == a.MIN_VALUE)
                 throw "assert failed";
               return this.estimatedSize;
-            }, h.prototype.calcEstimatedSize = function() {
-              for (var g = 0, u = this.nodes, N = u.length, v = 0; v < N; v++) {
-                var T = u[v];
+            }, s.prototype.calcEstimatedSize = function() {
+              for (var g = 0, u = this.nodes, N = u.length, p = 0; p < N; p++) {
+                var T = u[p];
                 g += T.calcEstimatedSize();
               }
               return g == 0 ? this.estimatedSize = i.EMPTY_COMPOUND_NODE_SIZE : this.estimatedSize = g / Math.sqrt(this.nodes.length), this.estimatedSize;
-            }, h.prototype.updateConnected = function() {
+            }, s.prototype.updateConnected = function() {
               var g = this;
               if (this.nodes.length == 0) {
                 this.isConnected = !0;
                 return;
               }
-              var u = new t(), N = /* @__PURE__ */ new Set(), v = this.nodes[0], T, m, R = v.withChildren();
-              for (R.forEach(function(w) {
-                u.push(w), N.add(w);
+              var u = new t(), N = /* @__PURE__ */ new Set(), p = this.nodes[0], T, L, D = p.withChildren();
+              for (D.forEach(function(R) {
+                u.push(R), N.add(R);
               }); u.length !== 0; ) {
-                v = u.shift(), T = v.getEdges();
-                for (var b = T.length, I = 0; I < b; I++) {
-                  var z = T[I];
-                  if (m = z.getOtherEndInGraph(v, this), m != null && !N.has(m)) {
-                    var H = m.withChildren();
-                    H.forEach(function(w) {
-                      u.push(w), N.add(w);
+                p = u.shift(), T = p.getEdges();
+                for (var X = T.length, w = 0; w < X; w++) {
+                  var Z = T[w];
+                  if (L = Z.getOtherEndInGraph(p, this), L != null && !N.has(L)) {
+                    var W = L.withChildren();
+                    W.forEach(function(R) {
+                      u.push(R), N.add(R);
                     });
                   }
                 }
               }
               if (this.isConnected = !1, N.size >= this.nodes.length) {
-                var J = 0;
-                N.forEach(function(w) {
-                  w.owner == g && J++;
-                }), J == this.nodes.length && (this.isConnected = !0);
+                var Q = 0;
+                N.forEach(function(R) {
+                  R.owner == g && Q++;
+                }), Q == this.nodes.length && (this.isConnected = !0);
               }
-            }, L.exports = h;
+            }, I.exports = s;
           },
           /* 7 */
           /***/
-          function(L, U, C) {
-            var c, n = C(1);
+          function(I, U, m) {
+            var c, a = m(1);
             function i(r) {
-              c = C(6), this.layout = r, this.graphs = [], this.edges = [];
+              c = m(6), this.layout = r, this.graphs = [], this.edges = [];
             }
             i.prototype.addRoot = function() {
-              var r = this.layout.newGraph(), a = this.layout.newNode(null), f = this.add(r, a);
+              var r = this.layout.newGraph(), n = this.layout.newNode(null), f = this.add(r, n);
               return this.setRootGraph(f), this.rootGraph;
-            }, i.prototype.add = function(r, a, f, o, y) {
-              if (f == null && o == null && y == null) {
+            }, i.prototype.add = function(r, n, f, o, v) {
+              if (f == null && o == null && v == null) {
                 if (r == null)
                   throw "Graph is null!";
-                if (a == null)
+                if (n == null)
                   throw "Parent node is null!";
                 if (this.graphs.indexOf(r) > -1)
                   throw "Graph already in this graph mgr!";
                 if (this.graphs.push(r), r.parent != null)
                   throw "Already has a parent!";
-                if (a.child != null)
+                if (n.child != null)
                   throw "Already has a child!";
-                return r.parent = a, a.child = r, r;
+                return r.parent = n, n.child = r, r;
               } else {
-                y = f, o = a, f = r;
-                var t = o.getOwner(), h = y.getOwner();
+                v = f, o = n, f = r;
+                var t = o.getOwner(), s = v.getOwner();
                 if (!(t != null && t.getGraphManager() == this))
                   throw "Source not in this graph mgr!";
-                if (!(h != null && h.getGraphManager() == this))
+                if (!(s != null && s.getGraphManager() == this))
                   throw "Target not in this graph mgr!";
-                if (t == h)
-                  return f.isInterGraph = !1, t.add(f, o, y);
-                if (f.isInterGraph = !0, f.source = o, f.target = y, this.edges.indexOf(f) > -1)
+                if (t == s)
+                  return f.isInterGraph = !1, t.add(f, o, v);
+                if (f.isInterGraph = !0, f.source = o, f.target = v, this.edges.indexOf(f) > -1)
                   throw "Edge already in inter-graph edge list!";
                 if (this.edges.push(f), !(f.source != null && f.target != null))
                   throw "Edge source and/or target is null!";
@@ -469,25 +469,25 @@ function Ie() {
               }
             }, i.prototype.remove = function(r) {
               if (r instanceof c) {
-                var a = r;
-                if (a.getGraphManager() != this)
+                var n = r;
+                if (n.getGraphManager() != this)
                   throw "Graph not in this graph mgr";
-                if (!(a == this.rootGraph || a.parent != null && a.parent.graphManager == this))
+                if (!(n == this.rootGraph || n.parent != null && n.parent.graphManager == this))
                   throw "Invalid parent node!";
                 var f = [];
-                f = f.concat(a.getEdges());
-                for (var o, y = f.length, t = 0; t < y; t++)
-                  o = f[t], a.remove(o);
-                var h = [];
-                h = h.concat(a.getNodes());
-                var s;
-                y = h.length;
-                for (var t = 0; t < y; t++)
-                  s = h[t], a.remove(s);
-                a == this.rootGraph && this.setRootGraph(null);
-                var g = this.graphs.indexOf(a);
-                this.graphs.splice(g, 1), a.parent = null;
-              } else if (r instanceof n) {
+                f = f.concat(n.getEdges());
+                for (var o, v = f.length, t = 0; t < v; t++)
+                  o = f[t], n.remove(o);
+                var s = [];
+                s = s.concat(n.getNodes());
+                var h;
+                v = s.length;
+                for (var t = 0; t < v; t++)
+                  h = s[t], n.remove(h);
+                n == this.rootGraph && this.setRootGraph(null);
+                var g = this.graphs.indexOf(n);
+                this.graphs.splice(g, 1), n.parent = null;
+              } else if (r instanceof a) {
                 if (o = r, o == null)
                   throw "Edge is null!";
                 if (!o.isInterGraph)
@@ -510,8 +510,8 @@ function Ie() {
               return this.graphs;
             }, i.prototype.getAllNodes = function() {
               if (this.allNodes == null) {
-                for (var r = [], a = this.getGraphs(), f = a.length, o = 0; o < f; o++)
-                  r = r.concat(a[o].getNodes());
+                for (var r = [], n = this.getGraphs(), f = n.length, o = 0; o < f; o++)
+                  r = r.concat(n[o].getNodes());
                 this.allNodes = r;
               }
               return this.allNodes;
@@ -523,10 +523,10 @@ function Ie() {
               this.allNodesToApplyGravitation = null;
             }, i.prototype.getAllEdges = function() {
               if (this.allEdges == null) {
-                var r = [], a = this.getGraphs();
-                a.length;
-                for (var f = 0; f < a.length; f++)
-                  r = r.concat(a[f].getEdges());
+                var r = [], n = this.getGraphs();
+                n.length;
+                for (var f = 0; f < n.length; f++)
+                  r = r.concat(n[f].getEdges());
                 r = r.concat(this.edges), this.allEdges = r;
               }
               return this.allEdges;
@@ -544,21 +544,21 @@ function Ie() {
               this.rootGraph = r, r.parent == null && (r.parent = this.layout.newNode("Root node"));
             }, i.prototype.getLayout = function() {
               return this.layout;
-            }, i.prototype.isOneAncestorOfOther = function(r, a) {
-              if (!(r != null && a != null))
+            }, i.prototype.isOneAncestorOfOther = function(r, n) {
+              if (!(r != null && n != null))
                 throw "assert failed";
-              if (r == a)
+              if (r == n)
                 return !0;
               var f = r.getOwner(), o;
               do {
                 if (o = f.getParent(), o == null)
                   break;
-                if (o == a)
+                if (o == n)
                   return !0;
                 if (f = o.getOwner(), f == null)
                   break;
               } while (!0);
-              f = a.getOwner();
+              f = n.getOwner();
               do {
                 if (o = f.getParent(), o == null)
                   break;
@@ -569,22 +569,22 @@ function Ie() {
               } while (!0);
               return !1;
             }, i.prototype.calcLowestCommonAncestors = function() {
-              for (var r, a, f, o, y, t = this.getAllEdges(), h = t.length, s = 0; s < h; s++) {
-                if (r = t[s], a = r.source, f = r.target, r.lca = null, r.sourceInLca = a, r.targetInLca = f, a == f) {
-                  r.lca = a.getOwner();
+              for (var r, n, f, o, v, t = this.getAllEdges(), s = t.length, h = 0; h < s; h++) {
+                if (r = t[h], n = r.source, f = r.target, r.lca = null, r.sourceInLca = n, r.targetInLca = f, n == f) {
+                  r.lca = n.getOwner();
                   continue;
                 }
-                for (o = a.getOwner(); r.lca == null; ) {
-                  for (r.targetInLca = f, y = f.getOwner(); r.lca == null; ) {
-                    if (y == o) {
-                      r.lca = y;
+                for (o = n.getOwner(); r.lca == null; ) {
+                  for (r.targetInLca = f, v = f.getOwner(); r.lca == null; ) {
+                    if (v == o) {
+                      r.lca = v;
                       break;
                     }
-                    if (y == this.rootGraph)
+                    if (v == this.rootGraph)
                       break;
                     if (r.lca != null)
                       throw "assert failed";
-                    r.targetInLca = y.getParent(), y = r.targetInLca.getOwner();
+                    r.targetInLca = v.getParent(), v = r.targetInLca.getOwner();
                   }
                   if (o == this.rootGraph)
                     break;
@@ -593,14 +593,14 @@ function Ie() {
                 if (r.lca == null)
                   throw "assert failed";
               }
-            }, i.prototype.calcLowestCommonAncestor = function(r, a) {
-              if (r == a)
+            }, i.prototype.calcLowestCommonAncestor = function(r, n) {
+              if (r == n)
                 return r.getOwner();
               var f = r.getOwner();
               do {
                 if (f == null)
                   break;
-                var o = a.getOwner();
+                var o = n.getOwner();
                 do {
                   if (o == null)
                     break;
@@ -611,161 +611,161 @@ function Ie() {
                 f = f.getParent().getOwner();
               } while (!0);
               return f;
-            }, i.prototype.calcInclusionTreeDepths = function(r, a) {
-              r == null && a == null && (r = this.rootGraph, a = 1);
-              for (var f, o = r.getNodes(), y = o.length, t = 0; t < y; t++)
-                f = o[t], f.inclusionTreeDepth = a, f.child != null && this.calcInclusionTreeDepths(f.child, a + 1);
+            }, i.prototype.calcInclusionTreeDepths = function(r, n) {
+              r == null && n == null && (r = this.rootGraph, n = 1);
+              for (var f, o = r.getNodes(), v = o.length, t = 0; t < v; t++)
+                f = o[t], f.inclusionTreeDepth = n, f.child != null && this.calcInclusionTreeDepths(f.child, n + 1);
             }, i.prototype.includesInvalidEdge = function() {
-              for (var r, a = [], f = this.edges.length, o = 0; o < f; o++)
-                r = this.edges[o], this.isOneAncestorOfOther(r.source, r.target) && a.push(r);
-              for (var o = 0; o < a.length; o++)
-                this.remove(a[o]);
+              for (var r, n = [], f = this.edges.length, o = 0; o < f; o++)
+                r = this.edges[o], this.isOneAncestorOfOther(r.source, r.target) && n.push(r);
+              for (var o = 0; o < n.length; o++)
+                this.remove(n[o]);
               return !1;
-            }, L.exports = i;
+            }, I.exports = i;
           },
           /* 8 */
           /***/
-          function(L, U, C) {
-            var c = C(12);
-            function n() {
+          function(I, U, m) {
+            var c = m(12);
+            function a() {
             }
-            n.calcSeparationAmount = function(i, r, a, f) {
+            a.calcSeparationAmount = function(i, r, n, f) {
               if (!i.intersects(r))
                 throw "assert failed";
               var o = new Array(2);
-              this.decideDirectionsForOverlappingNodes(i, r, o), a[0] = Math.min(i.getRight(), r.getRight()) - Math.max(i.x, r.x), a[1] = Math.min(i.getBottom(), r.getBottom()) - Math.max(i.y, r.y), i.getX() <= r.getX() && i.getRight() >= r.getRight() ? a[0] += Math.min(r.getX() - i.getX(), i.getRight() - r.getRight()) : r.getX() <= i.getX() && r.getRight() >= i.getRight() && (a[0] += Math.min(i.getX() - r.getX(), r.getRight() - i.getRight())), i.getY() <= r.getY() && i.getBottom() >= r.getBottom() ? a[1] += Math.min(r.getY() - i.getY(), i.getBottom() - r.getBottom()) : r.getY() <= i.getY() && r.getBottom() >= i.getBottom() && (a[1] += Math.min(i.getY() - r.getY(), r.getBottom() - i.getBottom()));
-              var y = Math.abs((r.getCenterY() - i.getCenterY()) / (r.getCenterX() - i.getCenterX()));
-              r.getCenterY() === i.getCenterY() && r.getCenterX() === i.getCenterX() && (y = 1);
-              var t = y * a[0], h = a[1] / y;
-              a[0] < h ? h = a[0] : t = a[1], a[0] = -1 * o[0] * (h / 2 + f), a[1] = -1 * o[1] * (t / 2 + f);
-            }, n.decideDirectionsForOverlappingNodes = function(i, r, a) {
-              i.getCenterX() < r.getCenterX() ? a[0] = -1 : a[0] = 1, i.getCenterY() < r.getCenterY() ? a[1] = -1 : a[1] = 1;
-            }, n.getIntersection2 = function(i, r, a) {
-              var f = i.getCenterX(), o = i.getCenterY(), y = r.getCenterX(), t = r.getCenterY();
+              this.decideDirectionsForOverlappingNodes(i, r, o), n[0] = Math.min(i.getRight(), r.getRight()) - Math.max(i.x, r.x), n[1] = Math.min(i.getBottom(), r.getBottom()) - Math.max(i.y, r.y), i.getX() <= r.getX() && i.getRight() >= r.getRight() ? n[0] += Math.min(r.getX() - i.getX(), i.getRight() - r.getRight()) : r.getX() <= i.getX() && r.getRight() >= i.getRight() && (n[0] += Math.min(i.getX() - r.getX(), r.getRight() - i.getRight())), i.getY() <= r.getY() && i.getBottom() >= r.getBottom() ? n[1] += Math.min(r.getY() - i.getY(), i.getBottom() - r.getBottom()) : r.getY() <= i.getY() && r.getBottom() >= i.getBottom() && (n[1] += Math.min(i.getY() - r.getY(), r.getBottom() - i.getBottom()));
+              var v = Math.abs((r.getCenterY() - i.getCenterY()) / (r.getCenterX() - i.getCenterX()));
+              r.getCenterY() === i.getCenterY() && r.getCenterX() === i.getCenterX() && (v = 1);
+              var t = v * n[0], s = n[1] / v;
+              n[0] < s ? s = n[0] : t = n[1], n[0] = -1 * o[0] * (s / 2 + f), n[1] = -1 * o[1] * (t / 2 + f);
+            }, a.decideDirectionsForOverlappingNodes = function(i, r, n) {
+              i.getCenterX() < r.getCenterX() ? n[0] = -1 : n[0] = 1, i.getCenterY() < r.getCenterY() ? n[1] = -1 : n[1] = 1;
+            }, a.getIntersection2 = function(i, r, n) {
+              var f = i.getCenterX(), o = i.getCenterY(), v = r.getCenterX(), t = r.getCenterY();
               if (i.intersects(r))
-                return a[0] = f, a[1] = o, a[2] = y, a[3] = t, !0;
-              var h = i.getX(), s = i.getY(), g = i.getRight(), u = i.getX(), N = i.getBottom(), v = i.getRight(), T = i.getWidthHalf(), m = i.getHeightHalf(), R = r.getX(), b = r.getY(), I = r.getRight(), z = r.getX(), H = r.getBottom(), J = r.getRight(), w = r.getWidthHalf(), ht = r.getHeightHalf(), e = !1, E = !1;
-              if (f === y) {
+                return n[0] = f, n[1] = o, n[2] = v, n[3] = t, !0;
+              var s = i.getX(), h = i.getY(), g = i.getRight(), u = i.getX(), N = i.getBottom(), p = i.getRight(), T = i.getWidthHalf(), L = i.getHeightHalf(), D = r.getX(), X = r.getY(), w = r.getRight(), Z = r.getX(), W = r.getBottom(), Q = r.getRight(), R = r.getWidthHalf(), ht = r.getHeightHalf(), e = !1, y = !1;
+              if (f === v) {
                 if (o > t)
-                  return a[0] = f, a[1] = s, a[2] = y, a[3] = H, !1;
+                  return n[0] = f, n[1] = h, n[2] = v, n[3] = W, !1;
                 if (o < t)
-                  return a[0] = f, a[1] = N, a[2] = y, a[3] = b, !1;
+                  return n[0] = f, n[1] = N, n[2] = v, n[3] = X, !1;
               } else if (o === t) {
-                if (f > y)
-                  return a[0] = h, a[1] = o, a[2] = I, a[3] = t, !1;
-                if (f < y)
-                  return a[0] = g, a[1] = o, a[2] = R, a[3] = t, !1;
+                if (f > v)
+                  return n[0] = s, n[1] = o, n[2] = w, n[3] = t, !1;
+                if (f < v)
+                  return n[0] = g, n[1] = o, n[2] = D, n[3] = t, !1;
               } else {
-                var l = i.height / i.width, d = r.height / r.width, p = (t - o) / (y - f), A = void 0, M = void 0, O = void 0, S = void 0, D = void 0, q = void 0;
-                if (-l === p ? f > y ? (a[0] = u, a[1] = N, e = !0) : (a[0] = g, a[1] = s, e = !0) : l === p && (f > y ? (a[0] = h, a[1] = s, e = !0) : (a[0] = v, a[1] = N, e = !0)), -d === p ? y > f ? (a[2] = z, a[3] = H, E = !0) : (a[2] = I, a[3] = b, E = !0) : d === p && (y > f ? (a[2] = R, a[3] = b, E = !0) : (a[2] = J, a[3] = H, E = !0)), e && E)
+                var l = i.height / i.width, d = r.height / r.width, E = (t - o) / (v - f), M = void 0, C = void 0, A = void 0, P = void 0, O = void 0, K = void 0;
+                if (-l === E ? f > v ? (n[0] = u, n[1] = N, e = !0) : (n[0] = g, n[1] = h, e = !0) : l === E && (f > v ? (n[0] = s, n[1] = h, e = !0) : (n[0] = p, n[1] = N, e = !0)), -d === E ? v > f ? (n[2] = Z, n[3] = W, y = !0) : (n[2] = w, n[3] = X, y = !0) : d === E && (v > f ? (n[2] = D, n[3] = X, y = !0) : (n[2] = Q, n[3] = W, y = !0)), e && y)
                   return !1;
-                if (f > y ? o > t ? (A = this.getCardinalDirection(l, p, 4), M = this.getCardinalDirection(d, p, 2)) : (A = this.getCardinalDirection(-l, p, 3), M = this.getCardinalDirection(-d, p, 1)) : o > t ? (A = this.getCardinalDirection(-l, p, 1), M = this.getCardinalDirection(-d, p, 3)) : (A = this.getCardinalDirection(l, p, 2), M = this.getCardinalDirection(d, p, 4)), !e)
-                  switch (A) {
-                    case 1:
-                      S = s, O = f + -m / p, a[0] = O, a[1] = S;
-                      break;
-                    case 2:
-                      O = v, S = o + T * p, a[0] = O, a[1] = S;
-                      break;
-                    case 3:
-                      S = N, O = f + m / p, a[0] = O, a[1] = S;
-                      break;
-                    case 4:
-                      O = u, S = o + -T * p, a[0] = O, a[1] = S;
-                      break;
-                  }
-                if (!E)
+                if (f > v ? o > t ? (M = this.getCardinalDirection(l, E, 4), C = this.getCardinalDirection(d, E, 2)) : (M = this.getCardinalDirection(-l, E, 3), C = this.getCardinalDirection(-d, E, 1)) : o > t ? (M = this.getCardinalDirection(-l, E, 1), C = this.getCardinalDirection(-d, E, 3)) : (M = this.getCardinalDirection(l, E, 2), C = this.getCardinalDirection(d, E, 4)), !e)
                   switch (M) {
                     case 1:
-                      q = b, D = y + -ht / p, a[2] = D, a[3] = q;
+                      P = h, A = f + -L / E, n[0] = A, n[1] = P;
                       break;
                     case 2:
-                      D = J, q = t + w * p, a[2] = D, a[3] = q;
+                      A = p, P = o + T * E, n[0] = A, n[1] = P;
                       break;
                     case 3:
-                      q = H, D = y + ht / p, a[2] = D, a[3] = q;
+                      P = N, A = f + L / E, n[0] = A, n[1] = P;
                       break;
                     case 4:
-                      D = z, q = t + -w * p, a[2] = D, a[3] = q;
+                      A = u, P = o + -T * E, n[0] = A, n[1] = P;
+                      break;
+                  }
+                if (!y)
+                  switch (C) {
+                    case 1:
+                      K = X, O = v + -ht / E, n[2] = O, n[3] = K;
+                      break;
+                    case 2:
+                      O = Q, K = t + R * E, n[2] = O, n[3] = K;
+                      break;
+                    case 3:
+                      K = W, O = v + ht / E, n[2] = O, n[3] = K;
+                      break;
+                    case 4:
+                      O = Z, K = t + -R * E, n[2] = O, n[3] = K;
                       break;
                   }
               }
               return !1;
-            }, n.getCardinalDirection = function(i, r, a) {
-              return i > r ? a : 1 + a % 4;
-            }, n.getIntersection = function(i, r, a, f) {
+            }, a.getCardinalDirection = function(i, r, n) {
+              return i > r ? n : 1 + n % 4;
+            }, a.getIntersection = function(i, r, n, f) {
               if (f == null)
-                return this.getIntersection2(i, r, a);
-              var o = i.x, y = i.y, t = r.x, h = r.y, s = a.x, g = a.y, u = f.x, N = f.y, v = void 0, T = void 0, m = void 0, R = void 0, b = void 0, I = void 0, z = void 0, H = void 0, J = void 0;
-              return m = h - y, b = o - t, z = t * y - o * h, R = N - g, I = s - u, H = u * g - s * N, J = m * I - R * b, J === 0 ? null : (v = (b * H - I * z) / J, T = (R * z - m * H) / J, new c(v, T));
-            }, n.angleOfVector = function(i, r, a, f) {
+                return this.getIntersection2(i, r, n);
+              var o = i.x, v = i.y, t = r.x, s = r.y, h = n.x, g = n.y, u = f.x, N = f.y, p = void 0, T = void 0, L = void 0, D = void 0, X = void 0, w = void 0, Z = void 0, W = void 0, Q = void 0;
+              return L = s - v, X = o - t, Z = t * v - o * s, D = N - g, w = h - u, W = u * g - h * N, Q = L * w - D * X, Q === 0 ? null : (p = (X * W - w * Z) / Q, T = (D * Z - L * W) / Q, new c(p, T));
+            }, a.angleOfVector = function(i, r, n, f) {
               var o = void 0;
-              return i !== a ? (o = Math.atan((f - r) / (a - i)), a < i ? o += Math.PI : f < r && (o += this.TWO_PI)) : f < r ? o = this.ONE_AND_HALF_PI : o = this.HALF_PI, o;
-            }, n.doIntersect = function(i, r, a, f) {
-              var o = i.x, y = i.y, t = r.x, h = r.y, s = a.x, g = a.y, u = f.x, N = f.y, v = (t - o) * (N - g) - (u - s) * (h - y);
-              if (v === 0)
+              return i !== n ? (o = Math.atan((f - r) / (n - i)), n < i ? o += Math.PI : f < r && (o += this.TWO_PI)) : f < r ? o = this.ONE_AND_HALF_PI : o = this.HALF_PI, o;
+            }, a.doIntersect = function(i, r, n, f) {
+              var o = i.x, v = i.y, t = r.x, s = r.y, h = n.x, g = n.y, u = f.x, N = f.y, p = (t - o) * (N - g) - (u - h) * (s - v);
+              if (p === 0)
                 return !1;
-              var T = ((N - g) * (u - o) + (s - u) * (N - y)) / v, m = ((y - h) * (u - o) + (t - o) * (N - y)) / v;
-              return 0 < T && T < 1 && 0 < m && m < 1;
-            }, n.findCircleLineIntersections = function(i, r, a, f, o, y, t) {
-              var h = (a - i) * (a - i) + (f - r) * (f - r), s = 2 * ((i - o) * (a - i) + (r - y) * (f - r)), g = (i - o) * (i - o) + (r - y) * (r - y) - t * t, u = s * s - 4 * h * g;
+              var T = ((N - g) * (u - o) + (h - u) * (N - v)) / p, L = ((v - s) * (u - o) + (t - o) * (N - v)) / p;
+              return 0 < T && T < 1 && 0 < L && L < 1;
+            }, a.findCircleLineIntersections = function(i, r, n, f, o, v, t) {
+              var s = (n - i) * (n - i) + (f - r) * (f - r), h = 2 * ((i - o) * (n - i) + (r - v) * (f - r)), g = (i - o) * (i - o) + (r - v) * (r - v) - t * t, u = h * h - 4 * s * g;
               if (u >= 0) {
-                var N = (-s + Math.sqrt(s * s - 4 * h * g)) / (2 * h), v = (-s - Math.sqrt(s * s - 4 * h * g)) / (2 * h), T = null;
-                return N >= 0 && N <= 1 ? [N] : v >= 0 && v <= 1 ? [v] : T;
+                var N = (-h + Math.sqrt(h * h - 4 * s * g)) / (2 * s), p = (-h - Math.sqrt(h * h - 4 * s * g)) / (2 * s), T = null;
+                return N >= 0 && N <= 1 ? [N] : p >= 0 && p <= 1 ? [p] : T;
               } else
                 return null;
-            }, n.HALF_PI = 0.5 * Math.PI, n.ONE_AND_HALF_PI = 1.5 * Math.PI, n.TWO_PI = 2 * Math.PI, n.THREE_PI = 3 * Math.PI, L.exports = n;
+            }, a.HALF_PI = 0.5 * Math.PI, a.ONE_AND_HALF_PI = 1.5 * Math.PI, a.TWO_PI = 2 * Math.PI, a.THREE_PI = 3 * Math.PI, I.exports = a;
           },
           /* 9 */
           /***/
-          function(L, U, C) {
+          function(I, U, m) {
             function c() {
             }
-            c.sign = function(n) {
-              return n > 0 ? 1 : n < 0 ? -1 : 0;
-            }, c.floor = function(n) {
-              return n < 0 ? Math.ceil(n) : Math.floor(n);
-            }, c.ceil = function(n) {
-              return n < 0 ? Math.floor(n) : Math.ceil(n);
-            }, L.exports = c;
+            c.sign = function(a) {
+              return a > 0 ? 1 : a < 0 ? -1 : 0;
+            }, c.floor = function(a) {
+              return a < 0 ? Math.ceil(a) : Math.floor(a);
+            }, c.ceil = function(a) {
+              return a < 0 ? Math.floor(a) : Math.ceil(a);
+            }, I.exports = c;
           },
           /* 10 */
           /***/
-          function(L, U, C) {
+          function(I, U, m) {
             function c() {
             }
-            c.MAX_VALUE = 2147483647, c.MIN_VALUE = -2147483648, L.exports = c;
+            c.MAX_VALUE = 2147483647, c.MIN_VALUE = -2147483648, I.exports = c;
           },
           /* 11 */
           /***/
-          function(L, U, C) {
+          function(I, U, m) {
             var c = /* @__PURE__ */ function() {
-              function o(y, t) {
-                for (var h = 0; h < t.length; h++) {
-                  var s = t[h];
-                  s.enumerable = s.enumerable || !1, s.configurable = !0, "value" in s && (s.writable = !0), Object.defineProperty(y, s.key, s);
+              function o(v, t) {
+                for (var s = 0; s < t.length; s++) {
+                  var h = t[s];
+                  h.enumerable = h.enumerable || !1, h.configurable = !0, "value" in h && (h.writable = !0), Object.defineProperty(v, h.key, h);
                 }
               }
-              return function(y, t, h) {
-                return t && o(y.prototype, t), h && o(y, h), y;
+              return function(v, t, s) {
+                return t && o(v.prototype, t), s && o(v, s), v;
               };
             }();
-            function n(o, y) {
-              if (!(o instanceof y))
+            function a(o, v) {
+              if (!(o instanceof v))
                 throw new TypeError("Cannot call a class as a function");
             }
-            var i = function(y) {
-              return { value: y, next: null, prev: null };
-            }, r = function(y, t, h, s) {
-              return y !== null ? y.next = t : s.head = t, h !== null ? h.prev = t : s.tail = t, t.prev = y, t.next = h, s.length++, t;
-            }, a = function(y, t) {
-              var h = y.prev, s = y.next;
-              return h !== null ? h.next = s : t.head = s, s !== null ? s.prev = h : t.tail = h, y.prev = y.next = null, t.length--, y;
+            var i = function(v) {
+              return { value: v, next: null, prev: null };
+            }, r = function(v, t, s, h) {
+              return v !== null ? v.next = t : h.head = t, s !== null ? s.prev = t : h.tail = t, t.prev = v, t.next = s, h.length++, t;
+            }, n = function(v, t) {
+              var s = v.prev, h = v.next;
+              return s !== null ? s.next = h : t.head = h, h !== null ? h.prev = s : t.tail = s, v.prev = v.next = null, t.length--, v;
             }, f = function() {
-              function o(y) {
+              function o(v) {
                 var t = this;
-                n(this, o), this.length = 0, this.head = null, this.tail = null, y != null && y.forEach(function(h) {
-                  return t.push(h);
+                a(this, o), this.length = 0, this.head = null, this.tail = null, v != null && v.forEach(function(s) {
+                  return t.push(s);
                 });
               }
               return c(o, [{
@@ -775,23 +775,23 @@ function Ie() {
                 }
               }, {
                 key: "insertBefore",
-                value: function(t, h) {
-                  return r(h.prev, i(t), h, this);
+                value: function(t, s) {
+                  return r(s.prev, i(t), s, this);
                 }
               }, {
                 key: "insertAfter",
-                value: function(t, h) {
-                  return r(h, i(t), h.next, this);
+                value: function(t, s) {
+                  return r(s, i(t), s.next, this);
                 }
               }, {
                 key: "insertNodeBefore",
-                value: function(t, h) {
-                  return r(h.prev, t, h, this);
+                value: function(t, s) {
+                  return r(s.prev, t, s, this);
                 }
               }, {
                 key: "insertNodeAfter",
-                value: function(t, h) {
-                  return r(h, t, h.next, this);
+                value: function(t, s) {
+                  return r(s, t, s.next, this);
                 }
               }, {
                 key: "push",
@@ -806,55 +806,55 @@ function Ie() {
               }, {
                 key: "remove",
                 value: function(t) {
-                  return a(t, this);
+                  return n(t, this);
                 }
               }, {
                 key: "pop",
                 value: function() {
-                  return a(this.tail, this).value;
+                  return n(this.tail, this).value;
                 }
               }, {
                 key: "popNode",
                 value: function() {
-                  return a(this.tail, this);
+                  return n(this.tail, this);
                 }
               }, {
                 key: "shift",
                 value: function() {
-                  return a(this.head, this).value;
+                  return n(this.head, this).value;
                 }
               }, {
                 key: "shiftNode",
                 value: function() {
-                  return a(this.head, this);
+                  return n(this.head, this);
                 }
               }, {
                 key: "get_object_at",
                 value: function(t) {
                   if (t <= this.length()) {
-                    for (var h = 1, s = this.head; h < t; )
-                      s = s.next, h++;
-                    return s.value;
+                    for (var s = 1, h = this.head; s < t; )
+                      h = h.next, s++;
+                    return h.value;
                   }
                 }
               }, {
                 key: "set_object_at",
-                value: function(t, h) {
+                value: function(t, s) {
                   if (t <= this.length()) {
-                    for (var s = 1, g = this.head; s < t; )
-                      g = g.next, s++;
-                    g.value = h;
+                    for (var h = 1, g = this.head; h < t; )
+                      g = g.next, h++;
+                    g.value = s;
                   }
                 }
               }]), o;
             }();
-            L.exports = f;
+            I.exports = f;
           },
           /* 12 */
           /***/
-          function(L, U, C) {
-            function c(n, i, r) {
-              this.x = null, this.y = null, n == null && i == null && r == null ? (this.x = 0, this.y = 0) : typeof n == "number" && typeof i == "number" && r == null ? (this.x = n, this.y = i) : n.constructor.name == "Point" && i == null && r == null && (r = n, this.x = r.x, this.y = r.y);
+          function(I, U, m) {
+            function c(a, i, r) {
+              this.x = null, this.y = null, a == null && i == null && r == null ? (this.x = 0, this.y = 0) : typeof a == "number" && typeof i == "number" && r == null ? (this.x = a, this.y = i) : a.constructor.name == "Point" && i == null && r == null && (r = a, this.x = r.x, this.y = r.y);
             }
             c.prototype.getX = function() {
               return this.x;
@@ -862,50 +862,50 @@ function Ie() {
               return this.y;
             }, c.prototype.getLocation = function() {
               return new c(this.x, this.y);
-            }, c.prototype.setLocation = function(n, i, r) {
-              n.constructor.name == "Point" && i == null && r == null ? (r = n, this.setLocation(r.x, r.y)) : typeof n == "number" && typeof i == "number" && r == null && (parseInt(n) == n && parseInt(i) == i ? this.move(n, i) : (this.x = Math.floor(n + 0.5), this.y = Math.floor(i + 0.5)));
-            }, c.prototype.move = function(n, i) {
-              this.x = n, this.y = i;
-            }, c.prototype.translate = function(n, i) {
-              this.x += n, this.y += i;
-            }, c.prototype.equals = function(n) {
-              if (n.constructor.name == "Point") {
-                var i = n;
+            }, c.prototype.setLocation = function(a, i, r) {
+              a.constructor.name == "Point" && i == null && r == null ? (r = a, this.setLocation(r.x, r.y)) : typeof a == "number" && typeof i == "number" && r == null && (parseInt(a) == a && parseInt(i) == i ? this.move(a, i) : (this.x = Math.floor(a + 0.5), this.y = Math.floor(i + 0.5)));
+            }, c.prototype.move = function(a, i) {
+              this.x = a, this.y = i;
+            }, c.prototype.translate = function(a, i) {
+              this.x += a, this.y += i;
+            }, c.prototype.equals = function(a) {
+              if (a.constructor.name == "Point") {
+                var i = a;
                 return this.x == i.x && this.y == i.y;
               }
-              return this == n;
+              return this == a;
             }, c.prototype.toString = function() {
               return new c().constructor.name + "[x=" + this.x + ",y=" + this.y + "]";
-            }, L.exports = c;
+            }, I.exports = c;
           },
           /* 13 */
           /***/
-          function(L, U, C) {
-            function c(n, i, r, a) {
-              this.x = 0, this.y = 0, this.width = 0, this.height = 0, n != null && i != null && r != null && a != null && (this.x = n, this.y = i, this.width = r, this.height = a);
+          function(I, U, m) {
+            function c(a, i, r, n) {
+              this.x = 0, this.y = 0, this.width = 0, this.height = 0, a != null && i != null && r != null && n != null && (this.x = a, this.y = i, this.width = r, this.height = n);
             }
             c.prototype.getX = function() {
               return this.x;
-            }, c.prototype.setX = function(n) {
-              this.x = n;
+            }, c.prototype.setX = function(a) {
+              this.x = a;
             }, c.prototype.getY = function() {
               return this.y;
-            }, c.prototype.setY = function(n) {
-              this.y = n;
+            }, c.prototype.setY = function(a) {
+              this.y = a;
             }, c.prototype.getWidth = function() {
               return this.width;
-            }, c.prototype.setWidth = function(n) {
-              this.width = n;
+            }, c.prototype.setWidth = function(a) {
+              this.width = a;
             }, c.prototype.getHeight = function() {
               return this.height;
-            }, c.prototype.setHeight = function(n) {
-              this.height = n;
+            }, c.prototype.setHeight = function(a) {
+              this.height = a;
             }, c.prototype.getRight = function() {
               return this.x + this.width;
             }, c.prototype.getBottom = function() {
               return this.y + this.height;
-            }, c.prototype.intersects = function(n) {
-              return !(this.getRight() < n.x || this.getBottom() < n.y || n.getRight() < this.x || n.getBottom() < this.y);
+            }, c.prototype.intersects = function(a) {
+              return !(this.getRight() < a.x || this.getBottom() < a.y || a.getRight() < this.x || a.getBottom() < this.y);
             }, c.prototype.getCenterX = function() {
               return this.x + this.width / 2;
             }, c.prototype.getMinX = function() {
@@ -922,134 +922,134 @@ function Ie() {
               return this.width / 2;
             }, c.prototype.getHeightHalf = function() {
               return this.height / 2;
-            }, L.exports = c;
+            }, I.exports = c;
           },
           /* 14 */
           /***/
-          function(L, U, C) {
+          function(I, U, m) {
             var c = typeof Symbol == "function" && typeof Symbol.iterator == "symbol" ? function(i) {
               return typeof i;
             } : function(i) {
               return i && typeof Symbol == "function" && i.constructor === Symbol && i !== Symbol.prototype ? "symbol" : typeof i;
             };
-            function n() {
+            function a() {
             }
-            n.lastID = 0, n.createID = function(i) {
-              return n.isPrimitive(i) ? i : (i.uniqueID != null || (i.uniqueID = n.getString(), n.lastID++), i.uniqueID);
-            }, n.getString = function(i) {
-              return i == null && (i = n.lastID), "Object#" + i;
-            }, n.isPrimitive = function(i) {
+            a.lastID = 0, a.createID = function(i) {
+              return a.isPrimitive(i) ? i : (i.uniqueID != null || (i.uniqueID = a.getString(), a.lastID++), i.uniqueID);
+            }, a.getString = function(i) {
+              return i == null && (i = a.lastID), "Object#" + i;
+            }, a.isPrimitive = function(i) {
               var r = typeof i > "u" ? "undefined" : c(i);
               return i == null || r != "object" && r != "function";
-            }, L.exports = n;
+            }, I.exports = a;
           },
           /* 15 */
           /***/
-          function(L, U, C) {
-            function c(s) {
-              if (Array.isArray(s)) {
-                for (var g = 0, u = Array(s.length); g < s.length; g++)
-                  u[g] = s[g];
+          function(I, U, m) {
+            function c(h) {
+              if (Array.isArray(h)) {
+                for (var g = 0, u = Array(h.length); g < h.length; g++)
+                  u[g] = h[g];
                 return u;
               } else
-                return Array.from(s);
+                return Array.from(h);
             }
-            var n = C(0), i = C(7), r = C(3), a = C(1), f = C(6), o = C(5), y = C(17), t = C(29);
-            function h(s) {
-              t.call(this), this.layoutQuality = n.QUALITY, this.createBendsAsNeeded = n.DEFAULT_CREATE_BENDS_AS_NEEDED, this.incremental = n.DEFAULT_INCREMENTAL, this.animationOnLayout = n.DEFAULT_ANIMATION_ON_LAYOUT, this.animationDuringLayout = n.DEFAULT_ANIMATION_DURING_LAYOUT, this.animationPeriod = n.DEFAULT_ANIMATION_PERIOD, this.uniformLeafNodeSizes = n.DEFAULT_UNIFORM_LEAF_NODE_SIZES, this.edgeToDummyNodes = /* @__PURE__ */ new Map(), this.graphManager = new i(this), this.isLayoutFinished = !1, this.isSubLayout = !1, this.isRemoteUse = !1, s != null && (this.isRemoteUse = s);
+            var a = m(0), i = m(7), r = m(3), n = m(1), f = m(6), o = m(5), v = m(17), t = m(29);
+            function s(h) {
+              t.call(this), this.layoutQuality = a.QUALITY, this.createBendsAsNeeded = a.DEFAULT_CREATE_BENDS_AS_NEEDED, this.incremental = a.DEFAULT_INCREMENTAL, this.animationOnLayout = a.DEFAULT_ANIMATION_ON_LAYOUT, this.animationDuringLayout = a.DEFAULT_ANIMATION_DURING_LAYOUT, this.animationPeriod = a.DEFAULT_ANIMATION_PERIOD, this.uniformLeafNodeSizes = a.DEFAULT_UNIFORM_LEAF_NODE_SIZES, this.edgeToDummyNodes = /* @__PURE__ */ new Map(), this.graphManager = new i(this), this.isLayoutFinished = !1, this.isSubLayout = !1, this.isRemoteUse = !1, h != null && (this.isRemoteUse = h);
             }
-            h.RANDOM_SEED = 1, h.prototype = Object.create(t.prototype), h.prototype.getGraphManager = function() {
+            s.RANDOM_SEED = 1, s.prototype = Object.create(t.prototype), s.prototype.getGraphManager = function() {
               return this.graphManager;
-            }, h.prototype.getAllNodes = function() {
+            }, s.prototype.getAllNodes = function() {
               return this.graphManager.getAllNodes();
-            }, h.prototype.getAllEdges = function() {
+            }, s.prototype.getAllEdges = function() {
               return this.graphManager.getAllEdges();
-            }, h.prototype.getAllNodesToApplyGravitation = function() {
+            }, s.prototype.getAllNodesToApplyGravitation = function() {
               return this.graphManager.getAllNodesToApplyGravitation();
-            }, h.prototype.newGraphManager = function() {
-              var s = new i(this);
-              return this.graphManager = s, s;
-            }, h.prototype.newGraph = function(s) {
-              return new f(null, this.graphManager, s);
-            }, h.prototype.newNode = function(s) {
-              return new r(this.graphManager, s);
-            }, h.prototype.newEdge = function(s) {
-              return new a(null, null, s);
-            }, h.prototype.checkLayoutSuccess = function() {
+            }, s.prototype.newGraphManager = function() {
+              var h = new i(this);
+              return this.graphManager = h, h;
+            }, s.prototype.newGraph = function(h) {
+              return new f(null, this.graphManager, h);
+            }, s.prototype.newNode = function(h) {
+              return new r(this.graphManager, h);
+            }, s.prototype.newEdge = function(h) {
+              return new n(null, null, h);
+            }, s.prototype.checkLayoutSuccess = function() {
               return this.graphManager.getRoot() == null || this.graphManager.getRoot().getNodes().length == 0 || this.graphManager.includesInvalidEdge();
-            }, h.prototype.runLayout = function() {
+            }, s.prototype.runLayout = function() {
               this.isLayoutFinished = !1, this.tilingPreLayout && this.tilingPreLayout(), this.initParameters();
-              var s;
-              return this.checkLayoutSuccess() ? s = !1 : s = this.layout(), n.ANIMATE === "during" ? !1 : (s && (this.isSubLayout || this.doPostLayout()), this.tilingPostLayout && this.tilingPostLayout(), this.isLayoutFinished = !0, s);
-            }, h.prototype.doPostLayout = function() {
+              var h;
+              return this.checkLayoutSuccess() ? h = !1 : h = this.layout(), a.ANIMATE === "during" ? !1 : (h && (this.isSubLayout || this.doPostLayout()), this.tilingPostLayout && this.tilingPostLayout(), this.isLayoutFinished = !0, h);
+            }, s.prototype.doPostLayout = function() {
               this.incremental || this.transform(), this.update();
-            }, h.prototype.update2 = function() {
+            }, s.prototype.update2 = function() {
               if (this.createBendsAsNeeded && (this.createBendpointsFromDummyNodes(), this.graphManager.resetAllEdges()), !this.isRemoteUse) {
-                for (var s = this.graphManager.getAllEdges(), g = 0; g < s.length; g++)
-                  s[g];
+                for (var h = this.graphManager.getAllEdges(), g = 0; g < h.length; g++)
+                  h[g];
                 for (var u = this.graphManager.getRoot().getNodes(), g = 0; g < u.length; g++)
                   u[g];
                 this.update(this.graphManager.getRoot());
               }
-            }, h.prototype.update = function(s) {
-              if (s == null)
+            }, s.prototype.update = function(h) {
+              if (h == null)
                 this.update2();
-              else if (s instanceof r) {
-                var g = s;
+              else if (h instanceof r) {
+                var g = h;
                 if (g.getChild() != null)
                   for (var u = g.getChild().getNodes(), N = 0; N < u.length; N++)
                     update(u[N]);
                 if (g.vGraphObject != null) {
-                  var v = g.vGraphObject;
-                  v.update(g);
+                  var p = g.vGraphObject;
+                  p.update(g);
                 }
-              } else if (s instanceof a) {
-                var T = s;
+              } else if (h instanceof n) {
+                var T = h;
                 if (T.vGraphObject != null) {
-                  var m = T.vGraphObject;
-                  m.update(T);
+                  var L = T.vGraphObject;
+                  L.update(T);
                 }
-              } else if (s instanceof f) {
-                var R = s;
-                if (R.vGraphObject != null) {
-                  var b = R.vGraphObject;
-                  b.update(R);
+              } else if (h instanceof f) {
+                var D = h;
+                if (D.vGraphObject != null) {
+                  var X = D.vGraphObject;
+                  X.update(D);
                 }
               }
-            }, h.prototype.initParameters = function() {
-              this.isSubLayout || (this.layoutQuality = n.QUALITY, this.animationDuringLayout = n.DEFAULT_ANIMATION_DURING_LAYOUT, this.animationPeriod = n.DEFAULT_ANIMATION_PERIOD, this.animationOnLayout = n.DEFAULT_ANIMATION_ON_LAYOUT, this.incremental = n.DEFAULT_INCREMENTAL, this.createBendsAsNeeded = n.DEFAULT_CREATE_BENDS_AS_NEEDED, this.uniformLeafNodeSizes = n.DEFAULT_UNIFORM_LEAF_NODE_SIZES), this.animationDuringLayout && (this.animationOnLayout = !1);
-            }, h.prototype.transform = function(s) {
-              if (s == null)
+            }, s.prototype.initParameters = function() {
+              this.isSubLayout || (this.layoutQuality = a.QUALITY, this.animationDuringLayout = a.DEFAULT_ANIMATION_DURING_LAYOUT, this.animationPeriod = a.DEFAULT_ANIMATION_PERIOD, this.animationOnLayout = a.DEFAULT_ANIMATION_ON_LAYOUT, this.incremental = a.DEFAULT_INCREMENTAL, this.createBendsAsNeeded = a.DEFAULT_CREATE_BENDS_AS_NEEDED, this.uniformLeafNodeSizes = a.DEFAULT_UNIFORM_LEAF_NODE_SIZES), this.animationDuringLayout && (this.animationOnLayout = !1);
+            }, s.prototype.transform = function(h) {
+              if (h == null)
                 this.transform(new o(0, 0));
               else {
-                var g = new y(), u = this.graphManager.getRoot().updateLeftTop();
+                var g = new v(), u = this.graphManager.getRoot().updateLeftTop();
                 if (u != null) {
-                  g.setWorldOrgX(s.x), g.setWorldOrgY(s.y), g.setDeviceOrgX(u.x), g.setDeviceOrgY(u.y);
-                  for (var N = this.getAllNodes(), v, T = 0; T < N.length; T++)
-                    v = N[T], v.transform(g);
+                  g.setWorldOrgX(h.x), g.setWorldOrgY(h.y), g.setDeviceOrgX(u.x), g.setDeviceOrgY(u.y);
+                  for (var N = this.getAllNodes(), p, T = 0; T < N.length; T++)
+                    p = N[T], p.transform(g);
                 }
               }
-            }, h.prototype.positionNodesRandomly = function(s) {
-              if (s == null)
+            }, s.prototype.positionNodesRandomly = function(h) {
+              if (h == null)
                 this.positionNodesRandomly(this.getGraphManager().getRoot()), this.getGraphManager().getRoot().updateBounds(!0);
               else
-                for (var g, u, N = s.getNodes(), v = 0; v < N.length; v++)
-                  g = N[v], u = g.getChild(), u == null || u.getNodes().length == 0 ? g.scatter() : (this.positionNodesRandomly(u), g.updateBounds());
-            }, h.prototype.getFlatForest = function() {
-              for (var s = [], g = !0, u = this.graphManager.getRoot().getNodes(), N = !0, v = 0; v < u.length; v++)
-                u[v].getChild() != null && (N = !1);
+                for (var g, u, N = h.getNodes(), p = 0; p < N.length; p++)
+                  g = N[p], u = g.getChild(), u == null || u.getNodes().length == 0 ? g.scatter() : (this.positionNodesRandomly(u), g.updateBounds());
+            }, s.prototype.getFlatForest = function() {
+              for (var h = [], g = !0, u = this.graphManager.getRoot().getNodes(), N = !0, p = 0; p < u.length; p++)
+                u[p].getChild() != null && (N = !1);
               if (!N)
-                return s;
-              var T = /* @__PURE__ */ new Set(), m = [], R = /* @__PURE__ */ new Map(), b = [];
-              for (b = b.concat(u); b.length > 0 && g; ) {
-                for (m.push(b[0]); m.length > 0 && g; ) {
-                  var I = m[0];
-                  m.splice(0, 1), T.add(I);
-                  for (var z = I.getEdges(), v = 0; v < z.length; v++) {
-                    var H = z[v].getOtherEnd(I);
-                    if (R.get(I) != H)
-                      if (!T.has(H))
-                        m.push(H), R.set(H, I);
+                return h;
+              var T = /* @__PURE__ */ new Set(), L = [], D = /* @__PURE__ */ new Map(), X = [];
+              for (X = X.concat(u); X.length > 0 && g; ) {
+                for (L.push(X[0]); L.length > 0 && g; ) {
+                  var w = L[0];
+                  L.splice(0, 1), T.add(w);
+                  for (var Z = w.getEdges(), p = 0; p < Z.length; p++) {
+                    var W = Z[p].getOtherEnd(w);
+                    if (D.get(w) != W)
+                      if (!T.has(W))
+                        L.push(W), D.set(W, w);
                       else {
                         g = !1;
                         break;
@@ -1057,251 +1057,251 @@ function Ie() {
                   }
                 }
                 if (!g)
-                  s = [];
+                  h = [];
                 else {
-                  var J = [].concat(c(T));
-                  s.push(J);
-                  for (var v = 0; v < J.length; v++) {
-                    var w = J[v], ht = b.indexOf(w);
-                    ht > -1 && b.splice(ht, 1);
+                  var Q = [].concat(c(T));
+                  h.push(Q);
+                  for (var p = 0; p < Q.length; p++) {
+                    var R = Q[p], ht = X.indexOf(R);
+                    ht > -1 && X.splice(ht, 1);
                   }
-                  T = /* @__PURE__ */ new Set(), R = /* @__PURE__ */ new Map();
+                  T = /* @__PURE__ */ new Set(), D = /* @__PURE__ */ new Map();
                 }
               }
-              return s;
-            }, h.prototype.createDummyNodesForBendpoints = function(s) {
-              for (var g = [], u = s.source, N = this.graphManager.calcLowestCommonAncestor(s.source, s.target), v = 0; v < s.bendpoints.length; v++) {
+              return h;
+            }, s.prototype.createDummyNodesForBendpoints = function(h) {
+              for (var g = [], u = h.source, N = this.graphManager.calcLowestCommonAncestor(h.source, h.target), p = 0; p < h.bendpoints.length; p++) {
                 var T = this.newNode(null);
                 T.setRect(new Point(0, 0), new Dimension(1, 1)), N.add(T);
-                var m = this.newEdge(null);
-                this.graphManager.add(m, u, T), g.add(T), u = T;
+                var L = this.newEdge(null);
+                this.graphManager.add(L, u, T), g.add(T), u = T;
               }
-              var m = this.newEdge(null);
-              return this.graphManager.add(m, u, s.target), this.edgeToDummyNodes.set(s, g), s.isInterGraph() ? this.graphManager.remove(s) : N.remove(s), g;
-            }, h.prototype.createBendpointsFromDummyNodes = function() {
-              var s = [];
-              s = s.concat(this.graphManager.getAllEdges()), s = [].concat(c(this.edgeToDummyNodes.keys())).concat(s);
-              for (var g = 0; g < s.length; g++) {
-                var u = s[g];
+              var L = this.newEdge(null);
+              return this.graphManager.add(L, u, h.target), this.edgeToDummyNodes.set(h, g), h.isInterGraph() ? this.graphManager.remove(h) : N.remove(h), g;
+            }, s.prototype.createBendpointsFromDummyNodes = function() {
+              var h = [];
+              h = h.concat(this.graphManager.getAllEdges()), h = [].concat(c(this.edgeToDummyNodes.keys())).concat(h);
+              for (var g = 0; g < h.length; g++) {
+                var u = h[g];
                 if (u.bendpoints.length > 0) {
-                  for (var N = this.edgeToDummyNodes.get(u), v = 0; v < N.length; v++) {
-                    var T = N[v], m = new o(T.getCenterX(), T.getCenterY()), R = u.bendpoints.get(v);
-                    R.x = m.x, R.y = m.y, T.getOwner().remove(T);
+                  for (var N = this.edgeToDummyNodes.get(u), p = 0; p < N.length; p++) {
+                    var T = N[p], L = new o(T.getCenterX(), T.getCenterY()), D = u.bendpoints.get(p);
+                    D.x = L.x, D.y = L.y, T.getOwner().remove(T);
                   }
                   this.graphManager.add(u, u.source, u.target);
                 }
               }
-            }, h.transform = function(s, g, u, N) {
+            }, s.transform = function(h, g, u, N) {
               if (u != null && N != null) {
-                var v = g;
-                if (s <= 50) {
+                var p = g;
+                if (h <= 50) {
                   var T = g / u;
-                  v -= (g - T) / 50 * (50 - s);
+                  p -= (g - T) / 50 * (50 - h);
                 } else {
-                  var m = g * N;
-                  v += (m - g) / 50 * (s - 50);
+                  var L = g * N;
+                  p += (L - g) / 50 * (h - 50);
                 }
-                return v;
+                return p;
               } else {
-                var R, b;
-                return s <= 50 ? (R = 9 * g / 500, b = g / 10) : (R = 9 * g / 50, b = -8 * g), R * s + b;
+                var D, X;
+                return h <= 50 ? (D = 9 * g / 500, X = g / 10) : (D = 9 * g / 50, X = -8 * g), D * h + X;
               }
-            }, h.findCenterOfTree = function(s) {
+            }, s.findCenterOfTree = function(h) {
               var g = [];
-              g = g.concat(s);
-              var u = [], N = /* @__PURE__ */ new Map(), v = !1, T = null;
-              (g.length == 1 || g.length == 2) && (v = !0, T = g[0]);
-              for (var m = 0; m < g.length; m++) {
-                var R = g[m], b = R.getNeighborsList().size;
-                N.set(R, R.getNeighborsList().size), b == 1 && u.push(R);
+              g = g.concat(h);
+              var u = [], N = /* @__PURE__ */ new Map(), p = !1, T = null;
+              (g.length == 1 || g.length == 2) && (p = !0, T = g[0]);
+              for (var L = 0; L < g.length; L++) {
+                var D = g[L], X = D.getNeighborsList().size;
+                N.set(D, D.getNeighborsList().size), X == 1 && u.push(D);
               }
-              var I = [];
-              for (I = I.concat(u); !v; ) {
-                var z = [];
-                z = z.concat(I), I = [];
-                for (var m = 0; m < g.length; m++) {
-                  var R = g[m], H = g.indexOf(R);
-                  H >= 0 && g.splice(H, 1);
-                  var J = R.getNeighborsList();
-                  J.forEach(function(e) {
+              var w = [];
+              for (w = w.concat(u); !p; ) {
+                var Z = [];
+                Z = Z.concat(w), w = [];
+                for (var L = 0; L < g.length; L++) {
+                  var D = g[L], W = g.indexOf(D);
+                  W >= 0 && g.splice(W, 1);
+                  var Q = D.getNeighborsList();
+                  Q.forEach(function(e) {
                     if (u.indexOf(e) < 0) {
-                      var E = N.get(e), l = E - 1;
-                      l == 1 && I.push(e), N.set(e, l);
+                      var y = N.get(e), l = y - 1;
+                      l == 1 && w.push(e), N.set(e, l);
                     }
                   });
                 }
-                u = u.concat(I), (g.length == 1 || g.length == 2) && (v = !0, T = g[0]);
+                u = u.concat(w), (g.length == 1 || g.length == 2) && (p = !0, T = g[0]);
               }
               return T;
-            }, h.prototype.setGraphManager = function(s) {
-              this.graphManager = s;
-            }, L.exports = h;
+            }, s.prototype.setGraphManager = function(h) {
+              this.graphManager = h;
+            }, I.exports = s;
           },
           /* 16 */
           /***/
-          function(L, U, C) {
+          function(I, U, m) {
             function c() {
             }
             c.seed = 1, c.x = 0, c.nextDouble = function() {
               return c.x = Math.sin(c.seed++) * 1e4, c.x - Math.floor(c.x);
-            }, L.exports = c;
+            }, I.exports = c;
           },
           /* 17 */
           /***/
-          function(L, U, C) {
-            var c = C(5);
-            function n(i, r) {
+          function(I, U, m) {
+            var c = m(5);
+            function a(i, r) {
               this.lworldOrgX = 0, this.lworldOrgY = 0, this.ldeviceOrgX = 0, this.ldeviceOrgY = 0, this.lworldExtX = 1, this.lworldExtY = 1, this.ldeviceExtX = 1, this.ldeviceExtY = 1;
             }
-            n.prototype.getWorldOrgX = function() {
+            a.prototype.getWorldOrgX = function() {
               return this.lworldOrgX;
-            }, n.prototype.setWorldOrgX = function(i) {
+            }, a.prototype.setWorldOrgX = function(i) {
               this.lworldOrgX = i;
-            }, n.prototype.getWorldOrgY = function() {
+            }, a.prototype.getWorldOrgY = function() {
               return this.lworldOrgY;
-            }, n.prototype.setWorldOrgY = function(i) {
+            }, a.prototype.setWorldOrgY = function(i) {
               this.lworldOrgY = i;
-            }, n.prototype.getWorldExtX = function() {
+            }, a.prototype.getWorldExtX = function() {
               return this.lworldExtX;
-            }, n.prototype.setWorldExtX = function(i) {
+            }, a.prototype.setWorldExtX = function(i) {
               this.lworldExtX = i;
-            }, n.prototype.getWorldExtY = function() {
+            }, a.prototype.getWorldExtY = function() {
               return this.lworldExtY;
-            }, n.prototype.setWorldExtY = function(i) {
+            }, a.prototype.setWorldExtY = function(i) {
               this.lworldExtY = i;
-            }, n.prototype.getDeviceOrgX = function() {
+            }, a.prototype.getDeviceOrgX = function() {
               return this.ldeviceOrgX;
-            }, n.prototype.setDeviceOrgX = function(i) {
+            }, a.prototype.setDeviceOrgX = function(i) {
               this.ldeviceOrgX = i;
-            }, n.prototype.getDeviceOrgY = function() {
+            }, a.prototype.getDeviceOrgY = function() {
               return this.ldeviceOrgY;
-            }, n.prototype.setDeviceOrgY = function(i) {
+            }, a.prototype.setDeviceOrgY = function(i) {
               this.ldeviceOrgY = i;
-            }, n.prototype.getDeviceExtX = function() {
+            }, a.prototype.getDeviceExtX = function() {
               return this.ldeviceExtX;
-            }, n.prototype.setDeviceExtX = function(i) {
+            }, a.prototype.setDeviceExtX = function(i) {
               this.ldeviceExtX = i;
-            }, n.prototype.getDeviceExtY = function() {
+            }, a.prototype.getDeviceExtY = function() {
               return this.ldeviceExtY;
-            }, n.prototype.setDeviceExtY = function(i) {
+            }, a.prototype.setDeviceExtY = function(i) {
               this.ldeviceExtY = i;
-            }, n.prototype.transformX = function(i) {
-              var r = 0, a = this.lworldExtX;
-              return a != 0 && (r = this.ldeviceOrgX + (i - this.lworldOrgX) * this.ldeviceExtX / a), r;
-            }, n.prototype.transformY = function(i) {
-              var r = 0, a = this.lworldExtY;
-              return a != 0 && (r = this.ldeviceOrgY + (i - this.lworldOrgY) * this.ldeviceExtY / a), r;
-            }, n.prototype.inverseTransformX = function(i) {
-              var r = 0, a = this.ldeviceExtX;
-              return a != 0 && (r = this.lworldOrgX + (i - this.ldeviceOrgX) * this.lworldExtX / a), r;
-            }, n.prototype.inverseTransformY = function(i) {
-              var r = 0, a = this.ldeviceExtY;
-              return a != 0 && (r = this.lworldOrgY + (i - this.ldeviceOrgY) * this.lworldExtY / a), r;
-            }, n.prototype.inverseTransformPoint = function(i) {
+            }, a.prototype.transformX = function(i) {
+              var r = 0, n = this.lworldExtX;
+              return n != 0 && (r = this.ldeviceOrgX + (i - this.lworldOrgX) * this.ldeviceExtX / n), r;
+            }, a.prototype.transformY = function(i) {
+              var r = 0, n = this.lworldExtY;
+              return n != 0 && (r = this.ldeviceOrgY + (i - this.lworldOrgY) * this.ldeviceExtY / n), r;
+            }, a.prototype.inverseTransformX = function(i) {
+              var r = 0, n = this.ldeviceExtX;
+              return n != 0 && (r = this.lworldOrgX + (i - this.ldeviceOrgX) * this.lworldExtX / n), r;
+            }, a.prototype.inverseTransformY = function(i) {
+              var r = 0, n = this.ldeviceExtY;
+              return n != 0 && (r = this.lworldOrgY + (i - this.ldeviceOrgY) * this.lworldExtY / n), r;
+            }, a.prototype.inverseTransformPoint = function(i) {
               var r = new c(this.inverseTransformX(i.x), this.inverseTransformY(i.y));
               return r;
-            }, L.exports = n;
+            }, I.exports = a;
           },
           /* 18 */
           /***/
-          function(L, U, C) {
+          function(I, U, m) {
             function c(t) {
               if (Array.isArray(t)) {
-                for (var h = 0, s = Array(t.length); h < t.length; h++)
-                  s[h] = t[h];
-                return s;
+                for (var s = 0, h = Array(t.length); s < t.length; s++)
+                  h[s] = t[s];
+                return h;
               } else
                 return Array.from(t);
             }
-            var n = C(15), i = C(4), r = C(0), a = C(8), f = C(9);
+            var a = m(15), i = m(4), r = m(0), n = m(8), f = m(9);
             function o() {
-              n.call(this), this.useSmartIdealEdgeLengthCalculation = i.DEFAULT_USE_SMART_IDEAL_EDGE_LENGTH_CALCULATION, this.gravityConstant = i.DEFAULT_GRAVITY_STRENGTH, this.compoundGravityConstant = i.DEFAULT_COMPOUND_GRAVITY_STRENGTH, this.gravityRangeFactor = i.DEFAULT_GRAVITY_RANGE_FACTOR, this.compoundGravityRangeFactor = i.DEFAULT_COMPOUND_GRAVITY_RANGE_FACTOR, this.displacementThresholdPerNode = 3 * i.DEFAULT_EDGE_LENGTH / 100, this.coolingFactor = i.DEFAULT_COOLING_FACTOR_INCREMENTAL, this.initialCoolingFactor = i.DEFAULT_COOLING_FACTOR_INCREMENTAL, this.totalDisplacement = 0, this.oldTotalDisplacement = 0, this.maxIterations = i.MAX_ITERATIONS;
+              a.call(this), this.useSmartIdealEdgeLengthCalculation = i.DEFAULT_USE_SMART_IDEAL_EDGE_LENGTH_CALCULATION, this.gravityConstant = i.DEFAULT_GRAVITY_STRENGTH, this.compoundGravityConstant = i.DEFAULT_COMPOUND_GRAVITY_STRENGTH, this.gravityRangeFactor = i.DEFAULT_GRAVITY_RANGE_FACTOR, this.compoundGravityRangeFactor = i.DEFAULT_COMPOUND_GRAVITY_RANGE_FACTOR, this.displacementThresholdPerNode = 3 * i.DEFAULT_EDGE_LENGTH / 100, this.coolingFactor = i.DEFAULT_COOLING_FACTOR_INCREMENTAL, this.initialCoolingFactor = i.DEFAULT_COOLING_FACTOR_INCREMENTAL, this.totalDisplacement = 0, this.oldTotalDisplacement = 0, this.maxIterations = i.MAX_ITERATIONS;
             }
-            o.prototype = Object.create(n.prototype);
-            for (var y in n)
-              o[y] = n[y];
+            o.prototype = Object.create(a.prototype);
+            for (var v in a)
+              o[v] = a[v];
             o.prototype.initParameters = function() {
-              n.prototype.initParameters.call(this, arguments), this.totalIterations = 0, this.notAnimatedIterations = 0, this.useFRGridVariant = i.DEFAULT_USE_SMART_REPULSION_RANGE_CALCULATION, this.grid = [];
+              a.prototype.initParameters.call(this, arguments), this.totalIterations = 0, this.notAnimatedIterations = 0, this.useFRGridVariant = i.DEFAULT_USE_SMART_REPULSION_RANGE_CALCULATION, this.grid = [];
             }, o.prototype.calcIdealEdgeLengths = function() {
-              for (var t, h, s, g, u, N, v, T = this.getGraphManager().getAllEdges(), m = 0; m < T.length; m++)
-                t = T[m], h = t.idealLength, t.isInterGraph && (g = t.getSource(), u = t.getTarget(), N = t.getSourceInLca().getEstimatedSize(), v = t.getTargetInLca().getEstimatedSize(), this.useSmartIdealEdgeLengthCalculation && (t.idealLength += N + v - 2 * r.SIMPLE_NODE_SIZE), s = t.getLca().getInclusionTreeDepth(), t.idealLength += h * i.PER_LEVEL_IDEAL_EDGE_LENGTH_FACTOR * (g.getInclusionTreeDepth() + u.getInclusionTreeDepth() - 2 * s));
+              for (var t, s, h, g, u, N, p, T = this.getGraphManager().getAllEdges(), L = 0; L < T.length; L++)
+                t = T[L], s = t.idealLength, t.isInterGraph && (g = t.getSource(), u = t.getTarget(), N = t.getSourceInLca().getEstimatedSize(), p = t.getTargetInLca().getEstimatedSize(), this.useSmartIdealEdgeLengthCalculation && (t.idealLength += N + p - 2 * r.SIMPLE_NODE_SIZE), h = t.getLca().getInclusionTreeDepth(), t.idealLength += s * i.PER_LEVEL_IDEAL_EDGE_LENGTH_FACTOR * (g.getInclusionTreeDepth() + u.getInclusionTreeDepth() - 2 * h));
             }, o.prototype.initSpringEmbedder = function() {
               var t = this.getAllNodes().length;
               this.incremental ? (t > i.ADAPTATION_LOWER_NODE_LIMIT && (this.coolingFactor = Math.max(this.coolingFactor * i.COOLING_ADAPTATION_FACTOR, this.coolingFactor - (t - i.ADAPTATION_LOWER_NODE_LIMIT) / (i.ADAPTATION_UPPER_NODE_LIMIT - i.ADAPTATION_LOWER_NODE_LIMIT) * this.coolingFactor * (1 - i.COOLING_ADAPTATION_FACTOR))), this.maxNodeDisplacement = i.MAX_NODE_DISPLACEMENT_INCREMENTAL) : (t > i.ADAPTATION_LOWER_NODE_LIMIT ? this.coolingFactor = Math.max(i.COOLING_ADAPTATION_FACTOR, 1 - (t - i.ADAPTATION_LOWER_NODE_LIMIT) / (i.ADAPTATION_UPPER_NODE_LIMIT - i.ADAPTATION_LOWER_NODE_LIMIT) * (1 - i.COOLING_ADAPTATION_FACTOR)) : this.coolingFactor = 1, this.initialCoolingFactor = this.coolingFactor, this.maxNodeDisplacement = i.MAX_NODE_DISPLACEMENT), this.maxIterations = Math.max(this.getAllNodes().length * 5, this.maxIterations), this.displacementThresholdPerNode = 3 * i.DEFAULT_EDGE_LENGTH / 100, this.totalDisplacementThreshold = this.displacementThresholdPerNode * this.getAllNodes().length, this.repulsionRange = this.calcRepulsionRange();
             }, o.prototype.calcSpringForces = function() {
-              for (var t = this.getAllEdges(), h, s = 0; s < t.length; s++)
-                h = t[s], this.calcSpringForce(h, h.idealLength);
+              for (var t = this.getAllEdges(), s, h = 0; h < t.length; h++)
+                s = t[h], this.calcSpringForce(s, s.idealLength);
             }, o.prototype.calcRepulsionForces = function() {
-              var t = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : !0, h = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : !1, s, g, u, N, v = this.getAllNodes(), T;
+              var t = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : !0, s = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : !1, h, g, u, N, p = this.getAllNodes(), T;
               if (this.useFRGridVariant)
-                for (this.totalIterations % i.GRID_CALCULATION_CHECK_PERIOD == 1 && t && this.updateGrid(), T = /* @__PURE__ */ new Set(), s = 0; s < v.length; s++)
-                  u = v[s], this.calculateRepulsionForceOfANode(u, T, t, h), T.add(u);
+                for (this.totalIterations % i.GRID_CALCULATION_CHECK_PERIOD == 1 && t && this.updateGrid(), T = /* @__PURE__ */ new Set(), h = 0; h < p.length; h++)
+                  u = p[h], this.calculateRepulsionForceOfANode(u, T, t, s), T.add(u);
               else
-                for (s = 0; s < v.length; s++)
-                  for (u = v[s], g = s + 1; g < v.length; g++)
-                    N = v[g], u.getOwner() == N.getOwner() && this.calcRepulsionForce(u, N);
+                for (h = 0; h < p.length; h++)
+                  for (u = p[h], g = h + 1; g < p.length; g++)
+                    N = p[g], u.getOwner() == N.getOwner() && this.calcRepulsionForce(u, N);
             }, o.prototype.calcGravitationalForces = function() {
-              for (var t, h = this.getAllNodesToApplyGravitation(), s = 0; s < h.length; s++)
-                t = h[s], this.calcGravitationalForce(t);
+              for (var t, s = this.getAllNodesToApplyGravitation(), h = 0; h < s.length; h++)
+                t = s[h], this.calcGravitationalForce(t);
             }, o.prototype.moveNodes = function() {
-              for (var t = this.getAllNodes(), h, s = 0; s < t.length; s++)
-                h = t[s], h.move();
-            }, o.prototype.calcSpringForce = function(t, h) {
-              var s = t.getSource(), g = t.getTarget(), u, N, v, T;
-              if (this.uniformLeafNodeSizes && s.getChild() == null && g.getChild() == null)
+              for (var t = this.getAllNodes(), s, h = 0; h < t.length; h++)
+                s = t[h], s.move();
+            }, o.prototype.calcSpringForce = function(t, s) {
+              var h = t.getSource(), g = t.getTarget(), u, N, p, T;
+              if (this.uniformLeafNodeSizes && h.getChild() == null && g.getChild() == null)
                 t.updateLengthSimple();
               else if (t.updateLength(), t.isOverlapingSourceAndTarget)
                 return;
-              u = t.getLength(), u != 0 && (N = t.edgeElasticity * (u - h), v = N * (t.lengthX / u), T = N * (t.lengthY / u), s.springForceX += v, s.springForceY += T, g.springForceX -= v, g.springForceY -= T);
-            }, o.prototype.calcRepulsionForce = function(t, h) {
-              var s = t.getRect(), g = h.getRect(), u = new Array(2), N = new Array(4), v, T, m, R, b, I, z;
-              if (s.intersects(g)) {
-                a.calcSeparationAmount(s, g, u, i.DEFAULT_EDGE_LENGTH / 2), I = 2 * u[0], z = 2 * u[1];
-                var H = t.noOfChildren * h.noOfChildren / (t.noOfChildren + h.noOfChildren);
-                t.repulsionForceX -= H * I, t.repulsionForceY -= H * z, h.repulsionForceX += H * I, h.repulsionForceY += H * z;
+              u = t.getLength(), u != 0 && (N = t.edgeElasticity * (u - s), p = N * (t.lengthX / u), T = N * (t.lengthY / u), h.springForceX += p, h.springForceY += T, g.springForceX -= p, g.springForceY -= T);
+            }, o.prototype.calcRepulsionForce = function(t, s) {
+              var h = t.getRect(), g = s.getRect(), u = new Array(2), N = new Array(4), p, T, L, D, X, w, Z;
+              if (h.intersects(g)) {
+                n.calcSeparationAmount(h, g, u, i.DEFAULT_EDGE_LENGTH / 2), w = 2 * u[0], Z = 2 * u[1];
+                var W = t.noOfChildren * s.noOfChildren / (t.noOfChildren + s.noOfChildren);
+                t.repulsionForceX -= W * w, t.repulsionForceY -= W * Z, s.repulsionForceX += W * w, s.repulsionForceY += W * Z;
               } else
-                this.uniformLeafNodeSizes && t.getChild() == null && h.getChild() == null ? (v = g.getCenterX() - s.getCenterX(), T = g.getCenterY() - s.getCenterY()) : (a.getIntersection(s, g, N), v = N[2] - N[0], T = N[3] - N[1]), Math.abs(v) < i.MIN_REPULSION_DIST && (v = f.sign(v) * i.MIN_REPULSION_DIST), Math.abs(T) < i.MIN_REPULSION_DIST && (T = f.sign(T) * i.MIN_REPULSION_DIST), m = v * v + T * T, R = Math.sqrt(m), b = (t.nodeRepulsion / 2 + h.nodeRepulsion / 2) * t.noOfChildren * h.noOfChildren / m, I = b * v / R, z = b * T / R, t.repulsionForceX -= I, t.repulsionForceY -= z, h.repulsionForceX += I, h.repulsionForceY += z;
+                this.uniformLeafNodeSizes && t.getChild() == null && s.getChild() == null ? (p = g.getCenterX() - h.getCenterX(), T = g.getCenterY() - h.getCenterY()) : (n.getIntersection(h, g, N), p = N[2] - N[0], T = N[3] - N[1]), Math.abs(p) < i.MIN_REPULSION_DIST && (p = f.sign(p) * i.MIN_REPULSION_DIST), Math.abs(T) < i.MIN_REPULSION_DIST && (T = f.sign(T) * i.MIN_REPULSION_DIST), L = p * p + T * T, D = Math.sqrt(L), X = (t.nodeRepulsion / 2 + s.nodeRepulsion / 2) * t.noOfChildren * s.noOfChildren / L, w = X * p / D, Z = X * T / D, t.repulsionForceX -= w, t.repulsionForceY -= Z, s.repulsionForceX += w, s.repulsionForceY += Z;
             }, o.prototype.calcGravitationalForce = function(t) {
-              var h, s, g, u, N, v, T, m;
-              h = t.getOwner(), s = (h.getRight() + h.getLeft()) / 2, g = (h.getTop() + h.getBottom()) / 2, u = t.getCenterX() - s, N = t.getCenterY() - g, v = Math.abs(u) + t.getWidth() / 2, T = Math.abs(N) + t.getHeight() / 2, t.getOwner() == this.graphManager.getRoot() ? (m = h.getEstimatedSize() * this.gravityRangeFactor, (v > m || T > m) && (t.gravitationForceX = -this.gravityConstant * u, t.gravitationForceY = -this.gravityConstant * N)) : (m = h.getEstimatedSize() * this.compoundGravityRangeFactor, (v > m || T > m) && (t.gravitationForceX = -this.gravityConstant * u * this.compoundGravityConstant, t.gravitationForceY = -this.gravityConstant * N * this.compoundGravityConstant));
+              var s, h, g, u, N, p, T, L;
+              s = t.getOwner(), h = (s.getRight() + s.getLeft()) / 2, g = (s.getTop() + s.getBottom()) / 2, u = t.getCenterX() - h, N = t.getCenterY() - g, p = Math.abs(u) + t.getWidth() / 2, T = Math.abs(N) + t.getHeight() / 2, t.getOwner() == this.graphManager.getRoot() ? (L = s.getEstimatedSize() * this.gravityRangeFactor, (p > L || T > L) && (t.gravitationForceX = -this.gravityConstant * u, t.gravitationForceY = -this.gravityConstant * N)) : (L = s.getEstimatedSize() * this.compoundGravityRangeFactor, (p > L || T > L) && (t.gravitationForceX = -this.gravityConstant * u * this.compoundGravityConstant, t.gravitationForceY = -this.gravityConstant * N * this.compoundGravityConstant));
             }, o.prototype.isConverged = function() {
-              var t, h = !1;
-              return this.totalIterations > this.maxIterations / 3 && (h = Math.abs(this.totalDisplacement - this.oldTotalDisplacement) < 2), t = this.totalDisplacement < this.totalDisplacementThreshold, this.oldTotalDisplacement = this.totalDisplacement, t || h;
+              var t, s = !1;
+              return this.totalIterations > this.maxIterations / 3 && (s = Math.abs(this.totalDisplacement - this.oldTotalDisplacement) < 2), t = this.totalDisplacement < this.totalDisplacementThreshold, this.oldTotalDisplacement = this.totalDisplacement, t || s;
             }, o.prototype.animate = function() {
               this.animationDuringLayout && !this.isSubLayout && (this.notAnimatedIterations == this.animationPeriod ? (this.update(), this.notAnimatedIterations = 0) : this.notAnimatedIterations++);
             }, o.prototype.calcNoOfChildrenForAllNodes = function() {
-              for (var t, h = this.graphManager.getAllNodes(), s = 0; s < h.length; s++)
-                t = h[s], t.noOfChildren = t.getNoOfChildren();
+              for (var t, s = this.graphManager.getAllNodes(), h = 0; h < s.length; h++)
+                t = s[h], t.noOfChildren = t.getNoOfChildren();
             }, o.prototype.calcGrid = function(t) {
-              var h = 0, s = 0;
-              h = parseInt(Math.ceil((t.getRight() - t.getLeft()) / this.repulsionRange)), s = parseInt(Math.ceil((t.getBottom() - t.getTop()) / this.repulsionRange));
-              for (var g = new Array(h), u = 0; u < h; u++)
-                g[u] = new Array(s);
-              for (var u = 0; u < h; u++)
-                for (var N = 0; N < s; N++)
+              var s = 0, h = 0;
+              s = parseInt(Math.ceil((t.getRight() - t.getLeft()) / this.repulsionRange)), h = parseInt(Math.ceil((t.getBottom() - t.getTop()) / this.repulsionRange));
+              for (var g = new Array(s), u = 0; u < s; u++)
+                g[u] = new Array(h);
+              for (var u = 0; u < s; u++)
+                for (var N = 0; N < h; N++)
                   g[u][N] = new Array();
               return g;
-            }, o.prototype.addNodeToGrid = function(t, h, s) {
-              var g = 0, u = 0, N = 0, v = 0;
-              g = parseInt(Math.floor((t.getRect().x - h) / this.repulsionRange)), u = parseInt(Math.floor((t.getRect().width + t.getRect().x - h) / this.repulsionRange)), N = parseInt(Math.floor((t.getRect().y - s) / this.repulsionRange)), v = parseInt(Math.floor((t.getRect().height + t.getRect().y - s) / this.repulsionRange));
+            }, o.prototype.addNodeToGrid = function(t, s, h) {
+              var g = 0, u = 0, N = 0, p = 0;
+              g = parseInt(Math.floor((t.getRect().x - s) / this.repulsionRange)), u = parseInt(Math.floor((t.getRect().width + t.getRect().x - s) / this.repulsionRange)), N = parseInt(Math.floor((t.getRect().y - h) / this.repulsionRange)), p = parseInt(Math.floor((t.getRect().height + t.getRect().y - h) / this.repulsionRange));
               for (var T = g; T <= u; T++)
-                for (var m = N; m <= v; m++)
-                  this.grid[T][m].push(t), t.setGridCoordinates(g, u, N, v);
+                for (var L = N; L <= p; L++)
+                  this.grid[T][L].push(t), t.setGridCoordinates(g, u, N, p);
             }, o.prototype.updateGrid = function() {
-              var t, h, s = this.getAllNodes();
-              for (this.grid = this.calcGrid(this.graphManager.getRoot()), t = 0; t < s.length; t++)
-                h = s[t], this.addNodeToGrid(h, this.graphManager.getRoot().getLeft(), this.graphManager.getRoot().getTop());
-            }, o.prototype.calculateRepulsionForceOfANode = function(t, h, s, g) {
-              if (this.totalIterations % i.GRID_CALCULATION_CHECK_PERIOD == 1 && s || g) {
+              var t, s, h = this.getAllNodes();
+              for (this.grid = this.calcGrid(this.graphManager.getRoot()), t = 0; t < h.length; t++)
+                s = h[t], this.addNodeToGrid(s, this.graphManager.getRoot().getLeft(), this.graphManager.getRoot().getTop());
+            }, o.prototype.calculateRepulsionForceOfANode = function(t, s, h, g) {
+              if (this.totalIterations % i.GRID_CALCULATION_CHECK_PERIOD == 1 && h || g) {
                 var u = /* @__PURE__ */ new Set();
                 t.surrounding = new Array();
-                for (var N, v = this.grid, T = t.startX - 1; T < t.finishX + 2; T++)
-                  for (var m = t.startY - 1; m < t.finishY + 2; m++)
-                    if (!(T < 0 || m < 0 || T >= v.length || m >= v[0].length)) {
-                      for (var R = 0; R < v[T][m].length; R++)
-                        if (N = v[T][m][R], !(t.getOwner() != N.getOwner() || t == N) && !h.has(N) && !u.has(N)) {
-                          var b = Math.abs(t.getCenterX() - N.getCenterX()) - (t.getWidth() / 2 + N.getWidth() / 2), I = Math.abs(t.getCenterY() - N.getCenterY()) - (t.getHeight() / 2 + N.getHeight() / 2);
-                          b <= this.repulsionRange && I <= this.repulsionRange && u.add(N);
+                for (var N, p = this.grid, T = t.startX - 1; T < t.finishX + 2; T++)
+                  for (var L = t.startY - 1; L < t.finishY + 2; L++)
+                    if (!(T < 0 || L < 0 || T >= p.length || L >= p[0].length)) {
+                      for (var D = 0; D < p[T][L].length; D++)
+                        if (N = p[T][L][D], !(t.getOwner() != N.getOwner() || t == N) && !s.has(N) && !u.has(N)) {
+                          var X = Math.abs(t.getCenterX() - N.getCenterX()) - (t.getWidth() / 2 + N.getWidth() / 2), w = Math.abs(t.getCenterY() - N.getCenterY()) - (t.getHeight() / 2 + N.getHeight() / 2);
+                          X <= this.repulsionRange && w <= this.repulsionRange && u.add(N);
                         }
                     }
                 t.surrounding = [].concat(c(u));
@@ -1310,245 +1310,245 @@ function Ie() {
                 this.calcRepulsionForce(t, t.surrounding[T]);
             }, o.prototype.calcRepulsionRange = function() {
               return 0;
-            }, L.exports = o;
+            }, I.exports = o;
           },
           /* 19 */
           /***/
-          function(L, U, C) {
-            var c = C(1), n = C(4);
-            function i(a, f, o) {
-              c.call(this, a, f, o), this.idealLength = n.DEFAULT_EDGE_LENGTH, this.edgeElasticity = n.DEFAULT_SPRING_STRENGTH;
+          function(I, U, m) {
+            var c = m(1), a = m(4);
+            function i(n, f, o) {
+              c.call(this, n, f, o), this.idealLength = a.DEFAULT_EDGE_LENGTH, this.edgeElasticity = a.DEFAULT_SPRING_STRENGTH;
             }
             i.prototype = Object.create(c.prototype);
             for (var r in c)
               i[r] = c[r];
-            L.exports = i;
+            I.exports = i;
           },
           /* 20 */
           /***/
-          function(L, U, C) {
-            var c = C(3), n = C(4);
-            function i(a, f, o, y) {
-              c.call(this, a, f, o, y), this.nodeRepulsion = n.DEFAULT_REPULSION_STRENGTH, this.springForceX = 0, this.springForceY = 0, this.repulsionForceX = 0, this.repulsionForceY = 0, this.gravitationForceX = 0, this.gravitationForceY = 0, this.displacementX = 0, this.displacementY = 0, this.startX = 0, this.finishX = 0, this.startY = 0, this.finishY = 0, this.surrounding = [];
+          function(I, U, m) {
+            var c = m(3), a = m(4);
+            function i(n, f, o, v) {
+              c.call(this, n, f, o, v), this.nodeRepulsion = a.DEFAULT_REPULSION_STRENGTH, this.springForceX = 0, this.springForceY = 0, this.repulsionForceX = 0, this.repulsionForceY = 0, this.gravitationForceX = 0, this.gravitationForceY = 0, this.displacementX = 0, this.displacementY = 0, this.startX = 0, this.finishX = 0, this.startY = 0, this.finishY = 0, this.surrounding = [];
             }
             i.prototype = Object.create(c.prototype);
             for (var r in c)
               i[r] = c[r];
-            i.prototype.setGridCoordinates = function(a, f, o, y) {
-              this.startX = a, this.finishX = f, this.startY = o, this.finishY = y;
-            }, L.exports = i;
+            i.prototype.setGridCoordinates = function(n, f, o, v) {
+              this.startX = n, this.finishX = f, this.startY = o, this.finishY = v;
+            }, I.exports = i;
           },
           /* 21 */
           /***/
-          function(L, U, C) {
-            function c(n, i) {
-              this.width = 0, this.height = 0, n !== null && i !== null && (this.height = i, this.width = n);
+          function(I, U, m) {
+            function c(a, i) {
+              this.width = 0, this.height = 0, a !== null && i !== null && (this.height = i, this.width = a);
             }
             c.prototype.getWidth = function() {
               return this.width;
-            }, c.prototype.setWidth = function(n) {
-              this.width = n;
+            }, c.prototype.setWidth = function(a) {
+              this.width = a;
             }, c.prototype.getHeight = function() {
               return this.height;
-            }, c.prototype.setHeight = function(n) {
-              this.height = n;
-            }, L.exports = c;
+            }, c.prototype.setHeight = function(a) {
+              this.height = a;
+            }, I.exports = c;
           },
           /* 22 */
           /***/
-          function(L, U, C) {
-            var c = C(14);
-            function n() {
+          function(I, U, m) {
+            var c = m(14);
+            function a() {
               this.map = {}, this.keys = [];
             }
-            n.prototype.put = function(i, r) {
-              var a = c.createID(i);
-              this.contains(a) || (this.map[a] = r, this.keys.push(i));
-            }, n.prototype.contains = function(i) {
+            a.prototype.put = function(i, r) {
+              var n = c.createID(i);
+              this.contains(n) || (this.map[n] = r, this.keys.push(i));
+            }, a.prototype.contains = function(i) {
               return c.createID(i), this.map[i] != null;
-            }, n.prototype.get = function(i) {
+            }, a.prototype.get = function(i) {
               var r = c.createID(i);
               return this.map[r];
-            }, n.prototype.keySet = function() {
+            }, a.prototype.keySet = function() {
               return this.keys;
-            }, L.exports = n;
+            }, I.exports = a;
           },
           /* 23 */
           /***/
-          function(L, U, C) {
-            var c = C(14);
-            function n() {
+          function(I, U, m) {
+            var c = m(14);
+            function a() {
               this.set = {};
             }
-            n.prototype.add = function(i) {
+            a.prototype.add = function(i) {
               var r = c.createID(i);
               this.contains(r) || (this.set[r] = i);
-            }, n.prototype.remove = function(i) {
+            }, a.prototype.remove = function(i) {
               delete this.set[c.createID(i)];
-            }, n.prototype.clear = function() {
+            }, a.prototype.clear = function() {
               this.set = {};
-            }, n.prototype.contains = function(i) {
+            }, a.prototype.contains = function(i) {
               return this.set[c.createID(i)] == i;
-            }, n.prototype.isEmpty = function() {
+            }, a.prototype.isEmpty = function() {
               return this.size() === 0;
-            }, n.prototype.size = function() {
+            }, a.prototype.size = function() {
               return Object.keys(this.set).length;
-            }, n.prototype.addAllTo = function(i) {
-              for (var r = Object.keys(this.set), a = r.length, f = 0; f < a; f++)
+            }, a.prototype.addAllTo = function(i) {
+              for (var r = Object.keys(this.set), n = r.length, f = 0; f < n; f++)
                 i.push(this.set[r[f]]);
-            }, n.prototype.size = function() {
+            }, a.prototype.size = function() {
               return Object.keys(this.set).length;
-            }, n.prototype.addAll = function(i) {
-              for (var r = i.length, a = 0; a < r; a++) {
-                var f = i[a];
+            }, a.prototype.addAll = function(i) {
+              for (var r = i.length, n = 0; n < r; n++) {
+                var f = i[n];
                 this.add(f);
               }
-            }, L.exports = n;
+            }, I.exports = a;
           },
           /* 24 */
           /***/
-          function(L, U, C) {
+          function(I, U, m) {
             function c() {
             }
-            c.multMat = function(n, i) {
-              for (var r = [], a = 0; a < n.length; a++) {
-                r[a] = [];
+            c.multMat = function(a, i) {
+              for (var r = [], n = 0; n < a.length; n++) {
+                r[n] = [];
                 for (var f = 0; f < i[0].length; f++) {
-                  r[a][f] = 0;
-                  for (var o = 0; o < n[0].length; o++)
-                    r[a][f] += n[a][o] * i[o][f];
+                  r[n][f] = 0;
+                  for (var o = 0; o < a[0].length; o++)
+                    r[n][f] += a[n][o] * i[o][f];
                 }
               }
               return r;
-            }, c.transpose = function(n) {
-              for (var i = [], r = 0; r < n[0].length; r++) {
+            }, c.transpose = function(a) {
+              for (var i = [], r = 0; r < a[0].length; r++) {
                 i[r] = [];
-                for (var a = 0; a < n.length; a++)
-                  i[r][a] = n[a][r];
+                for (var n = 0; n < a.length; n++)
+                  i[r][n] = a[n][r];
               }
               return i;
-            }, c.multCons = function(n, i) {
-              for (var r = [], a = 0; a < n.length; a++)
-                r[a] = n[a] * i;
+            }, c.multCons = function(a, i) {
+              for (var r = [], n = 0; n < a.length; n++)
+                r[n] = a[n] * i;
               return r;
-            }, c.minusOp = function(n, i) {
-              for (var r = [], a = 0; a < n.length; a++)
-                r[a] = n[a] - i[a];
+            }, c.minusOp = function(a, i) {
+              for (var r = [], n = 0; n < a.length; n++)
+                r[n] = a[n] - i[n];
               return r;
-            }, c.dotProduct = function(n, i) {
-              for (var r = 0, a = 0; a < n.length; a++)
-                r += n[a] * i[a];
+            }, c.dotProduct = function(a, i) {
+              for (var r = 0, n = 0; n < a.length; n++)
+                r += a[n] * i[n];
               return r;
-            }, c.mag = function(n) {
-              return Math.sqrt(this.dotProduct(n, n));
-            }, c.normalize = function(n) {
-              for (var i = [], r = this.mag(n), a = 0; a < n.length; a++)
-                i[a] = n[a] / r;
+            }, c.mag = function(a) {
+              return Math.sqrt(this.dotProduct(a, a));
+            }, c.normalize = function(a) {
+              for (var i = [], r = this.mag(a), n = 0; n < a.length; n++)
+                i[n] = a[n] / r;
               return i;
-            }, c.multGamma = function(n) {
-              for (var i = [], r = 0, a = 0; a < n.length; a++)
-                r += n[a];
-              r *= -1 / n.length;
-              for (var f = 0; f < n.length; f++)
-                i[f] = r + n[f];
+            }, c.multGamma = function(a) {
+              for (var i = [], r = 0, n = 0; n < a.length; n++)
+                r += a[n];
+              r *= -1 / a.length;
+              for (var f = 0; f < a.length; f++)
+                i[f] = r + a[f];
               return i;
-            }, c.multL = function(n, i, r) {
-              for (var a = [], f = [], o = [], y = 0; y < i[0].length; y++) {
-                for (var t = 0, h = 0; h < i.length; h++)
-                  t += -0.5 * i[h][y] * n[h];
-                f[y] = t;
+            }, c.multL = function(a, i, r) {
+              for (var n = [], f = [], o = [], v = 0; v < i[0].length; v++) {
+                for (var t = 0, s = 0; s < i.length; s++)
+                  t += -0.5 * i[s][v] * a[s];
+                f[v] = t;
               }
-              for (var s = 0; s < r.length; s++) {
+              for (var h = 0; h < r.length; h++) {
                 for (var g = 0, u = 0; u < r.length; u++)
-                  g += r[s][u] * f[u];
-                o[s] = g;
+                  g += r[h][u] * f[u];
+                o[h] = g;
               }
               for (var N = 0; N < i.length; N++) {
-                for (var v = 0, T = 0; T < i[0].length; T++)
-                  v += i[N][T] * o[T];
-                a[N] = v;
+                for (var p = 0, T = 0; T < i[0].length; T++)
+                  p += i[N][T] * o[T];
+                n[N] = p;
               }
-              return a;
-            }, L.exports = c;
+              return n;
+            }, I.exports = c;
           },
           /* 25 */
           /***/
-          function(L, U, C) {
+          function(I, U, m) {
             var c = /* @__PURE__ */ function() {
-              function a(f, o) {
-                for (var y = 0; y < o.length; y++) {
-                  var t = o[y];
+              function n(f, o) {
+                for (var v = 0; v < o.length; v++) {
+                  var t = o[v];
                   t.enumerable = t.enumerable || !1, t.configurable = !0, "value" in t && (t.writable = !0), Object.defineProperty(f, t.key, t);
                 }
               }
-              return function(f, o, y) {
-                return o && a(f.prototype, o), y && a(f, y), f;
+              return function(f, o, v) {
+                return o && n(f.prototype, o), v && n(f, v), f;
               };
             }();
-            function n(a, f) {
-              if (!(a instanceof f))
+            function a(n, f) {
+              if (!(n instanceof f))
                 throw new TypeError("Cannot call a class as a function");
             }
-            var i = C(11), r = function() {
-              function a(f, o) {
-                n(this, a), (o !== null || o !== void 0) && (this.compareFunction = this._defaultCompareFunction);
-                var y = void 0;
-                f instanceof i ? y = f.size() : y = f.length, this._quicksort(f, 0, y - 1);
+            var i = m(11), r = function() {
+              function n(f, o) {
+                a(this, n), (o !== null || o !== void 0) && (this.compareFunction = this._defaultCompareFunction);
+                var v = void 0;
+                f instanceof i ? v = f.size() : v = f.length, this._quicksort(f, 0, v - 1);
               }
-              return c(a, [{
+              return c(n, [{
                 key: "_quicksort",
-                value: function(o, y, t) {
-                  if (y < t) {
-                    var h = this._partition(o, y, t);
-                    this._quicksort(o, y, h), this._quicksort(o, h + 1, t);
+                value: function(o, v, t) {
+                  if (v < t) {
+                    var s = this._partition(o, v, t);
+                    this._quicksort(o, v, s), this._quicksort(o, s + 1, t);
                   }
                 }
               }, {
                 key: "_partition",
-                value: function(o, y, t) {
-                  for (var h = this._get(o, y), s = y, g = t; ; ) {
-                    for (; this.compareFunction(h, this._get(o, g)); )
+                value: function(o, v, t) {
+                  for (var s = this._get(o, v), h = v, g = t; ; ) {
+                    for (; this.compareFunction(s, this._get(o, g)); )
                       g--;
-                    for (; this.compareFunction(this._get(o, s), h); )
-                      s++;
-                    if (s < g)
-                      this._swap(o, s, g), s++, g--;
+                    for (; this.compareFunction(this._get(o, h), s); )
+                      h++;
+                    if (h < g)
+                      this._swap(o, h, g), h++, g--;
                     else
                       return g;
                   }
                 }
               }, {
                 key: "_get",
-                value: function(o, y) {
-                  return o instanceof i ? o.get_object_at(y) : o[y];
+                value: function(o, v) {
+                  return o instanceof i ? o.get_object_at(v) : o[v];
                 }
               }, {
                 key: "_set",
-                value: function(o, y, t) {
-                  o instanceof i ? o.set_object_at(y, t) : o[y] = t;
+                value: function(o, v, t) {
+                  o instanceof i ? o.set_object_at(v, t) : o[v] = t;
                 }
               }, {
                 key: "_swap",
-                value: function(o, y, t) {
-                  var h = this._get(o, y);
-                  this._set(o, y, this._get(o, t)), this._set(o, t, h);
+                value: function(o, v, t) {
+                  var s = this._get(o, v);
+                  this._set(o, v, this._get(o, t)), this._set(o, t, s);
                 }
               }, {
                 key: "_defaultCompareFunction",
-                value: function(o, y) {
-                  return y > o;
+                value: function(o, v) {
+                  return v > o;
                 }
-              }]), a;
+              }]), n;
             }();
-            L.exports = r;
+            I.exports = r;
           },
           /* 26 */
           /***/
-          function(L, U, C) {
+          function(I, U, m) {
             function c() {
             }
-            c.svd = function(n) {
-              this.U = null, this.V = null, this.s = null, this.m = 0, this.n = 0, this.m = n.length, this.n = n[0].length;
+            c.svd = function(a) {
+              this.U = null, this.V = null, this.s = null, this.m = 0, this.n = 0, this.m = a.length, this.n = a[0].length;
               var i = Math.min(this.m, this.n);
               this.s = function(lt) {
                 for (var ut = []; lt-- > 0; )
@@ -1577,20 +1577,20 @@ function Ie() {
                 for (var ut = []; lt-- > 0; )
                   ut.push(0);
                 return ut;
-              }(this.n), a = function(lt) {
+              }(this.n), n = function(lt) {
                 for (var ut = []; lt-- > 0; )
                   ut.push(0);
                 return ut;
-              }(this.m), f = !0, o = Math.min(this.m - 1, this.n), y = Math.max(0, Math.min(this.n - 2, this.m)), t = 0; t < Math.max(o, y); t++) {
+              }(this.m), f = !0, o = Math.min(this.m - 1, this.n), v = Math.max(0, Math.min(this.n - 2, this.m)), t = 0; t < Math.max(o, v); t++) {
                 if (t < o) {
                   this.s[t] = 0;
-                  for (var h = t; h < this.m; h++)
-                    this.s[t] = c.hypot(this.s[t], n[h][t]);
+                  for (var s = t; s < this.m; s++)
+                    this.s[t] = c.hypot(this.s[t], a[s][t]);
                   if (this.s[t] !== 0) {
-                    n[t][t] < 0 && (this.s[t] = -this.s[t]);
-                    for (var s = t; s < this.m; s++)
-                      n[s][t] /= this.s[t];
-                    n[t][t] += 1;
+                    a[t][t] < 0 && (this.s[t] = -this.s[t]);
+                    for (var h = t; h < this.m; h++)
+                      a[h][t] /= this.s[t];
+                    a[t][t] += 1;
                   }
                   this.s[t] = -this.s[t];
                 }
@@ -1599,115 +1599,115 @@ function Ie() {
                     return lt && ut;
                   }(t < o, this.s[t] !== 0)) {
                     for (var u = 0, N = t; N < this.m; N++)
-                      u += n[N][t] * n[N][g];
-                    u = -u / n[t][t];
-                    for (var v = t; v < this.m; v++)
-                      n[v][g] += u * n[v][t];
+                      u += a[N][t] * a[N][g];
+                    u = -u / a[t][t];
+                    for (var p = t; p < this.m; p++)
+                      a[p][g] += u * a[p][t];
                   }
-                  r[g] = n[t][g];
+                  r[g] = a[t][g];
                 }
                 if (/* @__PURE__ */ function(lt, ut) {
                   return ut;
                 }(f, t < o))
                   for (var T = t; T < this.m; T++)
-                    this.U[T][t] = n[T][t];
-                if (t < y) {
+                    this.U[T][t] = a[T][t];
+                if (t < v) {
                   r[t] = 0;
-                  for (var m = t + 1; m < this.n; m++)
-                    r[t] = c.hypot(r[t], r[m]);
+                  for (var L = t + 1; L < this.n; L++)
+                    r[t] = c.hypot(r[t], r[L]);
                   if (r[t] !== 0) {
                     r[t + 1] < 0 && (r[t] = -r[t]);
-                    for (var R = t + 1; R < this.n; R++)
-                      r[R] /= r[t];
+                    for (var D = t + 1; D < this.n; D++)
+                      r[D] /= r[t];
                     r[t + 1] += 1;
                   }
                   if (r[t] = -r[t], /* @__PURE__ */ function(lt, ut) {
                     return lt && ut;
                   }(t + 1 < this.m, r[t] !== 0)) {
-                    for (var b = t + 1; b < this.m; b++)
-                      a[b] = 0;
-                    for (var I = t + 1; I < this.n; I++)
-                      for (var z = t + 1; z < this.m; z++)
-                        a[z] += r[I] * n[z][I];
-                    for (var H = t + 1; H < this.n; H++)
-                      for (var J = -r[H] / r[t + 1], w = t + 1; w < this.m; w++)
-                        n[w][H] += J * a[w];
+                    for (var X = t + 1; X < this.m; X++)
+                      n[X] = 0;
+                    for (var w = t + 1; w < this.n; w++)
+                      for (var Z = t + 1; Z < this.m; Z++)
+                        n[Z] += r[w] * a[Z][w];
+                    for (var W = t + 1; W < this.n; W++)
+                      for (var Q = -r[W] / r[t + 1], R = t + 1; R < this.m; R++)
+                        a[R][W] += Q * n[R];
                   }
                   for (var ht = t + 1; ht < this.n; ht++)
                     this.V[ht][t] = r[ht];
                 }
               }
               var e = Math.min(this.n, this.m + 1);
-              o < this.n && (this.s[o] = n[o][o]), this.m < e && (this.s[e - 1] = 0), y + 1 < e && (r[y] = n[y][e - 1]), r[e - 1] = 0;
+              o < this.n && (this.s[o] = a[o][o]), this.m < e && (this.s[e - 1] = 0), v + 1 < e && (r[v] = a[v][e - 1]), r[e - 1] = 0;
               {
-                for (var E = o; E < i; E++) {
+                for (var y = o; y < i; y++) {
                   for (var l = 0; l < this.m; l++)
-                    this.U[l][E] = 0;
-                  this.U[E][E] = 1;
+                    this.U[l][y] = 0;
+                  this.U[y][y] = 1;
                 }
                 for (var d = o - 1; d >= 0; d--)
                   if (this.s[d] !== 0) {
-                    for (var p = d + 1; p < i; p++) {
-                      for (var A = 0, M = d; M < this.m; M++)
-                        A += this.U[M][d] * this.U[M][p];
-                      A = -A / this.U[d][d];
-                      for (var O = d; O < this.m; O++)
-                        this.U[O][p] += A * this.U[O][d];
+                    for (var E = d + 1; E < i; E++) {
+                      for (var M = 0, C = d; C < this.m; C++)
+                        M += this.U[C][d] * this.U[C][E];
+                      M = -M / this.U[d][d];
+                      for (var A = d; A < this.m; A++)
+                        this.U[A][E] += M * this.U[A][d];
                     }
-                    for (var S = d; S < this.m; S++)
-                      this.U[S][d] = -this.U[S][d];
+                    for (var P = d; P < this.m; P++)
+                      this.U[P][d] = -this.U[P][d];
                     this.U[d][d] = 1 + this.U[d][d];
-                    for (var D = 0; D < d - 1; D++)
-                      this.U[D][d] = 0;
+                    for (var O = 0; O < d - 1; O++)
+                      this.U[O][d] = 0;
                   } else {
-                    for (var q = 0; q < this.m; q++)
-                      this.U[q][d] = 0;
+                    for (var K = 0; K < this.m; K++)
+                      this.U[K][d] = 0;
                     this.U[d][d] = 1;
                   }
               }
-              for (var G = this.n - 1; G >= 0; G--) {
+              for (var b = this.n - 1; b >= 0; b--) {
                 if (/* @__PURE__ */ function(lt, ut) {
                   return lt && ut;
-                }(G < y, r[G] !== 0))
-                  for (var Y = G + 1; Y < i; Y++) {
-                    for (var $ = 0, B = G + 1; B < this.n; B++)
-                      $ += this.V[B][G] * this.V[B][Y];
-                    $ = -$ / this.V[G + 1][G];
-                    for (var x = G + 1; x < this.n; x++)
-                      this.V[x][Y] += $ * this.V[x][G];
+                }(b < v, r[b] !== 0))
+                  for (var Y = b + 1; Y < i; Y++) {
+                    for (var _ = 0, B = b + 1; B < this.n; B++)
+                      _ += this.V[B][b] * this.V[B][Y];
+                    _ = -_ / this.V[b + 1][b];
+                    for (var x = b + 1; x < this.n; x++)
+                      this.V[x][Y] += _ * this.V[x][b];
                   }
-                for (var X = 0; X < this.n; X++)
-                  this.V[X][G] = 0;
-                this.V[G][G] = 1;
+                for (var H = 0; H < this.n; H++)
+                  this.V[H][b] = 0;
+                this.V[b][b] = 1;
               }
-              for (var Q = e - 1, k = Math.pow(2, -52), ft = Math.pow(2, -966); e > 0; ) {
-                var W = void 0, Ot = void 0;
-                for (W = e - 2; W >= -1 && W !== -1; W--)
-                  if (Math.abs(r[W]) <= ft + k * (Math.abs(this.s[W]) + Math.abs(this.s[W + 1]))) {
-                    r[W] = 0;
+              for (var $ = e - 1, j = Math.pow(2, -52), ft = Math.pow(2, -966); e > 0; ) {
+                var V = void 0, Ot = void 0;
+                for (V = e - 2; V >= -1 && V !== -1; V--)
+                  if (Math.abs(r[V]) <= ft + j * (Math.abs(this.s[V]) + Math.abs(this.s[V + 1]))) {
+                    r[V] = 0;
                     break;
                   }
-                if (W === e - 2)
+                if (V === e - 2)
                   Ot = 4;
                 else {
                   var vt = void 0;
-                  for (vt = e - 1; vt >= W && vt !== W; vt--) {
-                    var $t = (vt !== e ? Math.abs(r[vt]) : 0) + (vt !== W + 1 ? Math.abs(r[vt - 1]) : 0);
-                    if (Math.abs(this.s[vt]) <= ft + k * $t) {
+                  for (vt = e - 1; vt >= V && vt !== V; vt--) {
+                    var $t = (vt !== e ? Math.abs(r[vt]) : 0) + (vt !== V + 1 ? Math.abs(r[vt - 1]) : 0);
+                    if (Math.abs(this.s[vt]) <= ft + j * $t) {
                       this.s[vt] = 0;
                       break;
                     }
                   }
-                  vt === W ? Ot = 3 : vt === e - 1 ? Ot = 1 : (Ot = 2, W = vt);
+                  vt === V ? Ot = 3 : vt === e - 1 ? Ot = 1 : (Ot = 2, V = vt);
                 }
-                switch (W++, Ot) {
+                switch (V++, Ot) {
                   case 1:
                     {
                       var Vt = r[e - 2];
                       r[e - 2] = 0;
-                      for (var Nt = e - 2; Nt >= W; Nt--) {
+                      for (var Nt = e - 2; Nt >= V; Nt--) {
                         var Yt = c.hypot(this.s[Nt], Vt), Xt = this.s[Nt] / Yt, ie = Vt / Yt;
-                        this.s[Nt] = Yt, Nt !== W && (Vt = -ie * r[Nt - 1], r[Nt - 1] = Xt * r[Nt - 1]);
+                        this.s[Nt] = Yt, Nt !== V && (Vt = -ie * r[Nt - 1], r[Nt - 1] = Xt * r[Nt - 1]);
                         for (var xt = 0; xt < this.n; xt++)
                           Yt = Xt * this.V[xt][Nt] + ie * this.V[xt][e - 1], this.V[xt][e - 1] = -ie * this.V[xt][Nt] + Xt * this.V[xt][e - 1], this.V[xt][Nt] = Yt;
                       }
@@ -1715,50 +1715,50 @@ function Ie() {
                     break;
                   case 2:
                     {
-                      var Jt = r[W - 1];
-                      r[W - 1] = 0;
-                      for (var Ft = W; Ft < e; Ft++) {
+                      var Jt = r[V - 1];
+                      r[V - 1] = 0;
+                      for (var Ft = V; Ft < e; Ft++) {
                         var zt = c.hypot(this.s[Ft], Jt), _t = this.s[Ft] / zt, ne = Jt / zt;
                         this.s[Ft] = zt, Jt = -ne * r[Ft], r[Ft] = _t * r[Ft];
                         for (var Pt = 0; Pt < this.m; Pt++)
-                          zt = _t * this.U[Pt][Ft] + ne * this.U[Pt][W - 1], this.U[Pt][W - 1] = -ne * this.U[Pt][Ft] + _t * this.U[Pt][W - 1], this.U[Pt][Ft] = zt;
+                          zt = _t * this.U[Pt][Ft] + ne * this.U[Pt][V - 1], this.U[Pt][V - 1] = -ne * this.U[Pt][Ft] + _t * this.U[Pt][V - 1], this.U[Pt][Ft] = zt;
                       }
                     }
                     break;
                   case 3:
                     {
-                      var Bt = Math.max(Math.max(Math.max(Math.max(Math.abs(this.s[e - 1]), Math.abs(this.s[e - 2])), Math.abs(r[e - 2])), Math.abs(this.s[W])), Math.abs(r[W])), Ut = this.s[e - 1] / Bt, P = this.s[e - 2] / Bt, V = r[e - 2] / Bt, _ = this.s[W] / Bt, it = r[W] / Bt, K = ((P + Ut) * (P - Ut) + V * V) / 2, at = Ut * V * (Ut * V), mt = 0;
+                      var Bt = Math.max(Math.max(Math.max(Math.max(Math.abs(this.s[e - 1]), Math.abs(this.s[e - 2])), Math.abs(r[e - 2])), Math.abs(this.s[V])), Math.abs(r[V])), Ut = this.s[e - 1] / Bt, G = this.s[e - 2] / Bt, z = r[e - 2] / Bt, k = this.s[V] / Bt, nt = r[V] / Bt, J = ((G + Ut) * (G - Ut) + z * z) / 2, at = Ut * z * (Ut * z), mt = 0;
                       /* @__PURE__ */ (function(lt, ut) {
                         return lt || ut;
-                      })(K !== 0, at !== 0) && (mt = Math.sqrt(K * K + at), K < 0 && (mt = -mt), mt = at / (K + mt));
-                      for (var pt = (_ + Ut) * (_ - Ut) + mt, tt = _ * it, Z = W; Z < e - 1; Z++) {
-                        var dt = c.hypot(pt, tt), Tt = pt / dt, ct = tt / dt;
-                        Z !== W && (r[Z - 1] = dt), pt = Tt * this.s[Z] + ct * r[Z], r[Z] = Tt * r[Z] - ct * this.s[Z], tt = ct * this.s[Z + 1], this.s[Z + 1] = Tt * this.s[Z + 1];
+                      })(J !== 0, at !== 0) && (mt = Math.sqrt(J * J + at), J < 0 && (mt = -mt), mt = at / (J + mt));
+                      for (var pt = (k + Ut) * (k - Ut) + mt, et = k * nt, q = V; q < e - 1; q++) {
+                        var dt = c.hypot(pt, et), Tt = pt / dt, ct = et / dt;
+                        q !== V && (r[q - 1] = dt), pt = Tt * this.s[q] + ct * r[q], r[q] = Tt * r[q] - ct * this.s[q], et = ct * this.s[q + 1], this.s[q + 1] = Tt * this.s[q + 1];
                         for (var Dt = 0; Dt < this.n; Dt++)
-                          dt = Tt * this.V[Dt][Z] + ct * this.V[Dt][Z + 1], this.V[Dt][Z + 1] = -ct * this.V[Dt][Z] + Tt * this.V[Dt][Z + 1], this.V[Dt][Z] = dt;
-                        if (dt = c.hypot(pt, tt), Tt = pt / dt, ct = tt / dt, this.s[Z] = dt, pt = Tt * r[Z] + ct * this.s[Z + 1], this.s[Z + 1] = -ct * r[Z] + Tt * this.s[Z + 1], tt = ct * r[Z + 1], r[Z + 1] = Tt * r[Z + 1], Z < this.m - 1)
+                          dt = Tt * this.V[Dt][q] + ct * this.V[Dt][q + 1], this.V[Dt][q + 1] = -ct * this.V[Dt][q] + Tt * this.V[Dt][q + 1], this.V[Dt][q] = dt;
+                        if (dt = c.hypot(pt, et), Tt = pt / dt, ct = et / dt, this.s[q] = dt, pt = Tt * r[q] + ct * this.s[q + 1], this.s[q + 1] = -ct * r[q] + Tt * this.s[q + 1], et = ct * r[q + 1], r[q + 1] = Tt * r[q + 1], q < this.m - 1)
                           for (var ot = 0; ot < this.m; ot++)
-                            dt = Tt * this.U[ot][Z] + ct * this.U[ot][Z + 1], this.U[ot][Z + 1] = -ct * this.U[ot][Z] + Tt * this.U[ot][Z + 1], this.U[ot][Z] = dt;
+                            dt = Tt * this.U[ot][q] + ct * this.U[ot][q + 1], this.U[ot][q + 1] = -ct * this.U[ot][q] + Tt * this.U[ot][q + 1], this.U[ot][q] = dt;
                       }
                       r[e - 2] = pt;
                     }
                     break;
                   case 4:
                     {
-                      if (this.s[W] <= 0) {
-                        this.s[W] = this.s[W] < 0 ? -this.s[W] : 0;
-                        for (var et = 0; et <= Q; et++)
-                          this.V[et][W] = -this.V[et][W];
+                      if (this.s[V] <= 0) {
+                        this.s[V] = this.s[V] < 0 ? -this.s[V] : 0;
+                        for (var rt = 0; rt <= $; rt++)
+                          this.V[rt][V] = -this.V[rt][V];
                       }
-                      for (; W < Q && !(this.s[W] >= this.s[W + 1]); ) {
-                        var yt = this.s[W];
-                        if (this.s[W] = this.s[W + 1], this.s[W + 1] = yt, W < this.n - 1)
-                          for (var rt = 0; rt < this.n; rt++)
-                            yt = this.V[rt][W + 1], this.V[rt][W + 1] = this.V[rt][W], this.V[rt][W] = yt;
-                        if (W < this.m - 1)
-                          for (var j = 0; j < this.m; j++)
-                            yt = this.U[j][W + 1], this.U[j][W + 1] = this.U[j][W], this.U[j][W] = yt;
-                        W++;
+                      for (; V < $ && !(this.s[V] >= this.s[V + 1]); ) {
+                        var yt = this.s[V];
+                        if (this.s[V] = this.s[V + 1], this.s[V + 1] = yt, V < this.n - 1)
+                          for (var it = 0; it < this.n; it++)
+                            yt = this.V[it][V + 1], this.V[it][V + 1] = this.V[it][V], this.V[it][V] = yt;
+                        if (V < this.m - 1)
+                          for (var tt = 0; tt < this.m; tt++)
+                            yt = this.U[tt][V + 1], this.U[tt][V + 1] = this.U[tt][V], this.U[tt][V] = yt;
+                        V++;
                       }
                       e--;
                     }
@@ -1767,37 +1767,37 @@ function Ie() {
               }
               var wt = { U: this.U, V: this.V, S: this.s };
               return wt;
-            }, c.hypot = function(n, i) {
+            }, c.hypot = function(a, i) {
               var r = void 0;
-              return Math.abs(n) > Math.abs(i) ? (r = i / n, r = Math.abs(n) * Math.sqrt(1 + r * r)) : i != 0 ? (r = n / i, r = Math.abs(i) * Math.sqrt(1 + r * r)) : r = 0, r;
-            }, L.exports = c;
+              return Math.abs(a) > Math.abs(i) ? (r = i / a, r = Math.abs(a) * Math.sqrt(1 + r * r)) : i != 0 ? (r = a / i, r = Math.abs(i) * Math.sqrt(1 + r * r)) : r = 0, r;
+            }, I.exports = c;
           },
           /* 27 */
           /***/
-          function(L, U, C) {
+          function(I, U, m) {
             var c = /* @__PURE__ */ function() {
-              function r(a, f) {
+              function r(n, f) {
                 for (var o = 0; o < f.length; o++) {
-                  var y = f[o];
-                  y.enumerable = y.enumerable || !1, y.configurable = !0, "value" in y && (y.writable = !0), Object.defineProperty(a, y.key, y);
+                  var v = f[o];
+                  v.enumerable = v.enumerable || !1, v.configurable = !0, "value" in v && (v.writable = !0), Object.defineProperty(n, v.key, v);
                 }
               }
-              return function(a, f, o) {
-                return f && r(a.prototype, f), o && r(a, o), a;
+              return function(n, f, o) {
+                return f && r(n.prototype, f), o && r(n, o), n;
               };
             }();
-            function n(r, a) {
-              if (!(r instanceof a))
+            function a(r, n) {
+              if (!(r instanceof n))
                 throw new TypeError("Cannot call a class as a function");
             }
             var i = function() {
-              function r(a, f) {
-                var o = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : 1, y = arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : -1, t = arguments.length > 4 && arguments[4] !== void 0 ? arguments[4] : -1;
-                n(this, r), this.sequence1 = a, this.sequence2 = f, this.match_score = o, this.mismatch_penalty = y, this.gap_penalty = t, this.iMax = a.length + 1, this.jMax = f.length + 1, this.grid = new Array(this.iMax);
-                for (var h = 0; h < this.iMax; h++) {
-                  this.grid[h] = new Array(this.jMax);
-                  for (var s = 0; s < this.jMax; s++)
-                    this.grid[h][s] = 0;
+              function r(n, f) {
+                var o = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : 1, v = arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : -1, t = arguments.length > 4 && arguments[4] !== void 0 ? arguments[4] : -1;
+                a(this, r), this.sequence1 = n, this.sequence2 = f, this.match_score = o, this.mismatch_penalty = v, this.gap_penalty = t, this.iMax = n.length + 1, this.jMax = f.length + 1, this.grid = new Array(this.iMax);
+                for (var s = 0; s < this.iMax; s++) {
+                  this.grid[s] = new Array(this.jMax);
+                  for (var h = 0; h < this.jMax; h++)
+                    this.grid[s][h] = 0;
                 }
                 this.tracebackGrid = new Array(this.iMax);
                 for (var g = 0; g < this.iMax; g++) {
@@ -1825,12 +1825,12 @@ function Ie() {
                     this.grid[0][f] = this.grid[0][f - 1] + this.gap_penalty, this.tracebackGrid[0][f] = [!1, !1, !0];
                   for (var o = 1; o < this.iMax; o++)
                     this.grid[o][0] = this.grid[o - 1][0] + this.gap_penalty, this.tracebackGrid[o][0] = [!1, !0, !1];
-                  for (var y = 1; y < this.iMax; y++)
+                  for (var v = 1; v < this.iMax; v++)
                     for (var t = 1; t < this.jMax; t++) {
-                      var h = void 0;
-                      this.sequence1[y - 1] === this.sequence2[t - 1] ? h = this.grid[y - 1][t - 1] + this.match_score : h = this.grid[y - 1][t - 1] + this.mismatch_penalty;
-                      var s = this.grid[y - 1][t] + this.gap_penalty, g = this.grid[y][t - 1] + this.gap_penalty, u = [h, s, g], N = this.arrayAllMaxIndexes(u);
-                      this.grid[y][t] = u[N[0]], this.tracebackGrid[y][t] = [N.includes(0), N.includes(1), N.includes(2)];
+                      var s = void 0;
+                      this.sequence1[v - 1] === this.sequence2[t - 1] ? s = this.grid[v - 1][t - 1] + this.match_score : s = this.grid[v - 1][t - 1] + this.mismatch_penalty;
+                      var h = this.grid[v - 1][t] + this.gap_penalty, g = this.grid[v][t - 1] + this.gap_penalty, u = [s, h, g], N = this.arrayAllMaxIndexes(u);
+                      this.grid[v][t] = u[N[0]], this.tracebackGrid[v][t] = [N.includes(0), N.includes(1), N.includes(2)];
                     }
                   this.score = this.grid[this.iMax - 1][this.jMax - 1];
                 }
@@ -1844,16 +1844,16 @@ function Ie() {
                     seq1: "",
                     seq2: ""
                   }); f[0]; ) {
-                    var o = f[0], y = this.tracebackGrid[o.pos[0]][o.pos[1]];
-                    y[0] && f.push({
+                    var o = f[0], v = this.tracebackGrid[o.pos[0]][o.pos[1]];
+                    v[0] && f.push({
                       pos: [o.pos[0] - 1, o.pos[1] - 1],
                       seq1: this.sequence1[o.pos[0] - 1] + o.seq1,
                       seq2: this.sequence2[o.pos[1] - 1] + o.seq2
-                    }), y[1] && f.push({
+                    }), v[1] && f.push({
                       pos: [o.pos[0] - 1, o.pos[1]],
                       seq1: this.sequence1[o.pos[0] - 1] + o.seq1,
                       seq2: "-" + o.seq2
-                    }), y[2] && f.push({
+                    }), v[2] && f.push({
                       pos: [o.pos[0], o.pos[1] - 1],
                       seq1: "-" + o.seq1,
                       seq2: this.sequence2[o.pos[1] - 1] + o.seq2
@@ -1868,9 +1868,9 @@ function Ie() {
               }, {
                 key: "getAllIndexes",
                 value: function(f, o) {
-                  for (var y = [], t = -1; (t = f.indexOf(o, t + 1)) !== -1; )
-                    y.push(t);
-                  return y;
+                  for (var v = [], t = -1; (t = f.indexOf(o, t + 1)) !== -1; )
+                    v.push(t);
+                  return v;
                 }
               }, {
                 key: "arrayAllMaxIndexes",
@@ -1879,38 +1879,38 @@ function Ie() {
                 }
               }]), r;
             }();
-            L.exports = i;
+            I.exports = i;
           },
           /* 28 */
           /***/
-          function(L, U, C) {
+          function(I, U, m) {
             var c = function() {
             };
-            c.FDLayout = C(18), c.FDLayoutConstants = C(4), c.FDLayoutEdge = C(19), c.FDLayoutNode = C(20), c.DimensionD = C(21), c.HashMap = C(22), c.HashSet = C(23), c.IGeometry = C(8), c.IMath = C(9), c.Integer = C(10), c.Point = C(12), c.PointD = C(5), c.RandomSeed = C(16), c.RectangleD = C(13), c.Transform = C(17), c.UniqueIDGeneretor = C(14), c.Quicksort = C(25), c.LinkedList = C(11), c.LGraphObject = C(2), c.LGraph = C(6), c.LEdge = C(1), c.LGraphManager = C(7), c.LNode = C(3), c.Layout = C(15), c.LayoutConstants = C(0), c.NeedlemanWunsch = C(27), c.Matrix = C(24), c.SVD = C(26), L.exports = c;
+            c.FDLayout = m(18), c.FDLayoutConstants = m(4), c.FDLayoutEdge = m(19), c.FDLayoutNode = m(20), c.DimensionD = m(21), c.HashMap = m(22), c.HashSet = m(23), c.IGeometry = m(8), c.IMath = m(9), c.Integer = m(10), c.Point = m(12), c.PointD = m(5), c.RandomSeed = m(16), c.RectangleD = m(13), c.Transform = m(17), c.UniqueIDGeneretor = m(14), c.Quicksort = m(25), c.LinkedList = m(11), c.LGraphObject = m(2), c.LGraph = m(6), c.LEdge = m(1), c.LGraphManager = m(7), c.LNode = m(3), c.Layout = m(15), c.LayoutConstants = m(0), c.NeedlemanWunsch = m(27), c.Matrix = m(24), c.SVD = m(26), I.exports = c;
           },
           /* 29 */
           /***/
-          function(L, U, C) {
+          function(I, U, m) {
             function c() {
               this.listeners = [];
             }
-            var n = c.prototype;
-            n.addListener = function(i, r) {
+            var a = c.prototype;
+            a.addListener = function(i, r) {
               this.listeners.push({
                 event: i,
                 callback: r
               });
-            }, n.removeListener = function(i, r) {
-              for (var a = this.listeners.length; a >= 0; a--) {
-                var f = this.listeners[a];
-                f.event === i && f.callback === r && this.listeners.splice(a, 1);
+            }, a.removeListener = function(i, r) {
+              for (var n = this.listeners.length; n >= 0; n--) {
+                var f = this.listeners[n];
+                f.event === i && f.callback === r && this.listeners.splice(n, 1);
               }
-            }, n.emit = function(i, r) {
-              for (var a = 0; a < this.listeners.length; a++) {
-                var f = this.listeners[a];
+            }, a.emit = function(i, r) {
+              for (var n = 0; n < this.listeners.length; n++) {
+                var f = this.listeners[n];
                 i === f.event && f.callback(r);
               }
-            }, L.exports = c;
+            }, I.exports = c;
           }
           /******/
         ])
@@ -1918,10 +1918,10 @@ function Ie() {
     });
   }(de)), de.exports;
 }
-(function(F, nt) {
-  (function(U, C) {
-    F.exports = C(Ie());
-  })(Ce, function(L) {
+(function(S, F) {
+  (function(U, m) {
+    S.exports = m(Re());
+  })(Ce, function(I) {
     return (
       /******/
       (() => {
@@ -1929,98 +1929,98 @@ function Ie() {
           /***/
           45: (
             /***/
-            (i, r, a) => {
+            (i, r, n) => {
               var f = {};
-              f.layoutBase = a(551), f.CoSEConstants = a(806), f.CoSEEdge = a(767), f.CoSEGraph = a(880), f.CoSEGraphManager = a(578), f.CoSELayout = a(765), f.CoSENode = a(991), f.ConstraintHandler = a(902), i.exports = f;
+              f.layoutBase = n(551), f.CoSEConstants = n(806), f.CoSEEdge = n(767), f.CoSEGraph = n(880), f.CoSEGraphManager = n(578), f.CoSELayout = n(765), f.CoSENode = n(991), f.ConstraintHandler = n(902), i.exports = f;
             }
           ),
           /***/
           806: (
             /***/
-            (i, r, a) => {
-              var f = a(551).FDLayoutConstants;
+            (i, r, n) => {
+              var f = n(551).FDLayoutConstants;
               function o() {
               }
-              for (var y in f)
-                o[y] = f[y];
+              for (var v in f)
+                o[v] = f[v];
               o.DEFAULT_USE_MULTI_LEVEL_SCALING = !1, o.DEFAULT_RADIAL_SEPARATION = f.DEFAULT_EDGE_LENGTH, o.DEFAULT_COMPONENT_SEPERATION = 60, o.TILE = !0, o.TILING_PADDING_VERTICAL = 10, o.TILING_PADDING_HORIZONTAL = 10, o.TRANSFORM_ON_CONSTRAINT_HANDLING = !0, o.ENFORCE_CONSTRAINTS = !0, o.APPLY_LAYOUT = !0, o.RELAX_MOVEMENT_ON_CONSTRAINTS = !0, o.TREE_REDUCTION_ON_INCREMENTAL = !0, o.PURE_INCREMENTAL = o.DEFAULT_INCREMENTAL, i.exports = o;
             }
           ),
           /***/
           767: (
             /***/
-            (i, r, a) => {
-              var f = a(551).FDLayoutEdge;
-              function o(t, h, s) {
-                f.call(this, t, h, s);
+            (i, r, n) => {
+              var f = n(551).FDLayoutEdge;
+              function o(t, s, h) {
+                f.call(this, t, s, h);
               }
               o.prototype = Object.create(f.prototype);
-              for (var y in f)
-                o[y] = f[y];
+              for (var v in f)
+                o[v] = f[v];
               i.exports = o;
             }
           ),
           /***/
           880: (
             /***/
-            (i, r, a) => {
-              var f = a(551).LGraph;
-              function o(t, h, s) {
-                f.call(this, t, h, s);
+            (i, r, n) => {
+              var f = n(551).LGraph;
+              function o(t, s, h) {
+                f.call(this, t, s, h);
               }
               o.prototype = Object.create(f.prototype);
-              for (var y in f)
-                o[y] = f[y];
+              for (var v in f)
+                o[v] = f[v];
               i.exports = o;
             }
           ),
           /***/
           578: (
             /***/
-            (i, r, a) => {
-              var f = a(551).LGraphManager;
+            (i, r, n) => {
+              var f = n(551).LGraphManager;
               function o(t) {
                 f.call(this, t);
               }
               o.prototype = Object.create(f.prototype);
-              for (var y in f)
-                o[y] = f[y];
+              for (var v in f)
+                o[v] = f[v];
               i.exports = o;
             }
           ),
           /***/
           765: (
             /***/
-            (i, r, a) => {
-              var f = a(551).FDLayout, o = a(578), y = a(880), t = a(991), h = a(767), s = a(806), g = a(902), u = a(551).FDLayoutConstants, N = a(551).LayoutConstants, v = a(551).Point, T = a(551).PointD, m = a(551).DimensionD, R = a(551).Layout, b = a(551).Integer, I = a(551).IGeometry, z = a(551).LGraph, H = a(551).Transform, J = a(551).LinkedList;
-              function w() {
+            (i, r, n) => {
+              var f = n(551).FDLayout, o = n(578), v = n(880), t = n(991), s = n(767), h = n(806), g = n(902), u = n(551).FDLayoutConstants, N = n(551).LayoutConstants, p = n(551).Point, T = n(551).PointD, L = n(551).DimensionD, D = n(551).Layout, X = n(551).Integer, w = n(551).IGeometry, Z = n(551).LGraph, W = n(551).Transform, Q = n(551).LinkedList;
+              function R() {
                 f.call(this), this.toBeTiled = {}, this.constraints = {};
               }
-              w.prototype = Object.create(f.prototype);
+              R.prototype = Object.create(f.prototype);
               for (var ht in f)
-                w[ht] = f[ht];
-              w.prototype.newGraphManager = function() {
+                R[ht] = f[ht];
+              R.prototype.newGraphManager = function() {
                 var e = new o(this);
                 return this.graphManager = e, e;
-              }, w.prototype.newGraph = function(e) {
-                return new y(null, this.graphManager, e);
-              }, w.prototype.newNode = function(e) {
+              }, R.prototype.newGraph = function(e) {
+                return new v(null, this.graphManager, e);
+              }, R.prototype.newNode = function(e) {
                 return new t(this.graphManager, e);
-              }, w.prototype.newEdge = function(e) {
-                return new h(null, null, e);
-              }, w.prototype.initParameters = function() {
-                f.prototype.initParameters.call(this, arguments), this.isSubLayout || (s.DEFAULT_EDGE_LENGTH < 10 ? this.idealEdgeLength = 10 : this.idealEdgeLength = s.DEFAULT_EDGE_LENGTH, this.useSmartIdealEdgeLengthCalculation = s.DEFAULT_USE_SMART_IDEAL_EDGE_LENGTH_CALCULATION, this.gravityConstant = u.DEFAULT_GRAVITY_STRENGTH, this.compoundGravityConstant = u.DEFAULT_COMPOUND_GRAVITY_STRENGTH, this.gravityRangeFactor = u.DEFAULT_GRAVITY_RANGE_FACTOR, this.compoundGravityRangeFactor = u.DEFAULT_COMPOUND_GRAVITY_RANGE_FACTOR, this.prunedNodesAll = [], this.growTreeIterations = 0, this.afterGrowthIterations = 0, this.isTreeGrowing = !1, this.isGrowthFinished = !1);
-              }, w.prototype.initSpringEmbedder = function() {
+              }, R.prototype.newEdge = function(e) {
+                return new s(null, null, e);
+              }, R.prototype.initParameters = function() {
+                f.prototype.initParameters.call(this, arguments), this.isSubLayout || (h.DEFAULT_EDGE_LENGTH < 10 ? this.idealEdgeLength = 10 : this.idealEdgeLength = h.DEFAULT_EDGE_LENGTH, this.useSmartIdealEdgeLengthCalculation = h.DEFAULT_USE_SMART_IDEAL_EDGE_LENGTH_CALCULATION, this.gravityConstant = u.DEFAULT_GRAVITY_STRENGTH, this.compoundGravityConstant = u.DEFAULT_COMPOUND_GRAVITY_STRENGTH, this.gravityRangeFactor = u.DEFAULT_GRAVITY_RANGE_FACTOR, this.compoundGravityRangeFactor = u.DEFAULT_COMPOUND_GRAVITY_RANGE_FACTOR, this.prunedNodesAll = [], this.growTreeIterations = 0, this.afterGrowthIterations = 0, this.isTreeGrowing = !1, this.isGrowthFinished = !1);
+              }, R.prototype.initSpringEmbedder = function() {
                 f.prototype.initSpringEmbedder.call(this), this.coolingCycle = 0, this.maxCoolingCycle = this.maxIterations / u.CONVERGENCE_CHECK_PERIOD, this.finalTemperature = 0.04, this.coolingAdjuster = 1;
-              }, w.prototype.layout = function() {
+              }, R.prototype.layout = function() {
                 var e = N.DEFAULT_CREATE_BENDS_AS_NEEDED;
                 return e && (this.createBendpoints(), this.graphManager.resetAllEdges()), this.level = 0, this.classicLayout();
-              }, w.prototype.classicLayout = function() {
+              }, R.prototype.classicLayout = function() {
                 if (this.nodesWithGravity = this.calculateNodesToApplyGravitationTo(), this.graphManager.setAllNodesToApplyGravitation(this.nodesWithGravity), this.calcNoOfChildrenForAllNodes(), this.graphManager.calcLowestCommonAncestors(), this.graphManager.calcInclusionTreeDepths(), this.graphManager.getRoot().calcEstimatedSize(), this.calcIdealEdgeLengths(), this.incremental) {
-                  if (s.TREE_REDUCTION_ON_INCREMENTAL) {
+                  if (h.TREE_REDUCTION_ON_INCREMENTAL) {
                     this.reduceTrees(), this.graphManager.resetAllNodesToApplyGravitation();
-                    var E = new Set(this.getAllNodes()), l = this.nodesWithGravity.filter(function(A) {
-                      return E.has(A);
+                    var y = new Set(this.getAllNodes()), l = this.nodesWithGravity.filter(function(M) {
+                      return y.has(M);
                     });
                     this.graphManager.setAllNodesToApplyGravitation(l);
                   }
@@ -2030,14 +2030,14 @@ function Ie() {
                     this.positionNodesRadially(e);
                   else {
                     this.reduceTrees(), this.graphManager.resetAllNodesToApplyGravitation();
-                    var E = new Set(this.getAllNodes()), l = this.nodesWithGravity.filter(function(d) {
-                      return E.has(d);
+                    var y = new Set(this.getAllNodes()), l = this.nodesWithGravity.filter(function(d) {
+                      return y.has(d);
                     });
                     this.graphManager.setAllNodesToApplyGravitation(l), this.positionNodesRandomly();
                   }
                 }
-                return Object.keys(this.constraints).length > 0 && (g.handleConstraints(this), this.initConstraintVariables()), this.initSpringEmbedder(), s.APPLY_LAYOUT && this.runSpringEmbedder(), !0;
-              }, w.prototype.tick = function() {
+                return Object.keys(this.constraints).length > 0 && (g.handleConstraints(this), this.initConstraintVariables()), this.initSpringEmbedder(), h.APPLY_LAYOUT && this.runSpringEmbedder(), !0;
+              }, R.prototype.tick = function() {
                 if (this.totalIterations++, this.totalIterations === this.maxIterations && !this.isTreeGrowing && !this.isGrowthFinished)
                   if (this.prunedNodesAll.length > 0)
                     this.isTreeGrowing = !0;
@@ -2055,10 +2055,10 @@ function Ie() {
                   if (this.growTreeIterations % 10 == 0)
                     if (this.prunedNodesAll.length > 0) {
                       this.graphManager.updateBounds(), this.updateGrid(), this.growTree(this.prunedNodesAll), this.graphManager.resetAllNodesToApplyGravitation();
-                      var e = new Set(this.getAllNodes()), E = this.nodesWithGravity.filter(function(p) {
-                        return e.has(p);
+                      var e = new Set(this.getAllNodes()), y = this.nodesWithGravity.filter(function(E) {
+                        return e.has(E);
                       });
-                      this.graphManager.setAllNodesToApplyGravitation(E), this.graphManager.updateBounds(), this.updateGrid(), s.PURE_INCREMENTAL ? this.coolingFactor = u.DEFAULT_COOLING_FACTOR_INCREMENTAL / 2 : this.coolingFactor = u.DEFAULT_COOLING_FACTOR_INCREMENTAL;
+                      this.graphManager.setAllNodesToApplyGravitation(y), this.graphManager.updateBounds(), this.updateGrid(), h.PURE_INCREMENTAL ? this.coolingFactor = u.DEFAULT_COOLING_FACTOR_INCREMENTAL / 2 : this.coolingFactor = u.DEFAULT_COOLING_FACTOR_INCREMENTAL;
                     } else
                       this.isTreeGrowing = !1, this.isGrowthFinished = !0;
                   this.growTreeIterations++;
@@ -2066,23 +2066,23 @@ function Ie() {
                 if (this.isGrowthFinished) {
                   if (this.isConverged())
                     return !0;
-                  this.afterGrowthIterations % 10 == 0 && (this.graphManager.updateBounds(), this.updateGrid()), s.PURE_INCREMENTAL ? this.coolingFactor = u.DEFAULT_COOLING_FACTOR_INCREMENTAL / 2 * ((100 - this.afterGrowthIterations) / 100) : this.coolingFactor = u.DEFAULT_COOLING_FACTOR_INCREMENTAL * ((100 - this.afterGrowthIterations) / 100), this.afterGrowthIterations++;
+                  this.afterGrowthIterations % 10 == 0 && (this.graphManager.updateBounds(), this.updateGrid()), h.PURE_INCREMENTAL ? this.coolingFactor = u.DEFAULT_COOLING_FACTOR_INCREMENTAL / 2 * ((100 - this.afterGrowthIterations) / 100) : this.coolingFactor = u.DEFAULT_COOLING_FACTOR_INCREMENTAL * ((100 - this.afterGrowthIterations) / 100), this.afterGrowthIterations++;
                 }
                 var l = !this.isTreeGrowing && !this.isGrowthFinished, d = this.growTreeIterations % 10 == 1 && this.isTreeGrowing || this.afterGrowthIterations % 10 == 1 && this.isGrowthFinished;
                 return this.totalDisplacement = 0, this.graphManager.updateBounds(), this.calcSpringForces(), this.calcRepulsionForces(l, d), this.calcGravitationalForces(), this.moveNodes(), this.animate(), !1;
-              }, w.prototype.getPositionsData = function() {
-                for (var e = this.graphManager.getAllNodes(), E = {}, l = 0; l < e.length; l++) {
-                  var d = e[l].rect, p = e[l].id;
-                  E[p] = {
-                    id: p,
+              }, R.prototype.getPositionsData = function() {
+                for (var e = this.graphManager.getAllNodes(), y = {}, l = 0; l < e.length; l++) {
+                  var d = e[l].rect, E = e[l].id;
+                  y[E] = {
+                    id: E,
                     x: d.getCenterX(),
                     y: d.getCenterY(),
                     w: d.width,
                     h: d.height
                   };
                 }
-                return E;
-              }, w.prototype.runSpringEmbedder = function() {
+                return y;
+              }, R.prototype.runSpringEmbedder = function() {
                 this.initialAnimationPeriod = 25, this.animationPeriod = this.initialAnimationPeriod;
                 var e = !1;
                 if (u.ANIMATE === "during")
@@ -2092,608 +2092,608 @@ function Ie() {
                     e = this.tick();
                   this.graphManager.updateBounds();
                 }
-              }, w.prototype.moveNodes = function() {
-                for (var e = this.getAllNodes(), E, l = 0; l < e.length; l++)
-                  E = e[l], E.calculateDisplacement();
+              }, R.prototype.moveNodes = function() {
+                for (var e = this.getAllNodes(), y, l = 0; l < e.length; l++)
+                  y = e[l], y.calculateDisplacement();
                 Object.keys(this.constraints).length > 0 && this.updateDisplacements();
                 for (var l = 0; l < e.length; l++)
-                  E = e[l], E.move();
-              }, w.prototype.initConstraintVariables = function() {
+                  y = e[l], y.move();
+              }, R.prototype.initConstraintVariables = function() {
                 var e = this;
                 this.idToNodeMap = /* @__PURE__ */ new Map(), this.fixedNodeSet = /* @__PURE__ */ new Set();
-                for (var E = this.graphManager.getAllNodes(), l = 0; l < E.length; l++) {
-                  var d = E[l];
+                for (var y = this.graphManager.getAllNodes(), l = 0; l < y.length; l++) {
+                  var d = y[l];
                   this.idToNodeMap.set(d.id, d);
                 }
-                var p = function x(X) {
-                  for (var Q = X.getChild().getNodes(), k, ft = 0, W = 0; W < Q.length; W++)
-                    k = Q[W], k.getChild() == null ? e.fixedNodeSet.has(k.id) && (ft += 100) : ft += x(k);
+                var E = function x(H) {
+                  for (var $ = H.getChild().getNodes(), j, ft = 0, V = 0; V < $.length; V++)
+                    j = $[V], j.getChild() == null ? e.fixedNodeSet.has(j.id) && (ft += 100) : ft += x(j);
                   return ft;
                 };
                 if (this.constraints.fixedNodeConstraint) {
-                  this.constraints.fixedNodeConstraint.forEach(function(Q) {
-                    e.fixedNodeSet.add(Q.nodeId);
+                  this.constraints.fixedNodeConstraint.forEach(function($) {
+                    e.fixedNodeSet.add($.nodeId);
                   });
-                  for (var E = this.graphManager.getAllNodes(), d, l = 0; l < E.length; l++)
-                    if (d = E[l], d.getChild() != null) {
-                      var A = p(d);
-                      A > 0 && (d.fixedNodeWeight = A);
+                  for (var y = this.graphManager.getAllNodes(), d, l = 0; l < y.length; l++)
+                    if (d = y[l], d.getChild() != null) {
+                      var M = E(d);
+                      M > 0 && (d.fixedNodeWeight = M);
                     }
                 }
                 if (this.constraints.relativePlacementConstraint) {
-                  var M = /* @__PURE__ */ new Map(), O = /* @__PURE__ */ new Map();
+                  var C = /* @__PURE__ */ new Map(), A = /* @__PURE__ */ new Map();
                   if (this.dummyToNodeForVerticalAlignment = /* @__PURE__ */ new Map(), this.dummyToNodeForHorizontalAlignment = /* @__PURE__ */ new Map(), this.fixedNodesOnHorizontal = /* @__PURE__ */ new Set(), this.fixedNodesOnVertical = /* @__PURE__ */ new Set(), this.fixedNodeSet.forEach(function(x) {
                     e.fixedNodesOnHorizontal.add(x), e.fixedNodesOnVertical.add(x);
                   }), this.constraints.alignmentConstraint) {
                     if (this.constraints.alignmentConstraint.vertical)
-                      for (var S = this.constraints.alignmentConstraint.vertical, l = 0; l < S.length; l++)
-                        this.dummyToNodeForVerticalAlignment.set("dummy" + l, []), S[l].forEach(function(X) {
-                          M.set(X, "dummy" + l), e.dummyToNodeForVerticalAlignment.get("dummy" + l).push(X), e.fixedNodeSet.has(X) && e.fixedNodesOnHorizontal.add("dummy" + l);
+                      for (var P = this.constraints.alignmentConstraint.vertical, l = 0; l < P.length; l++)
+                        this.dummyToNodeForVerticalAlignment.set("dummy" + l, []), P[l].forEach(function(H) {
+                          C.set(H, "dummy" + l), e.dummyToNodeForVerticalAlignment.get("dummy" + l).push(H), e.fixedNodeSet.has(H) && e.fixedNodesOnHorizontal.add("dummy" + l);
                         });
                     if (this.constraints.alignmentConstraint.horizontal)
-                      for (var D = this.constraints.alignmentConstraint.horizontal, l = 0; l < D.length; l++)
-                        this.dummyToNodeForHorizontalAlignment.set("dummy" + l, []), D[l].forEach(function(X) {
-                          O.set(X, "dummy" + l), e.dummyToNodeForHorizontalAlignment.get("dummy" + l).push(X), e.fixedNodeSet.has(X) && e.fixedNodesOnVertical.add("dummy" + l);
+                      for (var O = this.constraints.alignmentConstraint.horizontal, l = 0; l < O.length; l++)
+                        this.dummyToNodeForHorizontalAlignment.set("dummy" + l, []), O[l].forEach(function(H) {
+                          A.set(H, "dummy" + l), e.dummyToNodeForHorizontalAlignment.get("dummy" + l).push(H), e.fixedNodeSet.has(H) && e.fixedNodesOnVertical.add("dummy" + l);
                         });
                   }
-                  if (s.RELAX_MOVEMENT_ON_CONSTRAINTS)
+                  if (h.RELAX_MOVEMENT_ON_CONSTRAINTS)
                     this.shuffle = function(x) {
-                      var X, Q, k;
-                      for (k = x.length - 1; k >= 2 * x.length / 3; k--)
-                        X = Math.floor(Math.random() * (k + 1)), Q = x[k], x[k] = x[X], x[X] = Q;
+                      var H, $, j;
+                      for (j = x.length - 1; j >= 2 * x.length / 3; j--)
+                        H = Math.floor(Math.random() * (j + 1)), $ = x[j], x[j] = x[H], x[H] = $;
                       return x;
                     }, this.nodesInRelativeHorizontal = [], this.nodesInRelativeVertical = [], this.nodeToRelativeConstraintMapHorizontal = /* @__PURE__ */ new Map(), this.nodeToRelativeConstraintMapVertical = /* @__PURE__ */ new Map(), this.nodeToTempPositionMapHorizontal = /* @__PURE__ */ new Map(), this.nodeToTempPositionMapVertical = /* @__PURE__ */ new Map(), this.constraints.relativePlacementConstraint.forEach(function(x) {
                       if (x.left) {
-                        var X = M.has(x.left) ? M.get(x.left) : x.left, Q = M.has(x.right) ? M.get(x.right) : x.right;
-                        e.nodesInRelativeHorizontal.includes(X) || (e.nodesInRelativeHorizontal.push(X), e.nodeToRelativeConstraintMapHorizontal.set(X, []), e.dummyToNodeForVerticalAlignment.has(X) ? e.nodeToTempPositionMapHorizontal.set(X, e.idToNodeMap.get(e.dummyToNodeForVerticalAlignment.get(X)[0]).getCenterX()) : e.nodeToTempPositionMapHorizontal.set(X, e.idToNodeMap.get(X).getCenterX())), e.nodesInRelativeHorizontal.includes(Q) || (e.nodesInRelativeHorizontal.push(Q), e.nodeToRelativeConstraintMapHorizontal.set(Q, []), e.dummyToNodeForVerticalAlignment.has(Q) ? e.nodeToTempPositionMapHorizontal.set(Q, e.idToNodeMap.get(e.dummyToNodeForVerticalAlignment.get(Q)[0]).getCenterX()) : e.nodeToTempPositionMapHorizontal.set(Q, e.idToNodeMap.get(Q).getCenterX())), e.nodeToRelativeConstraintMapHorizontal.get(X).push({ right: Q, gap: x.gap }), e.nodeToRelativeConstraintMapHorizontal.get(Q).push({ left: X, gap: x.gap });
+                        var H = C.has(x.left) ? C.get(x.left) : x.left, $ = C.has(x.right) ? C.get(x.right) : x.right;
+                        e.nodesInRelativeHorizontal.includes(H) || (e.nodesInRelativeHorizontal.push(H), e.nodeToRelativeConstraintMapHorizontal.set(H, []), e.dummyToNodeForVerticalAlignment.has(H) ? e.nodeToTempPositionMapHorizontal.set(H, e.idToNodeMap.get(e.dummyToNodeForVerticalAlignment.get(H)[0]).getCenterX()) : e.nodeToTempPositionMapHorizontal.set(H, e.idToNodeMap.get(H).getCenterX())), e.nodesInRelativeHorizontal.includes($) || (e.nodesInRelativeHorizontal.push($), e.nodeToRelativeConstraintMapHorizontal.set($, []), e.dummyToNodeForVerticalAlignment.has($) ? e.nodeToTempPositionMapHorizontal.set($, e.idToNodeMap.get(e.dummyToNodeForVerticalAlignment.get($)[0]).getCenterX()) : e.nodeToTempPositionMapHorizontal.set($, e.idToNodeMap.get($).getCenterX())), e.nodeToRelativeConstraintMapHorizontal.get(H).push({ right: $, gap: x.gap }), e.nodeToRelativeConstraintMapHorizontal.get($).push({ left: H, gap: x.gap });
                       } else {
-                        var k = O.has(x.top) ? O.get(x.top) : x.top, ft = O.has(x.bottom) ? O.get(x.bottom) : x.bottom;
-                        e.nodesInRelativeVertical.includes(k) || (e.nodesInRelativeVertical.push(k), e.nodeToRelativeConstraintMapVertical.set(k, []), e.dummyToNodeForHorizontalAlignment.has(k) ? e.nodeToTempPositionMapVertical.set(k, e.idToNodeMap.get(e.dummyToNodeForHorizontalAlignment.get(k)[0]).getCenterY()) : e.nodeToTempPositionMapVertical.set(k, e.idToNodeMap.get(k).getCenterY())), e.nodesInRelativeVertical.includes(ft) || (e.nodesInRelativeVertical.push(ft), e.nodeToRelativeConstraintMapVertical.set(ft, []), e.dummyToNodeForHorizontalAlignment.has(ft) ? e.nodeToTempPositionMapVertical.set(ft, e.idToNodeMap.get(e.dummyToNodeForHorizontalAlignment.get(ft)[0]).getCenterY()) : e.nodeToTempPositionMapVertical.set(ft, e.idToNodeMap.get(ft).getCenterY())), e.nodeToRelativeConstraintMapVertical.get(k).push({ bottom: ft, gap: x.gap }), e.nodeToRelativeConstraintMapVertical.get(ft).push({ top: k, gap: x.gap });
+                        var j = A.has(x.top) ? A.get(x.top) : x.top, ft = A.has(x.bottom) ? A.get(x.bottom) : x.bottom;
+                        e.nodesInRelativeVertical.includes(j) || (e.nodesInRelativeVertical.push(j), e.nodeToRelativeConstraintMapVertical.set(j, []), e.dummyToNodeForHorizontalAlignment.has(j) ? e.nodeToTempPositionMapVertical.set(j, e.idToNodeMap.get(e.dummyToNodeForHorizontalAlignment.get(j)[0]).getCenterY()) : e.nodeToTempPositionMapVertical.set(j, e.idToNodeMap.get(j).getCenterY())), e.nodesInRelativeVertical.includes(ft) || (e.nodesInRelativeVertical.push(ft), e.nodeToRelativeConstraintMapVertical.set(ft, []), e.dummyToNodeForHorizontalAlignment.has(ft) ? e.nodeToTempPositionMapVertical.set(ft, e.idToNodeMap.get(e.dummyToNodeForHorizontalAlignment.get(ft)[0]).getCenterY()) : e.nodeToTempPositionMapVertical.set(ft, e.idToNodeMap.get(ft).getCenterY())), e.nodeToRelativeConstraintMapVertical.get(j).push({ bottom: ft, gap: x.gap }), e.nodeToRelativeConstraintMapVertical.get(ft).push({ top: j, gap: x.gap });
                       }
                     });
                   else {
-                    var q = /* @__PURE__ */ new Map(), G = /* @__PURE__ */ new Map();
+                    var K = /* @__PURE__ */ new Map(), b = /* @__PURE__ */ new Map();
                     this.constraints.relativePlacementConstraint.forEach(function(x) {
                       if (x.left) {
-                        var X = M.has(x.left) ? M.get(x.left) : x.left, Q = M.has(x.right) ? M.get(x.right) : x.right;
-                        q.has(X) ? q.get(X).push(Q) : q.set(X, [Q]), q.has(Q) ? q.get(Q).push(X) : q.set(Q, [X]);
+                        var H = C.has(x.left) ? C.get(x.left) : x.left, $ = C.has(x.right) ? C.get(x.right) : x.right;
+                        K.has(H) ? K.get(H).push($) : K.set(H, [$]), K.has($) ? K.get($).push(H) : K.set($, [H]);
                       } else {
-                        var k = O.has(x.top) ? O.get(x.top) : x.top, ft = O.has(x.bottom) ? O.get(x.bottom) : x.bottom;
-                        G.has(k) ? G.get(k).push(ft) : G.set(k, [ft]), G.has(ft) ? G.get(ft).push(k) : G.set(ft, [k]);
+                        var j = A.has(x.top) ? A.get(x.top) : x.top, ft = A.has(x.bottom) ? A.get(x.bottom) : x.bottom;
+                        b.has(j) ? b.get(j).push(ft) : b.set(j, [ft]), b.has(ft) ? b.get(ft).push(j) : b.set(ft, [j]);
                       }
                     });
-                    var Y = function(X, Q) {
-                      var k = [], ft = [], W = new J(), Ot = /* @__PURE__ */ new Set(), vt = 0;
-                      return X.forEach(function($t, Vt) {
+                    var Y = function(H, $) {
+                      var j = [], ft = [], V = new Q(), Ot = /* @__PURE__ */ new Set(), vt = 0;
+                      return H.forEach(function($t, Vt) {
                         if (!Ot.has(Vt)) {
-                          k[vt] = [], ft[vt] = !1;
+                          j[vt] = [], ft[vt] = !1;
                           var Nt = Vt;
-                          for (W.push(Nt), Ot.add(Nt), k[vt].push(Nt); W.length != 0; ) {
-                            Nt = W.shift(), Q.has(Nt) && (ft[vt] = !0);
-                            var Yt = X.get(Nt);
+                          for (V.push(Nt), Ot.add(Nt), j[vt].push(Nt); V.length != 0; ) {
+                            Nt = V.shift(), $.has(Nt) && (ft[vt] = !0);
+                            var Yt = H.get(Nt);
                             Yt.forEach(function(Xt) {
-                              Ot.has(Xt) || (W.push(Xt), Ot.add(Xt), k[vt].push(Xt));
+                              Ot.has(Xt) || (V.push(Xt), Ot.add(Xt), j[vt].push(Xt));
                             });
                           }
                           vt++;
                         }
-                      }), { components: k, isFixed: ft };
-                    }, $ = Y(q, e.fixedNodesOnHorizontal);
-                    this.componentsOnHorizontal = $.components, this.fixedComponentsOnHorizontal = $.isFixed;
-                    var B = Y(G, e.fixedNodesOnVertical);
+                      }), { components: j, isFixed: ft };
+                    }, _ = Y(K, e.fixedNodesOnHorizontal);
+                    this.componentsOnHorizontal = _.components, this.fixedComponentsOnHorizontal = _.isFixed;
+                    var B = Y(b, e.fixedNodesOnVertical);
                     this.componentsOnVertical = B.components, this.fixedComponentsOnVertical = B.isFixed;
                   }
                 }
-              }, w.prototype.updateDisplacements = function() {
+              }, R.prototype.updateDisplacements = function() {
                 var e = this;
                 if (this.constraints.fixedNodeConstraint && this.constraints.fixedNodeConstraint.forEach(function(B) {
                   var x = e.idToNodeMap.get(B.nodeId);
                   x.displacementX = 0, x.displacementY = 0;
                 }), this.constraints.alignmentConstraint) {
                   if (this.constraints.alignmentConstraint.vertical)
-                    for (var E = this.constraints.alignmentConstraint.vertical, l = 0; l < E.length; l++) {
-                      for (var d = 0, p = 0; p < E[l].length; p++) {
-                        if (this.fixedNodeSet.has(E[l][p])) {
+                    for (var y = this.constraints.alignmentConstraint.vertical, l = 0; l < y.length; l++) {
+                      for (var d = 0, E = 0; E < y[l].length; E++) {
+                        if (this.fixedNodeSet.has(y[l][E])) {
                           d = 0;
                           break;
                         }
-                        d += this.idToNodeMap.get(E[l][p]).displacementX;
+                        d += this.idToNodeMap.get(y[l][E]).displacementX;
                       }
-                      for (var A = d / E[l].length, p = 0; p < E[l].length; p++)
-                        this.idToNodeMap.get(E[l][p]).displacementX = A;
+                      for (var M = d / y[l].length, E = 0; E < y[l].length; E++)
+                        this.idToNodeMap.get(y[l][E]).displacementX = M;
                     }
                   if (this.constraints.alignmentConstraint.horizontal)
-                    for (var M = this.constraints.alignmentConstraint.horizontal, l = 0; l < M.length; l++) {
-                      for (var O = 0, p = 0; p < M[l].length; p++) {
-                        if (this.fixedNodeSet.has(M[l][p])) {
-                          O = 0;
+                    for (var C = this.constraints.alignmentConstraint.horizontal, l = 0; l < C.length; l++) {
+                      for (var A = 0, E = 0; E < C[l].length; E++) {
+                        if (this.fixedNodeSet.has(C[l][E])) {
+                          A = 0;
                           break;
                         }
-                        O += this.idToNodeMap.get(M[l][p]).displacementY;
+                        A += this.idToNodeMap.get(C[l][E]).displacementY;
                       }
-                      for (var S = O / M[l].length, p = 0; p < M[l].length; p++)
-                        this.idToNodeMap.get(M[l][p]).displacementY = S;
+                      for (var P = A / C[l].length, E = 0; E < C[l].length; E++)
+                        this.idToNodeMap.get(C[l][E]).displacementY = P;
                     }
                 }
                 if (this.constraints.relativePlacementConstraint)
-                  if (s.RELAX_MOVEMENT_ON_CONSTRAINTS)
+                  if (h.RELAX_MOVEMENT_ON_CONSTRAINTS)
                     this.totalIterations % 10 == 0 && (this.shuffle(this.nodesInRelativeHorizontal), this.shuffle(this.nodesInRelativeVertical)), this.nodesInRelativeHorizontal.forEach(function(B) {
                       if (!e.fixedNodesOnHorizontal.has(B)) {
                         var x = 0;
-                        e.dummyToNodeForVerticalAlignment.has(B) ? x = e.idToNodeMap.get(e.dummyToNodeForVerticalAlignment.get(B)[0]).displacementX : x = e.idToNodeMap.get(B).displacementX, e.nodeToRelativeConstraintMapHorizontal.get(B).forEach(function(X) {
-                          if (X.right) {
-                            var Q = e.nodeToTempPositionMapHorizontal.get(X.right) - e.nodeToTempPositionMapHorizontal.get(B) - x;
-                            Q < X.gap && (x -= X.gap - Q);
+                        e.dummyToNodeForVerticalAlignment.has(B) ? x = e.idToNodeMap.get(e.dummyToNodeForVerticalAlignment.get(B)[0]).displacementX : x = e.idToNodeMap.get(B).displacementX, e.nodeToRelativeConstraintMapHorizontal.get(B).forEach(function(H) {
+                          if (H.right) {
+                            var $ = e.nodeToTempPositionMapHorizontal.get(H.right) - e.nodeToTempPositionMapHorizontal.get(B) - x;
+                            $ < H.gap && (x -= H.gap - $);
                           } else {
-                            var Q = e.nodeToTempPositionMapHorizontal.get(B) - e.nodeToTempPositionMapHorizontal.get(X.left) + x;
-                            Q < X.gap && (x += X.gap - Q);
+                            var $ = e.nodeToTempPositionMapHorizontal.get(B) - e.nodeToTempPositionMapHorizontal.get(H.left) + x;
+                            $ < H.gap && (x += H.gap - $);
                           }
-                        }), e.nodeToTempPositionMapHorizontal.set(B, e.nodeToTempPositionMapHorizontal.get(B) + x), e.dummyToNodeForVerticalAlignment.has(B) ? e.dummyToNodeForVerticalAlignment.get(B).forEach(function(X) {
-                          e.idToNodeMap.get(X).displacementX = x;
+                        }), e.nodeToTempPositionMapHorizontal.set(B, e.nodeToTempPositionMapHorizontal.get(B) + x), e.dummyToNodeForVerticalAlignment.has(B) ? e.dummyToNodeForVerticalAlignment.get(B).forEach(function(H) {
+                          e.idToNodeMap.get(H).displacementX = x;
                         }) : e.idToNodeMap.get(B).displacementX = x;
                       }
                     }), this.nodesInRelativeVertical.forEach(function(B) {
                       if (!e.fixedNodesOnHorizontal.has(B)) {
                         var x = 0;
-                        e.dummyToNodeForHorizontalAlignment.has(B) ? x = e.idToNodeMap.get(e.dummyToNodeForHorizontalAlignment.get(B)[0]).displacementY : x = e.idToNodeMap.get(B).displacementY, e.nodeToRelativeConstraintMapVertical.get(B).forEach(function(X) {
-                          if (X.bottom) {
-                            var Q = e.nodeToTempPositionMapVertical.get(X.bottom) - e.nodeToTempPositionMapVertical.get(B) - x;
-                            Q < X.gap && (x -= X.gap - Q);
+                        e.dummyToNodeForHorizontalAlignment.has(B) ? x = e.idToNodeMap.get(e.dummyToNodeForHorizontalAlignment.get(B)[0]).displacementY : x = e.idToNodeMap.get(B).displacementY, e.nodeToRelativeConstraintMapVertical.get(B).forEach(function(H) {
+                          if (H.bottom) {
+                            var $ = e.nodeToTempPositionMapVertical.get(H.bottom) - e.nodeToTempPositionMapVertical.get(B) - x;
+                            $ < H.gap && (x -= H.gap - $);
                           } else {
-                            var Q = e.nodeToTempPositionMapVertical.get(B) - e.nodeToTempPositionMapVertical.get(X.top) + x;
-                            Q < X.gap && (x += X.gap - Q);
+                            var $ = e.nodeToTempPositionMapVertical.get(B) - e.nodeToTempPositionMapVertical.get(H.top) + x;
+                            $ < H.gap && (x += H.gap - $);
                           }
-                        }), e.nodeToTempPositionMapVertical.set(B, e.nodeToTempPositionMapVertical.get(B) + x), e.dummyToNodeForHorizontalAlignment.has(B) ? e.dummyToNodeForHorizontalAlignment.get(B).forEach(function(X) {
-                          e.idToNodeMap.get(X).displacementY = x;
+                        }), e.nodeToTempPositionMapVertical.set(B, e.nodeToTempPositionMapVertical.get(B) + x), e.dummyToNodeForHorizontalAlignment.has(B) ? e.dummyToNodeForHorizontalAlignment.get(B).forEach(function(H) {
+                          e.idToNodeMap.get(H).displacementY = x;
                         }) : e.idToNodeMap.get(B).displacementY = x;
                       }
                     });
                   else {
                     for (var l = 0; l < this.componentsOnHorizontal.length; l++) {
-                      var D = this.componentsOnHorizontal[l];
+                      var O = this.componentsOnHorizontal[l];
                       if (this.fixedComponentsOnHorizontal[l])
-                        for (var p = 0; p < D.length; p++)
-                          this.dummyToNodeForVerticalAlignment.has(D[p]) ? this.dummyToNodeForVerticalAlignment.get(D[p]).forEach(function(X) {
-                            e.idToNodeMap.get(X).displacementX = 0;
-                          }) : this.idToNodeMap.get(D[p]).displacementX = 0;
+                        for (var E = 0; E < O.length; E++)
+                          this.dummyToNodeForVerticalAlignment.has(O[E]) ? this.dummyToNodeForVerticalAlignment.get(O[E]).forEach(function(H) {
+                            e.idToNodeMap.get(H).displacementX = 0;
+                          }) : this.idToNodeMap.get(O[E]).displacementX = 0;
                       else {
-                        for (var q = 0, G = 0, p = 0; p < D.length; p++)
-                          if (this.dummyToNodeForVerticalAlignment.has(D[p])) {
-                            var Y = this.dummyToNodeForVerticalAlignment.get(D[p]);
-                            q += Y.length * this.idToNodeMap.get(Y[0]).displacementX, G += Y.length;
+                        for (var K = 0, b = 0, E = 0; E < O.length; E++)
+                          if (this.dummyToNodeForVerticalAlignment.has(O[E])) {
+                            var Y = this.dummyToNodeForVerticalAlignment.get(O[E]);
+                            K += Y.length * this.idToNodeMap.get(Y[0]).displacementX, b += Y.length;
                           } else
-                            q += this.idToNodeMap.get(D[p]).displacementX, G++;
-                        for (var $ = q / G, p = 0; p < D.length; p++)
-                          this.dummyToNodeForVerticalAlignment.has(D[p]) ? this.dummyToNodeForVerticalAlignment.get(D[p]).forEach(function(X) {
-                            e.idToNodeMap.get(X).displacementX = $;
-                          }) : this.idToNodeMap.get(D[p]).displacementX = $;
+                            K += this.idToNodeMap.get(O[E]).displacementX, b++;
+                        for (var _ = K / b, E = 0; E < O.length; E++)
+                          this.dummyToNodeForVerticalAlignment.has(O[E]) ? this.dummyToNodeForVerticalAlignment.get(O[E]).forEach(function(H) {
+                            e.idToNodeMap.get(H).displacementX = _;
+                          }) : this.idToNodeMap.get(O[E]).displacementX = _;
                       }
                     }
                     for (var l = 0; l < this.componentsOnVertical.length; l++) {
-                      var D = this.componentsOnVertical[l];
+                      var O = this.componentsOnVertical[l];
                       if (this.fixedComponentsOnVertical[l])
-                        for (var p = 0; p < D.length; p++)
-                          this.dummyToNodeForHorizontalAlignment.has(D[p]) ? this.dummyToNodeForHorizontalAlignment.get(D[p]).forEach(function(Q) {
-                            e.idToNodeMap.get(Q).displacementY = 0;
-                          }) : this.idToNodeMap.get(D[p]).displacementY = 0;
+                        for (var E = 0; E < O.length; E++)
+                          this.dummyToNodeForHorizontalAlignment.has(O[E]) ? this.dummyToNodeForHorizontalAlignment.get(O[E]).forEach(function($) {
+                            e.idToNodeMap.get($).displacementY = 0;
+                          }) : this.idToNodeMap.get(O[E]).displacementY = 0;
                       else {
-                        for (var q = 0, G = 0, p = 0; p < D.length; p++)
-                          if (this.dummyToNodeForHorizontalAlignment.has(D[p])) {
-                            var Y = this.dummyToNodeForHorizontalAlignment.get(D[p]);
-                            q += Y.length * this.idToNodeMap.get(Y[0]).displacementY, G += Y.length;
+                        for (var K = 0, b = 0, E = 0; E < O.length; E++)
+                          if (this.dummyToNodeForHorizontalAlignment.has(O[E])) {
+                            var Y = this.dummyToNodeForHorizontalAlignment.get(O[E]);
+                            K += Y.length * this.idToNodeMap.get(Y[0]).displacementY, b += Y.length;
                           } else
-                            q += this.idToNodeMap.get(D[p]).displacementY, G++;
-                        for (var $ = q / G, p = 0; p < D.length; p++)
-                          this.dummyToNodeForHorizontalAlignment.has(D[p]) ? this.dummyToNodeForHorizontalAlignment.get(D[p]).forEach(function(W) {
-                            e.idToNodeMap.get(W).displacementY = $;
-                          }) : this.idToNodeMap.get(D[p]).displacementY = $;
+                            K += this.idToNodeMap.get(O[E]).displacementY, b++;
+                        for (var _ = K / b, E = 0; E < O.length; E++)
+                          this.dummyToNodeForHorizontalAlignment.has(O[E]) ? this.dummyToNodeForHorizontalAlignment.get(O[E]).forEach(function(V) {
+                            e.idToNodeMap.get(V).displacementY = _;
+                          }) : this.idToNodeMap.get(O[E]).displacementY = _;
                       }
                     }
                   }
-              }, w.prototype.calculateNodesToApplyGravitationTo = function() {
-                var e = [], E, l = this.graphManager.getGraphs(), d = l.length, p;
-                for (p = 0; p < d; p++)
-                  E = l[p], E.updateConnected(), E.isConnected || (e = e.concat(E.getNodes()));
+              }, R.prototype.calculateNodesToApplyGravitationTo = function() {
+                var e = [], y, l = this.graphManager.getGraphs(), d = l.length, E;
+                for (E = 0; E < d; E++)
+                  y = l[E], y.updateConnected(), y.isConnected || (e = e.concat(y.getNodes()));
                 return e;
-              }, w.prototype.createBendpoints = function() {
+              }, R.prototype.createBendpoints = function() {
                 var e = [];
                 e = e.concat(this.graphManager.getAllEdges());
-                var E = /* @__PURE__ */ new Set(), l;
+                var y = /* @__PURE__ */ new Set(), l;
                 for (l = 0; l < e.length; l++) {
                   var d = e[l];
-                  if (!E.has(d)) {
-                    var p = d.getSource(), A = d.getTarget();
-                    if (p == A)
-                      d.getBendpoints().push(new T()), d.getBendpoints().push(new T()), this.createDummyNodesForBendpoints(d), E.add(d);
+                  if (!y.has(d)) {
+                    var E = d.getSource(), M = d.getTarget();
+                    if (E == M)
+                      d.getBendpoints().push(new T()), d.getBendpoints().push(new T()), this.createDummyNodesForBendpoints(d), y.add(d);
                     else {
-                      var M = [];
-                      if (M = M.concat(p.getEdgeListToNode(A)), M = M.concat(A.getEdgeListToNode(p)), !E.has(M[0])) {
-                        if (M.length > 1) {
-                          var O;
-                          for (O = 0; O < M.length; O++) {
-                            var S = M[O];
-                            S.getBendpoints().push(new T()), this.createDummyNodesForBendpoints(S);
+                      var C = [];
+                      if (C = C.concat(E.getEdgeListToNode(M)), C = C.concat(M.getEdgeListToNode(E)), !y.has(C[0])) {
+                        if (C.length > 1) {
+                          var A;
+                          for (A = 0; A < C.length; A++) {
+                            var P = C[A];
+                            P.getBendpoints().push(new T()), this.createDummyNodesForBendpoints(P);
                           }
                         }
-                        M.forEach(function(D) {
-                          E.add(D);
+                        C.forEach(function(O) {
+                          y.add(O);
                         });
                       }
                     }
                   }
-                  if (E.size == e.length)
+                  if (y.size == e.length)
                     break;
                 }
-              }, w.prototype.positionNodesRadially = function(e) {
-                for (var E = new v(0, 0), l = Math.ceil(Math.sqrt(e.length)), d = 0, p = 0, A = 0, M = new T(0, 0), O = 0; O < e.length; O++) {
-                  O % l == 0 && (A = 0, p = d, O != 0 && (p += s.DEFAULT_COMPONENT_SEPERATION), d = 0);
-                  var S = e[O], D = R.findCenterOfTree(S);
-                  E.x = A, E.y = p, M = w.radialLayout(S, D, E), M.y > d && (d = Math.floor(M.y)), A = Math.floor(M.x + s.DEFAULT_COMPONENT_SEPERATION);
+              }, R.prototype.positionNodesRadially = function(e) {
+                for (var y = new p(0, 0), l = Math.ceil(Math.sqrt(e.length)), d = 0, E = 0, M = 0, C = new T(0, 0), A = 0; A < e.length; A++) {
+                  A % l == 0 && (M = 0, E = d, A != 0 && (E += h.DEFAULT_COMPONENT_SEPERATION), d = 0);
+                  var P = e[A], O = D.findCenterOfTree(P);
+                  y.x = M, y.y = E, C = R.radialLayout(P, O, y), C.y > d && (d = Math.floor(C.y)), M = Math.floor(C.x + h.DEFAULT_COMPONENT_SEPERATION);
                 }
-                this.transform(new T(N.WORLD_CENTER_X - M.x / 2, N.WORLD_CENTER_Y - M.y / 2));
-              }, w.radialLayout = function(e, E, l) {
-                var d = Math.max(this.maxDiagonalInTree(e), s.DEFAULT_RADIAL_SEPARATION);
-                w.branchRadialLayout(E, null, 0, 359, 0, d);
-                var p = z.calculateBounds(e), A = new H();
-                A.setDeviceOrgX(p.getMinX()), A.setDeviceOrgY(p.getMinY()), A.setWorldOrgX(l.x), A.setWorldOrgY(l.y);
-                for (var M = 0; M < e.length; M++) {
-                  var O = e[M];
-                  O.transform(A);
+                this.transform(new T(N.WORLD_CENTER_X - C.x / 2, N.WORLD_CENTER_Y - C.y / 2));
+              }, R.radialLayout = function(e, y, l) {
+                var d = Math.max(this.maxDiagonalInTree(e), h.DEFAULT_RADIAL_SEPARATION);
+                R.branchRadialLayout(y, null, 0, 359, 0, d);
+                var E = Z.calculateBounds(e), M = new W();
+                M.setDeviceOrgX(E.getMinX()), M.setDeviceOrgY(E.getMinY()), M.setWorldOrgX(l.x), M.setWorldOrgY(l.y);
+                for (var C = 0; C < e.length; C++) {
+                  var A = e[C];
+                  A.transform(M);
                 }
-                var S = new T(p.getMaxX(), p.getMaxY());
-                return A.inverseTransformPoint(S);
-              }, w.branchRadialLayout = function(e, E, l, d, p, A) {
-                var M = (d - l + 1) / 2;
-                M < 0 && (M += 180);
-                var O = (M + l) % 360, S = O * I.TWO_PI / 360, D = p * Math.cos(S), q = p * Math.sin(S);
-                e.setCenter(D, q);
-                var G = [];
-                G = G.concat(e.getEdges());
-                var Y = G.length;
-                E != null && Y--;
-                for (var $ = 0, B = G.length, x, X = e.getEdgesBetween(E); X.length > 1; ) {
-                  var Q = X[0];
-                  X.splice(0, 1);
-                  var k = G.indexOf(Q);
-                  k >= 0 && G.splice(k, 1), B--, Y--;
+                var P = new T(E.getMaxX(), E.getMaxY());
+                return M.inverseTransformPoint(P);
+              }, R.branchRadialLayout = function(e, y, l, d, E, M) {
+                var C = (d - l + 1) / 2;
+                C < 0 && (C += 180);
+                var A = (C + l) % 360, P = A * w.TWO_PI / 360, O = E * Math.cos(P), K = E * Math.sin(P);
+                e.setCenter(O, K);
+                var b = [];
+                b = b.concat(e.getEdges());
+                var Y = b.length;
+                y != null && Y--;
+                for (var _ = 0, B = b.length, x, H = e.getEdgesBetween(y); H.length > 1; ) {
+                  var $ = H[0];
+                  H.splice(0, 1);
+                  var j = b.indexOf($);
+                  j >= 0 && b.splice(j, 1), B--, Y--;
                 }
-                E != null ? x = (G.indexOf(X[0]) + 1) % B : x = 0;
-                for (var ft = Math.abs(d - l) / Y, W = x; $ != Y; W = ++W % B) {
-                  var Ot = G[W].getOtherEnd(e);
-                  if (Ot != E) {
-                    var vt = (l + $ * ft) % 360, $t = (vt + ft) % 360;
-                    w.branchRadialLayout(Ot, e, vt, $t, p + A, A), $++;
+                y != null ? x = (b.indexOf(H[0]) + 1) % B : x = 0;
+                for (var ft = Math.abs(d - l) / Y, V = x; _ != Y; V = ++V % B) {
+                  var Ot = b[V].getOtherEnd(e);
+                  if (Ot != y) {
+                    var vt = (l + _ * ft) % 360, $t = (vt + ft) % 360;
+                    R.branchRadialLayout(Ot, e, vt, $t, E + M, M), _++;
                   }
                 }
-              }, w.maxDiagonalInTree = function(e) {
-                for (var E = b.MIN_VALUE, l = 0; l < e.length; l++) {
-                  var d = e[l], p = d.getDiagonal();
-                  p > E && (E = p);
+              }, R.maxDiagonalInTree = function(e) {
+                for (var y = X.MIN_VALUE, l = 0; l < e.length; l++) {
+                  var d = e[l], E = d.getDiagonal();
+                  E > y && (y = E);
                 }
-                return E;
-              }, w.prototype.calcRepulsionRange = function() {
+                return y;
+              }, R.prototype.calcRepulsionRange = function() {
                 return 2 * (this.level + 1) * this.idealEdgeLength;
-              }, w.prototype.groupZeroDegreeMembers = function() {
-                var e = this, E = {};
+              }, R.prototype.groupZeroDegreeMembers = function() {
+                var e = this, y = {};
                 this.memberGroups = {}, this.idToDummyNode = {};
-                for (var l = [], d = this.graphManager.getAllNodes(), p = 0; p < d.length; p++) {
-                  var A = d[p], M = A.getParent();
-                  this.getNodeDegreeWithChildren(A) === 0 && (M.id == null || !this.getToBeTiled(M)) && l.push(A);
+                for (var l = [], d = this.graphManager.getAllNodes(), E = 0; E < d.length; E++) {
+                  var M = d[E], C = M.getParent();
+                  this.getNodeDegreeWithChildren(M) === 0 && (C.id == null || !this.getToBeTiled(C)) && l.push(M);
                 }
-                for (var p = 0; p < l.length; p++) {
-                  var A = l[p], O = A.getParent().id;
-                  typeof E[O] > "u" && (E[O] = []), E[O] = E[O].concat(A);
+                for (var E = 0; E < l.length; E++) {
+                  var M = l[E], A = M.getParent().id;
+                  typeof y[A] > "u" && (y[A] = []), y[A] = y[A].concat(M);
                 }
-                Object.keys(E).forEach(function(S) {
-                  if (E[S].length > 1) {
-                    var D = "DummyCompound_" + S;
-                    e.memberGroups[D] = E[S];
-                    var q = E[S][0].getParent(), G = new t(e.graphManager);
-                    G.id = D, G.paddingLeft = q.paddingLeft || 0, G.paddingRight = q.paddingRight || 0, G.paddingBottom = q.paddingBottom || 0, G.paddingTop = q.paddingTop || 0, e.idToDummyNode[D] = G;
-                    var Y = e.getGraphManager().add(e.newGraph(), G), $ = q.getChild();
-                    $.add(G);
-                    for (var B = 0; B < E[S].length; B++) {
-                      var x = E[S][B];
-                      $.remove(x), Y.add(x);
+                Object.keys(y).forEach(function(P) {
+                  if (y[P].length > 1) {
+                    var O = "DummyCompound_" + P;
+                    e.memberGroups[O] = y[P];
+                    var K = y[P][0].getParent(), b = new t(e.graphManager);
+                    b.id = O, b.paddingLeft = K.paddingLeft || 0, b.paddingRight = K.paddingRight || 0, b.paddingBottom = K.paddingBottom || 0, b.paddingTop = K.paddingTop || 0, e.idToDummyNode[O] = b;
+                    var Y = e.getGraphManager().add(e.newGraph(), b), _ = K.getChild();
+                    _.add(b);
+                    for (var B = 0; B < y[P].length; B++) {
+                      var x = y[P][B];
+                      _.remove(x), Y.add(x);
                     }
                   }
                 });
-              }, w.prototype.clearCompounds = function() {
-                var e = {}, E = {};
+              }, R.prototype.clearCompounds = function() {
+                var e = {}, y = {};
                 this.performDFSOnCompounds();
                 for (var l = 0; l < this.compoundOrder.length; l++)
-                  E[this.compoundOrder[l].id] = this.compoundOrder[l], e[this.compoundOrder[l].id] = [].concat(this.compoundOrder[l].getChild().getNodes()), this.graphManager.remove(this.compoundOrder[l].getChild()), this.compoundOrder[l].child = null;
-                this.graphManager.resetAllNodes(), this.tileCompoundMembers(e, E);
-              }, w.prototype.clearZeroDegreeMembers = function() {
-                var e = this, E = this.tiledZeroDegreePack = [];
+                  y[this.compoundOrder[l].id] = this.compoundOrder[l], e[this.compoundOrder[l].id] = [].concat(this.compoundOrder[l].getChild().getNodes()), this.graphManager.remove(this.compoundOrder[l].getChild()), this.compoundOrder[l].child = null;
+                this.graphManager.resetAllNodes(), this.tileCompoundMembers(e, y);
+              }, R.prototype.clearZeroDegreeMembers = function() {
+                var e = this, y = this.tiledZeroDegreePack = [];
                 Object.keys(this.memberGroups).forEach(function(l) {
                   var d = e.idToDummyNode[l];
-                  if (E[l] = e.tileNodes(e.memberGroups[l], d.paddingLeft + d.paddingRight), d.rect.width = E[l].width, d.rect.height = E[l].height, d.setCenter(E[l].centerX, E[l].centerY), d.labelMarginLeft = 0, d.labelMarginTop = 0, s.NODE_DIMENSIONS_INCLUDE_LABELS) {
-                    var p = d.rect.width, A = d.rect.height;
-                    d.labelWidth && (d.labelPosHorizontal == "left" ? (d.rect.x -= d.labelWidth, d.setWidth(p + d.labelWidth), d.labelMarginLeft = d.labelWidth) : d.labelPosHorizontal == "center" && d.labelWidth > p ? (d.rect.x -= (d.labelWidth - p) / 2, d.setWidth(d.labelWidth), d.labelMarginLeft = (d.labelWidth - p) / 2) : d.labelPosHorizontal == "right" && d.setWidth(p + d.labelWidth)), d.labelHeight && (d.labelPosVertical == "top" ? (d.rect.y -= d.labelHeight, d.setHeight(A + d.labelHeight), d.labelMarginTop = d.labelHeight) : d.labelPosVertical == "center" && d.labelHeight > A ? (d.rect.y -= (d.labelHeight - A) / 2, d.setHeight(d.labelHeight), d.labelMarginTop = (d.labelHeight - A) / 2) : d.labelPosVertical == "bottom" && d.setHeight(A + d.labelHeight));
+                  if (y[l] = e.tileNodes(e.memberGroups[l], d.paddingLeft + d.paddingRight), d.rect.width = y[l].width, d.rect.height = y[l].height, d.setCenter(y[l].centerX, y[l].centerY), d.labelMarginLeft = 0, d.labelMarginTop = 0, h.NODE_DIMENSIONS_INCLUDE_LABELS) {
+                    var E = d.rect.width, M = d.rect.height;
+                    d.labelWidth && (d.labelPosHorizontal == "left" ? (d.rect.x -= d.labelWidth, d.setWidth(E + d.labelWidth), d.labelMarginLeft = d.labelWidth) : d.labelPosHorizontal == "center" && d.labelWidth > E ? (d.rect.x -= (d.labelWidth - E) / 2, d.setWidth(d.labelWidth), d.labelMarginLeft = (d.labelWidth - E) / 2) : d.labelPosHorizontal == "right" && d.setWidth(E + d.labelWidth)), d.labelHeight && (d.labelPosVertical == "top" ? (d.rect.y -= d.labelHeight, d.setHeight(M + d.labelHeight), d.labelMarginTop = d.labelHeight) : d.labelPosVertical == "center" && d.labelHeight > M ? (d.rect.y -= (d.labelHeight - M) / 2, d.setHeight(d.labelHeight), d.labelMarginTop = (d.labelHeight - M) / 2) : d.labelPosVertical == "bottom" && d.setHeight(M + d.labelHeight));
                   }
                 });
-              }, w.prototype.repopulateCompounds = function() {
+              }, R.prototype.repopulateCompounds = function() {
                 for (var e = this.compoundOrder.length - 1; e >= 0; e--) {
-                  var E = this.compoundOrder[e], l = E.id, d = E.paddingLeft, p = E.paddingTop, A = E.labelMarginLeft, M = E.labelMarginTop;
-                  this.adjustLocations(this.tiledMemberPack[l], E.rect.x, E.rect.y, d, p, A, M);
+                  var y = this.compoundOrder[e], l = y.id, d = y.paddingLeft, E = y.paddingTop, M = y.labelMarginLeft, C = y.labelMarginTop;
+                  this.adjustLocations(this.tiledMemberPack[l], y.rect.x, y.rect.y, d, E, M, C);
                 }
-              }, w.prototype.repopulateZeroDegreeMembers = function() {
-                var e = this, E = this.tiledZeroDegreePack;
-                Object.keys(E).forEach(function(l) {
-                  var d = e.idToDummyNode[l], p = d.paddingLeft, A = d.paddingTop, M = d.labelMarginLeft, O = d.labelMarginTop;
-                  e.adjustLocations(E[l], d.rect.x, d.rect.y, p, A, M, O);
+              }, R.prototype.repopulateZeroDegreeMembers = function() {
+                var e = this, y = this.tiledZeroDegreePack;
+                Object.keys(y).forEach(function(l) {
+                  var d = e.idToDummyNode[l], E = d.paddingLeft, M = d.paddingTop, C = d.labelMarginLeft, A = d.labelMarginTop;
+                  e.adjustLocations(y[l], d.rect.x, d.rect.y, E, M, C, A);
                 });
-              }, w.prototype.getToBeTiled = function(e) {
-                var E = e.id;
-                if (this.toBeTiled[E] != null)
-                  return this.toBeTiled[E];
+              }, R.prototype.getToBeTiled = function(e) {
+                var y = e.id;
+                if (this.toBeTiled[y] != null)
+                  return this.toBeTiled[y];
                 var l = e.getChild();
                 if (l == null)
-                  return this.toBeTiled[E] = !1, !1;
-                for (var d = l.getNodes(), p = 0; p < d.length; p++) {
-                  var A = d[p];
-                  if (this.getNodeDegree(A) > 0)
-                    return this.toBeTiled[E] = !1, !1;
-                  if (A.getChild() == null) {
-                    this.toBeTiled[A.id] = !1;
+                  return this.toBeTiled[y] = !1, !1;
+                for (var d = l.getNodes(), E = 0; E < d.length; E++) {
+                  var M = d[E];
+                  if (this.getNodeDegree(M) > 0)
+                    return this.toBeTiled[y] = !1, !1;
+                  if (M.getChild() == null) {
+                    this.toBeTiled[M.id] = !1;
                     continue;
                   }
-                  if (!this.getToBeTiled(A))
-                    return this.toBeTiled[E] = !1, !1;
+                  if (!this.getToBeTiled(M))
+                    return this.toBeTiled[y] = !1, !1;
                 }
-                return this.toBeTiled[E] = !0, !0;
-              }, w.prototype.getNodeDegree = function(e) {
+                return this.toBeTiled[y] = !0, !0;
+              }, R.prototype.getNodeDegree = function(e) {
                 e.id;
-                for (var E = e.getEdges(), l = 0, d = 0; d < E.length; d++) {
-                  var p = E[d];
-                  p.getSource().id !== p.getTarget().id && (l = l + 1);
+                for (var y = e.getEdges(), l = 0, d = 0; d < y.length; d++) {
+                  var E = y[d];
+                  E.getSource().id !== E.getTarget().id && (l = l + 1);
                 }
                 return l;
-              }, w.prototype.getNodeDegreeWithChildren = function(e) {
-                var E = this.getNodeDegree(e);
+              }, R.prototype.getNodeDegreeWithChildren = function(e) {
+                var y = this.getNodeDegree(e);
                 if (e.getChild() == null)
-                  return E;
+                  return y;
                 for (var l = e.getChild().getNodes(), d = 0; d < l.length; d++) {
-                  var p = l[d];
-                  E += this.getNodeDegreeWithChildren(p);
+                  var E = l[d];
+                  y += this.getNodeDegreeWithChildren(E);
                 }
-                return E;
-              }, w.prototype.performDFSOnCompounds = function() {
+                return y;
+              }, R.prototype.performDFSOnCompounds = function() {
                 this.compoundOrder = [], this.fillCompexOrderByDFS(this.graphManager.getRoot().getNodes());
-              }, w.prototype.fillCompexOrderByDFS = function(e) {
-                for (var E = 0; E < e.length; E++) {
-                  var l = e[E];
+              }, R.prototype.fillCompexOrderByDFS = function(e) {
+                for (var y = 0; y < e.length; y++) {
+                  var l = e[y];
                   l.getChild() != null && this.fillCompexOrderByDFS(l.getChild().getNodes()), this.getToBeTiled(l) && this.compoundOrder.push(l);
                 }
-              }, w.prototype.adjustLocations = function(e, E, l, d, p, A, M) {
-                E += d + A, l += p + M;
-                for (var O = E, S = 0; S < e.rows.length; S++) {
-                  var D = e.rows[S];
-                  E = O;
-                  for (var q = 0, G = 0; G < D.length; G++) {
-                    var Y = D[G];
-                    Y.rect.x = E, Y.rect.y = l, E += Y.rect.width + e.horizontalPadding, Y.rect.height > q && (q = Y.rect.height);
+              }, R.prototype.adjustLocations = function(e, y, l, d, E, M, C) {
+                y += d + M, l += E + C;
+                for (var A = y, P = 0; P < e.rows.length; P++) {
+                  var O = e.rows[P];
+                  y = A;
+                  for (var K = 0, b = 0; b < O.length; b++) {
+                    var Y = O[b];
+                    Y.rect.x = y, Y.rect.y = l, y += Y.rect.width + e.horizontalPadding, Y.rect.height > K && (K = Y.rect.height);
                   }
-                  l += q + e.verticalPadding;
+                  l += K + e.verticalPadding;
                 }
-              }, w.prototype.tileCompoundMembers = function(e, E) {
+              }, R.prototype.tileCompoundMembers = function(e, y) {
                 var l = this;
                 this.tiledMemberPack = [], Object.keys(e).forEach(function(d) {
-                  var p = E[d];
-                  if (l.tiledMemberPack[d] = l.tileNodes(e[d], p.paddingLeft + p.paddingRight), p.rect.width = l.tiledMemberPack[d].width, p.rect.height = l.tiledMemberPack[d].height, p.setCenter(l.tiledMemberPack[d].centerX, l.tiledMemberPack[d].centerY), p.labelMarginLeft = 0, p.labelMarginTop = 0, s.NODE_DIMENSIONS_INCLUDE_LABELS) {
-                    var A = p.rect.width, M = p.rect.height;
-                    p.labelWidth && (p.labelPosHorizontal == "left" ? (p.rect.x -= p.labelWidth, p.setWidth(A + p.labelWidth), p.labelMarginLeft = p.labelWidth) : p.labelPosHorizontal == "center" && p.labelWidth > A ? (p.rect.x -= (p.labelWidth - A) / 2, p.setWidth(p.labelWidth), p.labelMarginLeft = (p.labelWidth - A) / 2) : p.labelPosHorizontal == "right" && p.setWidth(A + p.labelWidth)), p.labelHeight && (p.labelPosVertical == "top" ? (p.rect.y -= p.labelHeight, p.setHeight(M + p.labelHeight), p.labelMarginTop = p.labelHeight) : p.labelPosVertical == "center" && p.labelHeight > M ? (p.rect.y -= (p.labelHeight - M) / 2, p.setHeight(p.labelHeight), p.labelMarginTop = (p.labelHeight - M) / 2) : p.labelPosVertical == "bottom" && p.setHeight(M + p.labelHeight));
+                  var E = y[d];
+                  if (l.tiledMemberPack[d] = l.tileNodes(e[d], E.paddingLeft + E.paddingRight), E.rect.width = l.tiledMemberPack[d].width, E.rect.height = l.tiledMemberPack[d].height, E.setCenter(l.tiledMemberPack[d].centerX, l.tiledMemberPack[d].centerY), E.labelMarginLeft = 0, E.labelMarginTop = 0, h.NODE_DIMENSIONS_INCLUDE_LABELS) {
+                    var M = E.rect.width, C = E.rect.height;
+                    E.labelWidth && (E.labelPosHorizontal == "left" ? (E.rect.x -= E.labelWidth, E.setWidth(M + E.labelWidth), E.labelMarginLeft = E.labelWidth) : E.labelPosHorizontal == "center" && E.labelWidth > M ? (E.rect.x -= (E.labelWidth - M) / 2, E.setWidth(E.labelWidth), E.labelMarginLeft = (E.labelWidth - M) / 2) : E.labelPosHorizontal == "right" && E.setWidth(M + E.labelWidth)), E.labelHeight && (E.labelPosVertical == "top" ? (E.rect.y -= E.labelHeight, E.setHeight(C + E.labelHeight), E.labelMarginTop = E.labelHeight) : E.labelPosVertical == "center" && E.labelHeight > C ? (E.rect.y -= (E.labelHeight - C) / 2, E.setHeight(E.labelHeight), E.labelMarginTop = (E.labelHeight - C) / 2) : E.labelPosVertical == "bottom" && E.setHeight(C + E.labelHeight));
                   }
                 });
-              }, w.prototype.tileNodes = function(e, E) {
-                var l = this.tileNodesByFavoringDim(e, E, !0), d = this.tileNodesByFavoringDim(e, E, !1), p = this.getOrgRatio(l), A = this.getOrgRatio(d), M;
-                return A < p ? M = d : M = l, M;
-              }, w.prototype.getOrgRatio = function(e) {
-                var E = e.width, l = e.height, d = E / l;
+              }, R.prototype.tileNodes = function(e, y) {
+                var l = this.tileNodesByFavoringDim(e, y, !0), d = this.tileNodesByFavoringDim(e, y, !1), E = this.getOrgRatio(l), M = this.getOrgRatio(d), C;
+                return M < E ? C = d : C = l, C;
+              }, R.prototype.getOrgRatio = function(e) {
+                var y = e.width, l = e.height, d = y / l;
                 return d < 1 && (d = 1 / d), d;
-              }, w.prototype.calcIdealRowWidth = function(e, E) {
-                var l = s.TILING_PADDING_VERTICAL, d = s.TILING_PADDING_HORIZONTAL, p = e.length, A = 0, M = 0, O = 0;
+              }, R.prototype.calcIdealRowWidth = function(e, y) {
+                var l = h.TILING_PADDING_VERTICAL, d = h.TILING_PADDING_HORIZONTAL, E = e.length, M = 0, C = 0, A = 0;
                 e.forEach(function(B) {
-                  A += B.getWidth(), M += B.getHeight(), B.getWidth() > O && (O = B.getWidth());
+                  M += B.getWidth(), C += B.getHeight(), B.getWidth() > A && (A = B.getWidth());
                 });
-                var S = A / p, D = M / p, q = Math.pow(l - d, 2) + 4 * (S + d) * (D + l) * p, G = (d - l + Math.sqrt(q)) / (2 * (S + d)), Y;
-                E ? (Y = Math.ceil(G), Y == G && Y++) : Y = Math.floor(G);
-                var $ = Y * (S + d) - d;
-                return O > $ && ($ = O), $ += d * 2, $;
-              }, w.prototype.tileNodesByFavoringDim = function(e, E, l) {
-                var d = s.TILING_PADDING_VERTICAL, p = s.TILING_PADDING_HORIZONTAL, A = s.TILING_COMPARE_BY, M = {
+                var P = M / E, O = C / E, K = Math.pow(l - d, 2) + 4 * (P + d) * (O + l) * E, b = (d - l + Math.sqrt(K)) / (2 * (P + d)), Y;
+                y ? (Y = Math.ceil(b), Y == b && Y++) : Y = Math.floor(b);
+                var _ = Y * (P + d) - d;
+                return A > _ && (_ = A), _ += d * 2, _;
+              }, R.prototype.tileNodesByFavoringDim = function(e, y, l) {
+                var d = h.TILING_PADDING_VERTICAL, E = h.TILING_PADDING_HORIZONTAL, M = h.TILING_COMPARE_BY, C = {
                   rows: [],
                   rowWidth: [],
                   rowHeight: [],
                   width: 0,
-                  height: E,
+                  height: y,
                   // assume minHeight equals to minWidth
                   verticalPadding: d,
-                  horizontalPadding: p,
+                  horizontalPadding: E,
                   centerX: 0,
                   centerY: 0
                 };
-                A && (M.idealRowWidth = this.calcIdealRowWidth(e, l));
-                var O = function(x) {
+                M && (C.idealRowWidth = this.calcIdealRowWidth(e, l));
+                var A = function(x) {
                   return x.rect.width * x.rect.height;
-                }, S = function(x, X) {
-                  return O(X) - O(x);
+                }, P = function(x, H) {
+                  return A(H) - A(x);
                 };
                 e.sort(function(B, x) {
-                  var X = S;
-                  return M.idealRowWidth ? (X = A, X(B.id, x.id)) : X(B, x);
+                  var H = P;
+                  return C.idealRowWidth ? (H = M, H(B.id, x.id)) : H(B, x);
                 });
-                for (var D = 0, q = 0, G = 0; G < e.length; G++) {
-                  var Y = e[G];
-                  D += Y.getCenterX(), q += Y.getCenterY();
+                for (var O = 0, K = 0, b = 0; b < e.length; b++) {
+                  var Y = e[b];
+                  O += Y.getCenterX(), K += Y.getCenterY();
                 }
-                M.centerX = D / e.length, M.centerY = q / e.length;
-                for (var G = 0; G < e.length; G++) {
-                  var Y = e[G];
-                  if (M.rows.length == 0)
-                    this.insertNodeToRow(M, Y, 0, E);
-                  else if (this.canAddHorizontal(M, Y.rect.width, Y.rect.height)) {
-                    var $ = M.rows.length - 1;
-                    M.idealRowWidth || ($ = this.getShortestRowIndex(M)), this.insertNodeToRow(M, Y, $, E);
+                C.centerX = O / e.length, C.centerY = K / e.length;
+                for (var b = 0; b < e.length; b++) {
+                  var Y = e[b];
+                  if (C.rows.length == 0)
+                    this.insertNodeToRow(C, Y, 0, y);
+                  else if (this.canAddHorizontal(C, Y.rect.width, Y.rect.height)) {
+                    var _ = C.rows.length - 1;
+                    C.idealRowWidth || (_ = this.getShortestRowIndex(C)), this.insertNodeToRow(C, Y, _, y);
                   } else
-                    this.insertNodeToRow(M, Y, M.rows.length, E);
-                  this.shiftToLastRow(M);
+                    this.insertNodeToRow(C, Y, C.rows.length, y);
+                  this.shiftToLastRow(C);
                 }
-                return M;
-              }, w.prototype.insertNodeToRow = function(e, E, l, d) {
-                var p = d;
+                return C;
+              }, R.prototype.insertNodeToRow = function(e, y, l, d) {
+                var E = d;
                 if (l == e.rows.length) {
-                  var A = [];
-                  e.rows.push(A), e.rowWidth.push(p), e.rowHeight.push(0);
+                  var M = [];
+                  e.rows.push(M), e.rowWidth.push(E), e.rowHeight.push(0);
                 }
-                var M = e.rowWidth[l] + E.rect.width;
-                e.rows[l].length > 0 && (M += e.horizontalPadding), e.rowWidth[l] = M, e.width < M && (e.width = M);
-                var O = E.rect.height;
-                l > 0 && (O += e.verticalPadding);
-                var S = 0;
-                O > e.rowHeight[l] && (S = e.rowHeight[l], e.rowHeight[l] = O, S = e.rowHeight[l] - S), e.height += S, e.rows[l].push(E);
-              }, w.prototype.getShortestRowIndex = function(e) {
-                for (var E = -1, l = Number.MAX_VALUE, d = 0; d < e.rows.length; d++)
-                  e.rowWidth[d] < l && (E = d, l = e.rowWidth[d]);
-                return E;
-              }, w.prototype.getLongestRowIndex = function(e) {
-                for (var E = -1, l = Number.MIN_VALUE, d = 0; d < e.rows.length; d++)
-                  e.rowWidth[d] > l && (E = d, l = e.rowWidth[d]);
-                return E;
-              }, w.prototype.canAddHorizontal = function(e, E, l) {
+                var C = e.rowWidth[l] + y.rect.width;
+                e.rows[l].length > 0 && (C += e.horizontalPadding), e.rowWidth[l] = C, e.width < C && (e.width = C);
+                var A = y.rect.height;
+                l > 0 && (A += e.verticalPadding);
+                var P = 0;
+                A > e.rowHeight[l] && (P = e.rowHeight[l], e.rowHeight[l] = A, P = e.rowHeight[l] - P), e.height += P, e.rows[l].push(y);
+              }, R.prototype.getShortestRowIndex = function(e) {
+                for (var y = -1, l = Number.MAX_VALUE, d = 0; d < e.rows.length; d++)
+                  e.rowWidth[d] < l && (y = d, l = e.rowWidth[d]);
+                return y;
+              }, R.prototype.getLongestRowIndex = function(e) {
+                for (var y = -1, l = Number.MIN_VALUE, d = 0; d < e.rows.length; d++)
+                  e.rowWidth[d] > l && (y = d, l = e.rowWidth[d]);
+                return y;
+              }, R.prototype.canAddHorizontal = function(e, y, l) {
                 if (e.idealRowWidth) {
-                  var d = e.rows.length - 1, p = e.rowWidth[d];
-                  return p + E + e.horizontalPadding <= e.idealRowWidth;
+                  var d = e.rows.length - 1, E = e.rowWidth[d];
+                  return E + y + e.horizontalPadding <= e.idealRowWidth;
                 }
-                var A = this.getShortestRowIndex(e);
-                if (A < 0)
+                var M = this.getShortestRowIndex(e);
+                if (M < 0)
                   return !0;
-                var M = e.rowWidth[A];
-                if (M + e.horizontalPadding + E <= e.width)
+                var C = e.rowWidth[M];
+                if (C + e.horizontalPadding + y <= e.width)
                   return !0;
-                var O = 0;
-                e.rowHeight[A] < l && A > 0 && (O = l + e.verticalPadding - e.rowHeight[A]);
-                var S;
-                e.width - M >= E + e.horizontalPadding ? S = (e.height + O) / (M + E + e.horizontalPadding) : S = (e.height + O) / e.width, O = l + e.verticalPadding;
-                var D;
-                return e.width < E ? D = (e.height + O) / E : D = (e.height + O) / e.width, D < 1 && (D = 1 / D), S < 1 && (S = 1 / S), S < D;
-              }, w.prototype.shiftToLastRow = function(e) {
-                var E = this.getLongestRowIndex(e), l = e.rowWidth.length - 1, d = e.rows[E], p = d[d.length - 1], A = p.width + e.horizontalPadding;
-                if (e.width - e.rowWidth[l] > A && E != l) {
-                  d.splice(-1, 1), e.rows[l].push(p), e.rowWidth[E] = e.rowWidth[E] - A, e.rowWidth[l] = e.rowWidth[l] + A, e.width = e.rowWidth[instance.getLongestRowIndex(e)];
-                  for (var M = Number.MIN_VALUE, O = 0; O < d.length; O++)
-                    d[O].height > M && (M = d[O].height);
-                  E > 0 && (M += e.verticalPadding);
-                  var S = e.rowHeight[E] + e.rowHeight[l];
-                  e.rowHeight[E] = M, e.rowHeight[l] < p.height + e.verticalPadding && (e.rowHeight[l] = p.height + e.verticalPadding);
-                  var D = e.rowHeight[E] + e.rowHeight[l];
-                  e.height += D - S, this.shiftToLastRow(e);
+                var A = 0;
+                e.rowHeight[M] < l && M > 0 && (A = l + e.verticalPadding - e.rowHeight[M]);
+                var P;
+                e.width - C >= y + e.horizontalPadding ? P = (e.height + A) / (C + y + e.horizontalPadding) : P = (e.height + A) / e.width, A = l + e.verticalPadding;
+                var O;
+                return e.width < y ? O = (e.height + A) / y : O = (e.height + A) / e.width, O < 1 && (O = 1 / O), P < 1 && (P = 1 / P), P < O;
+              }, R.prototype.shiftToLastRow = function(e) {
+                var y = this.getLongestRowIndex(e), l = e.rowWidth.length - 1, d = e.rows[y], E = d[d.length - 1], M = E.width + e.horizontalPadding;
+                if (e.width - e.rowWidth[l] > M && y != l) {
+                  d.splice(-1, 1), e.rows[l].push(E), e.rowWidth[y] = e.rowWidth[y] - M, e.rowWidth[l] = e.rowWidth[l] + M, e.width = e.rowWidth[instance.getLongestRowIndex(e)];
+                  for (var C = Number.MIN_VALUE, A = 0; A < d.length; A++)
+                    d[A].height > C && (C = d[A].height);
+                  y > 0 && (C += e.verticalPadding);
+                  var P = e.rowHeight[y] + e.rowHeight[l];
+                  e.rowHeight[y] = C, e.rowHeight[l] < E.height + e.verticalPadding && (e.rowHeight[l] = E.height + e.verticalPadding);
+                  var O = e.rowHeight[y] + e.rowHeight[l];
+                  e.height += O - P, this.shiftToLastRow(e);
                 }
-              }, w.prototype.tilingPreLayout = function() {
-                s.TILE && (this.groupZeroDegreeMembers(), this.clearCompounds(), this.clearZeroDegreeMembers());
-              }, w.prototype.tilingPostLayout = function() {
-                s.TILE && (this.repopulateZeroDegreeMembers(), this.repopulateCompounds());
-              }, w.prototype.reduceTrees = function() {
-                for (var e = [], E = !0, l; E; ) {
-                  var d = this.graphManager.getAllNodes(), p = [];
-                  E = !1;
-                  for (var A = 0; A < d.length; A++)
-                    if (l = d[A], l.getEdges().length == 1 && !l.getEdges()[0].isInterGraph && l.getChild() == null) {
-                      if (s.PURE_INCREMENTAL) {
-                        var M = l.getEdges()[0].getOtherEnd(l), O = new m(l.getCenterX() - M.getCenterX(), l.getCenterY() - M.getCenterY());
-                        p.push([l, l.getEdges()[0], l.getOwner(), O]);
+              }, R.prototype.tilingPreLayout = function() {
+                h.TILE && (this.groupZeroDegreeMembers(), this.clearCompounds(), this.clearZeroDegreeMembers());
+              }, R.prototype.tilingPostLayout = function() {
+                h.TILE && (this.repopulateZeroDegreeMembers(), this.repopulateCompounds());
+              }, R.prototype.reduceTrees = function() {
+                for (var e = [], y = !0, l; y; ) {
+                  var d = this.graphManager.getAllNodes(), E = [];
+                  y = !1;
+                  for (var M = 0; M < d.length; M++)
+                    if (l = d[M], l.getEdges().length == 1 && !l.getEdges()[0].isInterGraph && l.getChild() == null) {
+                      if (h.PURE_INCREMENTAL) {
+                        var C = l.getEdges()[0].getOtherEnd(l), A = new L(l.getCenterX() - C.getCenterX(), l.getCenterY() - C.getCenterY());
+                        E.push([l, l.getEdges()[0], l.getOwner(), A]);
                       } else
-                        p.push([l, l.getEdges()[0], l.getOwner()]);
-                      E = !0;
+                        E.push([l, l.getEdges()[0], l.getOwner()]);
+                      y = !0;
                     }
-                  if (E == !0) {
-                    for (var S = [], D = 0; D < p.length; D++)
-                      p[D][0].getEdges().length == 1 && (S.push(p[D]), p[D][0].getOwner().remove(p[D][0]));
-                    e.push(S), this.graphManager.resetAllNodes(), this.graphManager.resetAllEdges();
+                  if (y == !0) {
+                    for (var P = [], O = 0; O < E.length; O++)
+                      E[O][0].getEdges().length == 1 && (P.push(E[O]), E[O][0].getOwner().remove(E[O][0]));
+                    e.push(P), this.graphManager.resetAllNodes(), this.graphManager.resetAllEdges();
                   }
                 }
                 this.prunedNodesAll = e;
-              }, w.prototype.growTree = function(e) {
-                for (var E = e.length, l = e[E - 1], d, p = 0; p < l.length; p++)
-                  d = l[p], this.findPlaceforPrunedNode(d), d[2].add(d[0]), d[2].add(d[1], d[1].source, d[1].target);
+              }, R.prototype.growTree = function(e) {
+                for (var y = e.length, l = e[y - 1], d, E = 0; E < l.length; E++)
+                  d = l[E], this.findPlaceforPrunedNode(d), d[2].add(d[0]), d[2].add(d[1], d[1].source, d[1].target);
                 e.splice(e.length - 1, 1), this.graphManager.resetAllNodes(), this.graphManager.resetAllEdges();
-              }, w.prototype.findPlaceforPrunedNode = function(e) {
-                var E, l, d = e[0];
-                if (d == e[1].source ? l = e[1].target : l = e[1].source, s.PURE_INCREMENTAL)
+              }, R.prototype.findPlaceforPrunedNode = function(e) {
+                var y, l, d = e[0];
+                if (d == e[1].source ? l = e[1].target : l = e[1].source, h.PURE_INCREMENTAL)
                   d.setCenter(l.getCenterX() + e[3].getWidth(), l.getCenterY() + e[3].getHeight());
                 else {
-                  var p = l.startX, A = l.finishX, M = l.startY, O = l.finishY, S = 0, D = 0, q = 0, G = 0, Y = [S, q, D, G];
-                  if (M > 0)
-                    for (var $ = p; $ <= A; $++)
-                      Y[0] += this.grid[$][M - 1].length + this.grid[$][M].length - 1;
-                  if (A < this.grid.length - 1)
-                    for (var $ = M; $ <= O; $++)
-                      Y[1] += this.grid[A + 1][$].length + this.grid[A][$].length - 1;
-                  if (O < this.grid[0].length - 1)
-                    for (var $ = p; $ <= A; $++)
-                      Y[2] += this.grid[$][O + 1].length + this.grid[$][O].length - 1;
-                  if (p > 0)
-                    for (var $ = M; $ <= O; $++)
-                      Y[3] += this.grid[p - 1][$].length + this.grid[p][$].length - 1;
-                  for (var B = b.MAX_VALUE, x, X, Q = 0; Q < Y.length; Q++)
-                    Y[Q] < B ? (B = Y[Q], x = 1, X = Q) : Y[Q] == B && x++;
+                  var E = l.startX, M = l.finishX, C = l.startY, A = l.finishY, P = 0, O = 0, K = 0, b = 0, Y = [P, K, O, b];
+                  if (C > 0)
+                    for (var _ = E; _ <= M; _++)
+                      Y[0] += this.grid[_][C - 1].length + this.grid[_][C].length - 1;
+                  if (M < this.grid.length - 1)
+                    for (var _ = C; _ <= A; _++)
+                      Y[1] += this.grid[M + 1][_].length + this.grid[M][_].length - 1;
+                  if (A < this.grid[0].length - 1)
+                    for (var _ = E; _ <= M; _++)
+                      Y[2] += this.grid[_][A + 1].length + this.grid[_][A].length - 1;
+                  if (E > 0)
+                    for (var _ = C; _ <= A; _++)
+                      Y[3] += this.grid[E - 1][_].length + this.grid[E][_].length - 1;
+                  for (var B = X.MAX_VALUE, x, H, $ = 0; $ < Y.length; $++)
+                    Y[$] < B ? (B = Y[$], x = 1, H = $) : Y[$] == B && x++;
                   if (x == 3 && B == 0)
-                    Y[0] == 0 && Y[1] == 0 && Y[2] == 0 ? E = 1 : Y[0] == 0 && Y[1] == 0 && Y[3] == 0 ? E = 0 : Y[0] == 0 && Y[2] == 0 && Y[3] == 0 ? E = 3 : Y[1] == 0 && Y[2] == 0 && Y[3] == 0 && (E = 2);
+                    Y[0] == 0 && Y[1] == 0 && Y[2] == 0 ? y = 1 : Y[0] == 0 && Y[1] == 0 && Y[3] == 0 ? y = 0 : Y[0] == 0 && Y[2] == 0 && Y[3] == 0 ? y = 3 : Y[1] == 0 && Y[2] == 0 && Y[3] == 0 && (y = 2);
                   else if (x == 2 && B == 0) {
-                    var k = Math.floor(Math.random() * 2);
-                    Y[0] == 0 && Y[1] == 0 ? k == 0 ? E = 0 : E = 1 : Y[0] == 0 && Y[2] == 0 ? k == 0 ? E = 0 : E = 2 : Y[0] == 0 && Y[3] == 0 ? k == 0 ? E = 0 : E = 3 : Y[1] == 0 && Y[2] == 0 ? k == 0 ? E = 1 : E = 2 : Y[1] == 0 && Y[3] == 0 ? k == 0 ? E = 1 : E = 3 : k == 0 ? E = 2 : E = 3;
+                    var j = Math.floor(Math.random() * 2);
+                    Y[0] == 0 && Y[1] == 0 ? j == 0 ? y = 0 : y = 1 : Y[0] == 0 && Y[2] == 0 ? j == 0 ? y = 0 : y = 2 : Y[0] == 0 && Y[3] == 0 ? j == 0 ? y = 0 : y = 3 : Y[1] == 0 && Y[2] == 0 ? j == 0 ? y = 1 : y = 2 : Y[1] == 0 && Y[3] == 0 ? j == 0 ? y = 1 : y = 3 : j == 0 ? y = 2 : y = 3;
                   } else if (x == 4 && B == 0) {
-                    var k = Math.floor(Math.random() * 4);
-                    E = k;
+                    var j = Math.floor(Math.random() * 4);
+                    y = j;
                   } else
-                    E = X;
-                  E == 0 ? d.setCenter(l.getCenterX(), l.getCenterY() - l.getHeight() / 2 - u.DEFAULT_EDGE_LENGTH - d.getHeight() / 2) : E == 1 ? d.setCenter(l.getCenterX() + l.getWidth() / 2 + u.DEFAULT_EDGE_LENGTH + d.getWidth() / 2, l.getCenterY()) : E == 2 ? d.setCenter(l.getCenterX(), l.getCenterY() + l.getHeight() / 2 + u.DEFAULT_EDGE_LENGTH + d.getHeight() / 2) : d.setCenter(l.getCenterX() - l.getWidth() / 2 - u.DEFAULT_EDGE_LENGTH - d.getWidth() / 2, l.getCenterY());
+                    y = H;
+                  y == 0 ? d.setCenter(l.getCenterX(), l.getCenterY() - l.getHeight() / 2 - u.DEFAULT_EDGE_LENGTH - d.getHeight() / 2) : y == 1 ? d.setCenter(l.getCenterX() + l.getWidth() / 2 + u.DEFAULT_EDGE_LENGTH + d.getWidth() / 2, l.getCenterY()) : y == 2 ? d.setCenter(l.getCenterX(), l.getCenterY() + l.getHeight() / 2 + u.DEFAULT_EDGE_LENGTH + d.getHeight() / 2) : d.setCenter(l.getCenterX() - l.getWidth() / 2 - u.DEFAULT_EDGE_LENGTH - d.getWidth() / 2, l.getCenterY());
                 }
-              }, i.exports = w;
+              }, i.exports = R;
             }
           ),
           /***/
           991: (
             /***/
-            (i, r, a) => {
-              var f = a(551).FDLayoutNode, o = a(551).IMath;
-              function y(h, s, g, u) {
-                f.call(this, h, s, g, u);
+            (i, r, n) => {
+              var f = n(551).FDLayoutNode, o = n(551).IMath;
+              function v(s, h, g, u) {
+                f.call(this, s, h, g, u);
               }
-              y.prototype = Object.create(f.prototype);
+              v.prototype = Object.create(f.prototype);
               for (var t in f)
-                y[t] = f[t];
-              y.prototype.calculateDisplacement = function() {
-                var h = this.graphManager.getLayout();
-                this.getChild() != null && this.fixedNodeWeight ? (this.displacementX += h.coolingFactor * (this.springForceX + this.repulsionForceX + this.gravitationForceX) / this.fixedNodeWeight, this.displacementY += h.coolingFactor * (this.springForceY + this.repulsionForceY + this.gravitationForceY) / this.fixedNodeWeight) : (this.displacementX += h.coolingFactor * (this.springForceX + this.repulsionForceX + this.gravitationForceX) / this.noOfChildren, this.displacementY += h.coolingFactor * (this.springForceY + this.repulsionForceY + this.gravitationForceY) / this.noOfChildren), Math.abs(this.displacementX) > h.coolingFactor * h.maxNodeDisplacement && (this.displacementX = h.coolingFactor * h.maxNodeDisplacement * o.sign(this.displacementX)), Math.abs(this.displacementY) > h.coolingFactor * h.maxNodeDisplacement && (this.displacementY = h.coolingFactor * h.maxNodeDisplacement * o.sign(this.displacementY)), this.child && this.child.getNodes().length > 0 && this.propogateDisplacementToChildren(this.displacementX, this.displacementY);
-              }, y.prototype.propogateDisplacementToChildren = function(h, s) {
+                v[t] = f[t];
+              v.prototype.calculateDisplacement = function() {
+                var s = this.graphManager.getLayout();
+                this.getChild() != null && this.fixedNodeWeight ? (this.displacementX += s.coolingFactor * (this.springForceX + this.repulsionForceX + this.gravitationForceX) / this.fixedNodeWeight, this.displacementY += s.coolingFactor * (this.springForceY + this.repulsionForceY + this.gravitationForceY) / this.fixedNodeWeight) : (this.displacementX += s.coolingFactor * (this.springForceX + this.repulsionForceX + this.gravitationForceX) / this.noOfChildren, this.displacementY += s.coolingFactor * (this.springForceY + this.repulsionForceY + this.gravitationForceY) / this.noOfChildren), Math.abs(this.displacementX) > s.coolingFactor * s.maxNodeDisplacement && (this.displacementX = s.coolingFactor * s.maxNodeDisplacement * o.sign(this.displacementX)), Math.abs(this.displacementY) > s.coolingFactor * s.maxNodeDisplacement && (this.displacementY = s.coolingFactor * s.maxNodeDisplacement * o.sign(this.displacementY)), this.child && this.child.getNodes().length > 0 && this.propogateDisplacementToChildren(this.displacementX, this.displacementY);
+              }, v.prototype.propogateDisplacementToChildren = function(s, h) {
                 for (var g = this.getChild().getNodes(), u, N = 0; N < g.length; N++)
-                  u = g[N], u.getChild() == null ? (u.displacementX += h, u.displacementY += s) : u.propogateDisplacementToChildren(h, s);
-              }, y.prototype.move = function() {
-                var h = this.graphManager.getLayout();
-                (this.child == null || this.child.getNodes().length == 0) && (this.moveBy(this.displacementX, this.displacementY), h.totalDisplacement += Math.abs(this.displacementX) + Math.abs(this.displacementY)), this.springForceX = 0, this.springForceY = 0, this.repulsionForceX = 0, this.repulsionForceY = 0, this.gravitationForceX = 0, this.gravitationForceY = 0, this.displacementX = 0, this.displacementY = 0;
-              }, y.prototype.setPred1 = function(h) {
-                this.pred1 = h;
-              }, y.prototype.getPred1 = function() {
+                  u = g[N], u.getChild() == null ? (u.displacementX += s, u.displacementY += h) : u.propogateDisplacementToChildren(s, h);
+              }, v.prototype.move = function() {
+                var s = this.graphManager.getLayout();
+                (this.child == null || this.child.getNodes().length == 0) && (this.moveBy(this.displacementX, this.displacementY), s.totalDisplacement += Math.abs(this.displacementX) + Math.abs(this.displacementY)), this.springForceX = 0, this.springForceY = 0, this.repulsionForceX = 0, this.repulsionForceY = 0, this.gravitationForceX = 0, this.gravitationForceY = 0, this.displacementX = 0, this.displacementY = 0;
+              }, v.prototype.setPred1 = function(s) {
+                this.pred1 = s;
+              }, v.prototype.getPred1 = function() {
                 return pred1;
-              }, y.prototype.getPred2 = function() {
+              }, v.prototype.getPred2 = function() {
                 return pred2;
-              }, y.prototype.setNext = function(h) {
-                this.next = h;
-              }, y.prototype.getNext = function() {
+              }, v.prototype.setNext = function(s) {
+                this.next = s;
+              }, v.prototype.getNext = function() {
                 return next;
-              }, y.prototype.setProcessed = function(h) {
-                this.processed = h;
-              }, y.prototype.isProcessed = function() {
+              }, v.prototype.setProcessed = function(s) {
+                this.processed = s;
+              }, v.prototype.isProcessed = function() {
                 return processed;
-              }, i.exports = y;
+              }, i.exports = v;
             }
           ),
           /***/
           902: (
             /***/
-            (i, r, a) => {
+            (i, r, n) => {
               function f(g) {
                 if (Array.isArray(g)) {
                   for (var u = 0, N = Array(g.length); u < g.length; u++)
@@ -2702,116 +2702,116 @@ function Ie() {
                 } else
                   return Array.from(g);
               }
-              var o = a(806), y = a(551).LinkedList, t = a(551).Matrix, h = a(551).SVD;
-              function s() {
+              var o = n(806), v = n(551).LinkedList, t = n(551).Matrix, s = n(551).SVD;
+              function h() {
               }
-              s.handleConstraints = function(g) {
+              h.handleConstraints = function(g) {
                 var u = {};
                 u.fixedNodeConstraint = g.constraints.fixedNodeConstraint, u.alignmentConstraint = g.constraints.alignmentConstraint, u.relativePlacementConstraint = g.constraints.relativePlacementConstraint;
-                for (var N = /* @__PURE__ */ new Map(), v = /* @__PURE__ */ new Map(), T = [], m = [], R = g.getAllNodes(), b = 0, I = 0; I < R.length; I++) {
-                  var z = R[I];
-                  z.getChild() == null && (v.set(z.id, b++), T.push(z.getCenterX()), m.push(z.getCenterY()), N.set(z.id, z));
+                for (var N = /* @__PURE__ */ new Map(), p = /* @__PURE__ */ new Map(), T = [], L = [], D = g.getAllNodes(), X = 0, w = 0; w < D.length; w++) {
+                  var Z = D[w];
+                  Z.getChild() == null && (p.set(Z.id, X++), T.push(Z.getCenterX()), L.push(Z.getCenterY()), N.set(Z.id, Z));
                 }
-                u.relativePlacementConstraint && u.relativePlacementConstraint.forEach(function(P) {
-                  !P.gap && P.gap != 0 && (P.left ? P.gap = o.DEFAULT_EDGE_LENGTH + N.get(P.left).getWidth() / 2 + N.get(P.right).getWidth() / 2 : P.gap = o.DEFAULT_EDGE_LENGTH + N.get(P.top).getHeight() / 2 + N.get(P.bottom).getHeight() / 2);
+                u.relativePlacementConstraint && u.relativePlacementConstraint.forEach(function(G) {
+                  !G.gap && G.gap != 0 && (G.left ? G.gap = o.DEFAULT_EDGE_LENGTH + N.get(G.left).getWidth() / 2 + N.get(G.right).getWidth() / 2 : G.gap = o.DEFAULT_EDGE_LENGTH + N.get(G.top).getHeight() / 2 + N.get(G.bottom).getHeight() / 2);
                 });
-                var H = function(V, _) {
-                  return { x: V.x - _.x, y: V.y - _.y };
-                }, J = function(V) {
-                  var _ = 0, it = 0;
-                  return V.forEach(function(K) {
-                    _ += T[v.get(K)], it += m[v.get(K)];
-                  }), { x: _ / V.size, y: it / V.size };
-                }, w = function(V, _, it, K, at) {
-                  function mt(ot, et) {
-                    var yt = new Set(ot), rt = !0, j = !1, wt = void 0;
+                var W = function(z, k) {
+                  return { x: z.x - k.x, y: z.y - k.y };
+                }, Q = function(z) {
+                  var k = 0, nt = 0;
+                  return z.forEach(function(J) {
+                    k += T[p.get(J)], nt += L[p.get(J)];
+                  }), { x: k / z.size, y: nt / z.size };
+                }, R = function(z, k, nt, J, at) {
+                  function mt(ot, rt) {
+                    var yt = new Set(ot), it = !0, tt = !1, wt = void 0;
                     try {
-                      for (var lt = et[Symbol.iterator](), ut; !(rt = (ut = lt.next()).done); rt = !0) {
+                      for (var lt = rt[Symbol.iterator](), ut; !(it = (ut = lt.next()).done); it = !0) {
                         var Gt = ut.value;
                         yt.add(Gt);
                       }
                     } catch (At) {
-                      j = !0, wt = At;
+                      tt = !0, wt = At;
                     } finally {
                       try {
-                        !rt && lt.return && lt.return();
+                        !it && lt.return && lt.return();
                       } finally {
-                        if (j)
+                        if (tt)
                           throw wt;
                       }
                     }
                     return yt;
                   }
                   var pt = /* @__PURE__ */ new Map();
-                  V.forEach(function(ot, et) {
-                    pt.set(et, 0);
-                  }), V.forEach(function(ot, et) {
+                  z.forEach(function(ot, rt) {
+                    pt.set(rt, 0);
+                  }), z.forEach(function(ot, rt) {
                     ot.forEach(function(yt) {
                       pt.set(yt.id, pt.get(yt.id) + 1);
                     });
                   });
-                  var tt = /* @__PURE__ */ new Map(), Z = /* @__PURE__ */ new Map(), dt = new y();
-                  pt.forEach(function(ot, et) {
-                    ot == 0 ? (dt.push(et), it || (_ == "horizontal" ? tt.set(et, v.has(et) ? T[v.get(et)] : K.get(et)) : tt.set(et, v.has(et) ? m[v.get(et)] : K.get(et)))) : tt.set(et, Number.NEGATIVE_INFINITY), it && Z.set(et, /* @__PURE__ */ new Set([et]));
-                  }), it && at.forEach(function(ot) {
-                    var et = [];
-                    if (ot.forEach(function(j) {
-                      it.has(j) && et.push(j);
-                    }), et.length > 0) {
+                  var et = /* @__PURE__ */ new Map(), q = /* @__PURE__ */ new Map(), dt = new v();
+                  pt.forEach(function(ot, rt) {
+                    ot == 0 ? (dt.push(rt), nt || (k == "horizontal" ? et.set(rt, p.has(rt) ? T[p.get(rt)] : J.get(rt)) : et.set(rt, p.has(rt) ? L[p.get(rt)] : J.get(rt)))) : et.set(rt, Number.NEGATIVE_INFINITY), nt && q.set(rt, /* @__PURE__ */ new Set([rt]));
+                  }), nt && at.forEach(function(ot) {
+                    var rt = [];
+                    if (ot.forEach(function(tt) {
+                      nt.has(tt) && rt.push(tt);
+                    }), rt.length > 0) {
                       var yt = 0;
-                      et.forEach(function(j) {
-                        _ == "horizontal" ? (tt.set(j, v.has(j) ? T[v.get(j)] : K.get(j)), yt += tt.get(j)) : (tt.set(j, v.has(j) ? m[v.get(j)] : K.get(j)), yt += tt.get(j));
-                      }), yt = yt / et.length, ot.forEach(function(j) {
-                        it.has(j) || tt.set(j, yt);
+                      rt.forEach(function(tt) {
+                        k == "horizontal" ? (et.set(tt, p.has(tt) ? T[p.get(tt)] : J.get(tt)), yt += et.get(tt)) : (et.set(tt, p.has(tt) ? L[p.get(tt)] : J.get(tt)), yt += et.get(tt));
+                      }), yt = yt / rt.length, ot.forEach(function(tt) {
+                        nt.has(tt) || et.set(tt, yt);
                       });
                     } else {
-                      var rt = 0;
-                      ot.forEach(function(j) {
-                        _ == "horizontal" ? rt += v.has(j) ? T[v.get(j)] : K.get(j) : rt += v.has(j) ? m[v.get(j)] : K.get(j);
-                      }), rt = rt / ot.length, ot.forEach(function(j) {
-                        tt.set(j, rt);
+                      var it = 0;
+                      ot.forEach(function(tt) {
+                        k == "horizontal" ? it += p.has(tt) ? T[p.get(tt)] : J.get(tt) : it += p.has(tt) ? L[p.get(tt)] : J.get(tt);
+                      }), it = it / ot.length, ot.forEach(function(tt) {
+                        et.set(tt, it);
                       });
                     }
                   });
                   for (var Tt = function() {
-                    var et = dt.shift(), yt = V.get(et);
-                    yt.forEach(function(rt) {
-                      if (tt.get(rt.id) < tt.get(et) + rt.gap)
-                        if (it && it.has(rt.id)) {
-                          var j = void 0;
-                          if (_ == "horizontal" ? j = v.has(rt.id) ? T[v.get(rt.id)] : K.get(rt.id) : j = v.has(rt.id) ? m[v.get(rt.id)] : K.get(rt.id), tt.set(rt.id, j), j < tt.get(et) + rt.gap) {
-                            var wt = tt.get(et) + rt.gap - j;
-                            Z.get(et).forEach(function(lt) {
-                              tt.set(lt, tt.get(lt) - wt);
+                    var rt = dt.shift(), yt = z.get(rt);
+                    yt.forEach(function(it) {
+                      if (et.get(it.id) < et.get(rt) + it.gap)
+                        if (nt && nt.has(it.id)) {
+                          var tt = void 0;
+                          if (k == "horizontal" ? tt = p.has(it.id) ? T[p.get(it.id)] : J.get(it.id) : tt = p.has(it.id) ? L[p.get(it.id)] : J.get(it.id), et.set(it.id, tt), tt < et.get(rt) + it.gap) {
+                            var wt = et.get(rt) + it.gap - tt;
+                            q.get(rt).forEach(function(lt) {
+                              et.set(lt, et.get(lt) - wt);
                             });
                           }
                         } else
-                          tt.set(rt.id, tt.get(et) + rt.gap);
-                      pt.set(rt.id, pt.get(rt.id) - 1), pt.get(rt.id) == 0 && dt.push(rt.id), it && Z.set(rt.id, mt(Z.get(et), Z.get(rt.id)));
+                          et.set(it.id, et.get(rt) + it.gap);
+                      pt.set(it.id, pt.get(it.id) - 1), pt.get(it.id) == 0 && dt.push(it.id), nt && q.set(it.id, mt(q.get(rt), q.get(it.id)));
                     });
                   }; dt.length != 0; )
                     Tt();
-                  if (it) {
+                  if (nt) {
                     var ct = /* @__PURE__ */ new Set();
-                    V.forEach(function(ot, et) {
-                      ot.length == 0 && ct.add(et);
+                    z.forEach(function(ot, rt) {
+                      ot.length == 0 && ct.add(rt);
                     });
                     var Dt = [];
-                    Z.forEach(function(ot, et) {
-                      if (ct.has(et)) {
-                        var yt = !1, rt = !0, j = !1, wt = void 0;
+                    q.forEach(function(ot, rt) {
+                      if (ct.has(rt)) {
+                        var yt = !1, it = !0, tt = !1, wt = void 0;
                         try {
-                          for (var lt = ot[Symbol.iterator](), ut; !(rt = (ut = lt.next()).done); rt = !0) {
+                          for (var lt = ot[Symbol.iterator](), ut; !(it = (ut = lt.next()).done); it = !0) {
                             var Gt = ut.value;
-                            it.has(Gt) && (yt = !0);
+                            nt.has(Gt) && (yt = !0);
                           }
                         } catch (Mt) {
-                          j = !0, wt = Mt;
+                          tt = !0, wt = Mt;
                         } finally {
                           try {
-                            !rt && lt.return && lt.return();
+                            !it && lt.return && lt.return();
                           } finally {
-                            if (j)
+                            if (tt)
                               throw wt;
                           }
                         }
@@ -2824,14 +2824,14 @@ function Ie() {
                           }) : Dt.push(new Set(ot));
                         }
                       }
-                    }), Dt.forEach(function(ot, et) {
-                      var yt = Number.POSITIVE_INFINITY, rt = Number.POSITIVE_INFINITY, j = Number.NEGATIVE_INFINITY, wt = Number.NEGATIVE_INFINITY, lt = !0, ut = !1, Gt = void 0;
+                    }), Dt.forEach(function(ot, rt) {
+                      var yt = Number.POSITIVE_INFINITY, it = Number.POSITIVE_INFINITY, tt = Number.NEGATIVE_INFINITY, wt = Number.NEGATIVE_INFINITY, lt = !0, ut = !1, Gt = void 0;
                       try {
                         for (var At = ot[Symbol.iterator](), St; !(lt = (St = At.next()).done); lt = !0) {
                           var Mt = St.value, Ht = void 0;
-                          _ == "horizontal" ? Ht = v.has(Mt) ? T[v.get(Mt)] : K.get(Mt) : Ht = v.has(Mt) ? m[v.get(Mt)] : K.get(Mt);
-                          var kt = tt.get(Mt);
-                          Ht < yt && (yt = Ht), Ht > j && (j = Ht), kt < rt && (rt = kt), kt > wt && (wt = kt);
+                          k == "horizontal" ? Ht = p.has(Mt) ? T[p.get(Mt)] : J.get(Mt) : Ht = p.has(Mt) ? L[p.get(Mt)] : J.get(Mt);
+                          var kt = et.get(Mt);
+                          Ht < yt && (yt = Ht), Ht > tt && (tt = Ht), kt < it && (it = kt), kt > wt && (wt = kt);
                         }
                       } catch (re) {
                         ut = !0, Gt = re;
@@ -2843,11 +2843,11 @@ function Ie() {
                             throw Gt;
                         }
                       }
-                      var le = (yt + j) / 2 - (rt + wt) / 2, qt = !0, jt = !1, te = void 0;
+                      var le = (yt + tt) / 2 - (it + wt) / 2, qt = !0, jt = !1, te = void 0;
                       try {
                         for (var Qt = ot[Symbol.iterator](), oe; !(qt = (oe = Qt.next()).done); qt = !0) {
                           var ee = oe.value;
-                          tt.set(ee, tt.get(ee) + le);
+                          et.set(ee, et.get(ee) + le);
                         }
                       } catch (re) {
                         jt = !0, te = re;
@@ -2861,217 +2861,217 @@ function Ie() {
                       }
                     });
                   }
-                  return tt;
-                }, ht = function(V) {
-                  var _ = 0, it = 0, K = 0, at = 0;
-                  if (V.forEach(function(Z) {
-                    Z.left ? T[v.get(Z.left)] - T[v.get(Z.right)] >= 0 ? _++ : it++ : m[v.get(Z.top)] - m[v.get(Z.bottom)] >= 0 ? K++ : at++;
-                  }), _ > it && K > at)
-                    for (var mt = 0; mt < v.size; mt++)
-                      T[mt] = -1 * T[mt], m[mt] = -1 * m[mt];
-                  else if (_ > it)
-                    for (var pt = 0; pt < v.size; pt++)
+                  return et;
+                }, ht = function(z) {
+                  var k = 0, nt = 0, J = 0, at = 0;
+                  if (z.forEach(function(q) {
+                    q.left ? T[p.get(q.left)] - T[p.get(q.right)] >= 0 ? k++ : nt++ : L[p.get(q.top)] - L[p.get(q.bottom)] >= 0 ? J++ : at++;
+                  }), k > nt && J > at)
+                    for (var mt = 0; mt < p.size; mt++)
+                      T[mt] = -1 * T[mt], L[mt] = -1 * L[mt];
+                  else if (k > nt)
+                    for (var pt = 0; pt < p.size; pt++)
                       T[pt] = -1 * T[pt];
-                  else if (K > at)
-                    for (var tt = 0; tt < v.size; tt++)
-                      m[tt] = -1 * m[tt];
-                }, e = function(V) {
-                  var _ = [], it = new y(), K = /* @__PURE__ */ new Set(), at = 0;
-                  return V.forEach(function(mt, pt) {
-                    if (!K.has(pt)) {
-                      _[at] = [];
-                      var tt = pt;
-                      for (it.push(tt), K.add(tt), _[at].push(tt); it.length != 0; ) {
-                        tt = it.shift();
-                        var Z = V.get(tt);
-                        Z.forEach(function(dt) {
-                          K.has(dt.id) || (it.push(dt.id), K.add(dt.id), _[at].push(dt.id));
+                  else if (J > at)
+                    for (var et = 0; et < p.size; et++)
+                      L[et] = -1 * L[et];
+                }, e = function(z) {
+                  var k = [], nt = new v(), J = /* @__PURE__ */ new Set(), at = 0;
+                  return z.forEach(function(mt, pt) {
+                    if (!J.has(pt)) {
+                      k[at] = [];
+                      var et = pt;
+                      for (nt.push(et), J.add(et), k[at].push(et); nt.length != 0; ) {
+                        et = nt.shift();
+                        var q = z.get(et);
+                        q.forEach(function(dt) {
+                          J.has(dt.id) || (nt.push(dt.id), J.add(dt.id), k[at].push(dt.id));
                         });
                       }
                       at++;
                     }
-                  }), _;
-                }, E = function(V) {
-                  var _ = /* @__PURE__ */ new Map();
-                  return V.forEach(function(it, K) {
-                    _.set(K, []);
-                  }), V.forEach(function(it, K) {
-                    it.forEach(function(at) {
-                      _.get(K).push(at), _.get(at.id).push({ id: K, gap: at.gap, direction: at.direction });
+                  }), k;
+                }, y = function(z) {
+                  var k = /* @__PURE__ */ new Map();
+                  return z.forEach(function(nt, J) {
+                    k.set(J, []);
+                  }), z.forEach(function(nt, J) {
+                    nt.forEach(function(at) {
+                      k.get(J).push(at), k.get(at.id).push({ id: J, gap: at.gap, direction: at.direction });
                     });
-                  }), _;
-                }, l = function(V) {
-                  var _ = /* @__PURE__ */ new Map();
-                  return V.forEach(function(it, K) {
-                    _.set(K, []);
-                  }), V.forEach(function(it, K) {
-                    it.forEach(function(at) {
-                      _.get(at.id).push({ id: K, gap: at.gap, direction: at.direction });
+                  }), k;
+                }, l = function(z) {
+                  var k = /* @__PURE__ */ new Map();
+                  return z.forEach(function(nt, J) {
+                    k.set(J, []);
+                  }), z.forEach(function(nt, J) {
+                    nt.forEach(function(at) {
+                      k.get(at.id).push({ id: J, gap: at.gap, direction: at.direction });
                     });
-                  }), _;
-                }, d = [], p = [], A = !1, M = !1, O = /* @__PURE__ */ new Set(), S = /* @__PURE__ */ new Map(), D = /* @__PURE__ */ new Map(), q = [];
-                if (u.fixedNodeConstraint && u.fixedNodeConstraint.forEach(function(P) {
-                  O.add(P.nodeId);
-                }), u.relativePlacementConstraint && (u.relativePlacementConstraint.forEach(function(P) {
-                  P.left ? (S.has(P.left) ? S.get(P.left).push({ id: P.right, gap: P.gap, direction: "horizontal" }) : S.set(P.left, [{ id: P.right, gap: P.gap, direction: "horizontal" }]), S.has(P.right) || S.set(P.right, [])) : (S.has(P.top) ? S.get(P.top).push({ id: P.bottom, gap: P.gap, direction: "vertical" }) : S.set(P.top, [{ id: P.bottom, gap: P.gap, direction: "vertical" }]), S.has(P.bottom) || S.set(P.bottom, []));
-                }), D = E(S), q = e(D)), o.TRANSFORM_ON_CONSTRAINT_HANDLING) {
+                  }), k;
+                }, d = [], E = [], M = !1, C = !1, A = /* @__PURE__ */ new Set(), P = /* @__PURE__ */ new Map(), O = /* @__PURE__ */ new Map(), K = [];
+                if (u.fixedNodeConstraint && u.fixedNodeConstraint.forEach(function(G) {
+                  A.add(G.nodeId);
+                }), u.relativePlacementConstraint && (u.relativePlacementConstraint.forEach(function(G) {
+                  G.left ? (P.has(G.left) ? P.get(G.left).push({ id: G.right, gap: G.gap, direction: "horizontal" }) : P.set(G.left, [{ id: G.right, gap: G.gap, direction: "horizontal" }]), P.has(G.right) || P.set(G.right, [])) : (P.has(G.top) ? P.get(G.top).push({ id: G.bottom, gap: G.gap, direction: "vertical" }) : P.set(G.top, [{ id: G.bottom, gap: G.gap, direction: "vertical" }]), P.has(G.bottom) || P.set(G.bottom, []));
+                }), O = y(P), K = e(O)), o.TRANSFORM_ON_CONSTRAINT_HANDLING) {
                   if (u.fixedNodeConstraint && u.fixedNodeConstraint.length > 1)
-                    u.fixedNodeConstraint.forEach(function(P, V) {
-                      d[V] = [P.position.x, P.position.y], p[V] = [T[v.get(P.nodeId)], m[v.get(P.nodeId)]];
-                    }), A = !0;
+                    u.fixedNodeConstraint.forEach(function(G, z) {
+                      d[z] = [G.position.x, G.position.y], E[z] = [T[p.get(G.nodeId)], L[p.get(G.nodeId)]];
+                    }), M = !0;
                   else if (u.alignmentConstraint)
                     (function() {
-                      var P = 0;
+                      var G = 0;
                       if (u.alignmentConstraint.vertical) {
-                        for (var V = u.alignmentConstraint.vertical, _ = function(tt) {
-                          var Z = /* @__PURE__ */ new Set();
-                          V[tt].forEach(function(ct) {
-                            Z.add(ct);
+                        for (var z = u.alignmentConstraint.vertical, k = function(et) {
+                          var q = /* @__PURE__ */ new Set();
+                          z[et].forEach(function(ct) {
+                            q.add(ct);
                           });
-                          var dt = new Set([].concat(f(Z)).filter(function(ct) {
-                            return O.has(ct);
+                          var dt = new Set([].concat(f(q)).filter(function(ct) {
+                            return A.has(ct);
                           })), Tt = void 0;
-                          dt.size > 0 ? Tt = T[v.get(dt.values().next().value)] : Tt = J(Z).x, V[tt].forEach(function(ct) {
-                            d[P] = [Tt, m[v.get(ct)]], p[P] = [T[v.get(ct)], m[v.get(ct)]], P++;
+                          dt.size > 0 ? Tt = T[p.get(dt.values().next().value)] : Tt = Q(q).x, z[et].forEach(function(ct) {
+                            d[G] = [Tt, L[p.get(ct)]], E[G] = [T[p.get(ct)], L[p.get(ct)]], G++;
                           });
-                        }, it = 0; it < V.length; it++)
-                          _(it);
-                        A = !0;
+                        }, nt = 0; nt < z.length; nt++)
+                          k(nt);
+                        M = !0;
                       }
                       if (u.alignmentConstraint.horizontal) {
-                        for (var K = u.alignmentConstraint.horizontal, at = function(tt) {
-                          var Z = /* @__PURE__ */ new Set();
-                          K[tt].forEach(function(ct) {
-                            Z.add(ct);
+                        for (var J = u.alignmentConstraint.horizontal, at = function(et) {
+                          var q = /* @__PURE__ */ new Set();
+                          J[et].forEach(function(ct) {
+                            q.add(ct);
                           });
-                          var dt = new Set([].concat(f(Z)).filter(function(ct) {
-                            return O.has(ct);
+                          var dt = new Set([].concat(f(q)).filter(function(ct) {
+                            return A.has(ct);
                           })), Tt = void 0;
-                          dt.size > 0 ? Tt = T[v.get(dt.values().next().value)] : Tt = J(Z).y, K[tt].forEach(function(ct) {
-                            d[P] = [T[v.get(ct)], Tt], p[P] = [T[v.get(ct)], m[v.get(ct)]], P++;
+                          dt.size > 0 ? Tt = T[p.get(dt.values().next().value)] : Tt = Q(q).y, J[et].forEach(function(ct) {
+                            d[G] = [T[p.get(ct)], Tt], E[G] = [T[p.get(ct)], L[p.get(ct)]], G++;
                           });
-                        }, mt = 0; mt < K.length; mt++)
+                        }, mt = 0; mt < J.length; mt++)
                           at(mt);
-                        A = !0;
+                        M = !0;
                       }
-                      u.relativePlacementConstraint && (M = !0);
+                      u.relativePlacementConstraint && (C = !0);
                     })();
                   else if (u.relativePlacementConstraint) {
-                    for (var G = 0, Y = 0, $ = 0; $ < q.length; $++)
-                      q[$].length > G && (G = q[$].length, Y = $);
-                    if (G < D.size / 2)
-                      ht(u.relativePlacementConstraint), A = !1, M = !1;
+                    for (var b = 0, Y = 0, _ = 0; _ < K.length; _++)
+                      K[_].length > b && (b = K[_].length, Y = _);
+                    if (b < O.size / 2)
+                      ht(u.relativePlacementConstraint), M = !1, C = !1;
                     else {
-                      var B = /* @__PURE__ */ new Map(), x = /* @__PURE__ */ new Map(), X = [];
-                      q[Y].forEach(function(P) {
-                        S.get(P).forEach(function(V) {
-                          V.direction == "horizontal" ? (B.has(P) ? B.get(P).push(V) : B.set(P, [V]), B.has(V.id) || B.set(V.id, []), X.push({ left: P, right: V.id })) : (x.has(P) ? x.get(P).push(V) : x.set(P, [V]), x.has(V.id) || x.set(V.id, []), X.push({ top: P, bottom: V.id }));
+                      var B = /* @__PURE__ */ new Map(), x = /* @__PURE__ */ new Map(), H = [];
+                      K[Y].forEach(function(G) {
+                        P.get(G).forEach(function(z) {
+                          z.direction == "horizontal" ? (B.has(G) ? B.get(G).push(z) : B.set(G, [z]), B.has(z.id) || B.set(z.id, []), H.push({ left: G, right: z.id })) : (x.has(G) ? x.get(G).push(z) : x.set(G, [z]), x.has(z.id) || x.set(z.id, []), H.push({ top: G, bottom: z.id }));
                         });
-                      }), ht(X), M = !1;
-                      var Q = w(B, "horizontal"), k = w(x, "vertical");
-                      q[Y].forEach(function(P, V) {
-                        p[V] = [T[v.get(P)], m[v.get(P)]], d[V] = [], Q.has(P) ? d[V][0] = Q.get(P) : d[V][0] = T[v.get(P)], k.has(P) ? d[V][1] = k.get(P) : d[V][1] = m[v.get(P)];
-                      }), A = !0;
+                      }), ht(H), C = !1;
+                      var $ = R(B, "horizontal"), j = R(x, "vertical");
+                      K[Y].forEach(function(G, z) {
+                        E[z] = [T[p.get(G)], L[p.get(G)]], d[z] = [], $.has(G) ? d[z][0] = $.get(G) : d[z][0] = T[p.get(G)], j.has(G) ? d[z][1] = j.get(G) : d[z][1] = L[p.get(G)];
+                      }), M = !0;
                     }
                   }
-                  if (A) {
-                    for (var ft = void 0, W = t.transpose(d), Ot = t.transpose(p), vt = 0; vt < W.length; vt++)
-                      W[vt] = t.multGamma(W[vt]), Ot[vt] = t.multGamma(Ot[vt]);
-                    var $t = t.multMat(W, t.transpose(Ot)), Vt = h.svd($t);
+                  if (M) {
+                    for (var ft = void 0, V = t.transpose(d), Ot = t.transpose(E), vt = 0; vt < V.length; vt++)
+                      V[vt] = t.multGamma(V[vt]), Ot[vt] = t.multGamma(Ot[vt]);
+                    var $t = t.multMat(V, t.transpose(Ot)), Vt = s.svd($t);
                     ft = t.multMat(Vt.V, t.transpose(Vt.U));
-                    for (var Nt = 0; Nt < v.size; Nt++) {
-                      var Yt = [T[Nt], m[Nt]], Xt = [ft[0][0], ft[1][0]], ie = [ft[0][1], ft[1][1]];
-                      T[Nt] = t.dotProduct(Yt, Xt), m[Nt] = t.dotProduct(Yt, ie);
+                    for (var Nt = 0; Nt < p.size; Nt++) {
+                      var Yt = [T[Nt], L[Nt]], Xt = [ft[0][0], ft[1][0]], ie = [ft[0][1], ft[1][1]];
+                      T[Nt] = t.dotProduct(Yt, Xt), L[Nt] = t.dotProduct(Yt, ie);
                     }
-                    M && ht(u.relativePlacementConstraint);
+                    C && ht(u.relativePlacementConstraint);
                   }
                 }
                 if (o.ENFORCE_CONSTRAINTS) {
                   if (u.fixedNodeConstraint && u.fixedNodeConstraint.length > 0) {
                     var xt = { x: 0, y: 0 };
-                    u.fixedNodeConstraint.forEach(function(P, V) {
-                      var _ = { x: T[v.get(P.nodeId)], y: m[v.get(P.nodeId)] }, it = P.position, K = H(it, _);
-                      xt.x += K.x, xt.y += K.y;
-                    }), xt.x /= u.fixedNodeConstraint.length, xt.y /= u.fixedNodeConstraint.length, T.forEach(function(P, V) {
-                      T[V] += xt.x;
-                    }), m.forEach(function(P, V) {
-                      m[V] += xt.y;
-                    }), u.fixedNodeConstraint.forEach(function(P) {
-                      T[v.get(P.nodeId)] = P.position.x, m[v.get(P.nodeId)] = P.position.y;
+                    u.fixedNodeConstraint.forEach(function(G, z) {
+                      var k = { x: T[p.get(G.nodeId)], y: L[p.get(G.nodeId)] }, nt = G.position, J = W(nt, k);
+                      xt.x += J.x, xt.y += J.y;
+                    }), xt.x /= u.fixedNodeConstraint.length, xt.y /= u.fixedNodeConstraint.length, T.forEach(function(G, z) {
+                      T[z] += xt.x;
+                    }), L.forEach(function(G, z) {
+                      L[z] += xt.y;
+                    }), u.fixedNodeConstraint.forEach(function(G) {
+                      T[p.get(G.nodeId)] = G.position.x, L[p.get(G.nodeId)] = G.position.y;
                     });
                   }
                   if (u.alignmentConstraint) {
                     if (u.alignmentConstraint.vertical)
-                      for (var Jt = u.alignmentConstraint.vertical, Ft = function(V) {
-                        var _ = /* @__PURE__ */ new Set();
-                        Jt[V].forEach(function(at) {
-                          _.add(at);
+                      for (var Jt = u.alignmentConstraint.vertical, Ft = function(z) {
+                        var k = /* @__PURE__ */ new Set();
+                        Jt[z].forEach(function(at) {
+                          k.add(at);
                         });
-                        var it = new Set([].concat(f(_)).filter(function(at) {
-                          return O.has(at);
-                        })), K = void 0;
-                        it.size > 0 ? K = T[v.get(it.values().next().value)] : K = J(_).x, _.forEach(function(at) {
-                          O.has(at) || (T[v.get(at)] = K);
+                        var nt = new Set([].concat(f(k)).filter(function(at) {
+                          return A.has(at);
+                        })), J = void 0;
+                        nt.size > 0 ? J = T[p.get(nt.values().next().value)] : J = Q(k).x, k.forEach(function(at) {
+                          A.has(at) || (T[p.get(at)] = J);
                         });
                       }, zt = 0; zt < Jt.length; zt++)
                         Ft(zt);
                     if (u.alignmentConstraint.horizontal)
-                      for (var _t = u.alignmentConstraint.horizontal, ne = function(V) {
-                        var _ = /* @__PURE__ */ new Set();
-                        _t[V].forEach(function(at) {
-                          _.add(at);
+                      for (var _t = u.alignmentConstraint.horizontal, ne = function(z) {
+                        var k = /* @__PURE__ */ new Set();
+                        _t[z].forEach(function(at) {
+                          k.add(at);
                         });
-                        var it = new Set([].concat(f(_)).filter(function(at) {
-                          return O.has(at);
-                        })), K = void 0;
-                        it.size > 0 ? K = m[v.get(it.values().next().value)] : K = J(_).y, _.forEach(function(at) {
-                          O.has(at) || (m[v.get(at)] = K);
+                        var nt = new Set([].concat(f(k)).filter(function(at) {
+                          return A.has(at);
+                        })), J = void 0;
+                        nt.size > 0 ? J = L[p.get(nt.values().next().value)] : J = Q(k).y, k.forEach(function(at) {
+                          A.has(at) || (L[p.get(at)] = J);
                         });
                       }, Pt = 0; Pt < _t.length; Pt++)
                         ne(Pt);
                   }
                   u.relativePlacementConstraint && function() {
-                    var P = /* @__PURE__ */ new Map(), V = /* @__PURE__ */ new Map(), _ = /* @__PURE__ */ new Map(), it = /* @__PURE__ */ new Map(), K = /* @__PURE__ */ new Map(), at = /* @__PURE__ */ new Map(), mt = /* @__PURE__ */ new Set(), pt = /* @__PURE__ */ new Set();
-                    if (O.forEach(function(It) {
+                    var G = /* @__PURE__ */ new Map(), z = /* @__PURE__ */ new Map(), k = /* @__PURE__ */ new Map(), nt = /* @__PURE__ */ new Map(), J = /* @__PURE__ */ new Map(), at = /* @__PURE__ */ new Map(), mt = /* @__PURE__ */ new Set(), pt = /* @__PURE__ */ new Set();
+                    if (A.forEach(function(It) {
                       mt.add(It), pt.add(It);
                     }), u.alignmentConstraint) {
                       if (u.alignmentConstraint.vertical)
-                        for (var tt = u.alignmentConstraint.vertical, Z = function(st) {
-                          _.set("dummy" + st, []), tt[st].forEach(function(Et) {
-                            P.set(Et, "dummy" + st), _.get("dummy" + st).push(Et), O.has(Et) && mt.add("dummy" + st);
-                          }), K.set("dummy" + st, T[v.get(tt[st][0])]);
-                        }, dt = 0; dt < tt.length; dt++)
-                          Z(dt);
+                        for (var et = u.alignmentConstraint.vertical, q = function(st) {
+                          k.set("dummy" + st, []), et[st].forEach(function(Et) {
+                            G.set(Et, "dummy" + st), k.get("dummy" + st).push(Et), A.has(Et) && mt.add("dummy" + st);
+                          }), J.set("dummy" + st, T[p.get(et[st][0])]);
+                        }, dt = 0; dt < et.length; dt++)
+                          q(dt);
                       if (u.alignmentConstraint.horizontal)
                         for (var Tt = u.alignmentConstraint.horizontal, ct = function(st) {
-                          it.set("dummy" + st, []), Tt[st].forEach(function(Et) {
-                            V.set(Et, "dummy" + st), it.get("dummy" + st).push(Et), O.has(Et) && pt.add("dummy" + st);
-                          }), at.set("dummy" + st, m[v.get(Tt[st][0])]);
+                          nt.set("dummy" + st, []), Tt[st].forEach(function(Et) {
+                            z.set(Et, "dummy" + st), nt.get("dummy" + st).push(Et), A.has(Et) && pt.add("dummy" + st);
+                          }), at.set("dummy" + st, L[p.get(Tt[st][0])]);
                         }, Dt = 0; Dt < Tt.length; Dt++)
                           ct(Dt);
                     }
-                    var ot = /* @__PURE__ */ new Map(), et = /* @__PURE__ */ new Map(), yt = function(st) {
-                      S.get(st).forEach(function(Et) {
+                    var ot = /* @__PURE__ */ new Map(), rt = /* @__PURE__ */ new Map(), yt = function(st) {
+                      P.get(st).forEach(function(Et) {
                         var Zt = void 0, bt = void 0;
-                        Et.direction == "horizontal" ? (Zt = P.get(st) ? P.get(st) : st, P.get(Et.id) ? bt = { id: P.get(Et.id), gap: Et.gap, direction: Et.direction } : bt = Et, ot.has(Zt) ? ot.get(Zt).push(bt) : ot.set(Zt, [bt]), ot.has(bt.id) || ot.set(bt.id, [])) : (Zt = V.get(st) ? V.get(st) : st, V.get(Et.id) ? bt = { id: V.get(Et.id), gap: Et.gap, direction: Et.direction } : bt = Et, et.has(Zt) ? et.get(Zt).push(bt) : et.set(Zt, [bt]), et.has(bt.id) || et.set(bt.id, []));
+                        Et.direction == "horizontal" ? (Zt = G.get(st) ? G.get(st) : st, G.get(Et.id) ? bt = { id: G.get(Et.id), gap: Et.gap, direction: Et.direction } : bt = Et, ot.has(Zt) ? ot.get(Zt).push(bt) : ot.set(Zt, [bt]), ot.has(bt.id) || ot.set(bt.id, [])) : (Zt = z.get(st) ? z.get(st) : st, z.get(Et.id) ? bt = { id: z.get(Et.id), gap: Et.gap, direction: Et.direction } : bt = Et, rt.has(Zt) ? rt.get(Zt).push(bt) : rt.set(Zt, [bt]), rt.has(bt.id) || rt.set(bt.id, []));
                       });
-                    }, rt = !0, j = !1, wt = void 0;
+                    }, it = !0, tt = !1, wt = void 0;
                     try {
-                      for (var lt = S.keys()[Symbol.iterator](), ut; !(rt = (ut = lt.next()).done); rt = !0) {
+                      for (var lt = P.keys()[Symbol.iterator](), ut; !(it = (ut = lt.next()).done); it = !0) {
                         var Gt = ut.value;
                         yt(Gt);
                       }
                     } catch (It) {
-                      j = !0, wt = It;
+                      tt = !0, wt = It;
                     } finally {
                       try {
-                        !rt && lt.return && lt.return();
+                        !it && lt.return && lt.return();
                       } finally {
-                        if (j)
+                        if (tt)
                           throw wt;
                       }
                     }
-                    var At = E(ot), St = E(et), Mt = e(At), Ht = e(St), kt = l(ot), le = l(et), qt = [], jt = [];
+                    var At = y(ot), St = y(rt), Mt = e(At), Ht = e(St), kt = l(ot), le = l(rt), qt = [], jt = [];
                     Mt.forEach(function(It, st) {
                       qt[st] = [], It.forEach(function(Et) {
                         kt.get(Et).length == 0 && qt[st].push(Et);
@@ -3081,10 +3081,10 @@ function Ie() {
                         le.get(Et).length == 0 && jt[st].push(Et);
                       });
                     });
-                    var te = w(ot, "horizontal", mt, K, qt), Qt = w(et, "vertical", pt, at, jt), oe = function(st) {
-                      _.get(st) ? _.get(st).forEach(function(Et) {
-                        T[v.get(Et)] = te.get(st);
-                      }) : T[v.get(st)] = te.get(st);
+                    var te = R(ot, "horizontal", mt, J, qt), Qt = R(rt, "vertical", pt, at, jt), oe = function(st) {
+                      k.get(st) ? k.get(st).forEach(function(Et) {
+                        T[p.get(Et)] = te.get(st);
+                      }) : T[p.get(st)] = te.get(st);
                     }, ee = !0, re = !1, ve = void 0;
                     try {
                       for (var fe = te.keys()[Symbol.iterator](), pe; !(ee = (pe = fe.next()).done); ee = !0) {
@@ -3101,15 +3101,15 @@ function Ie() {
                           throw ve;
                       }
                     }
-                    var Ae = function(st) {
-                      it.get(st) ? it.get(st).forEach(function(Et) {
-                        m[v.get(Et)] = Qt.get(st);
-                      }) : m[v.get(st)] = Qt.get(st);
+                    var Oe = function(st) {
+                      nt.get(st) ? nt.get(st).forEach(function(Et) {
+                        L[p.get(Et)] = Qt.get(st);
+                      }) : L[p.get(st)] = Qt.get(st);
                     }, ue = !0, Ee = !1, ye = void 0;
                     try {
                       for (var ce = Qt.keys()[Symbol.iterator](), Ne; !(ue = (Ne = ce.next()).done); ue = !0) {
                         var ge = Ne.value;
-                        Ae(ge);
+                        Oe(ge);
                       }
                     } catch (It) {
                       Ee = !0, ye = It;
@@ -3123,27 +3123,27 @@ function Ie() {
                     }
                   }();
                 }
-                for (var Bt = 0; Bt < R.length; Bt++) {
-                  var Ut = R[Bt];
-                  Ut.getChild() == null && Ut.setCenter(T[v.get(Ut.id)], m[v.get(Ut.id)]);
+                for (var Bt = 0; Bt < D.length; Bt++) {
+                  var Ut = D[Bt];
+                  Ut.getChild() == null && Ut.setCenter(T[p.get(Ut.id)], L[p.get(Ut.id)]);
                 }
-              }, i.exports = s;
+              }, i.exports = h;
             }
           ),
           /***/
           551: (
             /***/
             (i) => {
-              i.exports = L;
+              i.exports = I;
             }
           )
           /******/
-        }, C = {};
+        }, m = {};
         function c(i) {
-          var r = C[i];
+          var r = m[i];
           if (r !== void 0)
             return r.exports;
-          var a = C[i] = {
+          var n = m[i] = {
             /******/
             // no module.id needed
             /******/
@@ -3152,318 +3152,318 @@ function Ie() {
             exports: {}
             /******/
           };
-          return U[i](a, a.exports, c), a.exports;
+          return U[i](n, n.exports, c), n.exports;
         }
-        var n = c(45);
-        return n;
+        var a = c(45);
+        return a;
       })()
     );
   });
 })(Me);
-var Re = Me.exports;
-const Wt = /* @__PURE__ */ De(Re), we = Wt.layoutBase.LinkedList;
+var we = Me.exports;
+const Wt = /* @__PURE__ */ Ie(we), xe = Wt.layoutBase.LinkedList;
 let Ct = {};
-Ct.getTopMostNodes = function(F) {
-  let nt = {};
-  for (let U = 0; U < F.length; U++)
-    nt[F[U].id()] = !0;
-  return F.filter(function(U, C) {
-    typeof U == "number" && (U = C);
+Ct.getTopMostNodes = function(S) {
+  let F = {};
+  for (let U = 0; U < S.length; U++)
+    F[S[U].id()] = !0;
+  return S.filter(function(U, m) {
+    typeof U == "number" && (U = m);
     let c = U.parent()[0];
     for (; c != null; ) {
-      if (nt[c.id()])
+      if (F[c.id()])
         return !1;
       c = c.parent()[0];
     }
     return !0;
   });
 };
-Ct.connectComponents = function(F, nt, L, U) {
-  let C = new we(), c = /* @__PURE__ */ new Set(), n = [], i, r, a, f = !1, o = 1, y = [], t = [];
+Ct.connectComponents = function(S, F, I, U) {
+  let m = new xe(), c = /* @__PURE__ */ new Set(), a = [], i, r, n, f = !1, o = 1, v = [], t = [];
   do {
-    let h = F.collection();
-    t.push(h);
-    let s = L[0], g = F.collection();
-    for (g.merge(s).merge(s.descendants().intersection(nt)), n.push(s), g.forEach(function(u) {
-      C.push(u), c.add(u), h.merge(u);
-    }); C.length != 0; ) {
-      s = C.shift();
-      let u = F.collection();
-      s.neighborhood().nodes().forEach(function(N) {
-        nt.intersection(s.edgesWith(N)).length > 0 && u.merge(N);
+    let s = S.collection();
+    t.push(s);
+    let h = I[0], g = S.collection();
+    for (g.merge(h).merge(h.descendants().intersection(F)), a.push(h), g.forEach(function(u) {
+      m.push(u), c.add(u), s.merge(u);
+    }); m.length != 0; ) {
+      h = m.shift();
+      let u = S.collection();
+      h.neighborhood().nodes().forEach(function(N) {
+        F.intersection(h.edgesWith(N)).length > 0 && u.merge(N);
       });
       for (let N = 0; N < u.length; N++) {
-        let v = u[N];
-        i = L.intersection(v.union(v.ancestors())), i != null && !c.has(i[0]) && i.union(i.descendants()).forEach(function(m) {
-          C.push(m), c.add(m), h.merge(m), L.has(m) && n.push(m);
+        let p = u[N];
+        i = I.intersection(p.union(p.ancestors())), i != null && !c.has(i[0]) && i.union(i.descendants()).forEach(function(L) {
+          m.push(L), c.add(L), s.merge(L), I.has(L) && a.push(L);
         });
       }
     }
-    if (h.forEach((u) => {
-      nt.intersection(u.connectedEdges()).forEach((N) => {
-        h.has(N.source()) && h.has(N.target()) && h.merge(N);
+    if (s.forEach((u) => {
+      F.intersection(u.connectedEdges()).forEach((N) => {
+        s.has(N.source()) && s.has(N.target()) && s.merge(N);
       });
-    }), n.length == L.length && (f = !0), !f || f && o > 1) {
-      r = n[0], a = r.connectedEdges().length, n.forEach(function(N) {
-        N.connectedEdges().length < a && (a = N.connectedEdges().length, r = N);
-      }), y.push(r.id());
-      let u = F.collection();
-      u.merge(n[0]), n.forEach(function(N) {
+    }), a.length == I.length && (f = !0), !f || f && o > 1) {
+      r = a[0], n = r.connectedEdges().length, a.forEach(function(N) {
+        N.connectedEdges().length < n && (n = N.connectedEdges().length, r = N);
+      }), v.push(r.id());
+      let u = S.collection();
+      u.merge(a[0]), a.forEach(function(N) {
         u.merge(N);
-      }), n = [], L = L.difference(u), o++;
+      }), a = [], I = I.difference(u), o++;
     }
   } while (!f);
-  return U && y.length > 0 && U.set("dummy" + (U.size + 1), y), t;
+  return U && v.length > 0 && U.set("dummy" + (U.size + 1), v), t;
 };
-Ct.relocateComponent = function(F, nt, L) {
-  if (!L.fixedNodeConstraint) {
-    let U = Number.POSITIVE_INFINITY, C = Number.NEGATIVE_INFINITY, c = Number.POSITIVE_INFINITY, n = Number.NEGATIVE_INFINITY;
-    if (L.quality == "draft") {
-      for (let [a, f] of nt.nodeIndexes) {
-        let o = L.cy.getElementById(a);
+Ct.relocateComponent = function(S, F, I) {
+  if (!I.fixedNodeConstraint) {
+    let U = Number.POSITIVE_INFINITY, m = Number.NEGATIVE_INFINITY, c = Number.POSITIVE_INFINITY, a = Number.NEGATIVE_INFINITY;
+    if (I.quality == "draft") {
+      for (let [n, f] of F.nodeIndexes) {
+        let o = I.cy.getElementById(n);
         if (o) {
-          let y = o.boundingBox(), t = nt.xCoords[f] - y.w / 2, h = nt.xCoords[f] + y.w / 2, s = nt.yCoords[f] - y.h / 2, g = nt.yCoords[f] + y.h / 2;
-          t < U && (U = t), h > C && (C = h), s < c && (c = s), g > n && (n = g);
+          let v = o.boundingBox(), t = F.xCoords[f] - v.w / 2, s = F.xCoords[f] + v.w / 2, h = F.yCoords[f] - v.h / 2, g = F.yCoords[f] + v.h / 2;
+          t < U && (U = t), s > m && (m = s), h < c && (c = h), g > a && (a = g);
         }
       }
-      let i = F.x - (C + U) / 2, r = F.y - (n + c) / 2;
-      nt.xCoords = nt.xCoords.map((a) => a + i), nt.yCoords = nt.yCoords.map((a) => a + r);
+      let i = S.x - (m + U) / 2, r = S.y - (a + c) / 2;
+      F.xCoords = F.xCoords.map((n) => n + i), F.yCoords = F.yCoords.map((n) => n + r);
     } else {
-      Object.keys(nt).forEach(function(a) {
-        let f = nt[a], o = f.getRect().x, y = f.getRect().x + f.getRect().width, t = f.getRect().y, h = f.getRect().y + f.getRect().height;
-        o < U && (U = o), y > C && (C = y), t < c && (c = t), h > n && (n = h);
+      Object.keys(F).forEach(function(n) {
+        let f = F[n], o = f.getRect().x, v = f.getRect().x + f.getRect().width, t = f.getRect().y, s = f.getRect().y + f.getRect().height;
+        o < U && (U = o), v > m && (m = v), t < c && (c = t), s > a && (a = s);
       });
-      let i = F.x - (C + U) / 2, r = F.y - (n + c) / 2;
-      Object.keys(nt).forEach(function(a) {
-        let f = nt[a];
+      let i = S.x - (m + U) / 2, r = S.y - (a + c) / 2;
+      Object.keys(F).forEach(function(n) {
+        let f = F[n];
         f.setCenter(f.getCenterX() + i, f.getCenterY() + r);
       });
     }
   }
 };
-Ct.calcBoundingBox = function(F, nt, L, U) {
-  let C = Number.MAX_SAFE_INTEGER, c = Number.MIN_SAFE_INTEGER, n = Number.MAX_SAFE_INTEGER, i = Number.MIN_SAFE_INTEGER, r, a, f, o, y = F.descendants().not(":parent"), t = y.length;
-  for (let s = 0; s < t; s++) {
-    let g = y[s];
-    r = nt[U.get(g.id())] - g.width() / 2, a = nt[U.get(g.id())] + g.width() / 2, f = L[U.get(g.id())] - g.height() / 2, o = L[U.get(g.id())] + g.height() / 2, C > r && (C = r), c < a && (c = a), n > f && (n = f), i < o && (i = o);
+Ct.calcBoundingBox = function(S, F, I, U) {
+  let m = Number.MAX_SAFE_INTEGER, c = Number.MIN_SAFE_INTEGER, a = Number.MAX_SAFE_INTEGER, i = Number.MIN_SAFE_INTEGER, r, n, f, o, v = S.descendants().not(":parent"), t = v.length;
+  for (let h = 0; h < t; h++) {
+    let g = v[h];
+    r = F[U.get(g.id())] - g.width() / 2, n = F[U.get(g.id())] + g.width() / 2, f = I[U.get(g.id())] - g.height() / 2, o = I[U.get(g.id())] + g.height() / 2, m > r && (m = r), c < n && (c = n), a > f && (a = f), i < o && (i = o);
   }
-  let h = {};
-  return h.topLeftX = C, h.topLeftY = n, h.width = c - C, h.height = i - n, h;
+  let s = {};
+  return s.topLeftX = m, s.topLeftY = a, s.width = c - m, s.height = i - a, s;
 };
-Ct.calcParentsWithoutChildren = function(F, nt) {
-  let L = F.collection();
-  return nt.nodes(":parent").forEach((U) => {
-    let C = !1;
+Ct.calcParentsWithoutChildren = function(S, F) {
+  let I = S.collection();
+  return F.nodes(":parent").forEach((U) => {
+    let m = !1;
     U.children().forEach((c) => {
-      c.css("display") != "none" && (C = !0);
-    }), C || L.merge(U);
-  }), L;
+      c.css("display") != "none" && (m = !0);
+    }), m || I.merge(U);
+  }), I;
 };
-const Lt = Wt.layoutBase.Matrix, xe = Wt.layoutBase.SVD;
-let me = function(F) {
-  let nt = F.cy, L = F.eles, U = L.nodes(), C = L.nodes(":parent"), c = /* @__PURE__ */ new Map(), n = /* @__PURE__ */ new Map(), i = /* @__PURE__ */ new Map(), r = [], a = [], f = [], o = [], y = [], t = [], h = [], s = [], g;
+const Lt = Wt.layoutBase.Matrix, Fe = Wt.layoutBase.SVD;
+let me = function(S) {
+  let F = S.cy, I = S.eles, U = I.nodes(), m = I.nodes(":parent"), c = /* @__PURE__ */ new Map(), a = /* @__PURE__ */ new Map(), i = /* @__PURE__ */ new Map(), r = [], n = [], f = [], o = [], v = [], t = [], s = [], h = [], g;
   const u = 1e8, N = 1e-9;
-  let v = F.piTol, T = F.samplingType, m = F.nodeSeparation, R, b = function() {
-    let e = 0, E = 0, l = !1;
-    for (; E < R; ) {
+  let p = S.piTol, T = S.samplingType, L = S.nodeSeparation, D, X = function() {
+    let e = 0, y = 0, l = !1;
+    for (; y < D; ) {
       e = Math.floor(Math.random() * g), l = !1;
-      for (let d = 0; d < E; d++)
+      for (let d = 0; d < y; d++)
         if (o[d] == e) {
           l = !0;
           break;
         }
       if (!l)
-        o[E] = e, E++;
+        o[y] = e, y++;
       else
         continue;
     }
-  }, I = function(e, E, l) {
-    let d = [], p = 0, A = 0, M = 0, O, S = [], D = 0, q = 1;
-    for (let G = 0; G < g; G++)
-      S[G] = u;
-    for (d[A] = e, S[e] = 0; A >= p; ) {
-      M = d[p++];
-      let G = r[M];
-      for (let Y = 0; Y < G.length; Y++)
-        O = n.get(G[Y]), S[O] == u && (S[O] = S[M] + 1, d[++A] = O);
-      t[M][E] = S[M] * m;
+  }, w = function(e, y, l) {
+    let d = [], E = 0, M = 0, C = 0, A, P = [], O = 0, K = 1;
+    for (let b = 0; b < g; b++)
+      P[b] = u;
+    for (d[M] = e, P[e] = 0; M >= E; ) {
+      C = d[E++];
+      let b = r[C];
+      for (let Y = 0; Y < b.length; Y++)
+        A = a.get(b[Y]), P[A] == u && (P[A] = P[C] + 1, d[++M] = A);
+      t[C][y] = P[C] * L;
     }
     if (l) {
-      for (let G = 0; G < g; G++)
-        t[G][E] < y[G] && (y[G] = t[G][E]);
-      for (let G = 0; G < g; G++)
-        y[G] > D && (D = y[G], q = G);
+      for (let b = 0; b < g; b++)
+        t[b][y] < v[b] && (v[b] = t[b][y]);
+      for (let b = 0; b < g; b++)
+        v[b] > O && (O = v[b], K = b);
     }
-    return q;
-  }, z = function(e) {
-    let E;
+    return K;
+  }, Z = function(e) {
+    let y;
     if (e) {
-      E = Math.floor(Math.random() * g);
+      y = Math.floor(Math.random() * g);
       for (let l = 0; l < g; l++)
-        y[l] = u;
-      for (let l = 0; l < R; l++)
-        o[l] = E, E = I(E, l, e);
+        v[l] = u;
+      for (let l = 0; l < D; l++)
+        o[l] = y, y = w(y, l, e);
     } else {
-      b();
-      for (let l = 0; l < R; l++)
-        I(o[l], l, e);
+      X();
+      for (let l = 0; l < D; l++)
+        w(o[l], l, e);
     }
     for (let l = 0; l < g; l++)
-      for (let d = 0; d < R; d++)
+      for (let d = 0; d < D; d++)
         t[l][d] *= t[l][d];
-    for (let l = 0; l < R; l++)
-      h[l] = [];
-    for (let l = 0; l < R; l++)
-      for (let d = 0; d < R; d++)
-        h[l][d] = t[o[d]][l];
-  }, H = function() {
-    let e = xe.svd(h), E = e.S, l = e.U, d = e.V, p = E[0] * E[0] * E[0], A = [];
-    for (let M = 0; M < R; M++) {
-      A[M] = [];
-      for (let O = 0; O < R; O++)
-        A[M][O] = 0, M == O && (A[M][O] = E[M] / (E[M] * E[M] + p / (E[M] * E[M])));
+    for (let l = 0; l < D; l++)
+      s[l] = [];
+    for (let l = 0; l < D; l++)
+      for (let d = 0; d < D; d++)
+        s[l][d] = t[o[d]][l];
+  }, W = function() {
+    let e = Fe.svd(s), y = e.S, l = e.U, d = e.V, E = y[0] * y[0] * y[0], M = [];
+    for (let C = 0; C < D; C++) {
+      M[C] = [];
+      for (let A = 0; A < D; A++)
+        M[C][A] = 0, C == A && (M[C][A] = y[C] / (y[C] * y[C] + E / (y[C] * y[C])));
     }
-    s = Lt.multMat(Lt.multMat(d, A), Lt.transpose(l));
-  }, J = function() {
-    let e, E, l = [], d = [], p = [], A = [];
-    for (let D = 0; D < g; D++)
-      l[D] = Math.random(), d[D] = Math.random();
+    h = Lt.multMat(Lt.multMat(d, M), Lt.transpose(l));
+  }, Q = function() {
+    let e, y, l = [], d = [], E = [], M = [];
+    for (let O = 0; O < g; O++)
+      l[O] = Math.random(), d[O] = Math.random();
     l = Lt.normalize(l), d = Lt.normalize(d);
-    let M = N, O = N, S;
+    let C = N, A = N, P;
     for (; ; ) {
-      for (let D = 0; D < g; D++)
-        p[D] = l[D];
-      if (l = Lt.multGamma(Lt.multL(Lt.multGamma(p), t, s)), e = Lt.dotProduct(p, l), l = Lt.normalize(l), M = Lt.dotProduct(p, l), S = Math.abs(M / O), S <= 1 + v && S >= 1)
+      for (let O = 0; O < g; O++)
+        E[O] = l[O];
+      if (l = Lt.multGamma(Lt.multL(Lt.multGamma(E), t, h)), e = Lt.dotProduct(E, l), l = Lt.normalize(l), C = Lt.dotProduct(E, l), P = Math.abs(C / A), P <= 1 + p && P >= 1)
         break;
-      O = M;
+      A = C;
     }
-    for (let D = 0; D < g; D++)
-      p[D] = l[D];
-    for (O = N; ; ) {
-      for (let D = 0; D < g; D++)
-        A[D] = d[D];
-      if (A = Lt.minusOp(A, Lt.multCons(p, Lt.dotProduct(p, A))), d = Lt.multGamma(Lt.multL(Lt.multGamma(A), t, s)), E = Lt.dotProduct(A, d), d = Lt.normalize(d), M = Lt.dotProduct(A, d), S = Math.abs(M / O), S <= 1 + v && S >= 1)
+    for (let O = 0; O < g; O++)
+      E[O] = l[O];
+    for (A = N; ; ) {
+      for (let O = 0; O < g; O++)
+        M[O] = d[O];
+      if (M = Lt.minusOp(M, Lt.multCons(E, Lt.dotProduct(E, M))), d = Lt.multGamma(Lt.multL(Lt.multGamma(M), t, h)), y = Lt.dotProduct(M, d), d = Lt.normalize(d), C = Lt.dotProduct(M, d), P = Math.abs(C / A), P <= 1 + p && P >= 1)
         break;
-      O = M;
+      A = C;
     }
-    for (let D = 0; D < g; D++)
-      A[D] = d[D];
-    a = Lt.multCons(p, Math.sqrt(Math.abs(e))), f = Lt.multCons(A, Math.sqrt(Math.abs(E)));
+    for (let O = 0; O < g; O++)
+      M[O] = d[O];
+    n = Lt.multCons(E, Math.sqrt(Math.abs(e))), f = Lt.multCons(M, Math.sqrt(Math.abs(y)));
   };
-  Ct.connectComponents(nt, L, Ct.getTopMostNodes(U), c), C.forEach(function(e) {
-    Ct.connectComponents(nt, L, Ct.getTopMostNodes(e.descendants().intersection(L)), c);
+  Ct.connectComponents(F, I, Ct.getTopMostNodes(U), c), m.forEach(function(e) {
+    Ct.connectComponents(F, I, Ct.getTopMostNodes(e.descendants().intersection(I)), c);
   });
-  let w = 0;
+  let R = 0;
   for (let e = 0; e < U.length; e++)
-    U[e].isParent() || n.set(U[e].id(), w++);
+    U[e].isParent() || a.set(U[e].id(), R++);
   for (let e of c.keys())
-    n.set(e, w++);
-  for (let e = 0; e < n.size; e++)
+    a.set(e, R++);
+  for (let e = 0; e < a.size; e++)
     r[e] = [];
-  C.forEach(function(e) {
-    let E = e.children().intersection(L);
-    for (; E.nodes(":childless").length == 0; )
-      E = E.nodes()[0].children().intersection(L);
-    let l = 0, d = E.nodes(":childless")[0].connectedEdges().length;
-    E.nodes(":childless").forEach(function(p, A) {
-      p.connectedEdges().length < d && (d = p.connectedEdges().length, l = A);
-    }), i.set(e.id(), E.nodes(":childless")[l].id());
+  m.forEach(function(e) {
+    let y = e.children().intersection(I);
+    for (; y.nodes(":childless").length == 0; )
+      y = y.nodes()[0].children().intersection(I);
+    let l = 0, d = y.nodes(":childless")[0].connectedEdges().length;
+    y.nodes(":childless").forEach(function(E, M) {
+      E.connectedEdges().length < d && (d = E.connectedEdges().length, l = M);
+    }), i.set(e.id(), y.nodes(":childless")[l].id());
   }), U.forEach(function(e) {
-    let E;
-    e.isParent() ? E = n.get(i.get(e.id())) : E = n.get(e.id()), e.neighborhood().nodes().forEach(function(l) {
-      L.intersection(e.edgesWith(l)).length > 0 && (l.isParent() ? r[E].push(i.get(l.id())) : r[E].push(l.id()));
+    let y;
+    e.isParent() ? y = a.get(i.get(e.id())) : y = a.get(e.id()), e.neighborhood().nodes().forEach(function(l) {
+      I.intersection(e.edgesWith(l)).length > 0 && (l.isParent() ? r[y].push(i.get(l.id())) : r[y].push(l.id()));
     });
   });
   for (let e of c.keys()) {
-    let E = n.get(e), l;
+    let y = a.get(e), l;
     c.get(e).forEach(function(d) {
-      nt.getElementById(d).isParent() ? l = i.get(d) : l = d, r[E].push(l), r[n.get(l)].push(e);
+      F.getElementById(d).isParent() ? l = i.get(d) : l = d, r[y].push(l), r[a.get(l)].push(e);
     });
   }
-  g = n.size;
+  g = a.size;
   let ht;
   if (g > 2) {
-    R = g < F.sampleSize ? g : F.sampleSize;
+    D = g < S.sampleSize ? g : S.sampleSize;
     for (let e = 0; e < g; e++)
       t[e] = [];
-    for (let e = 0; e < R; e++)
-      s[e] = [];
-    return F.quality == "draft" || F.step == "all" ? (z(T), H(), J(), ht = { nodeIndexes: n, xCoords: a, yCoords: f }) : (n.forEach(function(e, E) {
-      a.push(nt.getElementById(E).position("x")), f.push(nt.getElementById(E).position("y"));
-    }), ht = { nodeIndexes: n, xCoords: a, yCoords: f }), ht;
+    for (let e = 0; e < D; e++)
+      h[e] = [];
+    return S.quality == "draft" || S.step == "all" ? (Z(T), W(), Q(), ht = { nodeIndexes: a, xCoords: n, yCoords: f }) : (a.forEach(function(e, y) {
+      n.push(F.getElementById(y).position("x")), f.push(F.getElementById(y).position("y"));
+    }), ht = { nodeIndexes: a, xCoords: n, yCoords: f }), ht;
   } else {
-    let e = n.keys(), E = nt.getElementById(e.next().value), l = E.position(), d = E.outerWidth();
-    if (a.push(l.x), f.push(l.y), g == 2) {
-      let A = nt.getElementById(e.next().value).outerWidth();
-      a.push(l.x + d / 2 + A / 2 + F.idealEdgeLength), f.push(l.y);
+    let e = a.keys(), y = F.getElementById(e.next().value), l = y.position(), d = y.outerWidth();
+    if (n.push(l.x), f.push(l.y), g == 2) {
+      let M = F.getElementById(e.next().value).outerWidth();
+      n.push(l.x + d / 2 + M / 2 + S.idealEdgeLength), f.push(l.y);
     }
-    return ht = { nodeIndexes: n, xCoords: a, yCoords: f }, ht;
+    return ht = { nodeIndexes: a, xCoords: n, yCoords: f }, ht;
   }
 };
-const Fe = Wt.CoSELayout, ae = Wt.CoSENode, se = Wt.layoutBase.PointD, he = Wt.layoutBase.DimensionD, Kt = Wt.layoutBase.LayoutConstants, Rt = Wt.layoutBase.FDLayoutConstants, gt = Wt.CoSEConstants;
-let Le = function(F, nt) {
-  let L = F.cy, U = F.eles, C = U.nodes(), c = U.edges(), n, i, r, a = {};
-  F.randomize && (n = nt.nodeIndexes, i = nt.xCoords, r = nt.yCoords);
-  const f = (N) => typeof N == "function", o = (N, v) => f(N) ? N(v) : N;
-  let y = Ct.calcParentsWithoutChildren(L, U), t = function(N, v, T, m) {
-    let R = v.length;
-    for (let b = 0; b < R; b++) {
-      let I = v[b], z = null;
-      I.intersection(y).length == 0 && (z = I.children());
-      let H, J = I.layoutDimensions({
-        nodeDimensionsIncludeLabels: m.nodeDimensionsIncludeLabels
+const Se = Wt.CoSELayout, ae = Wt.CoSENode, se = Wt.layoutBase.PointD, he = Wt.layoutBase.DimensionD, Kt = Wt.layoutBase.LayoutConstants, Rt = Wt.layoutBase.FDLayoutConstants, gt = Wt.CoSEConstants;
+let Le = function(S, F) {
+  let I = S.cy, U = S.eles, m = U.nodes(), c = U.edges(), a, i, r, n = {};
+  S.randomize && (a = F.nodeIndexes, i = F.xCoords, r = F.yCoords);
+  const f = (N) => typeof N == "function", o = (N, p) => f(N) ? N(p) : N;
+  let v = Ct.calcParentsWithoutChildren(I, U), t = function(N, p, T, L) {
+    let D = p.length;
+    for (let X = 0; X < D; X++) {
+      let w = p[X], Z = null;
+      w.intersection(v).length == 0 && (Z = w.children());
+      let W, Q = w.layoutDimensions({
+        nodeDimensionsIncludeLabels: L.nodeDimensionsIncludeLabels
       });
-      if (I.outerWidth() != null && I.outerHeight() != null)
-        if (m.randomize)
-          if (!I.isParent())
-            H = N.add(new ae(
+      if (w.outerWidth() != null && w.outerHeight() != null)
+        if (L.randomize)
+          if (!w.isParent())
+            W = N.add(new ae(
               T.graphManager,
-              new se(i[n.get(I.id())] - J.w / 2, r[n.get(I.id())] - J.h / 2),
-              new he(parseFloat(J.w), parseFloat(J.h))
+              new se(i[a.get(w.id())] - Q.w / 2, r[a.get(w.id())] - Q.h / 2),
+              new he(parseFloat(Q.w), parseFloat(Q.h))
             ));
           else {
-            let w = Ct.calcBoundingBox(I, i, r, n);
-            I.intersection(y).length == 0 ? H = N.add(new ae(
+            let R = Ct.calcBoundingBox(w, i, r, a);
+            w.intersection(v).length == 0 ? W = N.add(new ae(
               T.graphManager,
-              new se(w.topLeftX, w.topLeftY),
-              new he(w.width, w.height)
-            )) : H = N.add(new ae(
+              new se(R.topLeftX, R.topLeftY),
+              new he(R.width, R.height)
+            )) : W = N.add(new ae(
               T.graphManager,
-              new se(w.topLeftX, w.topLeftY),
-              new he(parseFloat(J.w), parseFloat(J.h))
+              new se(R.topLeftX, R.topLeftY),
+              new he(parseFloat(Q.w), parseFloat(Q.h))
             ));
           }
         else
-          H = N.add(new ae(
+          W = N.add(new ae(
             T.graphManager,
-            new se(I.position("x") - J.w / 2, I.position("y") - J.h / 2),
-            new he(parseFloat(J.w), parseFloat(J.h))
+            new se(w.position("x") - Q.w / 2, w.position("y") - Q.h / 2),
+            new he(parseFloat(Q.w), parseFloat(Q.h))
           ));
       else
-        H = N.add(new ae(this.graphManager));
-      if (H.id = I.data("id"), H.nodeRepulsion = o(m.nodeRepulsion, I), H.paddingLeft = parseInt(I.css("padding")), H.paddingTop = parseInt(I.css("padding")), H.paddingRight = parseInt(I.css("padding")), H.paddingBottom = parseInt(I.css("padding")), m.nodeDimensionsIncludeLabels && (H.labelWidth = I.boundingBox({ includeLabels: !0, includeNodes: !1, includeOverlays: !1 }).w, H.labelHeight = I.boundingBox({ includeLabels: !0, includeNodes: !1, includeOverlays: !1 }).h, H.labelPosVertical = I.css("text-valign"), H.labelPosHorizontal = I.css("text-halign")), a[I.data("id")] = H, isNaN(H.rect.x) && (H.rect.x = 0), isNaN(H.rect.y) && (H.rect.y = 0), z != null && z.length > 0) {
-        let w;
-        w = T.getGraphManager().add(T.newGraph(), H), t(w, z, T, m);
+        W = N.add(new ae(this.graphManager));
+      if (W.id = w.data("id"), W.nodeRepulsion = o(L.nodeRepulsion, w), W.paddingLeft = parseInt(w.css("padding")), W.paddingTop = parseInt(w.css("padding")), W.paddingRight = parseInt(w.css("padding")), W.paddingBottom = parseInt(w.css("padding")), L.nodeDimensionsIncludeLabels && (W.labelWidth = w.boundingBox({ includeLabels: !0, includeNodes: !1, includeOverlays: !1 }).w, W.labelHeight = w.boundingBox({ includeLabels: !0, includeNodes: !1, includeOverlays: !1 }).h, W.labelPosVertical = w.css("text-valign"), W.labelPosHorizontal = w.css("text-halign")), n[w.data("id")] = W, isNaN(W.rect.x) && (W.rect.x = 0), isNaN(W.rect.y) && (W.rect.y = 0), Z != null && Z.length > 0) {
+        let R;
+        R = T.getGraphManager().add(T.newGraph(), W), t(R, Z, T, L);
       }
     }
-  }, h = function(N, v, T) {
-    let m = 0, R = 0;
-    for (let b = 0; b < T.length; b++) {
-      let I = T[b], z = a[I.data("source")], H = a[I.data("target")];
-      if (z && H && z !== H && z.getEdgesBetween(H).length == 0) {
-        let J = v.add(N.newEdge(), z, H);
-        J.id = I.id(), J.idealLength = o(F.idealEdgeLength, I), J.edgeElasticity = o(F.edgeElasticity, I), m += J.idealLength, R++;
+  }, s = function(N, p, T) {
+    let L = 0, D = 0;
+    for (let X = 0; X < T.length; X++) {
+      let w = T[X], Z = n[w.data("source")], W = n[w.data("target")];
+      if (Z && W && Z !== W && Z.getEdgesBetween(W).length == 0) {
+        let Q = p.add(N.newEdge(), Z, W);
+        Q.id = w.id(), Q.idealLength = o(S.idealEdgeLength, w), Q.edgeElasticity = o(S.edgeElasticity, w), L += Q.idealLength, D++;
       }
     }
-    F.idealEdgeLength != null && (R > 0 ? gt.DEFAULT_EDGE_LENGTH = Rt.DEFAULT_EDGE_LENGTH = m / R : f(F.idealEdgeLength) ? gt.DEFAULT_EDGE_LENGTH = Rt.DEFAULT_EDGE_LENGTH = 50 : gt.DEFAULT_EDGE_LENGTH = Rt.DEFAULT_EDGE_LENGTH = F.idealEdgeLength, gt.MIN_REPULSION_DIST = Rt.MIN_REPULSION_DIST = Rt.DEFAULT_EDGE_LENGTH / 10, gt.DEFAULT_RADIAL_SEPARATION = Rt.DEFAULT_EDGE_LENGTH);
-  }, s = function(N, v) {
-    v.fixedNodeConstraint && (N.constraints.fixedNodeConstraint = v.fixedNodeConstraint), v.alignmentConstraint && (N.constraints.alignmentConstraint = v.alignmentConstraint), v.relativePlacementConstraint && (N.constraints.relativePlacementConstraint = v.relativePlacementConstraint);
+    S.idealEdgeLength != null && (D > 0 ? gt.DEFAULT_EDGE_LENGTH = Rt.DEFAULT_EDGE_LENGTH = L / D : f(S.idealEdgeLength) ? gt.DEFAULT_EDGE_LENGTH = Rt.DEFAULT_EDGE_LENGTH = 50 : gt.DEFAULT_EDGE_LENGTH = Rt.DEFAULT_EDGE_LENGTH = S.idealEdgeLength, gt.MIN_REPULSION_DIST = Rt.MIN_REPULSION_DIST = Rt.DEFAULT_EDGE_LENGTH / 10, gt.DEFAULT_RADIAL_SEPARATION = Rt.DEFAULT_EDGE_LENGTH);
+  }, h = function(N, p) {
+    p.fixedNodeConstraint && (N.constraints.fixedNodeConstraint = p.fixedNodeConstraint), p.alignmentConstraint && (N.constraints.alignmentConstraint = p.alignmentConstraint), p.relativePlacementConstraint && (N.constraints.relativePlacementConstraint = p.relativePlacementConstraint);
   };
-  F.nestingFactor != null && (gt.PER_LEVEL_IDEAL_EDGE_LENGTH_FACTOR = Rt.PER_LEVEL_IDEAL_EDGE_LENGTH_FACTOR = F.nestingFactor), F.gravity != null && (gt.DEFAULT_GRAVITY_STRENGTH = Rt.DEFAULT_GRAVITY_STRENGTH = F.gravity), F.numIter != null && (gt.MAX_ITERATIONS = Rt.MAX_ITERATIONS = F.numIter), F.gravityRange != null && (gt.DEFAULT_GRAVITY_RANGE_FACTOR = Rt.DEFAULT_GRAVITY_RANGE_FACTOR = F.gravityRange), F.gravityCompound != null && (gt.DEFAULT_COMPOUND_GRAVITY_STRENGTH = Rt.DEFAULT_COMPOUND_GRAVITY_STRENGTH = F.gravityCompound), F.gravityRangeCompound != null && (gt.DEFAULT_COMPOUND_GRAVITY_RANGE_FACTOR = Rt.DEFAULT_COMPOUND_GRAVITY_RANGE_FACTOR = F.gravityRangeCompound), F.initialEnergyOnIncremental != null && (gt.DEFAULT_COOLING_FACTOR_INCREMENTAL = Rt.DEFAULT_COOLING_FACTOR_INCREMENTAL = F.initialEnergyOnIncremental), F.tilingCompareBy != null && (gt.TILING_COMPARE_BY = F.tilingCompareBy), F.quality == "proof" ? Kt.QUALITY = 2 : Kt.QUALITY = 0, gt.NODE_DIMENSIONS_INCLUDE_LABELS = Rt.NODE_DIMENSIONS_INCLUDE_LABELS = Kt.NODE_DIMENSIONS_INCLUDE_LABELS = F.nodeDimensionsIncludeLabels, gt.DEFAULT_INCREMENTAL = Rt.DEFAULT_INCREMENTAL = Kt.DEFAULT_INCREMENTAL = !F.randomize, gt.ANIMATE = Rt.ANIMATE = Kt.ANIMATE = F.animate, gt.TILE = F.tile, gt.TILING_PADDING_VERTICAL = typeof F.tilingPaddingVertical == "function" ? F.tilingPaddingVertical.call() : F.tilingPaddingVertical, gt.TILING_PADDING_HORIZONTAL = typeof F.tilingPaddingHorizontal == "function" ? F.tilingPaddingHorizontal.call() : F.tilingPaddingHorizontal, gt.DEFAULT_INCREMENTAL = Rt.DEFAULT_INCREMENTAL = Kt.DEFAULT_INCREMENTAL = !0, gt.PURE_INCREMENTAL = !F.randomize, Kt.DEFAULT_UNIFORM_LEAF_NODE_SIZES = F.uniformNodeDimensions, F.step == "transformed" && (gt.TRANSFORM_ON_CONSTRAINT_HANDLING = !0, gt.ENFORCE_CONSTRAINTS = !1, gt.APPLY_LAYOUT = !1), F.step == "enforced" && (gt.TRANSFORM_ON_CONSTRAINT_HANDLING = !1, gt.ENFORCE_CONSTRAINTS = !0, gt.APPLY_LAYOUT = !1), F.step == "cose" && (gt.TRANSFORM_ON_CONSTRAINT_HANDLING = !1, gt.ENFORCE_CONSTRAINTS = !1, gt.APPLY_LAYOUT = !0), F.step == "all" && (F.randomize ? gt.TRANSFORM_ON_CONSTRAINT_HANDLING = !0 : gt.TRANSFORM_ON_CONSTRAINT_HANDLING = !1, gt.ENFORCE_CONSTRAINTS = !0, gt.APPLY_LAYOUT = !0), F.fixedNodeConstraint || F.alignmentConstraint || F.relativePlacementConstraint ? gt.TREE_REDUCTION_ON_INCREMENTAL = !1 : gt.TREE_REDUCTION_ON_INCREMENTAL = !0;
-  let g = new Fe(), u = g.newGraphManager();
-  return t(u.addRoot(), Ct.getTopMostNodes(C), g, F), h(g, u, c), s(g, F), g.runLayout(), a;
+  S.nestingFactor != null && (gt.PER_LEVEL_IDEAL_EDGE_LENGTH_FACTOR = Rt.PER_LEVEL_IDEAL_EDGE_LENGTH_FACTOR = S.nestingFactor), S.gravity != null && (gt.DEFAULT_GRAVITY_STRENGTH = Rt.DEFAULT_GRAVITY_STRENGTH = S.gravity), S.numIter != null && (gt.MAX_ITERATIONS = Rt.MAX_ITERATIONS = S.numIter), S.gravityRange != null && (gt.DEFAULT_GRAVITY_RANGE_FACTOR = Rt.DEFAULT_GRAVITY_RANGE_FACTOR = S.gravityRange), S.gravityCompound != null && (gt.DEFAULT_COMPOUND_GRAVITY_STRENGTH = Rt.DEFAULT_COMPOUND_GRAVITY_STRENGTH = S.gravityCompound), S.gravityRangeCompound != null && (gt.DEFAULT_COMPOUND_GRAVITY_RANGE_FACTOR = Rt.DEFAULT_COMPOUND_GRAVITY_RANGE_FACTOR = S.gravityRangeCompound), S.initialEnergyOnIncremental != null && (gt.DEFAULT_COOLING_FACTOR_INCREMENTAL = Rt.DEFAULT_COOLING_FACTOR_INCREMENTAL = S.initialEnergyOnIncremental), S.tilingCompareBy != null && (gt.TILING_COMPARE_BY = S.tilingCompareBy), S.quality == "proof" ? Kt.QUALITY = 2 : Kt.QUALITY = 0, gt.NODE_DIMENSIONS_INCLUDE_LABELS = Rt.NODE_DIMENSIONS_INCLUDE_LABELS = Kt.NODE_DIMENSIONS_INCLUDE_LABELS = S.nodeDimensionsIncludeLabels, gt.DEFAULT_INCREMENTAL = Rt.DEFAULT_INCREMENTAL = Kt.DEFAULT_INCREMENTAL = !S.randomize, gt.ANIMATE = Rt.ANIMATE = Kt.ANIMATE = S.animate, gt.TILE = S.tile, gt.TILING_PADDING_VERTICAL = typeof S.tilingPaddingVertical == "function" ? S.tilingPaddingVertical.call() : S.tilingPaddingVertical, gt.TILING_PADDING_HORIZONTAL = typeof S.tilingPaddingHorizontal == "function" ? S.tilingPaddingHorizontal.call() : S.tilingPaddingHorizontal, gt.DEFAULT_INCREMENTAL = Rt.DEFAULT_INCREMENTAL = Kt.DEFAULT_INCREMENTAL = !0, gt.PURE_INCREMENTAL = !S.randomize, Kt.DEFAULT_UNIFORM_LEAF_NODE_SIZES = S.uniformNodeDimensions, S.step == "transformed" && (gt.TRANSFORM_ON_CONSTRAINT_HANDLING = !0, gt.ENFORCE_CONSTRAINTS = !1, gt.APPLY_LAYOUT = !1), S.step == "enforced" && (gt.TRANSFORM_ON_CONSTRAINT_HANDLING = !1, gt.ENFORCE_CONSTRAINTS = !0, gt.APPLY_LAYOUT = !1), S.step == "cose" && (gt.TRANSFORM_ON_CONSTRAINT_HANDLING = !1, gt.ENFORCE_CONSTRAINTS = !1, gt.APPLY_LAYOUT = !0), S.step == "all" && (S.randomize ? gt.TRANSFORM_ON_CONSTRAINT_HANDLING = !0 : gt.TRANSFORM_ON_CONSTRAINT_HANDLING = !1, gt.ENFORCE_CONSTRAINTS = !0, gt.APPLY_LAYOUT = !0), S.fixedNodeConstraint || S.alignmentConstraint || S.relativePlacementConstraint ? gt.TREE_REDUCTION_ON_INCREMENTAL = !1 : gt.TREE_REDUCTION_ON_INCREMENTAL = !0;
+  let g = new Se(), u = g.newGraphManager();
+  return t(u.addRoot(), Ct.getTopMostNodes(m), g, S), s(g, u, c), h(g, S), g.runLayout(), n;
 };
-const Se = Object.freeze({
+const Pe = Object.freeze({
   // 'draft', 'default' or 'proof' 
   // - 'draft' only applies spectral layout 
   // - 'default' improves the quality with subsequent CoSE layout (fast cooling rate)
@@ -3501,11 +3501,11 @@ const Se = Object.freeze({
   piTol: 1e-7,
   /* CoSE layout options */
   // Node repulsion (non overlapping) multiplier
-  nodeRepulsion: (F) => 4500,
+  nodeRepulsion: (S) => 4500,
   // Ideal edge (non nested) length
-  idealEdgeLength: (F) => 50,
+  idealEdgeLength: (S) => 50,
   // Divisor to compute edge forces
-  edgeElasticity: (F) => 0.45,
+  edgeElasticity: (S) => 0.45,
   // Nesting factor (multiplier) to compute ideal edge length for nested edges
   nestingFactor: 0.1,
   // Gravity force (constant)
@@ -3546,141 +3546,139 @@ const Se = Object.freeze({
   stop: () => {
   }
   // on layoutstop
-});
-let Pe = class {
-  constructor(nt) {
-    this.options = Oe({}, Se, nt);
-  }
-  run() {
-    let nt = this, L = this.options, U = L.cy, C = L.eles, c = [], n = [], i, r = [];
-    L.fixedNodeConstraint && (!Array.isArray(L.fixedNodeConstraint) || L.fixedNodeConstraint.length == 0) && (L.fixedNodeConstraint = void 0), L.alignmentConstraint && (L.alignmentConstraint.vertical && (!Array.isArray(L.alignmentConstraint.vertical) || L.alignmentConstraint.vertical.length == 0) && (L.alignmentConstraint.vertical = void 0), L.alignmentConstraint.horizontal && (!Array.isArray(L.alignmentConstraint.horizontal) || L.alignmentConstraint.horizontal.length == 0) && (L.alignmentConstraint.horizontal = void 0)), L.relativePlacementConstraint && (!Array.isArray(L.relativePlacementConstraint) || L.relativePlacementConstraint.length == 0) && (L.relativePlacementConstraint = void 0), (L.fixedNodeConstraint || L.alignmentConstraint || L.relativePlacementConstraint) && (L.tile = !1, L.packComponents = !1);
-    let f, o = !1;
-    if (U.layoutUtilities && L.packComponents && (f = U.layoutUtilities("get"), f || (f = U.layoutUtilities()), o = !0), C.nodes().length > 0)
-      if (o) {
-        let t = Ct.getTopMostNodes(L.eles.nodes());
-        if (i = Ct.connectComponents(U, L.eles, t), i.forEach(function(s) {
-          let g = s.boundingBox();
-          r.push({ x: g.x1 + g.w / 2, y: g.y1 + g.h / 2 });
-        }), L.randomize && i.forEach(function(s) {
-          L.eles = s, c.push(me(L));
-        }), L.quality == "default" || L.quality == "proof") {
-          let s = U.collection();
-          if (L.tile) {
-            let g = /* @__PURE__ */ new Map(), u = [], N = [], v = 0, T = { nodeIndexes: g, xCoords: u, yCoords: N }, m = [];
-            if (i.forEach(function(R, b) {
-              R.edges().length == 0 && (R.nodes().forEach(function(I, z) {
-                s.merge(R.nodes()[z]), I.isParent() || (T.nodeIndexes.set(R.nodes()[z].id(), v++), T.xCoords.push(R.nodes()[0].position().x), T.yCoords.push(R.nodes()[0].position().y));
-              }), m.push(b));
-            }), s.length > 1) {
-              let R = s.boundingBox();
-              r.push({ x: R.x1 + R.w / 2, y: R.y1 + R.h / 2 }), i.push(s), c.push(T);
-              for (let b = m.length - 1; b >= 0; b--)
-                i.splice(m[b], 1), c.splice(m[b], 1), r.splice(m[b], 1);
-            }
+}), Ae = function(S) {
+  this.options = De({}, Pe, S);
+};
+Ae.prototype.run = function() {
+  let S = this, F = this.options, I = F.cy, U = F.eles, m = [], c = [], a, i = [];
+  F.fixedNodeConstraint && (!Array.isArray(F.fixedNodeConstraint) || F.fixedNodeConstraint.length == 0) && (F.fixedNodeConstraint = void 0), F.alignmentConstraint && (F.alignmentConstraint.vertical && (!Array.isArray(F.alignmentConstraint.vertical) || F.alignmentConstraint.vertical.length == 0) && (F.alignmentConstraint.vertical = void 0), F.alignmentConstraint.horizontal && (!Array.isArray(F.alignmentConstraint.horizontal) || F.alignmentConstraint.horizontal.length == 0) && (F.alignmentConstraint.horizontal = void 0)), F.relativePlacementConstraint && (!Array.isArray(F.relativePlacementConstraint) || F.relativePlacementConstraint.length == 0) && (F.relativePlacementConstraint = void 0), (F.fixedNodeConstraint || F.alignmentConstraint || F.relativePlacementConstraint) && (F.tile = !1, F.packComponents = !1);
+  let n, f = !1;
+  if (I.layoutUtilities && F.packComponents && (n = I.layoutUtilities("get"), n || (n = I.layoutUtilities()), f = !0), U.nodes().length > 0)
+    if (f) {
+      let v = Ct.getTopMostNodes(F.eles.nodes());
+      if (a = Ct.connectComponents(I, F.eles, v), a.forEach(function(s) {
+        let h = s.boundingBox();
+        i.push({ x: h.x1 + h.w / 2, y: h.y1 + h.h / 2 });
+      }), F.randomize && a.forEach(function(s) {
+        F.eles = s, m.push(me(F));
+      }), F.quality == "default" || F.quality == "proof") {
+        let s = I.collection();
+        if (F.tile) {
+          let h = /* @__PURE__ */ new Map(), g = [], u = [], N = 0, p = { nodeIndexes: h, xCoords: g, yCoords: u }, T = [];
+          if (a.forEach(function(L, D) {
+            L.edges().length == 0 && (L.nodes().forEach(function(X, w) {
+              s.merge(L.nodes()[w]), X.isParent() || (p.nodeIndexes.set(L.nodes()[w].id(), N++), p.xCoords.push(L.nodes()[0].position().x), p.yCoords.push(L.nodes()[0].position().y));
+            }), T.push(D));
+          }), s.length > 1) {
+            let L = s.boundingBox();
+            i.push({ x: L.x1 + L.w / 2, y: L.y1 + L.h / 2 }), a.push(s), m.push(p);
+            for (let D = T.length - 1; D >= 0; D--)
+              a.splice(T[D], 1), m.splice(T[D], 1), i.splice(T[D], 1);
           }
-          i.forEach(function(g, u) {
-            L.eles = g, n.push(Le(L, c[u])), Ct.relocateComponent(r[u], n[u], L);
-          });
-        } else
-          i.forEach(function(s, g) {
-            Ct.relocateComponent(r[g], c[g], L);
-          });
-        let h = /* @__PURE__ */ new Set();
-        if (i.length > 1) {
-          let s = [], g = C.filter((N) => N.css("display") == "none");
-          i.forEach(function(N, v) {
-            let T;
-            if (L.quality == "draft" && (T = c[v].nodeIndexes), N.nodes().not(g).length > 0) {
-              let m = {};
-              m.edges = [], m.nodes = [];
-              let R;
-              N.nodes().not(g).forEach(function(b) {
-                if (L.quality == "draft")
-                  if (!b.isParent())
-                    R = T.get(b.id()), m.nodes.push({ x: c[v].xCoords[R] - b.boundingbox().w / 2, y: c[v].yCoords[R] - b.boundingbox().h / 2, width: b.boundingbox().w, height: b.boundingbox().h });
-                  else {
-                    let I = Ct.calcBoundingBox(b, c[v].xCoords, c[v].yCoords, T);
-                    m.nodes.push({ x: I.topLeftX, y: I.topLeftY, width: I.width, height: I.height });
-                  }
-                else
-                  n[v][b.id()] && m.nodes.push({ x: n[v][b.id()].getLeft(), y: n[v][b.id()].getTop(), width: n[v][b.id()].getWidth(), height: n[v][b.id()].getHeight() });
-              }), N.edges().forEach(function(b) {
-                let I = b.source(), z = b.target();
-                if (I.css("display") != "none" && z.css("display") != "none")
-                  if (L.quality == "draft") {
-                    let H = T.get(I.id()), J = T.get(z.id()), w = [], ht = [];
-                    if (I.isParent()) {
-                      let e = Ct.calcBoundingBox(I, c[v].xCoords, c[v].yCoords, T);
-                      w.push(e.topLeftX + e.width / 2), w.push(e.topLeftY + e.height / 2);
-                    } else
-                      w.push(c[v].xCoords[H]), w.push(c[v].yCoords[H]);
-                    if (z.isParent()) {
-                      let e = Ct.calcBoundingBox(z, c[v].xCoords, c[v].yCoords, T);
-                      ht.push(e.topLeftX + e.width / 2), ht.push(e.topLeftY + e.height / 2);
-                    } else
-                      ht.push(c[v].xCoords[J]), ht.push(c[v].yCoords[J]);
-                    m.edges.push({ startX: w[0], startY: w[1], endX: ht[0], endY: ht[1] });
+        }
+        a.forEach(function(h, g) {
+          F.eles = h, c.push(Le(F, m[g])), Ct.relocateComponent(i[g], c[g], F);
+        });
+      } else
+        a.forEach(function(s, h) {
+          Ct.relocateComponent(i[h], m[h], F);
+        });
+      let t = /* @__PURE__ */ new Set();
+      if (a.length > 1) {
+        let s = [], h = U.filter((u) => u.css("display") == "none");
+        a.forEach(function(u, N) {
+          let p;
+          if (F.quality == "draft" && (p = m[N].nodeIndexes), u.nodes().not(h).length > 0) {
+            let T = {};
+            T.edges = [], T.nodes = [];
+            let L;
+            u.nodes().not(h).forEach(function(D) {
+              if (F.quality == "draft")
+                if (!D.isParent())
+                  L = p.get(D.id()), T.nodes.push({ x: m[N].xCoords[L] - D.boundingbox().w / 2, y: m[N].yCoords[L] - D.boundingbox().h / 2, width: D.boundingbox().w, height: D.boundingbox().h });
+                else {
+                  let X = Ct.calcBoundingBox(D, m[N].xCoords, m[N].yCoords, p);
+                  T.nodes.push({ x: X.topLeftX, y: X.topLeftY, width: X.width, height: X.height });
+                }
+              else
+                c[N][D.id()] && T.nodes.push({ x: c[N][D.id()].getLeft(), y: c[N][D.id()].getTop(), width: c[N][D.id()].getWidth(), height: c[N][D.id()].getHeight() });
+            }), u.edges().forEach(function(D) {
+              let X = D.source(), w = D.target();
+              if (X.css("display") != "none" && w.css("display") != "none")
+                if (F.quality == "draft") {
+                  let Z = p.get(X.id()), W = p.get(w.id()), Q = [], R = [];
+                  if (X.isParent()) {
+                    let ht = Ct.calcBoundingBox(X, m[N].xCoords, m[N].yCoords, p);
+                    Q.push(ht.topLeftX + ht.width / 2), Q.push(ht.topLeftY + ht.height / 2);
                   } else
-                    n[v][I.id()] && n[v][z.id()] && m.edges.push({ startX: n[v][I.id()].getCenterX(), startY: n[v][I.id()].getCenterY(), endX: n[v][z.id()].getCenterX(), endY: n[v][z.id()].getCenterY() });
-              }), m.nodes.length > 0 && (s.push(m), h.add(v));
-            }
-          });
-          let u = f.packComponents(s, L.randomize).shifts;
-          if (L.quality == "draft")
-            c.forEach(function(N, v) {
-              let T = N.xCoords.map((R) => R + u[v].dx), m = N.yCoords.map((R) => R + u[v].dy);
-              N.xCoords = T, N.yCoords = m;
-            });
-          else {
-            let N = 0;
-            h.forEach((v) => {
-              Object.keys(n[v]).forEach(function(T) {
-                let m = n[v][T];
-                m.setCenter(m.getCenterX() + u[N].dx, m.getCenterY() + u[N].dy);
-              }), N++;
-            });
+                    Q.push(m[N].xCoords[Z]), Q.push(m[N].yCoords[Z]);
+                  if (w.isParent()) {
+                    let ht = Ct.calcBoundingBox(w, m[N].xCoords, m[N].yCoords, p);
+                    R.push(ht.topLeftX + ht.width / 2), R.push(ht.topLeftY + ht.height / 2);
+                  } else
+                    R.push(m[N].xCoords[W]), R.push(m[N].yCoords[W]);
+                  T.edges.push({ startX: Q[0], startY: Q[1], endX: R[0], endY: R[1] });
+                } else
+                  c[N][X.id()] && c[N][w.id()] && T.edges.push({ startX: c[N][X.id()].getCenterX(), startY: c[N][X.id()].getCenterY(), endX: c[N][w.id()].getCenterX(), endY: c[N][w.id()].getCenterY() });
+            }), T.nodes.length > 0 && (s.push(T), t.add(N));
           }
+        });
+        let g = n.packComponents(s, F.randomize).shifts;
+        if (F.quality == "draft")
+          m.forEach(function(u, N) {
+            let p = u.xCoords.map((L) => L + g[N].dx), T = u.yCoords.map((L) => L + g[N].dy);
+            u.xCoords = p, u.yCoords = T;
+          });
+        else {
+          let u = 0;
+          t.forEach((N) => {
+            Object.keys(c[N]).forEach(function(p) {
+              let T = c[N][p];
+              T.setCenter(T.getCenterX() + g[u].dx, T.getCenterY() + g[u].dy);
+            }), u++;
+          });
         }
-      } else {
-        let t = L.eles.boundingBox();
-        if (r.push({ x: t.x1 + t.w / 2, y: t.y1 + t.h / 2 }), L.randomize) {
-          let h = me(L);
-          c.push(h);
-        }
-        L.quality == "default" || L.quality == "proof" ? (n.push(Le(L, c[0])), Ct.relocateComponent(r[0], n[0], L)) : Ct.relocateComponent(r[0], c[0], L);
       }
-    let y = function(t, h) {
-      if (L.quality == "default" || L.quality == "proof") {
-        typeof t == "number" && (t = h);
-        let s, g, u = t.data("id");
-        return n.forEach(function(N) {
-          u in N && (s = { x: N[u].getRect().getCenterX(), y: N[u].getRect().getCenterY() }, g = N[u]);
-        }), L.nodeDimensionsIncludeLabels && (g.labelWidth && (g.labelPosHorizontal == "left" ? s.x += g.labelWidth / 2 : g.labelPosHorizontal == "right" && (s.x -= g.labelWidth / 2)), g.labelHeight && (g.labelPosVertical == "top" ? s.y += g.labelHeight / 2 : g.labelPosVertical == "bottom" && (s.y -= g.labelHeight / 2))), s == null && (s = { x: t.position("x"), y: t.position("y") }), {
-          x: s.x,
-          y: s.y
-        };
-      } else {
-        let s;
-        return c.forEach(function(g) {
-          let u = g.nodeIndexes.get(t.id());
-          u != null && (s = { x: g.xCoords[u], y: g.yCoords[u] });
-        }), s == null && (s = { x: t.position("x"), y: t.position("y") }), {
-          x: s.x,
-          y: s.y
-        };
+    } else {
+      let v = F.eles.boundingBox();
+      if (i.push({ x: v.x1 + v.w / 2, y: v.y1 + v.h / 2 }), F.randomize) {
+        let t = me(F);
+        m.push(t);
       }
-    };
-    if (L.quality == "default" || L.quality == "proof" || L.randomize) {
-      let t = Ct.calcParentsWithoutChildren(U, C), h = C.filter((s) => s.css("display") == "none");
-      L.eles = C.not(h), C.nodes().not(":parent").not(h).layoutPositions(nt, L, y), t.length > 0 && t.forEach((s) => {
-        s.position(y(s));
-      });
-    } else
-      console.log("If randomize option is set to false, then quality option must be 'default' or 'proof'.");
-  }
-}, be = function(F) {
-  F && F("layout", "fcose", Pe);
+      F.quality == "default" || F.quality == "proof" ? (c.push(Le(F, m[0])), Ct.relocateComponent(i[0], c[0], F)) : Ct.relocateComponent(i[0], m[0], F);
+    }
+  let o = function(v, t) {
+    if (F.quality == "default" || F.quality == "proof") {
+      typeof v == "number" && (v = t);
+      let s, h, g = v.data("id");
+      return c.forEach(function(u) {
+        g in u && (s = { x: u[g].getRect().getCenterX(), y: u[g].getRect().getCenterY() }, h = u[g]);
+      }), F.nodeDimensionsIncludeLabels && (h.labelWidth && (h.labelPosHorizontal == "left" ? s.x += h.labelWidth / 2 : h.labelPosHorizontal == "right" && (s.x -= h.labelWidth / 2)), h.labelHeight && (h.labelPosVertical == "top" ? s.y += h.labelHeight / 2 : h.labelPosVertical == "bottom" && (s.y -= h.labelHeight / 2))), s == null && (s = { x: v.position("x"), y: v.position("y") }), {
+        x: s.x,
+        y: s.y
+      };
+    } else {
+      let s;
+      return m.forEach(function(h) {
+        let g = h.nodeIndexes.get(v.id());
+        g != null && (s = { x: h.xCoords[g], y: h.yCoords[g] });
+      }), s == null && (s = { x: v.position("x"), y: v.position("y") }), {
+        x: s.x,
+        y: s.y
+      };
+    }
+  };
+  if (F.quality == "default" || F.quality == "proof" || F.randomize) {
+    let v = Ct.calcParentsWithoutChildren(I, U), t = U.filter((s) => s.css("display") == "none");
+    F.eles = U.not(t), U.nodes().not(":parent").not(t).layoutPositions(S, F, o), v.length > 0 && v.forEach((s) => {
+      s.position(o(s));
+    });
+  } else
+    console.log("If randomize option is set to false, then quality option must be 'default' or 'proof'.");
+};
+let Ge = function(S) {
+  S && S("layout", "fcose", Ae);
 };
 export {
-  be as default
+  Ge as default
 };

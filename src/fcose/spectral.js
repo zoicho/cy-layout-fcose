@@ -2,9 +2,11 @@
   The implementation of the spectral layout that is the first part of the fcose layout algorithm
 */
 
-const aux = require('./auxiliary');
-const Matrix = require('cose-base').layoutBase.Matrix;
-const SVD = require('cose-base').layoutBase.SVD;
+import CoseBase from 'cose-base';
+import aux from './auxiliary.js';
+
+const Matrix = CoseBase.layoutBase.Matrix;
+const SVD = CoseBase.layoutBase.SVD;
 
 // main function that spectral layout is processed
 let spectralLayout = function(options){
@@ -425,4 +427,6 @@ let spectralLayout = function(options){
   }
 };
 
-module.exports = { spectralLayout };
+export {
+  spectralLayout
+}

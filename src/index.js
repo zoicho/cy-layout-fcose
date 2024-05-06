@@ -1,14 +1,10 @@
-const impl = require('./fcose');
+import fcose from './fcose/index.js';
 
 // registers the extension on a cytoscape lib ref
 let register = function( cytoscape ){
   if( !cytoscape ){ return; } // can't register if cytoscape unspecified
 
-  cytoscape( 'layout', 'fcose', impl ); // register with cytoscape.js
+  cytoscape( 'layout', 'fcose', fcose ); // register with cytoscape.js
 };
 
-if( typeof cytoscape !== 'undefined' ){ // expose to global cytoscape (i.e. window.cytoscape)
-  register( cytoscape );
-}
-
-module.exports = register;
+export default register;

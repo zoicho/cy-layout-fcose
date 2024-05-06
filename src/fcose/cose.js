@@ -2,14 +2,16 @@
   The implementation of the postprocessing part that applies CoSE layout over the spectral layout
 */
 
-const aux = require('./auxiliary');
-const CoSELayout = require('cose-base').CoSELayout;
-const CoSENode = require('cose-base').CoSENode;
-const PointD = require('cose-base').layoutBase.PointD;
-const DimensionD = require('cose-base').layoutBase.DimensionD;
-const LayoutConstants = require('cose-base').layoutBase.LayoutConstants;
-const FDLayoutConstants = require('cose-base').layoutBase.FDLayoutConstants;
-const CoSEConstants = require('cose-base').CoSEConstants;
+import CoseBase from 'cose-base';
+import aux from './auxiliary';
+
+const CoSELayout = CoseBase.CoSELayout;
+const CoSENode = CoseBase.CoSENode;
+const PointD = CoseBase.layoutBase.PointD;
+const DimensionD = CoseBase.layoutBase.DimensionD;
+const LayoutConstants = CoseBase.layoutBase.LayoutConstants;
+const FDLayoutConstants = CoseBase.layoutBase.FDLayoutConstants;
+const CoSEConstants = CoseBase.CoSEConstants;
 
 // main function that cose layout is processed
 let coseLayout = function(options, spectralResult){
@@ -258,4 +260,6 @@ let coseLayout = function(options, spectralResult){
   return idToLNode;
 };
 
-module.exports = { coseLayout };
+export {
+  coseLayout
+};

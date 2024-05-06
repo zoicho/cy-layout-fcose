@@ -2,10 +2,10 @@
   The implementation of the fcose layout algorithm
 */
 
-const assign = require('../assign');
-const aux = require('./auxiliary');
-const { spectralLayout } = require('./spectral');
-const { coseLayout } = require('./cose');
+import assign from '../assign.js';
+import aux from './auxiliary.js';
+import { spectralLayout } from './spectral.js';
+import { coseLayout } from './cose.js';
 
 const defaults = Object.freeze({
   
@@ -411,4 +411,4 @@ class Layout {
   }
 }
 
-module.exports = Layout;
+export default Layout;

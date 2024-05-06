@@ -2,7 +2,8 @@
  * Auxiliary functions
  */
 
-const LinkedList = require('cose-base').layoutBase.LinkedList;
+import CoseBase from 'cose-base';
+const LinkedList = CoseBase.layoutBase.LinkedList;
 
 let auxiliary = {};
 
@@ -266,4 +267,4 @@ auxiliary.calcParentsWithoutChildren = function(cy, eles){
   return parentsWithoutChildren;
 }
 
-module.exports = auxiliary;
+export default auxiliary;

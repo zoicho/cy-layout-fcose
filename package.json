@@ -27,6 +27,12 @@
       "name": "zoicho"
     }
   ],
+  "keywords": [
+    "cytoscape",
+    "cytoscape-extension",
+    "cytoscape layout",
+    "organic layout"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vite build",

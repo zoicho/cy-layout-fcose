@@ -14,6 +14,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "build:watch": "vite build --watch",
     "preview": "vite preview"
   },
   "devDependencies": {
@@ -23,6 +24,7 @@
     "cytoscape": "^3.2.0"
   },
   "dependencies": {
-    "cose-base": "^2.2.0"
+    "cose-base": "^2.2.0",
+    "seedrandom": "^3.0.5"
   }
 }

@@ -16,7 +16,11 @@ const defaults = Object.freeze({
   quality: "default",
   // Use random node positions at beginning of layout
   // if this is set to false, then quality option must be "proof"
-  randomize: true, 
+  randomize: true,
+  // seeded random, for deterministic spectral layout
+  seededRandom: false,
+  // string for random seed (e.g. 'a', 'b', 'c' or 'abc')
+  seededRandomString: 'cose',
   // Whether or not to animate the layout
   animate: true, 
   // Duration of animation in ms, if enabled
@@ -147,32 +151,31 @@ Layout.prototype.run = function() {
   let packingEnabled = false;
   if(cy.layoutUtilities && options.packComponents){
     layUtil = cy.layoutUtilities("get");
-    if(!layUtil)
+    if(!layUtil) {
       layUtil = cy.layoutUtilities();
+    }
     packingEnabled = true;
   }
 
   if(eles.nodes().length > 0) {
     // if packing is not enabled, perform layout on the whole graph
-    if(!packingEnabled){
+    if(!packingEnabled) {
       // store component center
       let boundingBox = options.eles.boundingBox();
       componentCenters.push({x: boundingBox.x1 + boundingBox.w / 2, y: boundingBox.y1 + boundingBox.h / 2});
       // apply spectral layout
-      if(options.randomize){
+      if(options.randomize) {
         let result = spectralLayout(options);
         spectralResult.push(result);
       }
       // apply cose layout as postprocessing
-      if(options.quality == "default" || options.quality == "proof"){
+      if(options.quality === "default" || options.quality === "proof") {
         coseResult.push(coseLayout(options, spectralResult[0]));
         aux.relocateComponent(componentCenters[0], coseResult[0], options); // relocate center to original position
-      }
-      else{
+      } else {
         aux.relocateComponent(componentCenters[0], spectralResult[0], options); // relocate center to original position
       }
-    }
-    else{ // packing is enabled
+    } else { // packing is enabled
       let topMostNodes = aux.getTopMostNodes(options.eles.nodes());
       components = aux.connectComponents(cy, options.eles, topMostNodes);
       // store component centers
@@ -182,16 +185,16 @@ Layout.prototype.run = function() {
       });
 
       //send each component to spectral layout if randomized
-      if(options.randomize){
+      if(options.randomize) {
         components.forEach(function(component){
           options.eles = component;
           spectralResult.push(spectralLayout(options));
         });
       }
 
-      if(options.quality == "default" || options.quality == "proof"){
+      if(options.quality === "default" || options.quality === "proof") {
         let toBeTiledNodes = cy.collection();
-        if(options.tile){  // behave nodes to be tiled as one component
+        if(options.tile) {  // behave nodes to be tiled as one component
           let nodeIndexes = new Map();
           let xCoords = [];
           let yCoords = [];
@@ -199,7 +202,7 @@ Layout.prototype.run = function() {
           let tempSpectralResult = {nodeIndexes: nodeIndexes, xCoords: xCoords, yCoords: yCoords};
           let indexesToBeDeleted = [];
           components.forEach(function(component, index){
-            if(component.edges().length == 0){
+            if(component.edges().length === 0){
               component.nodes().forEach(function(node, i){
                 toBeTiledNodes.merge(component.nodes()[i]);
                 if(!node.isParent()){
@@ -228,8 +231,7 @@ Layout.prototype.run = function() {
           coseResult.push(coseLayout(options, spectralResult[index]));
           aux.relocateComponent(componentCenters[index], coseResult[index], options); // relocate center to original position
         });
-      }
-      else {
+      } else {
         components.forEach(function(component, index){
           aux.relocateComponent(componentCenters[index], spectralResult[index], options); // relocate center to original position
         });
@@ -237,12 +239,12 @@ Layout.prototype.run = function() {
 
       // packing
       let componentsEvaluated = new Set();
-      if(components.length > 1){
+      if (components.length > 1) {
         let subgraphs = [];
-        let hiddenEles = eles.filter((ele) => {return ele.css('display') == 'none'});
+        let hiddenEles = eles.filter((ele) => {return ele.css('display') === 'none'});
         components.forEach(function(component, index){
           let nodeIndexes;
-          if(options.quality == "draft"){
+          if(options.quality === "draft"){
             nodeIndexes = spectralResult[index].nodeIndexes;
           }
 
@@ -252,18 +254,16 @@ Layout.prototype.run = function() {
             subgraph.nodes = [];
             let nodeIndex;
             component.nodes().not(hiddenEles).forEach(function (node) {
-              if(options.quality == "draft"){
+              if (options.quality === "draft") {
                 if(!node.isParent()){
                   nodeIndex = nodeIndexes.get(node.id());
                   subgraph.nodes.push({x: spectralResult[index].xCoords[nodeIndex] - node.boundingbox().w/2, y: spectralResult[index].yCoords[nodeIndex] - node.boundingbox().h/2, width: node.boundingbox().w, height: node.boundingbox().h});
-                }
-                else{
+                } else {
                   let parentInfo = aux.calcBoundingBox(node, spectralResult[index].xCoords, spectralResult[index].yCoords, nodeIndexes);
                   subgraph.nodes.push({x: parentInfo.topLeftX, y: parentInfo.topLeftY, width: parentInfo.width, height: parentInfo.height});
                 }
-              }
-              else{
-                if(coseResult[index][node.id()]) {
+              } else {
+                if (coseResult[index][node.id()]) {
                   subgraph.nodes.push({x: coseResult[index][node.id()].getLeft(), y: coseResult[index][node.id()].getTop(), width: coseResult[index][node.id()].getWidth(), height: coseResult[index][node.id()].getHeight()});
                 }
               }
@@ -271,55 +271,59 @@ Layout.prototype.run = function() {
             component.edges().forEach(function (edge) {
               let source = edge.source();
               let target = edge.target();
-              if(source.css("display") != "none" && target.css("display") != "none") {
-                if(options.quality == "draft"){
+              if (source.css("display") !== "none" && target.css("display") !== "none") {
+                if (options.quality === "draft") {
                   let sourceNodeIndex = nodeIndexes.get(source.id());
                   let targetNodeIndex = nodeIndexes.get(target.id());
                   let sourceCenter = [];
                   let targetCenter = [];
-                  if(source.isParent()){
+
+                  if(source.isParent()) {
                     let parentInfo = aux.calcBoundingBox(source, spectralResult[index].xCoords, spectralResult[index].yCoords, nodeIndexes);
                     sourceCenter.push(parentInfo.topLeftX + parentInfo.width / 2);
                     sourceCenter.push(parentInfo.topLeftY + parentInfo.height / 2);
-                  }
-                  else{
+                  } else {
                     sourceCenter.push(spectralResult[index].xCoords[sourceNodeIndex]);
                     sourceCenter.push(spectralResult[index].yCoords[sourceNodeIndex]);
                   }
-                  if(target.isParent()){
+
+                  if(target.isParent()) {
                     let parentInfo = aux.calcBoundingBox(target, spectralResult[index].xCoords, spectralResult[index].yCoords, nodeIndexes);
                     targetCenter.push(parentInfo.topLeftX + parentInfo.width / 2);
                     targetCenter.push(parentInfo.topLeftY + parentInfo.height / 2);
-                  }
-                  else{
+                  } else {
                     targetCenter.push(spectralResult[index].xCoords[targetNodeIndex]);
                     targetCenter.push(spectralResult[index].yCoords[targetNodeIndex]);
                   }
+
                   subgraph.edges.push({startX: sourceCenter[0], startY: sourceCenter[1], endX: targetCenter[0], endY: targetCenter[1]});
-                }
-                else{
-                  if(coseResult[index][source.id()] && coseResult[index][target.id()]) {
+
+                } else {
+                  if (coseResult[index][source.id()] && coseResult[index][target.id()]) {
                     subgraph.edges.push({startX: coseResult[index][source.id()].getCenterX(), startY: coseResult[index][source.id()].getCenterY(), endX: coseResult[index][target.id()].getCenterX(), endY: coseResult[index][target.id()].getCenterY()});
                   }
                 }
               }
             });
+
             if(subgraph.nodes.length > 0) {
               subgraphs.push(subgraph);
               componentsEvaluated.add(index);
             }
+
           }
         });
+
         let shiftResult = layUtil.packComponents(subgraphs, options.randomize).shifts;
-        if(options.quality == "draft"){
+
+        if (options.quality === "draft") {
           spectralResult.forEach(function(result, index){
             let newXCoords = result.xCoords.map(x => x + shiftResult[index].dx);
             let newYCoords = result.yCoords.map(y => y + shiftResult[index].dy);
             result.xCoords = newXCoords;
             result.yCoords = newYCoords;
           });
-        }
-        else{
+        } else {
           let count = 0;
           componentsEvaluated.forEach((index) => {
             Object.keys(coseResult[index]).forEach(function (item) {
@@ -335,7 +339,7 @@ Layout.prototype.run = function() {
 
   // get each element's calculated position
   let getPositions = function(ele, i ){
-    if(options.quality == "default" || options.quality == "proof") {
+    if(options.quality === "default" || options.quality === "proof") {
       if(typeof ele === "number") {
         ele = i;
       }
@@ -350,30 +354,32 @@ Layout.prototype.run = function() {
       });
       if(options.nodeDimensionsIncludeLabels){
         if(node.labelWidth){
-          if(node.labelPosHorizontal == "left"){
+          if(node.labelPosHorizontal === "left"){
             pos.x += node.labelWidth/2;
           }
-          else if(node.labelPosHorizontal == "right"){
+          else if(node.labelPosHorizontal === "right"){
             pos.x -= node.labelWidth/2;
           }
         }
         if(node.labelHeight){
-          if(node.labelPosVertical == "top"){
+          if(node.labelPosVertical === "top"){
             pos.y += node.labelHeight/2;
           }
-          else if(node.labelPosVertical == "bottom"){
+          else if(node.labelPosVertical === "bottom"){
             pos.y -= node.labelHeight/2;
           }
         }
       }
-      if(pos == undefined)
+
+      if (pos === undefined) {
         pos = {x: ele.position("x"), y: ele.position("y")};
+      }
+
       return {
         x: pos.x,
         y: pos.y
       };
-    }
-    else{
+    } else {
       let pos;
       spectralResult.forEach(function(result){
         let index = result.nodeIndexes.get(ele.id());
@@ -391,10 +397,10 @@ Layout.prototype.run = function() {
   };
 
   // quality = "draft" and randomize = false are contradictive so in that case positions don't change
-  if(options.quality == "default" || options.quality == "proof" || options.randomize) {
+  if(options.quality === "default" || options.quality === "proof" || options.randomize) {
     // transfer calculated positions to nodes (positions of only simple nodes are evaluated, compounds are positioned automatically)
     let parentsWithoutChildren = aux.calcParentsWithoutChildren(cy, eles);
-    let hiddenEles = eles.filter((ele) => {return ele.css('display') == 'none'});
+    let hiddenEles = eles.filter((ele) => {return ele.css('display') === 'none'});
     options.eles = eles.not(hiddenEles);
 
     eles.nodes().not(":parent").not(hiddenEles).layoutPositions(layout, options, getPositions);
@@ -404,8 +410,7 @@ Layout.prototype.run = function() {
         ele.position(getPositions(ele));
       });
     }
-  }
-  else{
+  } else {
     console.log("If randomize option is set to false, then quality option must be 'default' or 'proof'.");
   }
 

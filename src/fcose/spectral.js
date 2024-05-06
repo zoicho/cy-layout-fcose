@@ -4,13 +4,20 @@
 
 import CoseBase from 'cose-base';
 import aux from './auxiliary.js';
+import seedrandom from 'seedrandom';
 
 const Matrix = CoseBase.layoutBase.Matrix;
 const SVD = CoseBase.layoutBase.SVD;
 
 // main function that spectral layout is processed
 let spectralLayout = function(options){
-  
+
+  let rng = Math.random;
+  // Create a new random number generator with a seed
+  if (options.seededRandom &&  options.seededRandomString) {
+    rng = seedrandom(options.seededRandomString);
+  }
+
   let cy = options.cy;
   let eles = options.eles;
   let nodes = eles.nodes();
@@ -51,7 +58,7 @@ let spectralLayout = function(options){
     let flag = false;
 
     while(count < sampleSize){
-      sample = Math.floor(Math.random() * nodeSize); 
+      sample = Math.floor(rng() * nodeSize);
 
       flag = false;
       for(let i = 0; i < count; i++){
@@ -132,9 +139,8 @@ let spectralLayout = function(options){
       for(let i = 0; i < sampleSize; i++){
         BFS(samplesColumn[i], i, samplingMethod, false);
       }          
-    }
-    else{
-      sample = Math.floor(Math.random() * nodeSize);
+    } else {
+      sample = Math.floor(rng() * nodeSize);
       firstSample = sample;
 
       for(let i = 0; i < nodeSize; i++){
@@ -209,8 +215,8 @@ let spectralLayout = function(options){
     let V2 = [];      
 
     for(let i = 0; i < nodeSize; i++){
-      Y1[i] = Math.random();
-      Y2[i] = Math.random();
+      Y1[i] = rng();
+      Y2[i] = rng();
     }
 
     Y1 = Matrix.normalize(Y1);

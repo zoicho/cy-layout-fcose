@@ -3912,6 +3912,8 @@ const sr = Object.freeze({
   // Place two nodes relatively in vertical/horizontal direction 
   // [{top: 'n1', bottom: 'n2', gap: 100}, {left: 'n3', right: 'n4', gap: 75}]
   relativePlacementConstraint: void 0,
+  // layout utilities options
+  componentSpacing: 70,
   /* layout event callbacks */
   ready: () => {
   },
@@ -3926,7 +3928,9 @@ Pe.prototype.run = function() {
   let A = this, w = this.options, M = w.cy, S = w.eles, T = [], d = [], h, n = [];
   w.fixedNodeConstraint && (!Array.isArray(w.fixedNodeConstraint) || w.fixedNodeConstraint.length == 0) && (w.fixedNodeConstraint = void 0), w.alignmentConstraint && (w.alignmentConstraint.vertical && (!Array.isArray(w.alignmentConstraint.vertical) || w.alignmentConstraint.vertical.length == 0) && (w.alignmentConstraint.vertical = void 0), w.alignmentConstraint.horizontal && (!Array.isArray(w.alignmentConstraint.horizontal) || w.alignmentConstraint.horizontal.length == 0) && (w.alignmentConstraint.horizontal = void 0)), w.relativePlacementConstraint && (!Array.isArray(w.relativePlacementConstraint) || w.relativePlacementConstraint.length == 0) && (w.relativePlacementConstraint = void 0), (w.fixedNodeConstraint || w.alignmentConstraint || w.relativePlacementConstraint) && (w.tile = !1, w.packComponents = !1);
   let i, s = !1;
-  if (M.layoutUtilities && w.packComponents && (i = M.layoutUtilities("get"), i || (i = M.layoutUtilities()), s = !0), S.nodes().length > 0)
+  if (M.layoutUtilities && w.packComponents && (i = M.layoutUtilities("get"), i || (i = M.layoutUtilities({
+    componentSpacing: w.componentSpacing
+  })), s = !0), S.nodes().length > 0)
     if (s) {
       let l = Lt.getTopMostNodes(w.eles.nodes());
       if (h = Lt.connectComponents(M, w.eles, l), h.forEach(function(a) {

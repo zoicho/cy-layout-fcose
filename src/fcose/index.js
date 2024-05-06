@@ -96,6 +96,9 @@ const defaults = Object.freeze({
   // Place two nodes relatively in vertical/horizontal direction 
   // [{top: 'n1', bottom: 'n2', gap: 100}, {left: 'n3', right: 'n4', gap: 75}]
   relativePlacementConstraint: undefined,
+
+  // layout utilities options
+  componentSpacing: 70,
   
   /* layout event callbacks */
   ready: () => {}, // on layoutready
@@ -151,10 +154,13 @@ Layout.prototype.run = function() {
   // decide component packing is enabled or not
   let layUtil;
   let packingEnabled = false;
-  if(cy.layoutUtilities && options.packComponents){
+
+  if(cy.layoutUtilities && options.packComponents) {
     layUtil = cy.layoutUtilities("get");
     if(!layUtil) {
-      layUtil = cy.layoutUtilities();
+      layUtil = cy.layoutUtilities({
+        componentSpacing: options.componentSpacing
+      });
     }
     packingEnabled = true;
   }
@@ -354,7 +360,7 @@ Layout.prototype.run = function() {
           node = result[theId];
         }
       });
-      if(options.nodeDimensionsIncludeLabels){
+      if(options.nodeDimensionsIncludeLabels) {
         if(node.labelWidth){
           if(node.labelPosHorizontal === "left"){
             pos.x += node.labelWidth/2;
